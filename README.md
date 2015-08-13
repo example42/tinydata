@@ -32,10 +32,10 @@ A sample ```hiera.yaml``` is like this:
 
 so the lookup is done, if ```$title == 'mariadb'```  and ```$::osfamily == 'RedHat'``` in these files:
 
-  - ```tinydata/data/mariadb/osfamily/RedHat.yaml```
-  
-  - ```tinydata/data/mariadb/default.yaml```
+  ```tinydata/data/mariadb/osfamily/RedHat.yaml```
+ 
+  ```tinydata/data/mariadb/default.yaml```
 
-  - ```tinydata/data/default.yaml``` (this file contains general defaults for every application)
+  ```tinydata/data/default.yaml``` (this file contains general defaults for every application)
 
 

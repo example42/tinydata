@@ -1,0 +1,3 @@
+---
+  openjdk-jre::settings:
+    package_name: 'java-1.6.0-openjdk'

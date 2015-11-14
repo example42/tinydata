@@ -1,0 +1,6 @@
+---
+  go-server::settings:
+    init_file_path: '/etc/default/go-server'
+    repo_url: 'http://dl.bintray.com/gocd/gocd-deb'
+    apt_repos: 'main'
+    apt_release: 'stable'

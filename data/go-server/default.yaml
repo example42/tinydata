@@ -1,0 +1,17 @@
+---
+  go-server::settings:
+    package_name: 'go-server'
+    service_name: 'go-server'
+    config_file_path: '/etc/go/log4j.properties'
+    config_dir_path: '/etc/go'
+    pid_file_path: '/var/run/go-server.pid'
+    log_file_path: '/var/log/go-server/go-server.log'
+    log_dir_path: '/var/log/go-server'
+    work_dir_path: '/var/lib/go-server'
+    process_name: 'java'
+    process_args: 'go-server'
+    process_user: 'go'
+    process_group: 'go'
+    tcp_port:
+      - '8153'
+      - '8154'

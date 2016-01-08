@@ -4,6 +4,7 @@
   "summary": "Tiny Puppet Data",
   "license": "Apache-2.0",
   "author": "Alessandro Franceschi",
+  "dependencies": [],
   "checksums": {
   },
   "source": "https://github.com/example42/tinydata",

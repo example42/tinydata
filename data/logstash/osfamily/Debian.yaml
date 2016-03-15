@@ -1,7 +1,7 @@
 ---
   logstash::settings:
     init_file_path: '/etc/default/logstash'
-    repo_url: 'http://packages.elastic.co/logstash/1.5/debian'
+    repo_url: 'http://packages.elastic.co/logstash/2.2/debian'
     key: 'D88E42B4'
     key_url: 'https://packages.elastic.co/GPG-KEY-elasticsearch'
     apt_repos: 'main'

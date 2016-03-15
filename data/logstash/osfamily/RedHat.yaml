@@ -1,6 +1,6 @@
 ---
   logstash::settings:
     init_file_path: '/etc/sysconfig/logstash'
-    repo_url: 'http://packages.elastic.co/logstash/1.5/centos'
+    repo_url: 'http://packages.elastic.co/logstash/2.2/centos'
     key: 'D88E42B4'
     key_url: 'https://packages.elastic.co/GPG-KEY-elasticsearch'

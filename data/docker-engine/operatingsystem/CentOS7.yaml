@@ -1,0 +1,3 @@
+---
+  docker-engine::settings:
+    repo_url: 'https://yum.dockerproject.org/repo/main/centos/7'

@@ -1,6 +1,7 @@
 ---
   docker-engine::settings:
     init_file_path: '/etc/default/docker'
+    config_file_path: '/etc/default/docker'
     repo_url: 'https://apt.dockerproject.org/repo'
     key: '2C52609D'
     key_url: 'http://apt.dockerproject.org/gpg'

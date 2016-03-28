@@ -7,6 +7,5 @@
     tcp_port: '6379'
     pid_file_path: '/var/run/redis.pid'
     log_file_path: '/var/log/redis.log'
-    log_dir_path: ''
     process_user: 'redis'
     process_group: 'redis'

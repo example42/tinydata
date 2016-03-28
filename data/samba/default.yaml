@@ -10,6 +10,5 @@
     log_file_path:
       - '/var/log/samba/log.smdb'
       - '/var/log/samba/log.nmdb'
-    log_dir_path: ''
     process_user: 'samba'
     process_group: 'samba'

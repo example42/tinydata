@@ -8,7 +8,6 @@
     log_file_path: '/var/log/fail2ban/fail2ban.log'
     config_dir_path: '/etc/fail2ban'
     log_dir_path: '/var/log/fail2ban'
-    tcp_port: ''
     process_name: 'fail2ban-server'
     process_user: 'fail2ban'
     process_group: 'fail2ban'

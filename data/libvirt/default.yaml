@@ -9,7 +9,6 @@
     conf_dir_path: '/etc/libvirt/conf.d'
     log_dir_path: '/var/log/libvirt'
     data_dir_path: '/var/lib/libvirt'
-    tcp_port: ''
     process_name: 'libvirtd'
     process_user: 'root'
     process_group: 'root'

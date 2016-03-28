@@ -8,7 +8,7 @@
     log_file_path: '/var/log/jenkins/jenkins.log'
     log_dir_path: '/var/log/jenkins'
     process_name: 'java'
-    process_args: 'jenkins'
+    process_extra_name: 'jenkins'
     process_user: 'jenkins'
     process_group: 'jenkins'
     tcp_port: '8080'

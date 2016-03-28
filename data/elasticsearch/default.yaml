@@ -8,7 +8,7 @@
     log_file_path: '/var/log/elasticsearch/elasticsearch.log'
     log_dir_path: '/var/log/elasticsearch'
     process_name: 'java'
-    process_args: 'elasticsearch'
+    process_extra_name: 'elasticsearch'
     process_user: 'elasticsearch'
     process_group: 'elasticsearch'
     tcp_port: '9200'

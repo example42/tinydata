@@ -9,7 +9,7 @@
     log_dir_path: '/var/log/go-server'
     work_dir_path: '/var/lib/go-server'
     process_name: 'java'
-    process_args: 'go-server'
+    process_extra_name: 'go-server'
     process_user: 'go'
     process_group: 'go'
     tcp_port:

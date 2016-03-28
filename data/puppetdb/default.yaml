@@ -12,7 +12,7 @@
     log_file_path: '/var/log/puppetdb/puppetdb.log'
     log_dir_path: '/var/log/puppetdb'
     process_name: 'java'
-    process_args: 'puppetdb'
+    process_extra_name: 'puppetdb'
     process_user: 'puppetdb'
     process_group: 'puppetdb'
     tcp_port: '8080'

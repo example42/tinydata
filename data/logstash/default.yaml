@@ -9,7 +9,7 @@
     log_file_path: '/var/log/logstash/logstash.log'
     log_dir_path: '/var/log/logstash'
     process_name: 'java'
-    process_args: 'logstash'
+    process_extra_name: 'logstash'
     process_user: 'logstash'
     process_group: 'logstash'
     tcp_port: '9292'

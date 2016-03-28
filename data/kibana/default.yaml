@@ -8,7 +8,7 @@
     log_file_path: '/var/log/kibana/kibana.stderr'
     log_dir_path: '/var/log/kibana'
     process_name: 'node'
-    process_args: 'kibana'
+    process_extra_name: 'kibana'
     process_user: 'kibana'
     process_group: 'root'
     tcp_port: '5601'

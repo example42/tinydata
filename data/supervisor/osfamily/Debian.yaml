@@ -1,0 +1,5 @@
+---
+  supervisor::settings:
+    init_file_path: '/etc/default/supervisor'
+    config_file_path: '/etc/supervisor/supervisord.conf'
+    process_args: '-c /etc/supervisor/supervisord.conf'

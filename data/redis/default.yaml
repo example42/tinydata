@@ -10,5 +10,4 @@
     process_user: 'redis'
     process_group: 'redis'
     process_name: 'redis-server'
-    process_args:
-      - '/etc/redis/redis.conf'
+    process_args: '/etc/redis/redis.conf'

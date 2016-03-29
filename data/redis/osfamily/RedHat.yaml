@@ -1,6 +1,4 @@
 ---
   redis::settings:
     config_file_path: '/etc/redis.conf'
-    process_args:
-      - '/etc/redis.conf'          
-      - '--daemonize no'          
+    process_args: '/etc/redis.conf --daemonize no'          

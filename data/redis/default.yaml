@@ -9,3 +9,6 @@
     log_file_path: '/var/log/redis.log'
     process_user: 'redis'
     process_group: 'redis'
+    process_name: 'redis-server'
+    process_args:
+      - '/etc/redis/redis.conf'

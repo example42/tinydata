@@ -16,3 +16,4 @@
     process_name: 'nginx'
     process_user: 'nginx'
     process_group: 'nginx'
+    nodaemon_args: -g 'daemon off;'

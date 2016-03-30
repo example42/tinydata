@@ -11,3 +11,4 @@
     process_name: 'sshd'
     process_user: 'root'
     process_group: 'root'
+    nodaemon_args: '-D'

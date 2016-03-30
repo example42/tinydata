@@ -8,3 +8,4 @@
     log_file_path: '/var/log/supervisor.log'
     log_dir_path: '/var/log/supervisor'
     process_name: 'supervisord'
+    nodaemon_args: '--nodaemon'

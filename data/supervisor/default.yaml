@@ -7,5 +7,4 @@
     pid_file_path: '/var/run/supervisor.pid'
     log_file_path: '/var/log/supervisor.log'
     log_dir_path: '/var/log/supervisor'
-    process_name: 'python'
-    process_extra_name: 'supervisord'
+    process_name: 'supervisord'

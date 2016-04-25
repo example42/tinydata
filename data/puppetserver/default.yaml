@@ -14,6 +14,9 @@
     process_name: 'puppet'
     process_user: 'puppet'
     process_group: 'puppet'
+    config_dir_owner: 'puppet'
+    config_dir_group: 'puppet'
+    config_dir_mode: '0750'
 
   puppetserver::options:
     java_args: '-Xms2g -Xmx2g -XX:MaxPermSize=256m'

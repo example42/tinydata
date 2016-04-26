@@ -1,5 +1,6 @@
 ---
   puppetserver::settings:
+    init_file_path: '/etc/default/puppetserver'
     repo_url: 'https://apt.puppetlabs.com'
     key: '07BB6C57'
     key_url: 'https://apt.puppetlabs.com/pubkey.gpg'

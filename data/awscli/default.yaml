@@ -1,0 +1,6 @@
+---
+  awscli::settings:
+    package_name: 'awscli'
+    package_provider: 'pip'
+    config_file_path: '/root/.aws/config'
+    config_dir_path: '/etc/aws'

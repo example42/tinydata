@@ -1,4 +1,3 @@
 ---
   python-pip::settings:
     package_name: 'python-pip'
-    config_file_path: ''

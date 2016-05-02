@@ -19,7 +19,3 @@
     config_dir_mode: '0750'
     nodaemon_args: 'foreground'
 
-  puppetserver::options::init:
-    java_args: '-Xms2g -Xmx2g -XX:MaxPermSize=256m'
-    service_stop_retries: '60'
-    start_timeout: '120'

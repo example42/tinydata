@@ -6,7 +6,7 @@
     service_enable: 'false'
     config_file_path: '/etc/redis-test/redis.conf'
     config_file_template: 'tinydata/redis/test.conf.erb'
-    init_file_path: '/etc/susconfig/redis-test'
+    init_file_path: '/etc/sysconfig/redis-test'
     init_file_template: 'tinydata/redis/test.conf.erb'
     config_file_owner: 'test'
     config_file_group: 'test'

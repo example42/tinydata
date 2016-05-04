@@ -12,3 +12,4 @@
     process_name: 'httpd'
     process_user: 'apache'
     process_group: 'apache'
+    nodaemon_args: '-DFOREGROUND'

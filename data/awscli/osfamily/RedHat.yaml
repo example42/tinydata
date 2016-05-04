@@ -1,0 +1,3 @@
+---
+  awscli::settings:
+    config_file_path: '/etc/awsclirc'

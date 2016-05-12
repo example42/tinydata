@@ -4,3 +4,4 @@
     config_dir_path: '/etc/supervisord.d'
     conf_dir_path: '/etc/supervisord.d'
     process_args: '-c /etc/supervisord.conf'
+    config_file_extension: 'ini'

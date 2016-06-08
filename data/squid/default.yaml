@@ -1,0 +1,11 @@
+---
+  squid::settings:
+    package_name: 'squid'
+    service_name: 'squid'
+    config_file_path: '/etc/squid/squid.conf'
+    config_dir_path: '/etc/squid'
+    pid_file_path: '/var/run/squid.pid'
+    process_name: 'squid'
+    process_user: 'squid'
+    process_group: 'squid'
+    tcp_port: '3128'

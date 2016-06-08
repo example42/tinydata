@@ -1,5 +1,5 @@
 ---
-  dhcpd::settings:
+  squid::settings:
     package_name: 'squid'
     service_name: 'squid'
     config_file_path: '/etc/squid/squid.conf'

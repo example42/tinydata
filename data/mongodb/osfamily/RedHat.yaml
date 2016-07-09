@@ -3,5 +3,7 @@
     service_name: 'mongod'
     init_file_path: '/etc/sysconfig/mongod'
     config_file_path: '/etc/mongod.conf'
-
+    pid_file_path: '/var/run/mongodb/mongod.pid'
+    log_file_path: '/var/log/mongodb/mongod.log'
+    data_dir_path: '/var/lib/mongodb'
 

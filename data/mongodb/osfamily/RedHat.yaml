@@ -1,3 +1,7 @@
 ---
   mongodb::settings:
-    init_file_path: '/etc/sysconfig/mongodb'
+    service_name: 'mongod'
+    init_file_path: '/etc/sysconfig/mongod'
+    config_file_path: '/etc/mongod.conf'
+
+

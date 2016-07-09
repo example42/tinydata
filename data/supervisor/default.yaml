@@ -9,3 +9,4 @@
     log_dir_path: '/var/log/supervisor'
     process_name: 'supervisord'
     nodaemon_args: '--nodaemon'
+    config_file_extension: 'conf'

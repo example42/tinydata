@@ -12,7 +12,7 @@
     environment_dir_path: '/etc/puppetlabs/code/environments'
     pid_file_path: '/var/run/puppetlabs/agent.pid'
     log_file_path: '/var/log/puppetlabs/puppet/puppet.log'
-    log_dir_path: '/var/log/puppetlabs'
+    log_dir_path: '/var/log/puppetlabs/puppet'
     process_name: 'puppet'
     process_user: 'root'
     process_group: 'root'

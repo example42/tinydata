@@ -1,0 +1,3 @@
+---
+  rails::settings:
+    package_name: 'rails'

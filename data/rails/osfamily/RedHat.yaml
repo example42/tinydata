@@ -1,0 +1,5 @@
+---
+  rails::settings:
+    package_dependencies:
+      - 'ruby-devel'
+      - 'zlib-devel'

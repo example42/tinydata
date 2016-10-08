@@ -1,0 +1,4 @@
+---
+  nfs-server::settings:
+    service_name: 'nfs-server'
+    init_file_path: '/etc/sysconfig/nfs'

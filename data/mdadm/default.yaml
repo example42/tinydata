@@ -1,0 +1,3 @@
+---
+  mdadm::settings:
+    package_name: 'mdadm'

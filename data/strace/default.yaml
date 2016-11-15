@@ -1,0 +1,3 @@
+---
+  strace::settings:
+    package_name: 'strace'

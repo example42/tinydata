@@ -1,3 +1,10 @@
 ---
   mdadm::settings:
     package_name: 'mdadm'
+    service_name: 'mdadm'
+    config_file_path: '/etc/mdadm/mdadm.conf'
+    config_dir_path: '/etc/mdadm'
+    pid_file_path: '/run/mdadm/monitor.pid'
+    process_name: 'mdadm'
+    process_user: 'root'
+    process_group: 'root'

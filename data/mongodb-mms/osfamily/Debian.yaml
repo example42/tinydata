@@ -1,0 +1,3 @@
+---
+  mongodb-mms::settings:
+    init_file_path: '/etc/init/mongodb-mms.conf'

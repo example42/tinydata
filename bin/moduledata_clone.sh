@@ -10,7 +10,7 @@ $0 -m test
 Create a module data dir based on test module data
 
 $0 -m wget -n vim
-Create a module data dir based on wget module data
+Create a module data dir for vim based on wget module data
 
 EOF
 }

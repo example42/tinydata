@@ -1,0 +1,3 @@
+---
+  fabric::settings:
+    config_file_path: '/etc/fabricrc'

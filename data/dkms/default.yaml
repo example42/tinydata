@@ -1,0 +1,6 @@
+---
+  dkms::settings:
+    package_name: 'dkms'
+    service_name: 'dkms'
+    config_file_path: '/etc/dkms/framework.conf'
+    config_dir_path: '/etc/dkms'

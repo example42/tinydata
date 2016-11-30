@@ -1,0 +1,3 @@
+---
+  virtualbox::settings:
+    apt_release: 'xenial'

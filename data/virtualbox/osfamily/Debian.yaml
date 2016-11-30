@@ -1,0 +1,7 @@
+---
+  virtualbox::settings:
+    repo_url: 'http://download.virtualbox.org/virtualbox/debian'
+    key: '7F438280EF8D349F'
+    key_url: 'https://www.virtualbox.org/download/oracle_vbox.asc'
+    apt_repos: 'contrib'
+

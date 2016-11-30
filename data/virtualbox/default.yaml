@@ -1,0 +1,5 @@
+---
+  virtualbox::settings:
+    package_name: 'VirtualBox-5.1'
+    service_name: 'vboxdrv'
+    config_dir_path: '/etc/vbox'

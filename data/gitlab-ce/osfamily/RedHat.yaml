@@ -1,6 +1,6 @@
 ---
   gitlab-ce::settings:
-    key: '14219A96E15E78F4'
+    key: ~ # '14219A96E15E78F4'
     repo_url: 'https://packages.gitlab.com/gitlab/gitlab-ce/el/$releasever/$basearch'
-    key_url: 'https://packages.gitlab.com/gitlab/gitlab-ce/gpgkey'
+    key_url: ~ # 'https://packages.gitlab.com/gitlab/gitlab-ce/gpgkey'
 

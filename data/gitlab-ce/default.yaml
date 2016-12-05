@@ -1,0 +1,6 @@
+---
+  gitlab-ce::settings:
+    package_name: 'gitlab-ce'
+    service_name: 'gitlab-runsvdir'
+    config_file_path: '/opt/gitlab/etc/gitlab.rb'
+    config_dir_path: '/opt/gitlab/etc'

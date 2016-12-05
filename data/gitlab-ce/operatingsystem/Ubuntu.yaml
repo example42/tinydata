@@ -1,0 +1,3 @@
+---
+  gitlab-ce::settings:
+    repo_url: 'http://packages.gitlab.com/gitlab/gitlab-ce/debian'

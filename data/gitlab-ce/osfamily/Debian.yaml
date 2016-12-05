@@ -1,0 +1,7 @@
+---
+  gitlab-ce::settings:
+    repo_url: 'http://packages.gitlab.com/gitlab/gitlab-ce/debian'
+    key: '14219A96E15E78F4'
+    key_url: 'https://packages.gitlab.com/gitlab/gitlab-ce/gpgkey'
+    apt_repos: 'main'
+

@@ -1,7 +1,0 @@
----
-  octocatalog::settings:
-    package_name: 'octocatalog'
-    package_provider: 'gem'
-    config_file_path: '/etc/octocatalog-diff.cfg.rb'
-    tp_prerequisites:
-      - rubygem

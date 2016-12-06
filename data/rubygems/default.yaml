@@ -1,3 +1,0 @@
----
-  rubygems::settings:
-    package_name: 'rubygems'

@@ -1,0 +1,6 @@
+---
+  gitlab-runner::settings:
+    key: ~ # ''
+    repo_url: 'https://packages.gitlab.com/runner/gitlab-ci-multi-runner/el/$releasever/$basearch'
+    key_url: ~ # 'https://packages.gitlab.com/runner/gitlab-ci-multi-runner/gpgkey'
+

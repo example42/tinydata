@@ -1,0 +1,7 @@
+---
+  gitlab-runner::settings:
+    repo_url: 'http://packages.gitlab.com/runner/gitlab-ci-multi-runner/debian'
+    key: '14219A96E15E78F4'
+    key_url: 'https://packages.gitlab.com/runner/gitlab-ci-multi-runner/gpgkey'
+    apt_repos: 'main'
+

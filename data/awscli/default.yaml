@@ -4,3 +4,6 @@
     package_provider: 'pip'
     config_file_path: '/root/.aws/config'
     config_dir_path: '/etc/aws'
+    tp_prerequisites:
+      - python-pip
+

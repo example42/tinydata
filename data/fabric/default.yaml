@@ -2,3 +2,5 @@
   fabric::settings:
     package_name: 'fabric'
     package_provider: 'pip'
+    tp_prerequisites:
+      - python-pip

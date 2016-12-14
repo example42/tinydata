@@ -10,3 +10,5 @@
     postinstall_exec:
       bundle_install:
         command: 'bundle install --without test'
+    tp_prerequisites:
+      - ruby

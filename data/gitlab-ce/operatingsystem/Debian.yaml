@@ -1,0 +1,6 @@
+---
+  gitlab-ce::settings:
+    package_prerequisites:
+      - debian-archive-keyring
+      - apt-transport-https
+  

@@ -1,0 +1,15 @@
+---
+  bacula-client::settings:
+    package_name: 'bacula-client'
+    service_name: 'bacula-fd'
+    config_file_path: '/etc/bacula/bacula-fd.conf'
+    config_dir_path: '/etc/bacula'
+    data_dir_path: '/var/lib/bacula'
+    init_file_path: '/etc/sysconfig/bacula-fd'
+    tcp_port: '9102'
+    pid_file_path: '/var/run/bacula/bacula-fd.9102.pid'
+    log_file_path: '/var/log/messages'
+    log_dir_path: '/var/log/bacula'
+    process_name: 'bacula-fd'
+    process_user: 'root'
+    process_group: 'root'

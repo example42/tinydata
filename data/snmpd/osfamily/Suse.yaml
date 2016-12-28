@@ -1,0 +1,4 @@
+---
+  snmpd::settings:
+    package_name: 'net-snmp'
+

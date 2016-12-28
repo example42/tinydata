@@ -12,3 +12,4 @@
     process_user: 'varnish'
     process_group: 'varnish'
     tcp_port: '6081'
+    nodaemon_args: '-F'

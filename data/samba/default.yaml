@@ -8,7 +8,7 @@
     tcp_port: '445'
     pid_file_path: '/var/run/smbd.pid'
     log_file_path:
-      - '/var/log/samba/log.smdb'
-      - '/var/log/samba/log.nmdb'
+      - '/var/log/samba/log.smbd'
+      - '/var/log/samba/log.nmbd'
     process_user: 'samba'
     process_group: 'samba'

@@ -2,3 +2,4 @@
   fabric::settings:
     package_prerequisites:
       - python-devel
+      - openssl-devel

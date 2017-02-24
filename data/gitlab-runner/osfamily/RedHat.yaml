@@ -1,6 +1,6 @@
 ---
   gitlab-runner::settings:
-    key: ~ # ''
-    repo_url: 'https://packages.gitlab.com/runner/gitlab-ci-multi-runner/el/$releasever/$basearch'
-    key_url: ~ # 'https://packages.gitlab.com/runner/gitlab-ci-multi-runner/gpgkey'
-
+    exec_prerequisites:
+      repo_setup:
+        command: 'curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-ci-multi-runner/script.rpm.sh | bash'
+        creates: '/etc/yum.repos.d/runner_gitlab-ci-multi-runner.repo'

@@ -1,3 +1,0 @@
----
-  gitlab-runner::settings:
-    apt_release: 'xenial'

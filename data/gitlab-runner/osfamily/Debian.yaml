@@ -1,7 +1,7 @@
 ---
   gitlab-runner::settings:
-    repo_url: 'http://packages.gitlab.com/runner/gitlab-ci-multi-runner/debian'
-    key: '14219A96E15E78F4'
-    key_url: 'https://packages.gitlab.com/runner/gitlab-ci-multi-runner/gpgkey'
-    apt_repos: 'main'
+    exec_prerequisites:
+      repo_setup:
+        command: 'curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-ci-multi-runner/script.deb.sh | bash'
+        creates: '/etc/apt/sources.list.d/runner_gitlab-ci-multi-runner.list'
 

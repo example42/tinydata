@@ -1,3 +1,0 @@
----
-  gitlab-runner::settings:  
-    repo_url: 'http://packages.gitlab.com/runner/gitlab-ci-multi-runner/ubuntu'

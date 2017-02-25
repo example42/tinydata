@@ -1,0 +1,9 @@
+---
+  foreman::settings:
+    init_file_path: '/etc/default/foreman'
+    repo_url: 'http://deb.theforeman.org/'
+    key: '563278F6'
+    key_url: 'https://deb.theforeman.org/pubkey.gpg'
+    apt_repos: '1.14'
+    package_prerequisites:
+      - ca-certificates

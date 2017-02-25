@@ -1,0 +1,5 @@
+---
+  epel::settings:
+    repo_package_name: 'epel-release'
+    repo_package_provider: 'rpm'
+

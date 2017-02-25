@@ -7,3 +7,4 @@
     modules_dir_path: '/etc/icingaweb2/modules'
     log_file_path: '/var/log/icingaweb2/icingaweb2.log'
     log_dir_path: '/var/log/icingaweb2'
+    config_dir_mode: '0775'

@@ -1,17 +1,17 @@
 {
   "name": "example42-tinydata",
-  "version": "0.1.3",
+  "version": "0.1.4",
+  "author": "Alessandro Franceschi",
   "summary": "Tiny Puppet Data",
   "license": "Apache-2.0",
-  "author": "Alessandro Franceschi",
-  "dependencies": [
-
-  ],
-  "checksums": {
-  },
   "source": "https://github.com/example42/tinydata",
   "project_page": "https://github.com/example42/tinydata",
   "issues_url": "https://github.com/example42/tinydata/issues",
+  "dependencies": [
+  
+  ],
+  "checksums": {
+  },
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",

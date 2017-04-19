@@ -1,6 +1,6 @@
 {
   "name": "example42-tinydata",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Alessandro Franceschi",
   "summary": "Tiny Puppet Data",
   "license": "Apache-2.0",
@@ -8,7 +8,7 @@
   "project_page": "https://github.com/example42/tinydata",
   "issues_url": "https://github.com/example42/tinydata/issues",
   "dependencies": [
-  
+
   ],
   "checksums": {
   },

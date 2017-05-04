@@ -1,0 +1,3 @@
+---
+  psmisc::settings:
+    package_name: 'psmisc'

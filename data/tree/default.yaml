@@ -1,0 +1,3 @@
+---
+  tree::settings:
+    package_name: 'tree'

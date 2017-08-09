@@ -1,0 +1,3 @@
+---
+  snmp::settings:
+    package_name: 'snmp'

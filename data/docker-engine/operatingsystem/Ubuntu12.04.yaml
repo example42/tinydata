@@ -1,3 +1,4 @@
 ---
-  docker-engine::settings:
-    apt_release: 'ubuntu-precise'
+docker-engine::settings:
+  apt_release: 'ubuntu-precise'
+  init_system: 'upstart'

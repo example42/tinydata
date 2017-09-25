@@ -1,4 +1,4 @@
 ---
-docker-engine::settings:
+docker::settings:
   apt_release: 'ubuntu-trusty'
   init_system: 'upstart'

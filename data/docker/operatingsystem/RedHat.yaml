@@ -1,5 +1,5 @@
 ---
-docker-engine::settings:
+docker::settings:
   init_file_path: '/etc/sysconfig/docker'
   config_file_path: '/etc/sysconfig/docker'
   key: '2C52609D'

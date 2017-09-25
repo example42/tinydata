@@ -1,5 +1,5 @@
 ---
-  docker-engine::settings:
+  docker::settings:
     package_source: https://download.docker.com/mac/stable/Docker.dmg
     config_file_group: 'wheel'
 

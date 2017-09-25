@@ -8,3 +8,5 @@ docker-engine::settings:
   process_group: 'docker'
   tcp_port: '2375'
   compose_version: '1.16.0'
+  config_file_path: '/etc/docker/daemon.json'
+  config_dir_path: '/etc/docker'

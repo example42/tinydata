@@ -1,0 +1,15 @@
+---
+  openswan::settings:
+    package_name: 'openswan'
+    service_name: 'ipsec'
+    config_file_path: '/etc/ipsec.conf'
+    secrets_file_path: '/etc/ipsec.secrets'
+    config_dir_path: '/etc/ipsec.d'
+    connections_dir_path: '/etc/ipsec.d/connections'
+    secrets_dir_path: '/etc/ipsec.d/secrets'
+    udp_port:
+      - '500'
+      - '4500'
+    process_name: 'openswan'
+    process_user: 'root'
+    process_group: 'root'

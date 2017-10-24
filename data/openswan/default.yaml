@@ -10,6 +10,9 @@
     udp_port:
       - '500'
       - '4500'
-    process_name: 'openswan'
+    process_name: 'pluto'
     process_user: 'root'
     process_group: 'root'
+    pid_file_path: '/var/run/pluto'
+    log_file_path: '/var/log/pluto/peer'
+    log_dir_path: '/var/log/pluto'

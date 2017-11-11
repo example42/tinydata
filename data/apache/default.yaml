@@ -13,3 +13,5 @@
     process_user: 'apache'
     process_group: 'apache'
     nodaemon_args: '-DFOREGROUND'
+    validate_cmd:
+      config: 'httpd -t -f %'

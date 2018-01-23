@@ -1,0 +1,3 @@
+---
+htop::settings:
+  package_name: 'htop'

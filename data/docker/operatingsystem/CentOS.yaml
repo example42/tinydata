@@ -1,0 +1,7 @@
+---
+docker::settings:
+  init_file_path: '/etc/sysconfig/docker'
+  init_system: 'systemd'
+  config_file_path: '/etc/sysconfig/docker'
+  key: '2C52609D'
+  key_url: 'http://yum.dockerproject.org/gpg'

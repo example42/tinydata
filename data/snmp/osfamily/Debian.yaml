@@ -1,0 +1,5 @@
+---  
+  snmp::settings:
+    config_file_path: '/etc/snmp/snmp.conf'
+    config_dir_path: '/etc/snmp/'
+

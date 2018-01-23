@@ -1,0 +1,12 @@
+---
+docker::settings:
+  package_name: 'docker-engine'
+  service_name: 'docker'
+  pid_file_path: '/var/run/docker.pid'
+  process_name: 'docker'
+  process_user: 'docker'
+  process_group: 'docker'
+  tcp_port: '2375'
+  compose_version: '1.16.0'
+  config_file_path: '/etc/docker/daemon.json'
+  config_dir_path: '/etc/docker'

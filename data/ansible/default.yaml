@@ -1,0 +1,7 @@
+---
+  ansible::settings:
+    package_name: 'ansible'
+    config_file_path: '/etc/ansible/ansible.cfg'
+    config_dir_path: '/etc/ansible'
+    roles_dir_path: '/etc/ansible/roles'
+    inventory_file_path: '/etc/ansible/hosts'

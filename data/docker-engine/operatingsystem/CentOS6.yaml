@@ -1,3 +1,4 @@
 ---
-  docker-engine::settings:
-    repo_url: 'https://yum.dockerproject.org/repo/main/centos/6'
+docker-engine::settings:
+  repo_url: 'https://yum.dockerproject.org/repo/main/centos/6'
+  init_system: 'sysvinit'

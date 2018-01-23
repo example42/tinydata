@@ -2,3 +2,7 @@
   jenkins::settings:
     pid_file_path: '/var/run/jenkins/jenkins.pid'
     init_file_path: '/etc/default/jenkins'
+    repo_url: 'https://pkg.jenkins.io/debian-stable'
+    key: 'D50582E6'
+    key_url: 'https://pkg.jenkins.io/debian-stable/jenkins.io.key'
+    apt_repos: 'binary/'

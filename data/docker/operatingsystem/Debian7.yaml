@@ -1,0 +1,3 @@
+---
+docker::settings:
+  apt_release: 'debian-wheezy'

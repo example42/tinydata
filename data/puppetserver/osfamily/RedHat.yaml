@@ -1,5 +1,5 @@
 ---
-  puppet-agent::settings:
+  puppetserver::settings:
     init_file_path: '/etc/sysconfig/puppetserver'
     repo_package_name: 'puppetlabs-release-pc1'
     repo_package_provider: 'rpm'

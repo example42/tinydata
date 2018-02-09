@@ -1,0 +1,9 @@
+---
+  openssh::settings:
+    package_name:
+      - 'SUNWsshcu'
+      - 'SUNWsshdr'
+      - 'SUNWsshdu'
+      - 'SUNWsshr'
+      - 'SUNWsshu'
+

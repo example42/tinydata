@@ -1,0 +1,5 @@
+---
+  influxdb::settings:
+    init_file_path: '/etc/default/influxdb'
+    repo_url: 'https://repos.influxdata.com/ubuntu/pool/stable/i/influxdb/'
+    apt_repos: 'main'

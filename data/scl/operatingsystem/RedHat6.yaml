@@ -1,0 +1,7 @@
+---
+# untested
+  scl::settings:
+    exec_prerequisites:
+      subscription_scl:
+        command: 'subscription-manager repos --enable rhel-server-rhscl-6-rpms'
+        unless: 'subscription-manager repos --list | grep scl'

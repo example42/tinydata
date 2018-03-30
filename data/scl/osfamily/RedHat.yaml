@@ -1,0 +1,4 @@
+---
+  scl::settings:
+    repo_package_provider: 'rpm'
+

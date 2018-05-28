@@ -1,0 +1,3 @@
+---
+  scl::settings:
+    package_name: 'centos-release-scl'

@@ -1,0 +1,3 @@
+---
+  influxdb::settings:
+    repo_url: 'https://repos.influxdata.com/rhel/6/x86_64/stable/'

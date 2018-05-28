@@ -1,4 +1,6 @@
 ---
   puppet-agent::settings:
-    apt_release: 'stretch'
+    repo_package_name: 'puppet5-release-stretch'
+    repo_package_url: 'https://apt.puppetlabs.com/puppet5-release-stretch.deb'
+    # apt_release: 'stretch'
 

@@ -6,5 +6,5 @@
     key: 'D59097AB'
     key_url: 'https://packagecloud.io/gpg.key'
     package_prerequisites:
-      - 'libfontconfig'
+      - 'libfontconfig1'
       - 'adduser'

@@ -2,3 +2,4 @@
 puppetdb-termini::settings:
   package_name: 'puppetdb-termini'
   config_file_path: '/etc/puppetlabs/puppet/puppetdb.conf'
+  config_dir_path: '/etc/puppetlabs/puppet'

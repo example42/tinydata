@@ -1,6 +1,5 @@
 ---
   puppet-agent::settings:
-    repo_package_name: 'puppet5-release-trusty'
+    repo_package_name: 'puppet5-release'
     repo_package_url: 'https://apt.puppetlabs.com/puppet5-release-trusty.deb'
-    # apt_release: 'trusty'
-
+    apt_release: 'trusty'

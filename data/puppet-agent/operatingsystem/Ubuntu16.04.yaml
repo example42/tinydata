@@ -1,5 +1,5 @@
 ---
   puppet-agent::settings:
-    repo_package_name: 'puppet5-release-xenial'
+    repo_package_name: 'puppet5-release'
     repo_package_url: 'https://apt.puppetlabs.com/puppet5-release-xenial.deb'
-    # apt_release: 'xenial'
+    apt_release: 'xenial'

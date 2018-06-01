@@ -1,6 +1,3 @@
 ---
   puppet-agent::settings:
-    repo_package_name: 'puppet5-release-precise'
-    repo_package_url: 'https://apt.puppetlabs.com/puppet5-release-precise.deb'
-    # apt_release: 'precise'
-
+    apt_release: 'precise'

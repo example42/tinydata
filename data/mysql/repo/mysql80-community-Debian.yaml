@@ -1,0 +1,5 @@
+---
+mysql::settings:
+  package_name: 'mysql-community-server'
+  repo_package_url: 'https://dev.mysql.com/get/mysql-apt-config_0.8.10-1_all.deb'
+  repo_package_name: 'mysqlapt-config_0.8'

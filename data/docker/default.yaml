@@ -1,6 +1,6 @@
 ---
 docker::settings:
-  package_name: 'docker-engine'
+  package_name: 'docker'
   service_name: 'docker'
   pid_file_path: '/var/run/docker.pid'
   process_name: 'docker'

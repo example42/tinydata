@@ -1,3 +1,4 @@
 ---
- :hierarchy:
-   - default
+:hierarchy:
+  - "%{title}/default"
+  - default

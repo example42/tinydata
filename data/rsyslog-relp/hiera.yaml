@@ -1,4 +1,5 @@
 ---
- :hierarchy:
-   - "%{title}/default"
-   - default
+:hierarchy:
+  - "%{title}/default"
+  - "default/%{operatingsystem}"
+  - default

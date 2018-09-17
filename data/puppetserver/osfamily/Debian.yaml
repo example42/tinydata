@@ -4,6 +4,7 @@
     repo_url: 'http://apt.puppetlabs.com'
     key: 'EF8D349F'
     key_url: 'http://apt.puppetlabs.com/pubkey.gpg'
-    apt_repos: 'PC1'
+    apt_repos: 'puppet5'
     apt_release: 'stable'
-
+    repo_package_provider: dpkg
+    repo_package_name: 'puppet5-release'

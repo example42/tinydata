@@ -1,4 +1,4 @@
 ---
   puppetserver::settings:
     apt_release: 'trusty'
-
+    repo_package_url: 'https://apt.puppetlabs.com/puppet5-release-trusty.deb'

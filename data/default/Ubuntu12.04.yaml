@@ -1,0 +1,4 @@
+---
+default::settings:
+  apt_release: 'precise'
+  init_system: 'upstart'

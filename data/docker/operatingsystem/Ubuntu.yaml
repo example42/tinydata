@@ -1,10 +1,9 @@
 ---
 docker::settings:
   init_file_path: '/etc/default/docker'
-  config_file_path: '/etc/default/docker'
-  repo_url: 'https://apt.dockerproject.org/repo'
-  key: '2C52609D'
-  key_url: 'http://apt.dockerproject.org/gpg'
-  apt_repos: 'main'
+  repo_url: 'https://download.docker.com/linux/ubuntu'
+  key: '0EBFCD88'
+  key_url: 'https://download.docker.com/linux/ubuntu/gpg'
+  apt_repos: 'stable'
   apt_key_server: 'http://p80.pool.sks-keyservers.net'
   init_system: 'systemd'

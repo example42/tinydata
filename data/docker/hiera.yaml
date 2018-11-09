@@ -3,5 +3,6 @@
   - "%{title}/operatingsystem/%{operatingsystem}%{operatingsystemmajrelease}"
   - "%{title}/operatingsystem/%{operatingsystem}"
   - "%{title}/default"
+  - "default/%{operatingsystem}%{operatingsystemmajrelease}"
   - "default/%{operatingsystem}"
   - default

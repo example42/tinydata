@@ -1,3 +1,0 @@
----
-  virtualbox::settings:
-    apt_release: 'jessie'

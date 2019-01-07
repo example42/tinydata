@@ -1,4 +1,0 @@
----
-docker::settings:
-  apt_release: 'ubuntu-precise'
-  init_system: 'upstart'

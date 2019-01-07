@@ -1,3 +1,0 @@
----
-docker::settings:
-  apt_release: 'ubuntu-xenial'

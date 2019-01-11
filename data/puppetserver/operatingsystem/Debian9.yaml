@@ -1,4 +1,4 @@
 ---
   puppetserver::settings:
-    repo_package_url: 'https://apt.puppetlabs.com/puppet5-release-stretch.deb'
+    repo_package_url: 'https://apt.puppetlabs.com/puppet-release-stretch.deb'
     apt_release: 'stretch'

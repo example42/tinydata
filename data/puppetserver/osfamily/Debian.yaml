@@ -7,4 +7,4 @@
     apt_repos: 'puppet5'
     apt_release: 'stable'
     repo_package_provider: dpkg
-    repo_package_name: 'puppet5-release'
+    repo_package_name: 'puppet-release'

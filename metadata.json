@@ -8,8 +8,9 @@
   "project_page": "https://github.com/example42/tinydata",
   "issues_url": "https://github.com/example42/tinydata/issues",
   "dependencies": [
-
+  
   ],
+  "data_provider": null,
   "checksums": {
   },
   "operatingsystem_support": [

@@ -1,4 +1,3 @@
 ---
 docker::settings:
-  apt_release: 'debian-stretch'
   init_system: 'systemd'

@@ -1,4 +1,4 @@
 ---
 docker::settings:
-  repo_url: 'https://yum.dockerproject.org/repo/main/centos/6'
+  repo_url: 'https://yum.dockerproject.org/repo/main/centos/6/$basearch/stable'
   init_system: 'sysvinit'

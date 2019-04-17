@@ -1,0 +1,7 @@
+---
+  gitlab-ee::settings:
+    package_name: 'gitlab-ce'
+    service_name: 'gitlab-runsvdir'
+    config_file_path: '/etc/gitlab/gitlab.rb'
+    config_dir_path: '/etc/gitlab'
+    ssl_dir_path: '/etc/gitlab/ssl'

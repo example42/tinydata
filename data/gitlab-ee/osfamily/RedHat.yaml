@@ -1,0 +1,6 @@
+---
+  gitlab-ee::settings:
+    exec_prerequisites:
+      gitlab-install:
+        command: 'curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | bash'
+        creates: '/etc/yum.repos.d/gitlab_gitlab-ee.repo'

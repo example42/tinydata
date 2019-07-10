@@ -1,0 +1,3 @@
+---
+  multitail::settings:
+    package_name: 'multitail'

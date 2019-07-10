@@ -1,0 +1,3 @@
+---
+  haveged::settings:
+    package_name: 'haveged'

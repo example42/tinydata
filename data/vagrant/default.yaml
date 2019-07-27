@@ -1,0 +1,4 @@
+---
+vagrant::settings:
+  package_name: 'vagrant'
+  process_name: 'vagrant'

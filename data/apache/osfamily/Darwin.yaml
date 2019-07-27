@@ -1,3 +1,0 @@
----
-  apache::settings:
-    config_file_group: 'wheel'

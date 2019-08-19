@@ -1,6 +1,5 @@
 ---
   puppet-agent::settings:
-    repo_package_provider: dpkg
     repo_url: 'http://apt.puppetlabs.com'
     key: 'EF8D349F'
     key_url: 'http://apt.puppetlabs.com/pubkey.gpg'

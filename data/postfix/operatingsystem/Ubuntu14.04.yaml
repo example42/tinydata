@@ -1,0 +1,3 @@
+---
+postfix::settings:
+  daemon_dir_path: '/usr/lib/postfix'

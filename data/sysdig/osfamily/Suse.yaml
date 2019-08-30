@@ -1,0 +1,3 @@
+---
+sysdig::settings:
+  package_name: ''

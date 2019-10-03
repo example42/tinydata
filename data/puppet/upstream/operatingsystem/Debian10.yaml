@@ -1,0 +1,3 @@
+---
+  puppet::settings:
+    repo_package_url: 'https://apt.puppetlabs.com/puppet-release-buster.deb'

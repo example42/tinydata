@@ -1,5 +1,6 @@
 ---
   puppet::settings:
+    upstream_repo: true
     package_name: 'puppet'
     service_name: 'puppet'
     config_file_path: '/etc/puppet/puppet.conf'

@@ -1,0 +1,4 @@
+---
+  puppet::settings:
+    repo_package_name: 'puppet-release'
+    dockerfile_prerequisites: 'RUN apt-get update && apt-get install -y --force-yes --no-install-recommends wget'

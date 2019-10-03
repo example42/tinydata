@@ -1,0 +1,3 @@
+---
+  puppet-agent::settings:
+    repo_package_url: 'https://yum.puppet.com/puppet/puppet-release-el-8.noarch.rpm'

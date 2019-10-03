@@ -1,7 +1,7 @@
 ---
   mongodb::settings:
-    repo_url: 'https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.2/x86_64/'
-    key_url: 'https://www.mongodb.org/static/pgp/server-3.2.asc'
+    repo_url: 'https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.2/x86_64/'
+    key_url: 'https://www.mongodb.org/static/pgp/server-4.2.asc'
     package_name: 'mongodb-org'
     service_name: 'mongod'
     config_file_path: '/etc/mongod.conf'

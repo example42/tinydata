@@ -1,9 +1,8 @@
 ---
   grafana::settings:
     init_file_path: '/etc/sysconfig/grafana-server'
-    repo_url: 'https://packagecloud.io/grafana/stable/el/7/$basearch'
+    repo_url: 'https://packages.grafana.com/oss/rpm'
     key: 'D59097AB'
-    key_url:  'https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana'
     package_prerequisites:
       - 'initscripts'
       - 'fontconfig'

@@ -2,6 +2,7 @@
   grafana::settings:
     package_name: 'grafana'
     service_name: 'grafana-server'
+    key_url: 'https://packages.grafana.com/gpg.key'
     config_file_path: '/etc/grafana/grafana.ini'
     custom_file_path: '/etc/grafana/custom.ini'
     ldap_file_path: '/etc/grafana/ldap.toml'

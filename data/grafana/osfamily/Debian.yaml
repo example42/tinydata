@@ -1,10 +1,9 @@
 ---
   grafana::settings:
     init_file_path: '/etc/default/grafana-server'
-    repo_url: 'https://packagecloud.io/grafana/stable/debian/'
-    apt_repos: 'stretch main'
+    repo_url: 'https://packages.grafana.com/oss/deb'
+    apt_repos: 'main'
     key: 'D59097AB'
-    key_url: 'https://packagecloud.io/gpg.key'
     package_prerequisites:
       - 'libfontconfig1'
       - 'adduser'

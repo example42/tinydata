@@ -1,0 +1,3 @@
+---
+  ntpdate::settings:
+    package_name: ''

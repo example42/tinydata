@@ -3,6 +3,7 @@
     init_file_path: '/etc/default/grafana-server'
     repo_url: 'https://packages.grafana.com/oss/deb'
     apt_repos: 'main'
+    apt_release: 'stable'
     key: 'D59097AB'
     package_prerequisites:
       - 'libfontconfig1'

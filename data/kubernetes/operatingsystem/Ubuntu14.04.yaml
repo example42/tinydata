@@ -1,0 +1,3 @@
+---
+kubernetes::settings:
+  apt_release: 'kubernetes-trusty'

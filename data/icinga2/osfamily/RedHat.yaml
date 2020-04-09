@@ -5,3 +5,6 @@
     config_file_owner: 'icinga'
     config_file_mode: '0640'
     repo_package_name: 'icinga-rpm-release'
+    tp_prerequisites:
+      - epel
+

@@ -1,0 +1,5 @@
+---
+remi::settings:
+  repo_package_name: 'remi-release'
+  tp_prerequisites:
+    - epel

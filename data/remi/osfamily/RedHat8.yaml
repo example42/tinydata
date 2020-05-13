@@ -1,0 +1,3 @@
+---
+remi::settings:
+  repo_package_url: 'https://rpms.remirepo.net/enterprise/remi-release-8.rpm'

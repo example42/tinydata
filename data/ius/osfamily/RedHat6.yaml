@@ -1,0 +1,3 @@
+---
+ius::settings:
+  repo_package_url: 'https://repo.ius.io/ius-release-el6.rpm'

@@ -1,0 +1,4 @@
+---
+ius::settings:
+  repo_package_name: 'ius-release'
+

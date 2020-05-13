@@ -1,0 +1,4 @@
+---
+ulyaoth::settings:
+  repo_package_name: 'ulyaoth'
+  repo_package_url: 'https://downloads.ulyaoth.com/rpm/ulyaoth-latest.rhel.x86_64.rpm'

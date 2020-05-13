@@ -1,0 +1,5 @@
+---
+rpmfusion-nonfree::settings:
+  repo_package_name: 'rpmfusion-nonfree-release'
+  tp_prerequisites:
+    - epel

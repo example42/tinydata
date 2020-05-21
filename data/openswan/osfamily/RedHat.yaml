@@ -1,0 +1,2 @@
+openswan::settings:
+  package_name: 'libreswan'

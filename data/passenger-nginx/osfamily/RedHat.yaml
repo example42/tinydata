@@ -1,0 +1,10 @@
+---
+passenger-nginx::settings:
+  repo_file_url: 'https://oss-binaries.phusionpassenger.com/yum/definitions/el-passenger.repo'
+  repo_file_name: 'passenger.repo'
+  package_name: 'passenger'
+  tp_prerequisites:
+    - epel
+  package_prerequisites:
+    - pygpgme
+    

@@ -1,0 +1,3 @@
+---
+  passenger-nginx::settings:
+    package_name: 'passenger-nginx'

@@ -1,10 +1,12 @@
 ---
 passenger-nginx::settings:
-  repo_file_url: 'https://oss-binaries.phusionpassenger.com/yum/definitions/el-passenger.repo'
+  repo_url: https://oss-binaries.phusionpassenger.com/yum/passenger/el/$releasever/$basearch
+  key_url: https://oss-binaries.phusionpassenger.com/auto-software-signing-gpg-key.txt
   repo_file_name: 'passenger.repo'
-  package_name: 'passenger'
+  package_name: 'nginx-mod-http-passenger'
   tp_prerequisites:
     - epel
   package_prerequisites:
     - pygpgme
+    - nginx
     

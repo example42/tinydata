@@ -1,3 +1,4 @@
 ---
 sysdig::settings:
+  upstream_repo: true
   package_name: 'sysdig'

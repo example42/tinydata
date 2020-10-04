@@ -1,0 +1,9 @@
+---
+kibana::settings:
+  init_file_path: '/etc/default/kibana'
+  repo_url: 'http://artifacts.elastic.co/packages/7.x/apt'
+  key: 'D88E42B4'
+  key_url: 'https://artifacts.elastic.co/GPG-KEY-elasticsearch'
+  apt_repos: 'main'
+  apt_release: 'stable'
+  apt_key_server: 'http://pgp.mit.edu'

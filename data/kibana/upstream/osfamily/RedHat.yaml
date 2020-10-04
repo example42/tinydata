@@ -1,0 +1,6 @@
+---
+kibana::settings:
+  init_file_path: '/etc/sysconfig/kibana'
+  repo_url: 'http://artifacts.elastic.co/packages/7.x/yum'
+  key: 'D88E42B4'
+  key_url: 'http://artifacts.elastic.co/GPG-KEY-elasticsearch'

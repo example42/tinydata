@@ -1,0 +1,44 @@
+---
+wazuh-server::settings:
+  upstream_repo: true
+  package_name:
+    - 'wazuh-manager'
+    - 'wazuh-api'
+  service_name:
+    - 'wazuh-manager'
+    - 'wazuh-api'
+  exec_postinstall:
+    filebeat_configuration:
+      command: 'curl -so /etc/filebeat/filebeat.yml https://raw.githubusercontent.com/wazuh/wazuh/v3.13.2/extensions/filebeat/7.x/filebeat.yml && chmod go+r /etc/filebeat/filebeat.yml'
+      creates: '/etc/filebeat/filebeat.yml'
+      require: Tp::Install[filebeat]
+    filebeat_alerts_configuration:
+      command: 'curl -so /etc/filebeat/wazuh-template.json https://raw.githubusercontent.com/wazuh/wazuh/v3.13.2/extensions/elasticsearch/7.x/wazuh-template.json && chmod go+r /etc/filebeat/wazuh-template.json'
+      creates: '/etc/filebeat/wazuh-template.json'
+      require: Tp::Install[filebeat]
+    filebeat_wazuh_module:
+      command: 'curl -s https://packages.wazuh.com/3.x/filebeat/wazuh-filebeat-0.1.tar.gz | sudo tar -xvz -C /usr/share/filebeat/module'
+      creates: '/usr/share/filebeat/module/wazuh'
+      require: Tp::Install[filebeat]
+    kibana_permissions:
+      command: 'chown -R kibana:kibana /usr/share/kibana/optimize ; chown -R kibana:kibana /usr/share/kibana/plugins'
+      refreshonly: true
+      subscribe: Tp::Install[kibana]
+    kibana_wazuh_plugin:
+      command: '/usr/share/kibana/bin/kibana-plugin install https://packages.wazuh.com/wazuhapp/wazuhapp-3.13.2_7.9.2.zip'
+      unless: '/usr/share/kibana/bin/kibana-plugin list | grep wazuh'
+      require: Tp::Install[kibana]
+      user: kibana
+      cwd: '/usr/share/kibana'
+  tp_prerequisites:
+    - nodejs
+    - elasticsearch
+    - filebeat
+    - kibana
+  package_prerequisites:
+    - curl
+  repo_filename: wazuh
+  log_dir_path: /var/ossec/logs
+  log_file_path:
+    - /var/ossec/logs/api.log
+    - /var/ossec/logs/ossec.log

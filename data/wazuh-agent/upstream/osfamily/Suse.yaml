@@ -1,0 +1,3 @@
+---
+wazuh-agent::settings:
+  package_name: ~

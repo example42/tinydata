@@ -1,0 +1,5 @@
+---
+wazuh-agent::settings:
+  upstream_repo: true
+  package_name: 'wazuh-agent'
+  service_name: 'wazuh-agent'

@@ -1,0 +1,15 @@
+---
+filebeat::settings:
+  upstream_repo: true
+  package_name: 'filebeat'
+  service_name: 'filebeat'
+  config_file_path: '/etc/filebeat/filebeat.yml'
+  config_file_format: 'yaml'
+  config_dir_path: '/etc/filebeat'
+  pid_file_path: '/var/run/filebeat.pid'
+  log_file_path: '/var/log/filebeat/filebeat'
+  log_dir_path: '/var/log/filebeat'
+  home_dir_path: '/usr/share/filebeat'
+  data_dir_path: '/var/lib/filebeat'
+  process_name: 'filebeat'
+  tcp_port: '9200'

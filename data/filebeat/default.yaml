@@ -12,4 +12,5 @@ filebeat::settings:
   home_dir_path: '/usr/share/filebeat'
   data_dir_path: '/var/lib/filebeat'
   process_name: 'filebeat'
-  tcp_port: '9200'
+  tp_prerequisites:
+    elastic_repo: {}

@@ -31,10 +31,10 @@ wazuh-server::settings:
       user: kibana
       cwd: '/usr/share/kibana'
   tp_prerequisites:
-    - nodejs
-    - elasticsearch
-    - filebeat
-    - kibana
+    nodejs: {}
+    elasticsearch: {}
+    filebeat: {}
+    kibana: {}
   package_prerequisites:
     - curl
   repo_filename: wazuh

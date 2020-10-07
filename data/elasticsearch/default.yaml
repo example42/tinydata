@@ -15,5 +15,4 @@ elasticsearch::settings:
   process_user: 'elasticsearch'
   process_group: 'elasticsearch'
   tcp_port: '9200'
-  tp_prerequisites:
-    elastic_repo: {}
+

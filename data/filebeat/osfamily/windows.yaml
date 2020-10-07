@@ -1,5 +1,4 @@
 ---
-# TODO: Verify and manage Windows versions older than 2008
 filebeat::settings:
   config_file_path: 'C:\ProgramData\chocolatey\lib\filebeat\tools\filebeat.yml'
 

@@ -16,5 +16,4 @@ kibana::settings:
   process_user: 'kibana'
   process_group: 'root'
   tcp_port: '5601'
-  tp_prerequisites:
-    elastic_repo: {}
+

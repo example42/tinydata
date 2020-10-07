@@ -1,0 +1,4 @@
+---
+filebeat::settings:
+  tp_prerequisites:
+    elastic_repo: {}

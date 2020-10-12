@@ -1,0 +1,4 @@
+---
+enterprise-search::settings:
+  tp_prerequisites:
+    elastic_repo: {}

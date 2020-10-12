@@ -1,0 +1,4 @@
+---
+elastic-agent::settings:
+  config_file_path: 'C:\ProgramData\chocolatey\lib\elastic-agent\tools\elastic-agent.yml'
+

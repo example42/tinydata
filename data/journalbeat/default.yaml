@@ -1,0 +1,15 @@
+---
+journalbeat::settings:
+  upstream_repo: true
+  package_name: 'journalbeat'
+  service_name: 'journalbeat'
+  config_file_path: '/etc/journalbeat/journalbeat.yml'
+  config_file_format: 'yaml'
+  config_dir_path: '/etc/journalbeat'
+  pid_file_path: '/var/run/journalbeat.pid'
+  log_file_path: '/var/log/journalbeat/journalbeat'
+  log_dir_path: '/var/log/journalbeat'
+  home_dir_path: '/usr/share/journalbeat'
+  data_dir_path: '/var/lib/journalbeat'
+  process_name: 'journalbeat'
+

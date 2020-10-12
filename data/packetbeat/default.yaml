@@ -1,0 +1,15 @@
+---
+packetbeat::settings:
+  upstream_repo: true
+  package_name: 'packetbeat'
+  service_name: 'packetbeat'
+  config_file_path: '/etc/packetbeat/packetbeat.yml'
+  config_file_format: 'yaml'
+  config_dir_path: '/etc/packetbeat'
+  pid_file_path: '/var/run/packetbeat.pid'
+  log_file_path: '/var/log/packetbeat/packetbeat'
+  log_dir_path: '/var/log/packetbeat'
+  home_dir_path: '/usr/share/packetbeat'
+  data_dir_path: '/var/lib/packetbeat'
+  process_name: 'packetbeat'
+

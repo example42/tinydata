@@ -1,0 +1,4 @@
+---
+auditbeat::settings:
+  config_file_path: 'C:\ProgramData\chocolatey\lib\auditbeat\tools\auditbeat.yml'
+

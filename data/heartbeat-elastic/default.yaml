@@ -1,0 +1,15 @@
+---
+heartbeat-elastic::settings:
+  upstream_repo: true
+  package_name: 'heartbeat-elastic'
+  service_name: 'heartbeat-elastic'
+  config_file_path: '/etc/heartbeat-elastic/heartbeat-elastic.yml'
+  config_file_format: 'yaml'
+  config_dir_path: '/etc/heartbeat-elastic'
+  pid_file_path: '/var/run/heartbeat-elastic.pid'
+  log_file_path: '/var/log/heartbeat-elastic/heartbeat-elastic'
+  log_dir_path: '/var/log/heartbeat-elastic'
+  home_dir_path: '/usr/share/heartbeat-elastic'
+  data_dir_path: '/var/lib/heartbeat-elastic'
+  process_name: 'heartbeat-elastic'
+

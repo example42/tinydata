@@ -1,0 +1,4 @@
+---
+metricbeat::settings:
+  config_file_path: 'C:\ProgramData\chocolatey\lib\metricbeat\tools\metricbeat.yml'
+

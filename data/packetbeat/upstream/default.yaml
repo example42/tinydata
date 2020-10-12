@@ -1,0 +1,4 @@
+---
+packetbeat::settings:
+  tp_prerequisites:
+    elastic_repo: {}

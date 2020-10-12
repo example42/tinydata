@@ -1,0 +1,15 @@
+---
+elastic-agent::settings:
+  upstream_repo: true
+  package_name: 'elastic-agent'
+  service_name: 'elastic-agent'
+  config_file_path: '/etc/elastic-agent/elastic-agent.yml'
+  config_file_format: 'yaml'
+  config_dir_path: '/etc/elastic-agent'
+  pid_file_path: '/var/run/elastic-agent.pid'
+  log_file_path: '/var/log/elastic-agent/elastic-agent'
+  log_dir_path: '/var/log/elastic-agent'
+  home_dir_path: '/usr/share/elastic-agent'
+  data_dir_path: '/var/lib/elastic-agent'
+  process_name: 'elastic-agent'
+

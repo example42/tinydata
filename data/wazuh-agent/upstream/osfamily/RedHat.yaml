@@ -1,5 +1,5 @@
 ---
 wazuh-agent::settings:
   repo_url: 'https://packages.wazuh.com/3.x/yum/'
-  key: 'F1C3BD80'
+  key: '0DCF CA55 47B1 9D2A 6099  5060 96B3 EE5F 2911 1145'
   key_url: 'https://packages.wazuh.com/key/GPG-KEY-WAZUH'

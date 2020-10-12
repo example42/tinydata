@@ -1,0 +1,4 @@
+---
+  multipath::settings:
+    package_name: 'multipath-tools'
+    service_name: 'multipath-tools'

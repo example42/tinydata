@@ -1,5 +1,6 @@
 ---
 logstash::settings:
+  upstream_repo: true
   package_name: 'logstash'
   service_name: 'logstash'
   config_file_path: '/etc/logstash/conf.d/logstash.conf'
@@ -13,5 +14,3 @@ logstash::settings:
   process_user: 'logstash'
   process_group: 'logstash'
   tcp_port: '9292'
-  tp_prerequisites:
-    elastic_repo: {}

@@ -1,0 +1,4 @@
+---
+hashicorp_repo::settings:
+  upstream_repo: true
+  

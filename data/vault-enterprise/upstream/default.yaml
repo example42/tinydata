@@ -1,0 +1,4 @@
+---
+vault-enterprise::settings:
+  tp_prerequisites:
+    hashicorp_repo: {}

@@ -1,0 +1,14 @@
+---
+consul::settings:
+  upstream_repo: true
+  package_name: 'consul'
+  process_name: 'consul'
+  service_name: 'consul'
+  config_file_path: '/etc/consul.d/consul.hcl'
+  config_dir_path: '/etc/consul.d'
+  data_dir_path: '/opt/consul'
+  config_file_format: 'hcl'
+  tcp_port:
+    - 8301
+    - 8500
+    - 8600

@@ -1,0 +1,6 @@
+---
+boundary::settings:
+  upstream_repo: true
+  package_name: 'boundary'
+  process_name: 'boundary'
+

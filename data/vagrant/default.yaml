@@ -1,4 +1,7 @@
 ---
 vagrant::settings:
+  upstream_repo: true
   package_name: 'vagrant'
   process_name: 'vagrant'
+  home_dir_path: '/opt/vagrant'
+

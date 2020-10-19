@@ -1,0 +1,12 @@
+---
+vault::settings:
+  upstream_repo: true
+  package_name: 'vault'
+  process_name: 'vault'
+  service_name: 'vault'
+  config_file_path: '/etc/vault.d/vault.hcl'
+  config_dir_path: '/etc/vault.d'
+  data_dir_path: '/opt/vault'
+  config_file_format: 'hcl'
+  tcp_port: 8200
+  

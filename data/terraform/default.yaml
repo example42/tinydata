@@ -1,0 +1,6 @@
+---
+terraform::settings:
+  upstream_repo: true
+  package_name: 'terraform'
+  process_name: 'terraform'
+

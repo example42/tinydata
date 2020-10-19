@@ -1,0 +1,16 @@
+---
+nomad-enterprise::settings:
+  upstream_repo: true
+  package_name: 'nomad-enterprise'
+  process_name: 'nomad'
+  service_name: 'nomad'
+  config_file_path: '/etc/nomad.d/nomad.hcl'
+  config_dir_path: '/etc/nomad.d'
+  data_dir_path: '/opt/nomad'
+  config_file_format: 'hcl'
+  tcp_port:
+    - 4646
+    - 4647
+    - 4648
+  
+

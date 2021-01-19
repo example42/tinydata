@@ -3,6 +3,7 @@ pgbouncer::settings:
   package_name: 'pgbouncer'
   service_name: 'pgbouncer'
   config_file_path: '/etc/pgbouncer/pgbouncer.ini'
+  config_file_format: 'inifile_with_stanzas'
   userlist_file_path: '/etc/pgbouncer/userlist.txt'
   config_dir_path: '/etc/pgbouncer'
   pid_file_path: '/var/run/pgbouncer/pgbouncer.pid'

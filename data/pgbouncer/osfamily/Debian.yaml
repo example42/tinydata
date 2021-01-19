@@ -1,0 +1,8 @@
+---
+pgbouncer::settings:
+  log_file_path: '/var/log/postgresql/pgbouncer.log'
+  log_dir_path: '/var/log/postgresql'
+  init_file_path: '/etc/default/pgbouncer'
+  process_user: 'postgres'
+  process_group: 'postgres'
+  pid_file_path: '/var/run/postgresql/pgbouncer.pid'

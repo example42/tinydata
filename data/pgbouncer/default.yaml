@@ -1,0 +1,14 @@
+---
+pgbouncer::settings:
+  package_name: 'pgbouncer'
+  service_name: 'pgbouncer'
+  config_file_path: '/etc/pgbouncer/pgbouncer.ini'
+  userlist_file_path: '/etc/pgbouncer/userlist.txt'
+  config_dir_path: '/etc/pgbouncer'
+  pid_file_path: '/var/run/pgbouncer/pgbouncer.pid'
+  log_file_path: '/var/log/pgbouncer/pgbouncer.log'
+  log_dir_path: '/var/log/pgbouncer'
+  process_name: 'pgbouncer'
+  process_user: 'pgbouncer'
+  process_group: 'pgbouncer'
+  tcp_port: '6432'

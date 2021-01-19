@@ -5,4 +5,6 @@ pgbouncer::settings:
   init_file_path: '/etc/default/pgbouncer'
   process_user: 'postgres'
   process_group: 'postgres'
+  config_file_owner: 'postgres'
+  config_file_group: 'postgres'
   pid_file_path: '/var/run/postgresql/pgbouncer.pid'

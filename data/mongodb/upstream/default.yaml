@@ -5,10 +5,10 @@ mongodb::settings:
   config_file_path: '/etc/mongod.conf'
   pid_file_path: '/var/run/mongodb.pid'
   log_file_path: '/var/log/mongodb/mongod.log'
-  process_user: 'mongod'
-  process_group: 'mongod'
+  process_user: 'mongodb'
+  process_group: 'mongodb'
   key: '2069 1EEC 3521 6C63 CAF6  6CE1 6564 08E3 90CF B1F5'
   key_url: 'https://www.mongodb.org/static/pgp/server-4.4.asc'
   repo_filename: mongodb-org-4.4
   repo_description: 'MongoDB Repository'
-  data_dir_path: '/var/lib/mongo'
+  data_dir_path: '/var/lib/mongodb'

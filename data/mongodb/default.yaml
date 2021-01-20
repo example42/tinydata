@@ -1,6 +1,5 @@
 ---
 mongodb::settings:
-  upstream_repo: true
   package_name: 'mongodb-server'
   service_name: 'mongodb'
   config_file_path: '/etc/mongodb.conf'

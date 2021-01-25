@@ -1,5 +1,5 @@
 ---
-  nagios-plugins::settings:
+  nagios-plugins::settings_broken:
     exec_prerequisites:
       enable_powertools:
         command: 'dnf config-manager --set-enabled PowerTools'

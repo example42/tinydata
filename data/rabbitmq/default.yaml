@@ -7,7 +7,6 @@
     pid_file_path: '/var/run/rabbitmq.pid'
     log_file_path: '/var/log/rabbitmq/rabbitmq.log'
     log_dir_path: '/var/log/rabbitmq'
-    process_name: 'beam'
     process_name: 'rabbitmq'
     process_user: 'rabbitmq'
     process_group: 'rabbitmq'

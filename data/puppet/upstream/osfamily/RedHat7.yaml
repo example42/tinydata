@@ -1,3 +1,0 @@
----
-  puppet::settings:
-    repo_package_url: 'https://yum.puppet.com/puppet/puppet-release-el-7.noarch.rpm'

@@ -1,3 +1,0 @@
----
-  puppetserver::settings:
-    repo_package_url: 'https://yum.puppetlabs.com/puppet/puppet-release-el-6.noarch.rpm'

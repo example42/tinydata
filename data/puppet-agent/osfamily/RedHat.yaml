@@ -1,4 +1,3 @@
 ---
-  puppet-agent::settings:
-    repo_package_name: 'puppet-release'
-    dockerfile_prerequisites: 'RUN yum install -y wget which'
+puppet-agent::settings:
+  dockerfile_prerequisites: 'RUN yum install -y wget which'

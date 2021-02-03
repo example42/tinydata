@@ -1,4 +1,0 @@
----
-  puppetserver::settings:
-    apt_release: 'trusty'
-    repo_package_url: 'https://apt.puppetlabs.com/puppet-release-trusty.deb'

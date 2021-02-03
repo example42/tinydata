@@ -1,5 +1,4 @@
 ---
-  puppetserver::settings:
-    init_file_path: '/etc/sysconfig/puppetserver'
-    repo_package_name: 'puppet-release'
-    dockerfile_prerequisites: 'RUN yum install -y wget'
+puppetserver::settings:
+  init_file_path: '/etc/sysconfig/puppetserver'
+  dockerfile_prerequisites: 'RUN yum install -y wget'

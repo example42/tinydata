@@ -1,5 +1,0 @@
----
-  puppet-agent::settings:
-    repo_package_name: 'puppet-release'
-    repo_package_url: 'https://apt.puppetlabs.com/puppet-release-jessie.deb'
-    apt_release: 'jessie'

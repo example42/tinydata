@@ -1,0 +1,3 @@
+---
+puppet_repo::settings:
+  upstream_repo: true

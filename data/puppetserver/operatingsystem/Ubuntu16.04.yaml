@@ -1,4 +1,0 @@
----
-  puppetserver::settings:
-    apt_release: 'xenial'
-    repo_package_url: 'https://apt.puppetlabs.com/puppet-release-xenial.deb'

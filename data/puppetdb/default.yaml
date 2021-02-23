@@ -1,21 +1,23 @@
 ---
-  puppetdb::settings:
-    package_name: 'puppetdb'
-    service_name: 'puppetdb'
-    config_file_path: '/etc/puppetlabs/puppetsdb/bootstrap.cfg'
-    config_dir_path: '/etc/puppetlabs/puppetdb'
-    conf_dir_path: '/etc/puppetlabs/puppetdb/conf.d'
-    install_dir_path: '/opt/puppetlabs/server/apps/puppetdb'
-    pid_file_path: '/var/run/puppetlabs/puppetdb/puppetdb.pid'
-    config_dir_owner: 'puppetdb'
-    config_dir_group: 'puppetdb'
-    config_dir_mode: '0640'
-    log_dir_path: '/var/log/puppetlabs/puppetdb'
-    process_name: 'java'
-    process_extra_name: 'puppetdb'
-    process_user: 'puppetdb'
-    process_group: 'puppetdb'
-    tcp_port: '8080'
-    log_file_path:
-      - '/var/log/puppetlabs/puppetdb/puppetdb.log'
-      - '/var/log/puppetlabs/puppetdb/puppetdb-accesss.log'
+puppetdb::settings:
+  package_name: 'puppetdb'
+  service_name: 'puppetdb'
+  config_file_path: '/etc/puppetlabs/puppetsdb/bootstrap.cfg'
+  config_dir_path: '/etc/puppetlabs/puppetdb'
+  conf_dir_path: '/etc/puppetlabs/puppetdb/conf.d'
+  install_dir_path: '/opt/puppetlabs/server/apps/puppetdb'
+  pid_file_path: '/var/run/puppetlabs/puppetdb/puppetdb.pid'
+  config_dir_owner: 'puppetdb'
+  config_dir_group: 'puppetdb'
+  config_dir_mode: '0640'
+  log_dir_path: '/var/log/puppetlabs/puppetdb'
+  process_name: 'java'
+  process_extra_name: 'puppetdb'
+  process_user: 'puppetdb'
+  process_group: 'puppetdb'
+  tcp_port: '8080'
+  log_file_path:
+    - '/var/log/puppetlabs/puppetdb/puppetdb.log'
+    - '/var/log/puppetlabs/puppetdb/puppetdb-accesss.log'
+  tp_prerequisites:
+    puppet_repo: {}

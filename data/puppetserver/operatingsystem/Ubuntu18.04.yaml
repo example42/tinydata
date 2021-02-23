@@ -1,4 +1,0 @@
----
-  puppetserver::settings:
-    repo_package_url: 'https://apt.puppetlabs.com/puppet-release-bionic.deb'
-    apt_release: 'bionic'

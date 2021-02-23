@@ -1,9 +1,3 @@
 ---
-  puppetserver::settings:
-    init_file_path: '/etc/default/puppetserver'
-    repo_url: 'http://apt.puppetlabs.com'
-    key: 'EF8D349F'
-    key_url: 'http://apt.puppetlabs.com/pubkey.gpg'
-    apt_repos: 'puppet5'
-    apt_release: 'stable'
-    repo_package_name: 'puppet-release'
+puppetserver::settings:
+  init_file_path: '/etc/default/puppetserver'

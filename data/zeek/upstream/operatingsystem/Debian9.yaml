@@ -1,0 +1,3 @@
+---
+zeek::settings:
+  init_system: 'systemd'

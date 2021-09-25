@@ -1,0 +1,4 @@
+---
+  zeek::settings:
+    package_source: https://download.zeek.com/mac/stable/Docker.dmg
+

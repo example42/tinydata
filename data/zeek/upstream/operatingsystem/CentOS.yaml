@@ -1,0 +1,4 @@
+---
+zeek::settings:
+  init_file_path: '/etc/sysconfig/zeek'
+  init_system: 'systemd'

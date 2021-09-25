@@ -1,0 +1,3 @@
+---
+zeek::settings:
+  package_name: 'zeek'

@@ -1,4 +1,4 @@
 ---
-pgbouncer::settings:
+hashicorp_repo::settings:
   repo_url: 'https://apt.releases.hashicorp.com'
   apt_release: 'buster main'

@@ -1,0 +1,3 @@
+---
+default::settings:
+  apt_release: 'buster/mongodb-org/4.4'

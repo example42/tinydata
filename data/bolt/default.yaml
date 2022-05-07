@@ -1,0 +1,5 @@
+---
+pdk::settings:
+  package_name: 'puppet-bolt'
+  tp_prerequisites:
+    puppet_repo: {}

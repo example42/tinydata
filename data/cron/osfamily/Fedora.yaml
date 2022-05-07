@@ -1,0 +1,3 @@
+---
+cron::settings:
+  package_name: 'cronie'

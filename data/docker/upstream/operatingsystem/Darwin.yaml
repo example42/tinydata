@@ -1,4 +1,4 @@
 ---
-  docker::settings:
-    package_name: docker
-    
+docker::settings:
+  package_name: docker
+  service_name: com.docker.vmnetd

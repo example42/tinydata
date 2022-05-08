@@ -4,6 +4,7 @@
   - "%{title}/%{repo}/osfamily/%{osfamily}%{operatingsystemmajrelease}"
   - "%{title}/%{repo}/osfamily/%{osfamily}"
   - "%{title}/%{repo}/default"
+  - "%{title}/default"
   - "default/%{operatingsystem}%{operatingsystemmajrelease}"
   - "default/%{operatingsystem}"
   - default

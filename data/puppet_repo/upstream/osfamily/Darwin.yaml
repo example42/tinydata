@@ -1,0 +1,4 @@
+---
+puppet_repo::settings:
+  brew_tap: 'puppetlabs/puppet'
+  package_provider: tap

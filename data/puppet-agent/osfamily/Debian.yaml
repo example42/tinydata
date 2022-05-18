@@ -1,0 +1,4 @@
+---
+puppet-agent::settings:
+  init_file_path: '/etc/default/puppet-agent'
+  dockerfile_prerequisites: 'RUN apt-get update && apt-get install -y --force-yes --no-install-recommends wget'

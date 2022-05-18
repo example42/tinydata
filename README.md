@@ -30,7 +30,7 @@ A sample ```hiera.yaml``` is like this:
    - default
 ```
 
-so the lookup is done, if ```$title == 'mariadb'```  and ```$::osfamily == 'RedHat'``` in these files:
+so the lookup is done, if ```$title == 'mariadb'```  and ```$facts['os']['family'] == 'RedHat'``` in these files:
 
     tinydata/data/mariadb/osfamily/RedHat.yaml
     tinydata/data/mariadb/default.yaml

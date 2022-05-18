@@ -1,0 +1,24 @@
+---
+puppet-agent::settings:
+  package_name: 'puppet-agent-agent'
+  service_name: 'puppet-agent'
+  config_file_path: '/etc/puppet-agentlabs/puppet-agent/puppet-agent.conf'
+  fileserver_file_path: '/etc/puppet-agentlabs/puppet-agent/fileserver.conf'
+  routes_file_path: '/etc/puppet-agentlabs/puppet-agent/routes.yaml'
+  autosign_file_path: '/etc/puppet-agentlabs/puppet-agent/autosign.conf'
+  auth_file_path: '/etc/puppet-agentlabs/puppet-agent/auth.conf'
+  puppet-agentdb_file_path: '/etc/puppet-agentlabs/puppet-agent/puppet-agentdb.conf'
+  config_dir_path: '/etc/puppet-agentlabs/puppet-agent/'
+  code_dir_path: '/etc/puppet-agentlabs/code'
+  environment_dir_path: '/etc/puppet-agentlabs/code/environments'
+  pid_file_path: '/var/run/puppet-agentlabs/agent.pid'
+  log_file_path:
+    - '/var/log/puppet-agentlabs/puppet-agent/puppet-agent.log'
+    - '/var/log/puppet-agentlabs/pxp-agent/pxp-agent.log'
+    - '/var/log/puppet-agentlabs/mcollective-log'
+  log_dir_path: '/var/log/puppet-agentlabs/puppet-agent'
+  process_name: 'puppet-agent'
+  process_user: 'root'
+  process_group: 'root'
+  tp_prerequisites:
+    puppet-agent_repo: {}

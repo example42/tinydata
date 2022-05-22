@@ -1,3 +1,0 @@
----
-docker::settings:
-  init_system: 'systemd'

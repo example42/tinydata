@@ -5,4 +5,3 @@ docker::settings:
   key: '0EBFCD88'
   key_url: 'https://download.docker.com/linux/debian/gpg'
   apt_repos: 'stable'
-  init_system: 'sysvinit'

@@ -2,3 +2,4 @@
 default::settings:
   config_file_group: 'wheel'
   package_provider: 'homebrew'
+  init_systemd: 'launchd'

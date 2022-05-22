@@ -1,5 +1,5 @@
 ---
-  nagios-plugins::settings:
-    package_name: 'nagios-plugins-all'
-    tp_prerequisites:
-      - epel
+nagios-plugins::settings:
+  package_name: 'nagios-plugins-all'
+  tp_prerequisites:
+    - epel

@@ -7,4 +7,3 @@ docker-engine::settings:
   key_url: 'http://apt.dockerproject.org/gpg'
   apt_repos: 'main'
   apt_key_server: 'http://p80.pool.sks-keyservers.net'
-  init_system: 'systemd'

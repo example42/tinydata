@@ -1,6 +1,6 @@
 ---
-  nagios-plugins::settings_broken:
-    exec_prerequisites:
-      enable_powertools:
-        command: 'dnf config-manager --set-enabled PowerTools'
-        unless: "grep 'enabled=1' /etc/yum.repos.d/CentOS-PowerTools.repo 2>&1>/dev/null"
+nagios-plugins::settings_broken:
+  exec_prerequisites:
+    enable_powertools:
+      command: 'dnf config-manager --set-enabled PowerTools'
+      unless: "grep 'enabled=1' /etc/yum.repos.d/CentOS-PowerTools.repo 2>&1>/dev/null"

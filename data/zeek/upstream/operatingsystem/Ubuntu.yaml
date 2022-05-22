@@ -6,4 +6,3 @@ zeek::settings:
   key_url: 'https://download.zeek.com/linux/ubuntu/gpg'
   apt_repos: 'stable'
   apt_key_server: 'http://p80.pool.sks-keyservers.net'
-  init_system: 'systemd'

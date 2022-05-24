@@ -1,0 +1,7 @@
+---
+scikit-learn:
+  package_name:
+    - 'python3-sklearn'
+    - 'python3-sklearn-lib'
+    - 'python3-sklearn-doc'
+  package_provider: 'apt'

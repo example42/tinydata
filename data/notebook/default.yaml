@@ -1,0 +1,5 @@
+---
+notebook:
+  package_name: notebook
+  package_provider: 'pip'
+

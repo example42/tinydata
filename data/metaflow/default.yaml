@@ -1,0 +1,5 @@
+---
+metaflow:
+  package_name: metaflow
+  package_provider: 'pip'
+

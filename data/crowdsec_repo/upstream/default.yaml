@@ -1,0 +1,6 @@
+---
+crowdsec_repo::settings:
+  key_url: 'https://packagecloud.io/crowdsec_repo/crowdsec_repo/gpgkey'
+  key: '6A89 E3C2 303A 901A 8899  71D3 376E D532 6E93 CD0C'
+  apt_repos: 'main'
+  repo_name: crowdsec_crowdsec

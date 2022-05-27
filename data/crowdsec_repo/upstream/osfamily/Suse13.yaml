@@ -1,0 +1,2 @@
+crowdsec_repo::settings:
+  repo_url: 'https://packagecloud.io/crowdsec_repo/crowdsec_repo/opensuse/13/$basearch'

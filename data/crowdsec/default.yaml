@@ -1,0 +1,22 @@
+---
+crowdsec::settings:
+  upstream_repo: true
+  package_name: 'crowdsec'
+  service_name: 'crowdsec'
+  config_file_path: '/etc/crowdsec/config.yaml'
+  config_dir_path: '/etc/crowdsec'
+  data_dir_path: '/var/lib/crowdsec/data'
+  log_file_path:
+    - '/var/log/crowdsec.log'
+    - '/var/log/crowdsec_api.log'
+  process_name: 'crowdsec'
+  process_user: 'root'
+  process_group: 'root'
+  config_file_format: yaml
+  info_commands:
+    decisions_list: 'cscli decisions list'
+    alerts_list: 'cscli alerts list'
+    metrics: 'cscli metrics'
+    config_show: 'cscli config show'
+  tp_prerequisites:
+    - crowdsec_repo

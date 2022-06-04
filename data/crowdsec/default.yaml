@@ -16,7 +16,13 @@ crowdsec::settings:
   info_commands:
     decisions_list: 'cscli decisions list'
     alerts_list: 'cscli alerts list'
+    bouncers_list: 'cscli bouncers list'
+    machines_list: 'cscli machines list'
+    collections_list: 'cscli collections list'
     metrics: 'cscli metrics'
     config_show: 'cscli config show'
+  task_commands:
+    hub_upgrade:
+      command: 'cscli hub update && cscli hub upgrade'
   tp_prerequisites:
     - crowdsec_repo

@@ -1,0 +1,5 @@
+---
+mlflow:
+  package_name: mlflow
+  package_provider: 'pip'
+

@@ -1,0 +1,5 @@
+---
+tensorflow:
+  package_name: tensorflow
+  package_provider: 'pip'
+

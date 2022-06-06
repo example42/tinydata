@@ -1,0 +1,5 @@
+---
+keras:
+  package_name: keras
+  package_provider: 'pip'
+

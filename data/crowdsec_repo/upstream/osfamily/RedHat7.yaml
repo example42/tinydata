@@ -1,0 +1,3 @@
+---
+crowdsec_repo::settings:
+  repo_url: 'https://packagecloud.io/crowdsec/crowdsec/el/7/$basearch'

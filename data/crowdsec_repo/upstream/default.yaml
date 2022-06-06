@@ -9,7 +9,7 @@ crowdsec_repo::settings:
   apt_repos: 'main'
   repo_filename: crowdsec_crowdsec
   repo_description: 'Cloudsec repository'
-  yumrepo_settings:
+  yumrepo_params:
     sslverify: 1
     sslcacert: /etc/pki/tls/certs/ca-bundle.crt
     metadata_expire: 300

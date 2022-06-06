@@ -1,5 +1,5 @@
 ---
-crowdsec-bouncer::settings:
+crowdsec-firewall-bouncer-iptables::settings:
   upstream_repo: true
   package_name: 'crowdsec-firewall-bouncer-iptables'
   service_name: 'crowdsec-firewall-bouncer'
@@ -10,3 +10,4 @@ crowdsec-bouncer::settings:
   process_group: 'root'
   tp_prerequisites:
     - crowdsec_repo
+  

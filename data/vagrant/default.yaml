@@ -4,4 +4,7 @@ vagrant::settings:
   package_name: 'vagrant'
   process_name: 'vagrant'
   home_dir_path: '/opt/vagrant'
-
+  info_commands:
+    global-status: 'vagrant global-status'
+  git_source: https://github.com/hashicorp/vagrant.git
+  git_use: true

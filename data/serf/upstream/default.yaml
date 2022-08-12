@@ -1,0 +1,4 @@
+---
+serf::settings:
+  tp_prerequisites:
+    hashicorp_repo: {}

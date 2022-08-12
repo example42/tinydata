@@ -9,4 +9,7 @@ vault::settings:
   data_dir_path: '/opt/vault'
   config_file_format: 'hcl'
   tcp_port: 8200
-  
+  git_source: https://github.com/hashicorp/vault.git
+  info_commands:
+    vault_status: 'vault status'
+

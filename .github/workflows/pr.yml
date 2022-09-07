@@ -62,8 +62,9 @@ jobs:
               version: [2019,2016]
             - os: redhat
               version: [9,8,7]
-    runs-on: ${{ matrix.os }}
-    name: "Acceptance test OS ${{ matrix.os }} ${{ matrix.version }}"
+    # runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
+    name: "Acceptance test on ${{ matrix.os }} versions"
     timeout-minutes: 60
     steps:
         - uses: actions/checkout@v2

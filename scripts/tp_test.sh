@@ -12,6 +12,8 @@ changedfiles=$(git diff HEAD~$diff_commits_number --name-only | grep 'data/');
 apps=$(echo "$changedfiles" | cut -d '/' -f 2 | sort | uniq)
 
 for app in $apps; do
+  echo_title "Testing $app"
+  tp install $app
   tp test $app
   if [ "x$?" == "x0" ]; then
     result='success'

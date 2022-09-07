@@ -3,7 +3,7 @@ default_branch='master'
 repo_dir="$(dirname $0)/.."
 
 # repo_dir=$(git rev-parse --show-toplevel)
-. "${repo_dir}/bin/functions"
+. "${repo_dir}/scripts/functions"
 
 diff_commits_number=$(git log origin/$default_branch..$1 --pretty=oneline | wc -l)
 echo "Checking for files in the last $diff_commits_number commits"

@@ -37,3 +37,39 @@ jobs:
         env:
           BUNDLE_WITHOUT: development:system_tests:release
         continue-on-error: true
+
+  acceptance:
+    strategy:
+        matrix:
+          include:
+            - os: ubuntu
+              version: [22.04,20.04,18.04,16.04]
+            - os: debian
+              version: [11,10,9,8]
+            - os: centos
+              version: [8,7]
+            - os: fedora
+              version: [34,33,32]
+            - os: opensuse
+              version: [15.3]
+            - os: sles
+              version: [15]
+            - os: oracle
+              version: [8,7]
+            - os: amazon
+              version: [2]
+            - os: windows
+              version: [2019,2016]
+            - os: redhat
+              version: [9,8,7]
+    runs-on: ${{ matrix.os }}
+    name: "Acceptance test OS ${{ matrix.os }} ${{ matrix.version }}"
+    timeout-minutes: 60
+    steps:
+        - uses: actions/checkout@v2
+        - name: Install Puppet and Tiny Puppet
+          run: scripts/tp_setup.sh
+          shell: bash
+        - name: Run acceptance tests
+          run: scripts/tp_test.sh
+          shell: bash

@@ -63,14 +63,17 @@ jobs:
             - os: redhat
               version: [9,8,7]
     # runs-on: ${{ matrix.os }}
+    # name: "Acceptance test on ${{ matrix.os }} versions"
     runs-on: ubuntu-latest
-    name: "Acceptance test on ${{ matrix.os }} versions"
+    name: Acceptance test on Ubuntu
     timeout-minutes: 60
     steps:
         - uses: actions/checkout@v2
         - name: Install Puppet and Tiny Puppet
-          run: scripts/tp_setup.sh
+          run: tp_setup.sh
           shell: bash
+          working-directory: scripts
         - name: Run acceptance tests
-          run: scripts/tp_test.sh
+          run: tp_test.sh
           shell: bash
+          working-directory: scripts

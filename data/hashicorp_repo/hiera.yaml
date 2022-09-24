@@ -7,5 +7,6 @@
   - "%{title}/upstream/default"
   - "%{title}/osfamily/%{osfamily}"
   - "%{title}/default"
+  - "default/%{operatingsystem}%{operatingsystemmajrelease}"
   - "default/%{operatingsystem}"
   - default

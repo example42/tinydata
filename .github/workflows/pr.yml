@@ -74,6 +74,6 @@ jobs:
           shell: bash
 #          working-directory: scripts
         - name: Run acceptance tests
-          run: scripts/tp_test.sh
+          run: scripts/tp_test.sh ${GITHUB_REF##*/}
           shell: bash
 #          working-directory: scripts

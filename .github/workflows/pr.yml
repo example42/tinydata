@@ -80,10 +80,10 @@ jobs:
       - name: List all changed files
         run: |
           changedfiles="${{ steps.changed-files.outputs.all_changed_files }}"
-          apps=$(for a in  $changedfiles  ; do echo $a ; done | grep '^data' | cut -d '/' -f 2 | sort | uniq)
+          apps=$(for a in $changedfiles ; do echo $a ; done | grep '^data' | cut -d '/' -f 2 | sort | uniq)
 
           for app in $apps; do
-            echo_title "Testing $app"
+            echo "### Testing ${app}"
             tp install "${app}"
             
             if tp test "${app}"; then
@@ -91,10 +91,11 @@ jobs:
             else
               result='failure'
             fi
-            echo_$result "## ${result}!"
-
+            echo "### ${app} test: ${result}!"
+            echo
             tp info "${app}"
+            echo
             tp version "${app}"
-
+            echo
           done
         shell: bash

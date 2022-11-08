@@ -79,8 +79,8 @@ jobs:
         shell: bash
       - name: List all changed files
         run: |
-          changedfiles=${{ steps.changed-files.outputs.all_changed_files }}
-          apps=$(echo "$changedfiles" | grep '^data' | cut -d '/' -f 2 | sort | uniq)
+          changedfiles="${{ steps.changed-files.outputs.all_changed_files }}"
+          apps=$(for a in  $changedfiles  ; do echo $a ; done | grep '^data' | cut -d '/' -f 2 | sort | uniq)
 
           for app in $apps; do
             echo_title "Testing $app"

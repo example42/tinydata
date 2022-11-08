@@ -83,19 +83,23 @@ jobs:
           apps=$(for a in $changedfiles ; do echo $a ; done | grep '^data' | cut -d '/' -f 2 | sort | uniq)
 
           for app in $apps; do
-            echo "### Testing ${app}"
+            echo "### Checking ${app}"
             sudo tp install "${app}" || test $? -eq 2
-            
-            if tp test "${app}"; then
+            if sudo tp test "${app}"; then
               result='success'
             else
               result='failure'
             fi
             echo "### ${app} test: ${result}!"
             echo
+            echo "### ${app} info"
             sudo tp info "${app}"
             echo
+            echo "### ${app} version"
             sudo tp version "${app}"
+            echo
+            echo "### ${app} uninstall"
+            sudo tp uninstall "${app}"
             echo
           done
         shell: bash

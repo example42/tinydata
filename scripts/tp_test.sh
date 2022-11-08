@@ -9,7 +9,7 @@ repo_dir="$(dirname "${0}")/.."
 #diff_commits_number=$(git log $default_branch.."${1}" --pretty=oneline | wc -l)
 #echo "Checking for files in the last $diff_commits_number commits"
 #changedfiles=$(git diff HEAD~"${diff_commits_number}" --name-only | grep 'data/');
-changedfiles=$(git --no-pager diff --name-only FETCH_HEAD $(git merge-base FETCH_HEAD $default_branch))
+changedfiles=$(git --no-pager diff --name-only FETCH_HEAD $(git merge-base FETCH_HEAD origin/$default_branch))
 
 apps=$(echo "$changedfiles" | grep '^data' | cut -d '/' -f 2 | sort | uniq)
 

@@ -78,30 +78,7 @@ jobs:
         run: scripts/github_tp_setup.sh
         shell: bash
       - name: Run tp tests
-        run: |
-          changedfiles="${{ steps.changed-files.outputs.all_changed_files }}"
-          apps=$(for a in $changedfiles ; do echo $a ; done | grep '^data' | cut -d '/' -f 2 | sort | uniq)
-
-          for app in $apps; do
-            echo "### Checking ${app}"
-            sudo tp install "${app}" || true
-            if sudo tp test "${app}"; then
-              result='success'
-            else
-              result='failure'
-            fi
-            echo "### ${app} test: ${result}!"
-            echo
-            echo "### ${app} info"
-            sudo tp info "${app}"
-            echo
-            echo "### ${app} version"
-            sudo tp version "${app}"
-            echo
-            echo "### ${app} uninstall"
-            sudo tp uninstall "${app}" || true
-            echo
-          done
+        run: scripts/github_tp_test.sh "${{ steps.changed-files.outputs.all_changed_files }}"
         shell: script -e -c /bin/bash -c {0}
       - name: 'Upload results artifact'
         uses: actions/upload-artifact@v3

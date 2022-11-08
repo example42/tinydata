@@ -68,15 +68,30 @@ jobs:
     name: Acceptance test on Ubuntu
     timeout-minutes: 60
     steps:
-        - name: Get branch names
-          id: branch-name
-          uses: tj-actions/branch-names@v6
-        - uses: actions/checkout@v3
+        - name: Get changed files
+          id: changed-files
+          uses: tj-actions/changed-files@v34
         - name: Install Puppet and Tiny Puppet
           run: scripts/tp_setup.sh
           shell: bash
-#          working-directory: scripts
-        - name: Run acceptance tests
-          run: scripts/tp_test.sh ${{ steps.branch-name.outputs.head_ref_branch }}
+        - name: List all changed files
+          run: |
+            changedfiles=${{ steps.changed-files.outputs.all_changed_files }}
+            apps=$(echo "$changedfiles" | grep '^data' | cut -d '/' -f 2 | sort | uniq)
+
+            for app in $apps; do
+              echo_title "Testing $app"
+              tp install "${app}"
+              
+              if tp test "${app}"; then
+                result='success'
+              else
+                result='failure'
+              fi
+              echo_$result "## ${result}!"
+
+              tp info "${app}"
+              tp version "${app}"
+
+            done
           shell: bash
-#          working-directory: scripts

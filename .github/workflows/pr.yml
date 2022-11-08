@@ -40,58 +40,61 @@ jobs:
 
   acceptance:
     strategy:
-        matrix:
-          include:
-            - os: ubuntu
-              version: [22.04,20.04,18.04,16.04]
-            - os: debian
-              version: [11,10,9,8]
-            - os: centos
-              version: [8,7]
-            - os: fedora
-              version: [34,33,32]
-            - os: opensuse
-              version: [15.3]
-            - os: sles
-              version: [15]
-            - os: oracle
-              version: [8,7]
-            - os: amazon
-              version: [2]
-            - os: windows
-              version: [2019,2016]
-            - os: redhat
-              version: [9,8,7]
+      matrix:
+        include:
+          - os: ubuntu
+            version: [22.04,20.04,18.04,16.04]
+          - os: debian
+            version: [11,10,9,8]
+          - os: centos
+            version: [8,7]
+          - os: fedora
+            version: [34,33,32]
+          - os: opensuse
+            version: [15.3]
+          - os: sles
+            version: [15]
+          - os: oracle
+            version: [8,7]
+          - os: amazon
+            version: [2]
+          - os: windows
+            version: [2019,2016]
+          - os: redhat
+            version: [9,8,7]
     # runs-on: ${{ matrix.os }}
     # name: "Acceptance test on ${{ matrix.os }} versions"
     runs-on: ubuntu-latest
     name: Acceptance test on Ubuntu
     timeout-minutes: 60
     steps:
-        - name: Get changed files
-          id: changed-files
-          uses: tj-actions/changed-files@v34
-        - name: Install Puppet and Tiny Puppet
-          run: scripts/tp_setup.sh
-          shell: bash
-        - name: List all changed files
-          run: |
-            changedfiles=${{ steps.changed-files.outputs.all_changed_files }}
-            apps=$(echo "$changedfiles" | grep '^data' | cut -d '/' -f 2 | sort | uniq)
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v34
+      - name: Install Puppet and Tiny Puppet
+        run: scripts/tp_setup.sh
+        shell: bash
+      - name: List all changed files
+        run: |
+          changedfiles=${{ steps.changed-files.outputs.all_changed_files }}
+          apps=$(echo "$changedfiles" | grep '^data' | cut -d '/' -f 2 | sort | uniq)
 
-            for app in $apps; do
-              echo_title "Testing $app"
-              tp install "${app}"
-              
-              if tp test "${app}"; then
-                result='success'
-              else
-                result='failure'
-              fi
-              echo_$result "## ${result}!"
+          for app in $apps; do
+            echo_title "Testing $app"
+            tp install "${app}"
+            
+            if tp test "${app}"; then
+              result='success'
+            else
+              result='failure'
+            fi
+            echo_$result "## ${result}!"
 
-              tp info "${app}"
-              tp version "${app}"
+            tp info "${app}"
+            tp version "${app}"
 
-            done
-          shell: bash
+          done
+        shell: bash

@@ -10,7 +10,7 @@ jobs:
     timeout-minutes: 10
     container: puppet/puppet-dev-tools:4.x
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Run static validations
         run: /usr/local/bin/pdk bundle exec rake validate lint check
         env:
@@ -22,7 +22,7 @@ jobs:
     timeout-minutes: 60
     container: puppet/puppet-dev-tools:4.x
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Run unit tests on current puppet
 #        run: /usr/local/bin/pdk bundle exec rake spec
         run: /usr/local/bin/pdk test unit
@@ -68,7 +68,7 @@ jobs:
     name: Acceptance test on Ubuntu
     timeout-minutes: 60
     steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v3
         - name: Install Puppet and Tiny Puppet
           run: scripts/tp_setup.sh
           shell: bash

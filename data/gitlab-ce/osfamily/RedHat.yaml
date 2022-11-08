@@ -1,6 +1,6 @@
 ---
-  gitlab-ce::settings:
-    exec_prerequisites:
-      gitlab-install:
-        command: 'curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | bash'
-        creates: '/etc/yum.repos.d/gitlab_gitlab-ce.repo'
+gitlab-ce::settings:
+  exec_prerequisites:
+    gitlab-install:
+      command: 'curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | bash'
+      creates: '/etc/yum.repos.d/gitlab_gitlab-ce.repo'

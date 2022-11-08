@@ -21,7 +21,7 @@ crowdsec::settings:
     collections_list: 'cscli collections list'
     metrics: 'cscli metrics'
     config_show: 'cscli config show'
-  task_commands:
+  run_commands:
     hub_upgrade:
       command: 'cscli hub update && cscli hub upgrade'
   tp_prerequisites:

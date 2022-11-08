@@ -72,8 +72,8 @@ jobs:
         - name: Install Puppet and Tiny Puppet
           run: scripts/tp_setup.sh
           shell: bash
-          working-directory: scripts
+#          working-directory: scripts
         - name: Run acceptance tests
           run: scripts/tp_test.sh
           shell: bash
-          working-directory: scripts
+#          working-directory: scripts

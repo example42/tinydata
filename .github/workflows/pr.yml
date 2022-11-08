@@ -102,4 +102,10 @@ jobs:
             sudo tp uninstall "${app}" || true
             echo
           done
-        shell: bash
+        shell: script -e -c /bin/bash -c {0}
+      - name: 'Upload results artifact'
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: my_file.txt
+          retention-days: 5

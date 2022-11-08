@@ -84,7 +84,7 @@ jobs:
 
           for app in $apps; do
             echo "### Checking ${app}"
-            sudo tp install "${app}" || test $? -eq 2
+            sudo tp install "${app}" || true
             if sudo tp test "${app}"; then
               result='success'
             else
@@ -99,7 +99,7 @@ jobs:
             sudo tp version "${app}"
             echo
             echo "### ${app} uninstall"
-            sudo tp uninstall "${app}" || test $? -eq 2
+            sudo tp uninstall "${app}" || true
             echo
           done
         shell: bash

@@ -68,12 +68,15 @@ jobs:
     name: Acceptance test on Ubuntu
     timeout-minutes: 60
     steps:
+        - name: Get branch names
+          id: branch-name
+          uses: tj-actions/branch-names@v6
         - uses: actions/checkout@v3
         - name: Install Puppet and Tiny Puppet
           run: scripts/tp_setup.sh
           shell: bash
 #          working-directory: scripts
         - name: Run acceptance tests
-          run: scripts/tp_test.sh ${GITHUB_REF##*/}
+          run: scripts/tp_test.sh ${{ steps.branch-name.outputs.head_ref_branch }}
           shell: bash
 #          working-directory: scripts

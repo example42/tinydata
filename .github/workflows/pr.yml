@@ -77,7 +77,7 @@ jobs:
       - name: Install Puppet and Tiny Puppet
         run: scripts/tp_setup.sh
         shell: bash
-      - name: List all changed files
+      - name: Run tp tests
         run: |
           changedfiles="${{ steps.changed-files.outputs.all_changed_files }}"
           apps=$(for a in $changedfiles ; do echo $a ; done | grep '^data' | cut -d '/' -f 2 | sort | uniq)

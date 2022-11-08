@@ -75,7 +75,7 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v34
       - name: Install Puppet and Tiny Puppet
-        run: scripts/gitlab_tp_setup.sh
+        run: scripts/github_tp_setup.sh
         shell: bash
       - name: Run tp tests
         run: |

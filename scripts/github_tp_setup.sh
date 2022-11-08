@@ -8,7 +8,7 @@ sudo puppet module install puppetlabs-stdlib --ignore-dependencies
 sudo puppet tp setup
 
 # Let's use tinydaya from the PR
-mkdir -p /etc/puppetlabs/code/modules/tinydata/
-ln -s /home/runner/work/tinydata/tinydata/data /etc/puppetlabs/code/modules/tinydata/data
+sudo mkdir -p /etc/puppetlabs/code/modules/tinydata/
+sudo ln -s /home/runner/work/tinydata/tinydata/data /etc/puppetlabs/code/modules/tinydata/data
 
 exit 0

@@ -99,7 +99,7 @@ jobs:
             sudo tp version "${app}"
             echo
             echo "### ${app} uninstall"
-            sudo tp uninstall "${app}"
+            sudo tp uninstall "${app}" || test $? -eq 2
             echo
           done
         shell: bash

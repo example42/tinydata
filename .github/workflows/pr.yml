@@ -78,8 +78,8 @@ jobs:
         run: scripts/github_tp_setup.sh
         shell: bash
       - name: Run tp tests
-        run: scripts/github_tp_test.sh "${{ steps.changed-files.outputs.all_changed_files }}"
-        shell: script -e -c /bin/bash -c {0}
+        run: script -e -c scripts/github_tp_test.sh "${{ steps.changed-files.outputs.all_changed_files }}"
+        shell: bash
       - name: 'Upload results artifact'
         uses: actions/upload-artifact@v3
         with:

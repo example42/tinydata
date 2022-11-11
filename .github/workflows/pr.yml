@@ -49,7 +49,7 @@ jobs:
           - os: centos
             version: [8,7]
           - os: fedora
-            version: [34,33,32]
+            version: [36,35,34]
           - os: opensuse
             version: [15.3]
           - os: sles
@@ -62,9 +62,9 @@ jobs:
             version: [2019,2016]
           - os: redhat
             version: [9,8,7]
-    # runs-on: ${{ matrix.os }}
-    # name: "Acceptance test on ${{ matrix.os }} versions"
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    name: "Acceptance test on ${{ matrix.os }} versions"
+    # runs-on: ubuntu-latest
     name: Acceptance test on Ubuntu
     timeout-minutes: 60
     steps:

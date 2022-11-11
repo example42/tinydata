@@ -21,16 +21,23 @@ jobs:
           - container: debian:10
           - container: debian:9
           - container: debian:8
-          - container: redhat:9
-          - container: redhat:8
-          - container: redhat:7
+          - container: redhat/ubi9-minimal
+          - container: redhat/ubi8-minimal
+          - container: redhat/ubi7-minimal
     runs-on: ubuntu-latest
     container: ${{ matrix.container }}
     name: "Acceptance test on ${{ matrix.container }}"
     timeout-minutes: 60
     steps:
       - name: Install Puppet, Tiny Puppet and git
-        run: scripts/github_tp_setup.sh
+        run: |
+          wget -O - https://bit.ly/installpuppet | sudo bash
+          sudo mkdir -p /etc/puppetlabs/code/modules/tinydata/
+          sudo ln -s /home/runner/work/tinydata/tinydata/data /etc/puppetlabs/code/modules/tinydata/data
+          sudo puppet module install example42-tp --ignore-dependencies
+          sudo puppet module install puppetlabs-stdlib --ignore-dependencies
+          sudo puppet tp setup
+          sudo tp install git
         shell: bash
       - uses: actions/checkout@v3
         with:

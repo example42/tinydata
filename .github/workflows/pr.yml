@@ -35,20 +35,22 @@ jobs:
           - container: redhat/ubi7-minimal
             pkg_install: yum install -y
     runs-on: ubuntu-latest
-    container: ${{ matrix.container }}
+    container:
+      image: ${{ matrix.container }}
+      options: --user root
     name: "Acceptance test on ${{ matrix.container }}"
     timeout-minutes: 60
     steps:
       - name: Install Puppet, Tiny Puppet and git
         run: |
           ${{ matrix.pkg_install }} wget
-          wget -O - https://bit.ly/installpuppet | sudo bash
-          sudo mkdir -p /etc/puppetlabs/code/modules/tinydata/
-          sudo ln -s /home/runner/work/tinydata/tinydata/data /etc/puppetlabs/code/modules/tinydata/data
-          sudo puppet module install example42-tp --ignore-dependencies
-          sudo puppet module install puppetlabs-stdlib --ignore-dependencies
-          sudo puppet tp setup
-          sudo tp install git
+          wget -O - https://bit.ly/installpuppet | bash
+          mkdir -p /etc/puppetlabs/code/modules/tinydata/
+          ln -s /home/runner/work/tinydata/tinydata/data /etc/puppetlabs/code/modules/tinydata/data
+          puppet module install example42-tp --ignore-dependencies
+          puppet module install puppetlabs-stdlib --ignore-dependencies
+          puppet tp setup
+          tp install git
         shell: 'script -q -e -c "bash {0}"'
       - uses: actions/checkout@v3
         with:

@@ -49,7 +49,7 @@ jobs:
           sudo puppet module install puppetlabs-stdlib --ignore-dependencies
           sudo puppet tp setup
           sudo tp install git
-        shell: bash
+        shell: 'script -q -e -c "bash {0}"'
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0 

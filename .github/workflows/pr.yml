@@ -1,6 +1,5 @@
 ---
 name: PR tests
-
 on: pull_request
 
 jobs:
@@ -15,29 +14,19 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: ubuntu
-            version: [22.04,20.04,18.04]
-          - os: debian
-            version: [11,10,9,8]
-          - os: roboxes/centos
-            version: [8,7]
-#          - os: fedora
-#            version: [36,35,34]
-#          - os: opensuse
-#            version: [15.3]
-#          - os: sles
-#            version: [15]
-          - os: oracle
-            version: [9,8,7]
-#          - os: amazon
-#            version: [2]
-#          - os: windows
-#            version: [2019,2016]
-          - os: redhat
-            version: [9,8,7,6]
+          - container: ubuntu:18.04
+          - container: ubuntu:20.04
+          - container: ubuntu:22.04
+          - container: debian:11
+          - container: debian:10
+          - container: debian:9
+          - container: debian:8
+          - container: redhat:9
+          - container: redhat:8
+          - container: redhat:7
     runs-on: ubuntu-latest
-    container: ${{ matrix.os }}:${{ matrix.version }}
-    name: "Acceptance test on ${{ matrix.os }} versions"
+    container: ${{ matrix.container }}
+    name: "Acceptance test on ${{ matrix.container }}"
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v3

@@ -10,6 +10,6 @@ echo "### Installing Tiny Puppet"
 sudo puppet module install example42-tp --ignore-dependencies
 sudo puppet module install puppetlabs-stdlib --ignore-dependencies
 sudo puppet tp setup
-
+sudo tp install git
 
 exit 0

@@ -15,15 +15,25 @@ jobs:
       matrix:
         include:
           - container: ubuntu:18.04
+            pkg_install: apt-get update && apt-get install -y
           - container: ubuntu:20.04
+            pkg_install: apt-get update && apt-get install -y
           - container: ubuntu:22.04
+            pkg_install: apt-get update && apt-get install -y
           - container: debian:11
+            pkg_install: apt-get update && apt-get install -y
           - container: debian:10
+            pkg_install: apt-get update && apt-get install -y
           - container: debian:9
+            pkg_install: apt-get update && apt-get install -y
           - container: debian:8
+            pkg_install: apt-get update && apt-get install -y
           - container: redhat/ubi9-minimal
+            pkg_install: yum install -y
           - container: redhat/ubi8-minimal
+            pkg_install: yum install -y
           - container: redhat/ubi7-minimal
+            pkg_install: yum install -y
     runs-on: ubuntu-latest
     container: ${{ matrix.container }}
     name: "Acceptance test on ${{ matrix.container }}"
@@ -31,6 +41,7 @@ jobs:
     steps:
       - name: Install Puppet, Tiny Puppet and git
         run: |
+          ${{ matrix.pkg_install }} wget
           wget -O - https://bit.ly/installpuppet | sudo bash
           sudo mkdir -p /etc/puppetlabs/code/modules/tinydata/
           sudo ln -s /home/runner/work/tinydata/tinydata/data /etc/puppetlabs/code/modules/tinydata/data

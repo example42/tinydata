@@ -65,7 +65,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     name: "Acceptance test on ${{ matrix.os }} versions"
     # runs-on: ubuntu-latest
-    name: Acceptance test on Ubuntu
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v3

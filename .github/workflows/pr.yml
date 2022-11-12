@@ -1,39 +1,69 @@
 ---
 name: PR tests
-
 on: pull_request
 
 jobs:
-  static:
-    name: 'Syntax validation'
+  validate-yaml:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-    container: puppet/puppet-dev-tools:4.x
     steps:
-      - uses: actions/checkout@v2
-      - name: Run static validations
-        run: /usr/local/bin/pdk bundle exec rake validate lint check
-        env:
-          BUNDLE_WITHOUT: development:system_tests:release
+      - uses: actions/checkout@v3
+      - name: Validate YAML files
+        run: yamllint .
 
-  unit:
-    name: 'Unit tests'
+  acceptance:
+    strategy:
+      matrix:
+        include:
+          - container: ubuntu:18.04
+            pkg_install: apt-get update && apt-get install -y
+          - container: ubuntu:20.04
+            pkg_install: apt-get update && apt-get install -y
+          - container: ubuntu:22.04
+            pkg_install: apt-get update && apt-get install -y
+          - container: debian:11
+            pkg_install: apt-get update && apt-get install -y
+          - container: debian:10
+            pkg_install: apt-get update && apt-get install -y
+          - container: debian:9
+            pkg_install: apt-get update && apt-get install -y
+          - container: debian:8
+            pkg_install: apt-get update && apt-get install -y
+          - container: redhat/ubi9-minimal
+            pkg_install: yum install -y
+          - container: redhat/ubi8-minimal
+            pkg_install: yum install -y
+          - container: redhat/ubi7-minimal
+            pkg_install: yum install -y
     runs-on: ubuntu-latest
+    container:
+      image: ${{ matrix.container }}
+      options: --user root
+    name: "Acceptance test on ${{ matrix.container }}"
     timeout-minutes: 60
-    container: puppet/puppet-dev-tools:4.x
     steps:
-      - uses: actions/checkout@v2
-      - name: Run unit tests on current puppet
-#        run: /usr/local/bin/pdk bundle exec rake spec
-        run: /usr/local/bin/pdk test unit
-        env:
-          BUNDLE_WITHOUT: development:system_tests:release
-      - name: Run unit tests on Puppet 6
-        run: /usr/local/bin/pdk test unit  --puppet-version=6
-        env:
-          BUNDLE_WITHOUT: development:system_tests:release
-      - name: Run unit tests on Puppet 5
-        run: /usr/local/bin/pdk test unit --puppet-version=5
-        env:
-          BUNDLE_WITHOUT: development:system_tests:release
-        continue-on-error: true
+      - name: Install Puppet, Tiny Puppet and git
+        run: |
+          ${{ matrix.pkg_install }} wget
+          wget -O - https://bit.ly/installpuppet | bash
+          mkdir -p /etc/puppetlabs/code/modules/tinydata/
+          ln -s /home/runner/work/tinydata/tinydata/data /etc/puppetlabs/code/modules/tinydata/data
+          puppet module install example42-tp --ignore-dependencies
+          puppet module install puppetlabs-stdlib --ignore-dependencies
+          puppet tp setup
+          tp install git
+        shell: 'script -q -e -c "bash {0}"'
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v34
+      - name: Run tp tests
+        run: scripts/github_tp_test.sh "${{ steps.changed-files.outputs.all_changed_files }}"
+        shell: 'script -q -e -c "bash {0}"'
+      - name: 'Upload results artifact'
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: my_file.txt
+          retention-days: 5

@@ -19,3 +19,4 @@
     nodaemon_args: -g 'daemon off;'
     validate_cmd:
       config: 'nginx -t -c %'        
+    version_command: 'nginx -v'

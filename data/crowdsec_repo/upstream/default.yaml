@@ -1,10 +1,6 @@
 ---
 crowdsec_repo::settings:
-  key_url: "https://packagecloud.io/crowdsec/crowdsec/gpgkey\n       https://packagecloud.io/crowdsec/crowdsec/gpgkey/crowdsec-crowdsec-B78D1222C9AD2D5D.pub.gpg\n       https://packagecloud.io/crowdsec/crowdsec/gpgkey/crowdsec-crowdsec-FED78314A2468CCF.pub.gpg"
-  key_url_array:
-    - 'https://packagecloud.io/crowdsec/crowdsec/gpgkey'
-    - 'https://packagecloud.io/crowdsec/crowdsec/gpgkey/crowdsec-crowdsec-B78D1222C9AD2D5D.pub.gpg'
-    - 'https://packagecloud.io/crowdsec/crowdsec/gpgkey/crowdsec-crowdsec-FED78314A2468CCF.pub.gpg'
+  key_url: https://packagecloud.io/crowdsec/crowdsec/gpgkey
   key: '6A89 E3C2 303A 901A 8899  71D3 376E D532 6E93 CD0C'
   apt_repos: 'main'
   repo_filename: crowdsec_crowdsec

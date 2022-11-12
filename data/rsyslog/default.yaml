@@ -13,3 +13,4 @@
     process_name: 'rsyslogd'
     process_user: 'root'
     process_group: 'root'
+    version_command: 'rsyslogd -v'

@@ -1,0 +1,3 @@
+---
+azure-cli::settings:
+  winget_package_name: 'Microsoft.AzureCLI'

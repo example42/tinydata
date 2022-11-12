@@ -2,10 +2,9 @@
 :hierarchy:
   - "%{title}/upstream/operatingsystem/%{operatingsystem}%{operatingsystemmajrelease}"
   - "%{title}/upstream/operatingsystem/%{operatingsystem}"
-  - "%{title}/upstream/osfamily/%{operatingsystem}"
+  - "%{title}/upstream/osfamily/%{osfamily}%{operatingsystemmajrelease}"
   - "%{title}/upstream/osfamily/%{osfamily}"
   - "%{title}/upstream/default"
-  - "%{title}/osfamily/%{osfamily}"
   - "%{title}/default"
   - "default/%{operatingsystem}%{operatingsystemmajrelease}"
   - "default/%{operatingsystem}"

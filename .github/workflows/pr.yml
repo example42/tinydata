@@ -27,7 +27,7 @@ jobs:
           - container: example42/tiny-puppet-almalinux8
           - container: example42/tiny-puppet-redhat9
           - container: example42/tiny-puppet-redhat8
-          - container: example42/tiny-puppet-centos7
+#          - container: example42/tiny-puppet-centos7
 #          - container: example42/tiny-puppet-centos6
     runs-on: ubuntu-latest
     container:

@@ -19,8 +19,8 @@ jobs:
           - container: example42/tiny-puppet-ubuntu2204
           - container: example42/tiny-puppet-debian11
           - container: example42/tiny-puppet-debian10
-          - container: example42/tiny-puppet-debian9
-          - container: example42/tiny-puppet-debian8
+#          - container: example42/tiny-puppet-debian9
+#          - container: example42/tiny-puppet-debian8
           - container: example42/tiny-puppet-rockylinux9
           - container: example42/tiny-puppet-rockylinux8
           - container: example42/tiny-puppet-almalinux9
@@ -28,7 +28,7 @@ jobs:
           - container: example42/tiny-puppet-redhat9
           - container: example42/tiny-puppet-redhat8
           - container: example42/tiny-puppet-centos7
-          - container: example42/tiny-puppet-centos6
+#          - container: example42/tiny-puppet-centos6
     runs-on: ubuntu-latest
     container:
       image: ${{ matrix.container }}

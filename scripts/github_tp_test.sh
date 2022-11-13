@@ -3,6 +3,8 @@ changedfiles="${1}"
 repo_dir="$(dirname "${0}")/.."
 . "${repo_dir}/scripts/functions"
 
+PATH:"$PATH":/usr/local/bin
+
 # Detecting apps for which we have changes in the PR
 #default_branch='master'
 #diff_commits_number=$(git log $default_branch.."${1}" --pretty=oneline | wc -l)
@@ -15,8 +17,8 @@ apps=$(for a in $changedfiles ; do echo "$a" ; done | grep '^data' | cut -d '/' 
 for app in $apps; do
 
   echo_title "### Checking ${app}"
-  sudo tp install "${app}" || true
-  if sudo tp test "${app}"; then
+  tp install "${app}" || true
+  if tp test "${app}"; then
     result='success'
   else
     result='failure'
@@ -24,13 +26,13 @@ for app in $apps; do
   echo_$result "### ${app} test: ${result}!"
   echo
   echo_title "### ${app} info"
-  sudo tp info "${app}"
+  tp info "${app}"
   echo
   echo_title "### ${app} version"
-  sudo tp version "${app}"
+  tp version "${app}"
   echo
   echo_title "### ${app} uninstall"
-  sudo tp uninstall "${app}" || true
+  tp uninstall "${app}" || true
   echo
 
 done

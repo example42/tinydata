@@ -12,3 +12,4 @@ consul::settings:
     - 8301
     - 8500
     - 8600
+  git_source: 'https://github.com/hashicorp/consul'

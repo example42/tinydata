@@ -6,5 +6,6 @@ vagrant::settings:
   home_dir_path: '/opt/vagrant'
   info_commands:
     global-status: 'vagrant global-status'
-  git_source: https://github.com/hashicorp/vagrant.git
+  git_source: 'https://github.com/hashicorp/vagrant'
   git_use: true
+  

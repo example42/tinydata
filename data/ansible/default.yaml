@@ -5,3 +5,4 @@ ansible::settings:
   config_dir_path: '/etc/ansible'
   roles_dir_path: '/etc/ansible/roles'
   inventory_file_path: '/etc/ansible/hosts'
+  git_source: 'https://github.com/ansible/ansible'

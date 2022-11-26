@@ -1,3 +1,4 @@
 ---
-  git::settings:
-    package_name: 'git'
+git::settings:
+  package_name: 'git'
+  git_source: 'https://github.com/git/git'

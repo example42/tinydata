@@ -2,4 +2,4 @@
 scikit-learn:
   package_name: 'scikit-learn'
   package_provider: 'pip'
-
+  git_source: 'https://github.com/scikit-learn/scikit-learn'

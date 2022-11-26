@@ -1,3 +1,4 @@
 ---
-  rails::settings:
-    package_name: 'rails'
+rails::settings:
+  package_name: 'rails'
+  git_source: 'https://github.com/rails/rails'

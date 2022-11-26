@@ -1,6 +1,7 @@
 ---
-  fabric::settings:
-    package_name: 'fabric'
-    package_provider: 'pip'
-    tp_prerequisites:
-      - python-pip
+fabric::settings:
+  package_name: 'fabric'
+  package_provider: 'pip'
+  tp_prerequisites:
+    - python-pip
+  git_source: 'https://github.com/fabric/fabric'

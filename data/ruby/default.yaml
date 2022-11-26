@@ -1,3 +1,4 @@
 ---
-  ruby::settings:
-    package_name: 'ruby'
+ruby::settings:
+  package_name: 'ruby'
+  git_source: 'https://github.com/ruby/ruby'

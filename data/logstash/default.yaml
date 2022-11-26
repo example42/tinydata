@@ -14,3 +14,4 @@ logstash::settings:
   process_user: 'logstash'
   process_group: 'logstash'
   tcp_port: '9292'
+  git_source: 'https://github.com/elastic/logstash'

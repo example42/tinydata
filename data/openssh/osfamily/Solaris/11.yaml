@@ -1,4 +1,4 @@
 ---
-  openssh::settings:
-    package_name: 'network/openssh'
+openssh::settings:
+  package_name: 'network/openssh'
 

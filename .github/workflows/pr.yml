@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - container: example42/tiny-puppet-ubuntu1804
+#          - container: example42/tiny-puppet-ubuntu1804
           - container: example42/tiny-puppet-ubuntu2004
           - container: example42/tiny-puppet-ubuntu2204
           - container: example42/tiny-puppet-debian11

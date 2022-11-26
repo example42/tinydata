@@ -1,0 +1,19 @@
+---
+bird::settings:
+  upstream_repo: false
+  package_name: 'bird'
+  service_name: 'bird'
+  config_file_path: '/etc/bird/bird.conf'
+  config_dir_path: '/etc/bird'
+  home_dir_path: '/run/bird'
+  process_name: 'bird'
+  process_user: 'bird'
+  process_group: 'bird'
+  info_commands:
+    show-protocols: 'birdc show protocols'
+    show-protocols6: 'birdc6 show protocols'
+    count-bgp-sessions: 'birdc show protocols | grep -i established | wc -l'
+    count-bgp-sessions6: 'birdc6 show protocols | grep -i established | wc -l'
+  log_file_path:
+    - /var/log/bird.log
+    - /var/log/bird6.log

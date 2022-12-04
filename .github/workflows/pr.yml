@@ -47,6 +47,7 @@ jobs:
       - name: Run tp tests
         run: scripts/github_tp_test.sh "${{ steps.changed-files.outputs.all_changed_files }}"
         shell: 'script -q -e -c "bash {0}"'
+        if: always()
       - name: 'Upload results artifact'
         uses: actions/upload-artifact@v3
         with:

@@ -2,6 +2,7 @@
 changedfiles="${1}"
 repo_dir="$(dirname "${0}")/.."
 . "${repo_dir}/scripts/functions"
+outputfile="${repo_dir}/results.txt"
 
 PATH:"$PATH":/usr/local/bin
 
@@ -13,15 +14,17 @@ PATH:"$PATH":/usr/local/bin
 #changedfiles=$(git --no-pager diff --name-only FETCH_HEAD $(git merge-base FETCH_HEAD origin/$default_branch))
 
 apps=$(for a in $changedfiles ; do echo "$a" ; done | grep '^data' | cut -d '/' -f 2 | sort | uniq)
+exitcode='0'
 
 for app in $apps; do
 
   echo_title "### Checking ${app}"
-  tp install "${app}" || true
+  tp install "${app}" | tee -a "$outputfile" || true
   if tp test "${app}"; then
     result='success'
   else
     result='failure'
+    exitcode='1'
   fi
   echo_$result "### ${app} test: ${result}!"
   echo
@@ -36,3 +39,4 @@ for app in $apps; do
   echo
 
 done
+exit $exitcode

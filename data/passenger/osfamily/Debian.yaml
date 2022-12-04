@@ -1,7 +1,6 @@
 ---
-  passenger::settings:
-    repo_url: 'https://oss-binaries.phusionpassenger.com/apt/passenger'
-    key: '561F9B9CAC40B2F7'
-    apt_repos: 'main'
-#    apt_release: 'stable'
-    apt_key_server: 'http://keyserver.ubuntu.com'
+passenger::settings:
+  repo_url: 'https://oss-binaries.phusionpassenger.com/apt/passenger'
+  key: '561F9B9CAC40B2F7'
+  apt_repos: 'main'
+  apt_key_server: 'http://keyserver.ubuntu.com'

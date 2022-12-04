@@ -9,7 +9,6 @@
       - '/var/log/foreman/production.log'
       - '/var/log/foreman/error.log'
     log_dir_path: '/var/log/foreman'
-#    process_name: 'foreman'
     process_user: 'foreman'
     process_group: 'foreman'
     tp_prerequisites:

@@ -1,5 +1,4 @@
 ---
-  passenger::settings:
-    repo_url: 'https://oss-binaries.phusionpassenger.com/yum/passenger/el/$releasever/$basearch'
-#    key_url: 'https://packagecloud.io/gpg.key'
+passenger::settings:
+  repo_url: 'https://oss-binaries.phusionpassenger.com/yum/passenger/el/$releasever/$basearch'
 

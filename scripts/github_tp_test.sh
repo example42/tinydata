@@ -39,4 +39,4 @@ for app in $apps; do
   echo
 
 done
-exit $exitcode
+exit 0

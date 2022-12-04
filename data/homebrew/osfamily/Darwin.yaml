@@ -1,0 +1,15 @@
+---
+homebrew::settings:
+  exec_prerequisites:
+    homebrew-install:
+      command: 'NONINTERACTIVE=1 ; curl https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash'
+      creates: '/opt/homebrew/bin/brew'
+  exec_postinstall:
+    homebrew-add-user-env:
+      command: 'echo "eval $(/opt/homebrew/bin/brew shellenv)" >> ~/.zprofile'
+      provider: 'shell'
+      unless: "grep '/opt/homebrew/bin/brew shellenv' ~/.zprofile"
+  debug_commands:
+    doctor: '/opt/homebrew/bin/brew doctor'
+  info_commands:
+    config: '/opt/homebrew/bin/brew config'

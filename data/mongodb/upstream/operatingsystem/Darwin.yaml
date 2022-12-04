@@ -2,5 +2,5 @@
 mongodb::settings:
   package_name: 'mongodb-community@4.4'
   service_name: 'mongodb-community@4.4'
-  brew_tab: 'mongodb/brew'
+  brew_tap: 'mongodb/brew'
   config_file_path: '/usr/local/etc/mongod.conf'

@@ -1,3 +1,5 @@
 ---
 azure-cli::settings:
   key: '0DCF CA55 47B1 9D2A 6099  5060 96B3 EE5F 2911 1145'
+  repo_package_name: packages-microsoft-prod
+  repo_filename: microsoft-prod

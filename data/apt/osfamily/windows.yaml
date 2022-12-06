@@ -1,0 +1,3 @@
+apt::settings:
+  package_name: ''
+  service_name: ''

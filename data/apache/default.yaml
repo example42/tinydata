@@ -15,3 +15,12 @@ apache::settings:
   nodaemon_args: '-DFOREGROUND'
   validate_cmd:
     config: 'httpd -t -f %'
+  version_command: 'httpd -v'
+  info_commands:
+    show_compile_settings: 'httpd -V'
+    show_compiled_modules: 'httpd -l'
+    show_loaded_modules: 'httpd -t -D DUMP_MODULES'
+  test_commands:
+    validate_config: 'httpd -t'
+  website_url: 'https://httpd.apache.org/'
+  git_source: 'https://github.com/apache/httpd'

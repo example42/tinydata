@@ -1,3 +1,4 @@
 ---
 azure-cli::settings:
   winget_package_name: 'Microsoft.AzureCLI'
+  choco_package_name: 'azure-cli'

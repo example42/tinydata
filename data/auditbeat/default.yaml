@@ -12,4 +12,9 @@ auditbeat::settings:
   home_dir_path: '/usr/share/auditbeat'
   data_dir_path: '/var/lib/auditbeat'
   process_name: 'auditbeat'
-
+  website_url: 'https://www.elastic.co/beats/auditbeat'
+  git_source: 'https://github.com/elastic/beats/tree/master/auditbeat'
+  version_command: 'autditbeat version'
+  info_commands:
+    show_status: 'auditbeat show auditd_status'
+    show_rules: 'auditbeat show auditd_rules'

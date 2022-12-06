@@ -1,4 +1,4 @@
 ---
 elastic_repo::settings:
-  repo_url: 'http://artifacts.elastic.co/packages/7.x/yum'
+  repo_url: 'https://artifacts.elastic.co/packages/8.x/yum'
 

@@ -2,6 +2,7 @@
 :hierarchy:
   - "%{title}/%{repo}/osfamily/%{osfamily}"
   - "%{title}/%{repo}/default"
+  - "%{title}/upstream/osfamily/%{osfamily}%{operatingsystemmajrelease}"
   - "%{title}/upstream/osfamily/%{osfamily}"
   - "%{title}/upstream/default"
   - "%{title}/osfamily/%{osfamily}"

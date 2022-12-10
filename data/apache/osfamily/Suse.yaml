@@ -20,3 +20,4 @@ apache::settings:
     show_loaded_modules: 'httpd2-prefork -t -D DUMP_MODULES'
   test_commands:
     validate_config: 'httpd2-prefork -t'
+  version_command: 'httpd2-prefork -v'

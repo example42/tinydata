@@ -21,6 +21,7 @@ apache::settings:
   process_group: 'www-data'
   validate_cmd:
     config: 'apache2 -t -f %'
+  version_command: 'apache2 -v'
   info_commands:
     show_compile_settings: 'apache2 -V'
     show_compiled_modules: 'apache2 -l'

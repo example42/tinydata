@@ -6,4 +6,5 @@ awscli::settings:
   config_dir_path: '/etc/aws'
   tp_prerequisites:
     - python-pip
+  version_command: 'aws --version'
 

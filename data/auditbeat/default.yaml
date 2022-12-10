@@ -14,7 +14,7 @@ auditbeat::settings:
   process_name: 'auditbeat'
   website_url: 'https://www.elastic.co/beats/auditbeat'
   git_source: 'https://github.com/elastic/beats/tree/master/auditbeat'
-  version_command: 'autditbeat version'
+  version_command: 'auditbeat version'
   info_commands:
     show_status: 'auditbeat show auditd_status'
     show_rules: 'auditbeat show auditd_rules'

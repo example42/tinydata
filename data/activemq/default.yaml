@@ -18,3 +18,4 @@ activemq::settings:
     list: 'activemq list'
   test_commands:
     status: 'activemq status'
+  docker_image: 'apache/activemq'

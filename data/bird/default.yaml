@@ -17,3 +17,5 @@ bird::settings:
   log_file_path:
     - /var/log/bird.log
     - /var/log/bird6.log
+  website_url: 'https://bird.network.cz/'
+  git_source: 'https://gitlab.labs.nic.cz/labs/bird'

@@ -7,4 +7,4 @@ awscli::settings:
   tp_prerequisites:
     - python-pip
   version_command: 'aws --version'
-
+  docker_image: 'amazon/aws-cli'

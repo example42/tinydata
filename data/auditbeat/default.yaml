@@ -18,3 +18,4 @@ auditbeat::settings:
   info_commands:
     show_status: 'auditbeat show auditd_status'
     show_rules: 'auditbeat show auditd_rules'
+  docker_image: 'elastic/autditbeat'

@@ -24,3 +24,4 @@ apache::settings:
     validate_config: 'httpd -t'
   website_url: 'https://httpd.apache.org/'
   git_source: 'https://github.com/apache/httpd'
+  docker_image: 'httpd'

@@ -3,5 +3,6 @@
   - "%{title}/osfamily/%{operatingsystem}"
   - "%{title}/osfamily/%{osfamily}"
   - "%{title}/default"
+  - "default/%{operatingsystem}%{operatingsystemmajrelease}"
   - "default/%{operatingsystem}"
   - default

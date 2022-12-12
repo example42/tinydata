@@ -1,0 +1,4 @@
+---
+bolt::settings:
+  config_file_path: 'C:\ProgramData\PuppetLabs\bolt\etc\bolt-defaults.yaml'
+  config_dir_path: 'C:\ProgramData\PuppetLabs\bolt\etc\'

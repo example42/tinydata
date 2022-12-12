@@ -5,3 +5,7 @@ ansible::settings:
   config_dir_path: '/etc/ansible'
   roles_dir_path: '/etc/ansible/roles'
   inventory_file_path: '/etc/ansible/hosts'
+  config_file_format: 'inifile_with_stanzas'
+  website_url: 'https://www.ansible.com/'
+  git_source: 'https://github.com/ansible/ansible'
+  docker_image: 'quay.io/ansible/ansible-runner'

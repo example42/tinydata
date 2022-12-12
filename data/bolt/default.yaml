@@ -1,5 +1,21 @@
 ---
-pdk::settings:
+bolt::settings:
   package_name: 'puppet-bolt'
   tp_prerequisites:
     puppet_repo: {}
+  website_url: 'https://puppet.com/docs/bolt/'
+  git_source: 'https://github.com/puppetlabs/bolt'
+  config_file_path: '/etc/puppetlabs/bolt/bolt-defaults.yaml'
+  config_dir_path: '/etc/puppetlabs/bolt'
+  config_file_format: 'yaml'
+  user_config_file_path: '$HOME/.puppetlabs/etc/bolt/bolt-defaults.yaml'
+  user_config_dir_path: '$HOME/.puppetlabs/etc/bolt'
+  info_commands:
+    inventory_show: 'bolt inventory show'
+    group_show: 'bolt group show'
+    module_show: 'bolt module show'
+    plan_show: 'bolt plan show'
+    task_show: 'bolt task show'
+    plugin_show: 'bolt plugin show'
+    policy_show: 'bolt policy show'
+  docker_image: 'puppet/puppet-bolt'

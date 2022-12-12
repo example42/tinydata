@@ -14,3 +14,4 @@ openssh::settings:
   nodaemon_args: '-D'
   validate_cmd: 'sshd -t -f %'
   version_command: 'ssh -V'
+  config_file_format: 'inifile'

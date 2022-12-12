@@ -3,3 +3,4 @@ azure-cli::settings:
   upstream_repo: true
   package_name: azure-cli
   version_command: 'az -v'
+  docker_image: 'bitnami/azure-cli'

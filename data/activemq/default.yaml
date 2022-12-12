@@ -11,3 +11,11 @@ activemq::settings:
   process_extra_name: 'activemq'
   process_user: 'activemq'
   process_group: 'activemq'
+  website_url: 'https://activemq.apache.org/'
+  git_source: 'https://github.com/apache/activemq'
+  info_commands:
+    dstat: 'activemq dstat'
+    list: 'activemq list'
+  test_commands:
+    status: 'activemq status'
+  docker_image: 'apache/activemq'

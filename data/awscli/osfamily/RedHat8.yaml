@@ -1,0 +1,3 @@
+---
+awscli::settings:
+  package_provider: 'pip3'

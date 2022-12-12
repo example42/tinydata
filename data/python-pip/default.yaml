@@ -1,3 +1,15 @@
 ---
-  python-pip::settings:
-    package_name: 'python-pip'
+python-pip::settings:
+  package_name: 'python-pip'
+  version_command: 'pip -V'
+  website_url: 'https://pypi.org/project/pip/'
+  git_source: 'https://github.com/pypa/pip'
+  config_file_path: '/etc/pip.conf'
+  user_config_file_path: '$HOME/.config/pip/pip.conf'
+  config_file_format: 'inifile_with_stanzas'
+  debug_commands:
+    debug: 'pip debug'
+  info_commands:
+    cache_info: 'pip cache info'
+    check: 'pip check'
+    config_debug: 'pip config debug'

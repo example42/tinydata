@@ -1,0 +1,5 @@
+---
+elastic_repo::settings:
+  repo_url: 'http://artifacts.elastic.co/packages/7.x/apt'
+  apt_repos: 'main'
+  apt_release: 'stable'

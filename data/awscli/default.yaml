@@ -1,9 +1,10 @@
 ---
-  awscli::settings:
-    package_name: 'awscli'
-    package_provider: 'pip'
-    config_file_path: '/root/.aws/config'
-    config_dir_path: '/etc/aws'
-    tp_prerequisites:
-      - python-pip
-
+awscli::settings:
+  package_name: 'awscli'
+  package_provider: 'pip'
+  config_file_path: '/root/.aws/config'
+  config_dir_path: '/etc/aws'
+  tp_prerequisites:
+    - python-pip
+  version_command: 'aws --version'
+  docker_image: 'amazon/aws-cli'

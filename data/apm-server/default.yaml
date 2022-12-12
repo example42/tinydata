@@ -12,4 +12,5 @@ apm-server::settings:
   home_dir_path: '/usr/share/apm-server'
   data_dir_path: '/var/lib/apm-server'
   process_name: 'apm-server'
-
+  version_command: 'apm-server version'
+  docker_image: 'elastic/apm-server'

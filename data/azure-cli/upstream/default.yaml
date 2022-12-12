@@ -5,3 +5,5 @@ azure-cli::settings:
   apt_repos: 'main'
   repo_filename: azure-cli
   repo_description: 'Azure CLI'
+  git_source: https://github.com/Azure/azure-cli
+  website_url: https://learn.microsoft.com/en-us/cli/azure/

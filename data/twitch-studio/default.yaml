@@ -1,0 +1,4 @@
+---
+twitch-studio::settings:
+  package_name: ''
+  website_url: 'https://www.twitch.tv/'

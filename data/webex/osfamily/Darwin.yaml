@@ -1,0 +1,4 @@
+---
+webex::settings:
+  brew_package_name: 'webex'
+  package_name: 'webex'

@@ -1,0 +1,4 @@
+---
+obs-studio::settings:
+  winget_package_name: 'OBSProject.OBSStudio'
+  choco_package_name: 'obs-studio'

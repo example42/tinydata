@@ -1,0 +1,5 @@
+---
+twitch-studio::settings:
+  winget_package_name: 'Twitch.TwitchStudio'
+  choco_package_name: 'twitch-studio'
+  package_name: 'twitch-studio'

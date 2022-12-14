@@ -1,3 +1,8 @@
 ---
-  git::settings:
-    package_name: 'git'
+git::settings:
+  package_name: 'git'
+  website_url: 'https://git-scm.com/'
+  git_source: 'https://github.com/git/git'
+  docker_image: 'bitnami/git'
+  user_config_dir: '$HOME/.git'
+  user_config_path: '$HOME/.gitconfig'

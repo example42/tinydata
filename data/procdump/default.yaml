@@ -1,0 +1,7 @@
+---
+procdump::settings:
+  package_name: procdump
+  website_url: 'https://learn.microsoft.com/sysinternals/downloads/procdump/'
+  git_source: 'https://github.com/Sysinternals/ProcDump-for-Linux'
+  tp_prerequisites:
+    - 'microsoft_repo'

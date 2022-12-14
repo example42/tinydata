@@ -1,0 +1,7 @@
+---
+vscode::settings:
+  winget_package_name: 'Microsoft.VisualStudioCode'
+  choco_package_name: 'vscode'
+  user_config_file_path: '%APPDATA%\Code\User\settings.json'
+  user_config_dir_path: '%APPDATA%\Code\User'
+

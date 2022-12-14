@@ -1,0 +1,6 @@
+---
+git::settings:
+  winget_package_name: 'Git.Git'
+  choco_package_name: 'git'
+  user_config_dir: '%HOMEPATH%/.git'
+  user_config_path: '%HOMEPATH%/.gitconfig'

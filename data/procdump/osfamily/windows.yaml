@@ -1,0 +1,3 @@
+---
+procdump::settings:
+  choco_package_name: 'procdump'

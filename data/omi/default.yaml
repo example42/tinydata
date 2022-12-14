@@ -1,0 +1,12 @@
+---
+omi::settings:
+  package_name: 'omi'
+  service_name: 'omid'
+  website_url: 'https://learn.microsoft.com/en-us/system-center/scom/plan-planning-agent-deployment'
+  git_source: 'https://github.com/microsoft/omi.git'
+  log_dir_path: '/var/opt/omi/log/'
+  config_dir_path: '/etc/opt/microsoft/omi/'
+  config_file_path: '/etc/opt/omi/conf/omiserver.conf'
+  home_dir_path: '/opt/microsoft/omi/'
+  tp_prerequisites:
+    - 'microsoft_repo'

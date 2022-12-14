@@ -1,0 +1,4 @@
+---
+powertoys::settings:
+  website_url: 'https://learn.microsoft.com/windows/powertoys/'
+  git_source: 'https://github.com/microsoft/PowerToys.git'

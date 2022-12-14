@@ -1,0 +1,3 @@
+---
+telegram-desktop::settings:
+  brew_package_name: 'telegram-desktop'

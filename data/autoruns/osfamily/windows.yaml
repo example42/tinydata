@@ -1,0 +1,5 @@
+---
+autoruns::settings:
+  winget_package_name: 'Microsoft.Sysinternals.Autoruns'
+  choco_package_name: 'autoruns'
+  package_name: 'autoruns'

@@ -1,0 +1,4 @@
+---
+discord::settings:
+  winget_package_name: 'Discord.Discord'
+  choco_package_name: 'discord'

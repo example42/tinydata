@@ -1,0 +1,7 @@
+---
+edge::settings:
+  package_name: microsoft-edge-stable
+  docker_image: 'microsoft/edge'
+  website_url: 'https://learn.microsoft.com/edge/'
+  tp_prerequisites:
+    - 'microsoft_repo'

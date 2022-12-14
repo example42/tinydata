@@ -1,0 +1,7 @@
+---
+sysmon::settings:
+  package_name: sysmonforlinux
+  website_url: 'https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon/'
+  git_source: 'https://github.com/Sysinternals/SysmonForLinux'
+  tp_prerequisites:
+    - 'microsoft_repo'

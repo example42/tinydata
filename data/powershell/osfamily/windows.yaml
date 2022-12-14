@@ -1,0 +1,4 @@
+---
+powershell::settings:
+  winget_package_name: 'Microsoft.PowerShell'
+  choco_package_name: 'powershell'

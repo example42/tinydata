@@ -1,0 +1,5 @@
+---
+edge::settings:
+  winget_package_name: 'Microsoft.Edge'
+  choco_package_name: 'edge'
+  package_name: 'edge'

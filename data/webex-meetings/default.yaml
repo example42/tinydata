@@ -1,0 +1,6 @@
+---
+webex-meetings::settings:
+  package_name: ''
+  snap_package_name: 'webex-meetings'
+  website_url: 'https://desktop.telegram.org/'
+  git_source: 'https://github.com/telegramdesktop/tdesktop.git'

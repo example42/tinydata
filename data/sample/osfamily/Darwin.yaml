@@ -1,0 +1,13 @@
+---
+sample::settings:
+  brew_package_name: 'sample'
+  user_config_file_path: '$HOME/Library/Application\ Support/Sample/sample.conf'
+  user_config_dir_path: '$HOME/Library/Application\ Support/Sample/'
+
+  user_configs:
+    main:
+      path: '$HOME/Library/Application\ Support/Sample/sample.conf'
+
+  user_dirs:
+    main:
+      path: '$HOME/Library/Application\ Support/Sample/sample.conf'

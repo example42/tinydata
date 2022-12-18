@@ -1,0 +1,19 @@
+---
+sample::settings:
+  winget_package_name: 'Sample.sample'
+  choco_package_name: 'sample'
+  package_name: 'sample'
+  config_file_path: 'C:\ProgramData\Sample\sample\etc\sample.conf'
+  config_dir_path: 'C:\ProgramData\Sample\sample\etc'
+  process_user: 'LocalSystem'
+  process_group: 'LocalSystem'
+  user_config_file_path: '%APPDATA%\Sample\sample.conf'
+  user_config_dir_path: '%APPDATA%\Sample'
+
+  user_configs:
+    main:
+      path: '%APPDATA%\Sample\sample.conf'
+
+  user_dirs:
+    main:
+      path: '%APPDATA%\Sample'

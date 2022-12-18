@@ -1,0 +1,108 @@
+---
+sample::settings:
+  tp_prerequisites: {}
+
+  upstream_repo: false
+  package_name: 'sample'
+  service_name: 'sample'
+
+  process_name: 'sample'
+  process_user: 'root'
+  process_group: 'root'
+
+  config_file_path: '/etc/sample/sample.conf'
+  config_file_format: yaml
+#  validate_cmd: 'sample validate'
+  pid_file_path: '/run/sample.pid'
+  init_file_path: '/etc/sysconfig/sample.conf'
+  log_file_path:
+    - '/var/log/sample/sample.log'
+  config_dir_path: '/etc/sample'
+  log_dir_path:
+    - '/var/log/sample'
+
+  info_commands:
+    list: 'sample list'
+  debug_commands:
+    list: 'sample debug'
+  test_commands:
+    status: 'sample status'
+  version_command: 'sample version'
+
+  docker_image: 'sample/sample'
+  website_url: 'https://sample.com'
+  git_source: 'https://github.com/sample/sample'
+
+  user_config_file_path: '$HOME/.sample/sample.conf'
+  user_config_dir_path: '$HOME/.sample/'
+
+
+# tp 4 settings  
+  configs:
+    main:
+      path: '/etc/sample/sample.conf'
+    init:
+      path: '/etc/sysconfig/sample.conf'
+    systemd:
+      path: '/etc/systemd/system/sample.service'
+
+  dirs:
+    main:
+      path: '/etc/sample'
+    conf:
+      path: '/etc/sample/conf.d'
+    log:
+      path: /var/log/sample
+    home:
+      path: /var/lib/sample
+
+  user_configs:
+    main:
+      path: '$HOME/.sample/sample.conf'
+
+  user_dirs:
+    main:
+      path: '$HOME/.sample'
+
+  ports:
+    main:
+      port: 42
+      protocol: tcp
+    ssl:
+      port: 4432
+      protocol: tcp
+
+  run_commands:
+    start:
+      command: 'sample start'
+      arguments:
+        - 'instance':
+          default: ''
+          description: 'Instance to start'
+      options:
+        config_file:
+          default: 'sample.conf'
+          value: String
+          description: 'Config file to use'
+    restart:
+      command: 'sample restart'
+
+  build:
+    prerequisites:
+      package:
+        - make
+        - gcc
+    pre_commands: 
+      - 'true'
+    build_commands:
+      - 'gcc build.c'
+    install_commands:
+      - 'cp sample /usr/bin/sample'
+
+  releases:
+    baseurl: 'https://github.com/sample/sample/releases/download/'
+    file_format: tar.gz
+    latest:
+      release_url: 'https://github.com/sample/sample/releases/download/sample-latest/sample-latest.tar.gz'
+    version:
+      release_url: 'https://github.com/sample/sample/releases/download/sample-$VERSION/sample-$VERSION.tar.gz'

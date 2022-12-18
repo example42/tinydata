@@ -1,5 +1,0 @@
----
-pdk::settings:
-  package_name: 'pdk'
-  tp_prerequisites:
-    puppet_repo: {}

@@ -1,0 +1,3 @@
+---
+bolt::settings:
+  package_name: 'Puppet.puppet-bolt'

@@ -1,0 +1,5 @@
+---
+default::settings:
+  apt_release: 'chimaera'
+  init_system: 'sysvinit'
+  service_provider: 'sysvinit'

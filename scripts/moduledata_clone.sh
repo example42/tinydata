@@ -1,30 +1,26 @@
 #!/bin/bash
+name=$2
+module=$1
 
 showhelp () {
 cat << EOF
+Use this script to generate tinydata for a new app.
 
-This script clones and renames the directory of a module data
+Use existing or sample data as a template to create a new tinydata dir:
+$0 sample
+Clone default sample data (data/sample) in a new app whose name is requested
 
-Usage:
-$0 -m test
-Create a module data dir based on test module data
+$0 sample_command vim
+Clone sample_command data (data/sample_command) into a data dir called vim (data/vim)
 
-$0 -m wget -n vim
-Create a module data dir for vim based on wget module data
+$0 sample_app discord
+Clone sample_app data (for GUI apps) into a data dir called discord (data/discord)
+
+$0 sample_repo hashicorp_repo
+Clone sample_repo data (data/sample_repo) into a data dir called vim (data/hashicorp_repo)
 
 EOF
 }
-
-while [ $# -gt 0 ]; do
-  case "$1" in
-  -m)
-    module=$2
-    shift 2 ;;
-  -n)
-    name=$2
-    shift 2 ;;
-  esac
-done
 
 showhelp
 

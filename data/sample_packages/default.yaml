@@ -1,0 +1,92 @@
+---
+sample_packages::settings:
+  tp_prerequisites: {}
+
+  upstream_repo: false
+  package_name: 'sample_packages'
+
+  config_file_path: '/etc/sample_packages/sample_packages.conf'
+  config_file_format: yaml
+#  validate_cmd: 'sample_packages validate'
+  log_file_path:
+    - '/var/log/sample_packages/sample_packages.log'
+  config_dir_path: '/etc/sample_packages'
+  log_dir_path:
+    - '/var/log/sample_packages'
+
+  info_commands:
+    list: 'sample_packages list'
+  debug_commands:
+    list: 'sample_packages debug'
+  test_commands:
+    status: 'sample_packages status'
+  version_command: 'sample_packages version'
+
+  git_source: 'https://github.com/sample_packages/sample_packages'
+
+
+# tp 4 settings  
+  description: 'sample_packages description'
+  docker_image: 'sample_packages/sample_packages'
+
+  urls:
+    source: 'https://github.com/sample_packages/sample_packages'
+    website: 'https://sample_packages.com'
+    releases: 'https://github.com/sample_packages/sample_packages/releases'
+    issues: 'https://github.com/sample_packages/sample_packages/issues'
+
+  configs:
+    main:
+      path: '/etc/sample_packages/sample_packages.conf'
+
+  dirs:
+    main:
+      path: '/etc/sample_packages'
+    conf:
+      path: '/etc/sample_packages/conf.d'
+    log:
+      path: /var/log/sample_packages
+    home:
+      path: /var/lib/sample_packages
+
+  user_configs:
+    main:
+      path: '$HOME/.sample_packages/sample_packages.conf'
+
+  user_dirs:
+    main:
+      path: '$HOME/.sample_packages'
+
+  run_commands:
+    start:
+      command: 'sample_packages start'
+      arguments:
+        instance:
+          default: ''
+          description: 'Instance to start'
+      options:
+        config_file:
+          default: 'sample_packages.conf'
+          value: String
+          description: 'Config file to use'
+    restart:
+      command: 'sample_packages restart'
+
+  build:
+    prerequisites:
+      tp::install:
+        - build-essential
+    pre_commands: 
+      - './configure'
+    build_commands:
+      - 'make'
+    setup_commands:
+      - 'make install'
+
+  releases:
+    baseurl: 'https://github.com/sample_packages/sample_packages/releases/download/'
+    file_format: tar.gz
+    latest:
+      release_url: 'https://github.com/sample_packages/sample_packages/releases/download/sample_packages-latest/sample_packages-latest.tar.gz'
+    version:
+      release_url: 'https://github.com/sample_packages/sample_packages/releases/download/sample_packages-$VERSION/sample_packages-$VERSION.tar.gz'

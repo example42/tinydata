@@ -29,15 +29,19 @@ sample::settings:
     status: 'sample status'
   version_command: 'sample version'
 
-  docker_image: 'sample/sample'
-  website_url: 'https://sample.com'
   git_source: 'https://github.com/sample/sample'
-
-  user_config_file_path: '$HOME/.sample/sample.conf'
-  user_config_dir_path: '$HOME/.sample/'
 
 
 # tp 4 settings  
+  description: 'sample_packages description'
+  docker_image: 'sample/sample'
+
+  urls:
+    source: 'https://github.com/sample/sample'
+    website: 'https://sample.com'
+    releases: 'https://github.com/sample/sample/releases'
+    issues: 'https://github.com/sample/sample/issues'
+
   configs:
     main:
       path: '/etc/sample/sample.conf'
@@ -89,15 +93,15 @@ sample::settings:
 
   build:
     prerequisites:
-      package:
-        - make
-        - gcc
+      tp::install:
+        - build-essential
     pre_commands: 
-      - 'true'
+      - './configure'
     build_commands:
-      - 'gcc build.c'
-    install_commands:
-      - 'cp sample /usr/bin/sample'
+      - 'make'
+    setup_commands:
+      - 'make install'
+
 
   releases:
     baseurl: 'https://github.com/sample/sample/releases/download/'

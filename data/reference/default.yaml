@@ -1,0 +1,124 @@
+---
+# This reference module shows all the possible tinydata settings.
+#
+# The settings key is looked up by the tp_lookuop function
+# It's an hash whose values are looked up in deep merge mode across the hierarchies
+# defined in hiera.yaml.
+reference::settings:
+
+# If the app needs other apps, installed via tp.
+# Key used in tp::install (and tp::install::*)
+# Valids values: String, Array, Hash of tp::install resources with (in case of Hash)
+# their parameters. v3 and v4 compatible.
+# These resources, as every other prerequisites, are installed if tp::auto_prereq is set to true.
+# If auto_prereq is set to false, the user is responsible for installing the prerequisites.
+  tp_prerequisites: {}
+
+# If to use the upstream repo or not (if defined in tinydata)
+  upstream_repo: false
+
+# The name of the package to install. ust be available via the system or the configured repos
+# v3 and v4 compatible.
+  package_name: 'reference'
+
+# The name of the service to manage
+  service_name: 'reference'
+  process_name: 'reference'
+  process_user: 'root'
+  process_group: 'root'
+  config_file_path: '/etc/reference/reference.conf'
+  config_file_format: yaml
+#  validate_cmd: 'reference validate'
+  pid_file_path: '/run/reference.pid'
+  init_file_path: '/etc/sysconfig/reference.conf'
+  log_file_path:
+    - '/var/log/reference/reference.log'
+  config_dir_path: '/etc/reference'
+  log_dir_path:
+    - '/var/log/reference'
+
+  info_commandsTOCONFIG:
+    list: 'reference list'
+  debug_commandsTOCONFIG:
+    list: 'reference debug'
+  test_commandsTOCONFIG:
+    status: 'reference status'
+  version_command: 'reference version'
+  run_commandsTOCONFIG:
+    start:
+      command: 'reference start'
+      arguments:
+        - 'instance':
+          default: ''
+          description: 'Instance to start'
+      options:
+        config_file:
+          default: 'reference.conf'
+          value: String
+          description: 'Config file to use'
+    restart:
+      command: 'reference restart'
+
+# tp 4 settings
+  install_method: 'package'
+  description: 'reference_packages description'
+  docker_image: 'reference/reference'
+  website: 'https://reference.com'
+  issues: 'https://github.com/reference/reference/issues'
+  git_source: 'https://github.com/reference/reference'
+
+  configs:
+    main:
+      path: '/etc/reference/reference.conf'
+    init:
+      path: '/etc/sysconfig/reference.conf'
+      format: 'inifile'
+    systemd:
+      path: '/etc/systemd/system/reference.service'
+      format: 'inifile_with_stanzas'
+
+  dirs:
+    main:
+      path: '/etc/reference'
+    conf:
+      path: '/etc/reference/conf.d'
+    log:
+      path: /var/log/reference
+    home:
+      path: /var/lib/reference
+
+  user_configs:
+    main:
+      path: '$HOME/.reference/reference.conf'
+
+  user_dirs:
+    main:
+      path: '$HOME/.reference'
+
+  ports:
+    main:
+      port: 42
+      protocol: tcp
+    ssl:
+      port: 4432
+      protocol: tcp
+
+  build:
+    prerequisites:
+      tp::install:
+        - build-essential
+    execs:
+      configure:
+        command: './configure'
+      build:
+        command: 'make'
+      setup:
+        command: 'make install'
+
+  releases:
+    baseurl: 'https://github.com/reference/reference/releases/download/'
+    file_format: tar.gz
+    latest:
+      release_url: 'https://github.com/reference/reference/releases/download/reference-latest/reference-latest.tar.gz'
+    version:
+      release_url: 'https://github.com/reference/reference/releases/download/reference-$VERSION/reference-$VERSION.tar.gz'

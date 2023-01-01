@@ -1,0 +1,9 @@
+---
+prometheus::settings:
+  init_file_path: '/etc/default/prometheus'
+  dockerfile_prerequisites: 'RUN apt-get update && apt-get install -y --force-yes --no-install-recommends wget'
+  install_method: 'package'
+
+  configs:
+    init:
+      path: '/etc/default/prometheus'

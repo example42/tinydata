@@ -1,0 +1,19 @@
+---
+reference::settings:
+  winget_package_name: 'Sample.reference'
+  choco_package_name: 'reference'
+  package_name: 'reference'
+  config_file_path: 'C:\ProgramData\Sample\reference\etc\reference.conf'
+  config_dir_path: 'C:\ProgramData\Sample\reference\etc'
+  process_user: 'LocalSystem'
+  process_group: 'LocalSystem'
+  user_config_file_path: '%APPDATA%\Sample\reference.conf'
+  user_config_dir_path: '%APPDATA%\Sample'
+
+  user_configs:
+    main:
+      path: '%APPDATA%\Sample\reference.conf'
+
+  user_dirs:
+    main:
+      path: '%APPDATA%\Sample'

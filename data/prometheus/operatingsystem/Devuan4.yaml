@@ -1,0 +1,3 @@
+---
+prometheus::settings:
+  pid_file_path: '/run/prometheus/prometheus.pid'

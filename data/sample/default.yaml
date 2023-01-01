@@ -5,11 +5,9 @@ sample::settings:
   upstream_repo: false
   package_name: 'sample'
   service_name: 'sample'
-
   process_name: 'sample'
   process_user: 'root'
   process_group: 'root'
-
   config_file_path: '/etc/sample/sample.conf'
   config_file_format: yaml
 #  validate_cmd: 'sample validate'
@@ -21,34 +19,24 @@ sample::settings:
   log_dir_path:
     - '/var/log/sample'
 
-  info_commands:
-    list: 'sample list'
-  debug_commands:
-    list: 'sample debug'
-  test_commands:
-    status: 'sample status'
-  version_command: 'sample version'
-
-  git_source: 'https://github.com/sample/sample'
-
-
-# tp 4 settings  
-  description: 'sample_packages description'
+# tp 4 settings
+  install_method: 'package'
+  description: 'sample  description'
   docker_image: 'sample/sample'
-
-  urls:
-    source: 'https://github.com/sample/sample'
-    website: 'https://sample.com'
-    releases: 'https://github.com/sample/sample/releases'
-    issues: 'https://github.com/sample/sample/issues'
+  docker_args: ''
+  website: 'https://sample.com'
+  issues: 'https://github.com/sample/sample/issues'
+  git_source: 'https://github.com/sample/sample'
 
   configs:
     main:
       path: '/etc/sample/sample.conf'
     init:
       path: '/etc/sysconfig/sample.conf'
+      format: 'inifile'
     systemd:
       path: '/etc/systemd/system/sample.service'
+      format: 'inifile_with_stanzas'
 
   dirs:
     main:
@@ -76,37 +64,66 @@ sample::settings:
       port: 4432
       protocol: tcp
 
-  run_commands:
-    start:
-      command: 'sample start'
-      arguments:
-        - 'instance':
-          default: ''
-          description: 'Instance to start'
-      options:
-        config_file:
-          default: 'sample.conf'
-          value: String
-          description: 'Config file to use'
-    restart:
-      command: 'sample restart'
+  commandsTOCONF:
+    info:
+      list: 'sample list'
+    debug:
+      debug: 'sample debug'
+    test:
+      status: 'sample status'
+    version: 'sample --version'
+    run:
+      start:
+        command: 'sample start'
+        arguments:
+          - 'instance':
+            default: ''
+            description: 'Instance to start'
+        options:
+          config_file:
+            default: 'sample.conf'
+            value: String
+            description: 'Config file to use'
+      restart:
+        command: 'sample restart'
+
 
   build:
     prerequisites:
       tp::install:
         - build-essential
-    pre_commands: 
-      - './configure'
-    build_commands:
-      - 'make'
-    setup_commands:
-      - 'make install'
-
+    execs:
+      configure:
+        command: './configure'
+      build:
+        command: 'make'
+      setup:
+        command: 'make install'
 
   releases:
-    baseurl: 'https://github.com/sample/sample/releases/download/'
+    base_url: 'https://github.com/sample/sample/releases/download/'
     file_format: tar.gz
+    latest_version: '4.0'
+    prerequisites: {}
     latest:
       release_url: 'https://github.com/sample/sample/releases/download/sample-latest/sample-latest.tar.gz'
     version:
       release_url: 'https://github.com/sample/sample/releases/download/sample-$VERSION/sample-$VERSION.tar.gz'
+      file_name: 'sample-$VERSIONN.zip'
+      extracted_dir: 'sample-$VERSION'
+      base_path: 'sample-$VERSION'
+
+  install:
+    enable: true
+    files:
+      sample:
+        path: '/usr/local/bin/sample'
+        mode: '0755'
+    systemd_settings:
+      Service:
+        ExecStart: '/var/lib/tp/source/sample/sample -l 127.0.0.1'
+        EnvironmentFile: ~
+    resources: {}
+    manage_service: true
+    manage_user: false
+

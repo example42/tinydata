@@ -13,3 +13,5 @@ puppet::settings:
   log_dir_path: 'C:\ProgramData\PuppetLabs\var\log'
   process_user: 'LocalSystem'
   process_group: 'LocalSystem'
+  winget_package_name: 'Puppet.puppet-agent'
+  

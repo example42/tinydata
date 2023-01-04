@@ -1,24 +1,109 @@
 ---
 puppet-agent::settings:
-  package_name: 'puppet-agent-agent'
-  service_name: 'puppet-agent'
-  config_file_path: '/etc/puppet-agentlabs/puppet-agent/puppet-agent.conf'
-  fileserver_file_path: '/etc/puppet-agentlabs/puppet-agent/fileserver.conf'
-  routes_file_path: '/etc/puppet-agentlabs/puppet-agent/routes.yaml'
-  autosign_file_path: '/etc/puppet-agentlabs/puppet-agent/autosign.conf'
-  auth_file_path: '/etc/puppet-agentlabs/puppet-agent/auth.conf'
-  puppet-agentdb_file_path: '/etc/puppet-agentlabs/puppet-agent/puppet-agentdb.conf'
-  config_dir_path: '/etc/puppet-agentlabs/puppet-agent/'
-  code_dir_path: '/etc/puppet-agentlabs/code'
-  environment_dir_path: '/etc/puppet-agentlabs/code/environments'
-  pid_file_path: '/var/run/puppet-agentlabs/agent.pid'
-  log_file_path:
-    - '/var/log/puppet-agentlabs/puppet-agent/puppet-agent.log'
-    - '/var/log/puppet-agentlabs/pxp-agent/pxp-agent.log'
-    - '/var/log/puppet-agentlabs/mcollective-log'
-  log_dir_path: '/var/log/puppet-agentlabs/puppet-agent'
-  process_name: 'puppet-agent'
-  process_user: 'root'
-  process_group: 'root'
   tp_prerequisites:
     puppet-agent_repo: {}
+
+
+  # tp 4 settings
+  
+  configs:
+    main:
+      path: '/etc/puppetlabs/puppet/puppet.conf'
+    fileserverconfig:
+      path: '/etc/puppetlabs/puppet/fileserver.conf'
+    routes:
+      path: '/etc/puppetlabs/puppet/routes.yaml'
+    autosign:
+      path: '/etc/puppetlabs/puppet/autosign.conf'
+    auth:
+      path: '/etc/puppetlabs/puppet/auth.conf'
+    puppetdb:
+      path: '/etc/puppetlabs/puppet/puppetdb.conf'
+    agent_catalog_run_lockfile:
+      path: '/opt/puppetlabs/puppet/cache/state/agent_catalog_run.lock'
+    agent_disabled_lockfile:
+      path: '/opt/puppetlabs/puppet/cache/state/agent_disabled.lock'
+    classfile:
+      path: '/opt/puppetlabs/puppet/cache/state/classes.txt'
+    lastrunfile:
+      path: '/opt/puppetlabs/puppet/public/last_run_summary.yaml'
+    passfile:
+      path: '/etc/puppetlabs/puppet/ssl/private/password'
+    pidfile: 
+      path: '/var/run/puppetlabs/main.pid'
+    resourcefile:
+      path: /opt/puppetlabs/puppet/cache/state/resources.txt
+    routefile:
+      path: '/etc/puppetlabs/puppet/routes.yaml'
+    ssl_lockfile:
+      path: '/etc/puppetlabs/puppet/ssl/ssl.lock'
+    statefile:
+      path: '/opt/puppetlabs/puppet/cache/state/state.yaml'
+    transactionstorefile:
+      path: '/opt/puppetlabs/puppet/cache/state/transactionstore.yaml'
+    trusted_oid_mapping_file:
+      path: '/etc/puppetlabs/puppet/custom_trusted_oid_mapping.yaml'
+
+  dirs:
+    main:
+      path: '/etc/puppetlabs/puppet'
+    log:
+      path: '/var/log/puppetlabs'
+    code:
+      path: '/etc/puppetlabs/code'
+    environment:
+      path: '/etc/puppetlabs/code/environments'
+    client_datadir:
+      path: /opt/puppetlabs/puppet/cache/client_data
+    clientbucketdir:
+      path: /opt/puppetlabs/puppet/cache/clientbucket
+    clientyamldir:
+      path: /opt/puppetlabs/puppet/cache/client_yaml  
+    codedir:
+      path: /etc/puppetlabs/code
+    confdir:
+      path: /etc/puppetlabs/puppet
+    csrdir:
+      path: /etc/puppetlabs/puppetserver/ca/requests
+    deviceconfdir:
+      path: /etc/puppetlabs/puppet/devices
+    devicedir:
+      path: /opt/puppetlabs/puppet/cache/devices
+    graphdir:
+      path: /opt/puppetlabs/puppet/cache/state/graphs
+    libdir:
+      path: /opt/puppetlabs/puppet/cache/lib
+    logdir:
+      path: /var/log/puppetlabs/puppet
+    module_working_dir:
+      path: /opt/puppetlabs/puppet/cache/puppet-module
+    preview_outputdir:
+      path: /opt/puppetlabs/puppet/cache/preview
+    privatedir:
+      path: /etc/puppetlabs/puppet/ssl/private
+    privatekeydir:
+      path: /etc/puppetlabs/puppet/ssl/private_keys
+    publicdir:
+      path: /opt/puppetlabs/puppet/public
+    publickeydir:
+      path: /etc/puppetlabs/puppet/ssl/public_keys
+    reportdir:
+      path: /opt/puppetlabs/puppet/cache/reports
+    requestdir:
+      path: /etc/puppetlabs/puppet/ssl/certificate_requests
+    rundir:
+      path: /var/run/puppetlabs
+    server_datadir:
+      path: /opt/puppetlabs/puppet/cache/server_data
+    signeddir:
+      path: /etc/puppetlabs/puppetserver/ca/signed
+    ssldir:
+      path: /etc/puppetlabs/puppet/ssl
+    statedir:
+      path: /opt/puppetlabs/puppet/cache/state
+    vardir:
+      path: /opt/puppetlabs/puppet/cache
+    vendormoduledir:
+      path: /opt/puppetlabs/puppet/vendor_modules
+    yaml:
+      path: /opt/puppetlabs/puppet/cache/yaml

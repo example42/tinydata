@@ -1,0 +1,8 @@
+---
+reference::settings:
+  init_file_path: '/etc/default/reference'
+  dockerfile_prerequisites: 'RUN apt-get update && apt-get install -y --force-yes --no-install-recommends wget'
+
+  configs:
+    init:
+      path: '/etc/default/reference'

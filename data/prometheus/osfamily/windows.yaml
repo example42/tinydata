@@ -1,0 +1,20 @@
+---
+prometheus::settings:
+  install_method: 'package'
+  choco_package_name: 'prometheus'
+  package_name: 'prometheus'
+  config_file_path: 'C:\ProgramData\prometheus\prometheus\etc\prometheus.yml'
+  config_dir_path: 'C:\ProgramData\prometheus\prometheus\etc'
+  process_user: 'LocalSystem'
+  process_group: 'LocalSystem'
+  user_config_file_path: '%APPDATA%\prometheus\prometheus.yml'
+  user_config_dir_path: '%APPDATA%\prometheus'
+
+  user_configs:
+    main:
+      path: '%APPDATA%\prometheus\prometheus.yml'
+
+  user_dirs:
+    main:
+      path: '%APPDATA%\prometheus'
+

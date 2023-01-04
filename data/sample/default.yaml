@@ -1,0 +1,129 @@
+---
+sample::settings:
+  tp_prerequisites: {}
+
+  upstream_repo: false
+  package_name: 'sample'
+  service_name: 'sample'
+  process_name: 'sample'
+  process_user: 'root'
+  process_group: 'root'
+  config_file_path: '/etc/sample/sample.conf'
+  config_file_format: yaml
+#  validate_cmd: 'sample validate'
+  pid_file_path: '/run/sample.pid'
+  init_file_path: '/etc/sysconfig/sample.conf'
+  log_file_path:
+    - '/var/log/sample/sample.log'
+  config_dir_path: '/etc/sample'
+  log_dir_path:
+    - '/var/log/sample'
+
+# tp 4 settings
+  install_method: 'package'
+  description: 'sample  description'
+  docker_image: 'sample/sample'
+  docker_args: ''
+  website: 'https://sample.com'
+  issues: 'https://github.com/sample/sample/issues'
+  git_source: 'https://github.com/sample/sample'
+
+  configs:
+    main:
+      path: '/etc/sample/sample.conf'
+    init:
+      path: '/etc/sysconfig/sample.conf'
+      format: 'inifile'
+    systemd:
+      path: '/etc/systemd/system/sample.service'
+      format: 'inifile_with_stanzas'
+
+  dirs:
+    main:
+      path: '/etc/sample'
+    conf:
+      path: '/etc/sample/conf.d'
+    log:
+      path: /var/log/sample
+    home:
+      path: /var/lib/sample
+
+  user_configs:
+    main:
+      path: '$HOME/.sample/sample.conf'
+
+  user_dirs:
+    main:
+      path: '$HOME/.sample'
+
+  ports:
+    main:
+      port: 42
+      protocol: tcp
+    ssl:
+      port: 4432
+      protocol: tcp
+
+  commandsTOCONF:
+    info:
+      list: 'sample list'
+    debug:
+      debug: 'sample debug'
+    test:
+      status: 'sample status'
+    version: 'sample --version'
+    run:
+      start:
+        command: 'sample start'
+        arguments:
+          - 'instance':
+            default: ''
+            description: 'Instance to start'
+        options:
+          config_file:
+            default: 'sample.conf'
+            value: String
+            description: 'Config file to use'
+      restart:
+        command: 'sample restart'
+
+
+  build:
+    prerequisites:
+      tp::install:
+        - build-essential
+    execs:
+      configure:
+        command: './configure'
+      build:
+        command: 'make'
+      setup:
+        command: 'make install'
+
+  releases:
+    base_url: 'https://github.com/sample/sample/releases/download/'
+    file_format: tar.gz
+    latest_version: '4.0'
+    prerequisites: {}
+    latest:
+      release_url: 'https://github.com/sample/sample/releases/download/sample-latest/sample-latest.tar.gz'
+    version:
+      release_url: 'https://github.com/sample/sample/releases/download/sample-$VERSION/sample-$VERSION.tar.gz'
+      file_name: 'sample-$VERSIONN.zip'
+      extracted_dir: 'sample-$VERSION'
+      base_path: 'sample-$VERSION'
+
+  install:
+    enable: true
+    files:
+      sample:
+        path: '/usr/local/bin/sample'
+        mode: '0755'
+    systemd_settings:
+      Service:
+        ExecStart: '/var/lib/tp/source/sample/sample -l 127.0.0.1'
+        EnvironmentFile: ~
+    resources: {}
+    manage_service: true
+    manage_user: false
+

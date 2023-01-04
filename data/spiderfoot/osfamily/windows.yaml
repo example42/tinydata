@@ -1,0 +1,13 @@
+---
+spiderfoot::settings:
+  choco_package_name: 'spiderfoot'
+  package_name: 'spiderfoot'
+
+  install:
+    enable: true
+    files:
+      sf.py:
+        path: ~
+        mode: '0755'
+    manage_service: false
+    manage_user: false

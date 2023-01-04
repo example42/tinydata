@@ -1,0 +1,155 @@
+---
+prometheus::settings:
+  tp_prerequisites: {}
+
+  upstream_repo: false
+  package_name: 'prometheus'
+  service_name: 'prometheus'
+
+  process_name: 'prometheus'
+  process_user: 'prometheus'
+  process_group: 'prometheus'
+
+  config_file_path: '/etc/prometheus/prometheus.yml'
+  config_file_group: prometheus
+  config_file_mode: '0660'
+  config_file_format: yaml
+#  validate_cmd: 'prometheus validate'
+  pid_file_path: ''
+  init_file_path: '/etc/sysconfig/prometheus.conf'
+  log_file_path:
+    - '/var/log/prometheus/prometheus.log'
+    - '/var/log/prometheus/prometheus-node-exporter.log'
+  config_dir_path: '/etc/prometheus'
+  log_dir_path: '/var/log/prometheus'
+
+
+# tp 4 settings
+  install_method: 'file'
+  description: 'The Prometheus monitoring system and time series database'
+  docker_image: 'prom/prometheus'
+  website: 'https://prometheus.io/'
+  issues: 'https://github.com/prometheus/prometheus/issues'
+  git_source: 'https://github.com/prometheus/prometheus'
+
+  configs:
+    main:
+      path: '/etc/prometheus/prometheus.yml'
+      format: yaml
+    init:
+      path: '/etc/sysconfig/prometheus.conf'
+      format: inifile
+    systemd:
+      path: '/etc/systemd/system/prometheus.service'
+      format: inifile_with_stanzas
+
+  dirs:
+    main:
+      path: '/etc/prometheus'
+    rules:
+      path: '/etc/prometheus/rules'
+    rules.d:
+      path: '/etc/prometheus/rules.d'
+    files_sd:
+      path: /etc/prometheus/files_sd
+    home:
+      path: /var/lib/prometheus
+    data:
+      path: /var/lib/prometheus
+
+  user_configs:
+    main:
+      path: '$HOME/.prometheus/prometheus.conf'
+
+  user_dirs:
+    main:
+      path: '$HOME/.prometheus'
+
+  ports:
+    main:
+      port: 9090
+      protocol: tcp
+      listen: 127.0.0.1
+
+  commands:
+    info:
+      list: 'prometheus list'
+    debug:
+      debug: 'prometheus debug'
+    test:
+      status: 'prometheus status'
+    version: 'prometheus --version'
+    run:
+      start:
+        command: 'prometheus start'
+        arguments:
+          - 'instance':
+            default: ''
+            description: 'Instance to start'
+        options:
+          config_file:
+            default: 'prometheus.conf'
+            value: String
+            description: 'Config file to use'
+      restart:
+        command: 'prometheus restart'
+
+  releases:
+    base_url: 'https://github.com/prometheus/prometheus/releases/download/'
+    file_format: 'tar.gz'
+  # extracted_dir: 'prometheus-$VERSION.$OS-$ARCH' # Override standard tar content 
+    latest_version: '2.41.0'
+    prerequisites: {}
+    latest: {}
+    version:
+      file_name: 'prometheus-$VERSION.$OS-$ARCH.tar.gz'
+      extracted_dir: 'prometheus-$VERSION.$OS-$ARCH'
+      checksum_url: 'https://github.com/prometheus/prometheus/releases/download/$VERSION/sha256sums.txt'
+      base_path: 'v$VERSION/'
+      # file_name: 'prometheus-$VERSION.$OS-$ARCH.tar.gz'
+
+  install:
+    enable: true
+    files:
+      prometheus:
+        path: '/usr/local/bin/prometheus'
+        mode: '0755'
+      promtool:
+        path: '/usr/local/bin/promtool'
+        mode: '0755'
+      prometheus.yml:
+        path: '/etc/prometheus/prometheus.yml'
+        mode: '0644'    
+    resources:
+      file:
+        /etc/prometheus:
+          ensure: directory
+        /var/log/prometheus:
+          ensure: directory
+          owner: prometheus
+      exec:
+        prometheus_init_config:
+          command: 'touch /etc/sysconfig/prometheus.conf'
+          creates: '/etc/sysconfig/prometheus.conf'
+    systemd_settings: {}
+    manage_service: true
+    manage_user: true
+#    systemd_symlink: '/etc/systemd/system/multi-user.target.wants/prometheus.service' #default
+#    systemd_template: 'tinydata/prometheus/systemd.epp'
+
+  build:
+    enable: false
+    prerequisites:
+      tp::install:
+        - nodejs
+        - golang
+        - npm
+    execs:
+      build:
+        command: 'go build cmd/prometheus/main.go'
+        environment:
+          - 'GO111MODULE=on'
+      setup:
+        command: 'go install cmd/prometheus/main.go'
+        environment:
+          - 'GO111MODULE=on'

@@ -1,0 +1,13 @@
+---
+prometheus::settings:
+  brew_package_name: 'prometheus'
+  user_config_file_path: '$HOME/Library/Application\ Support/Prometheus/prometheus.yml'
+  user_config_dir_path: '$HOME/Library/Application\ Support/Prometheus/'
+
+  user_configs:
+    main:
+      path: '$HOME/Library/Application\ Support/Prometheus/prometheus.yml'
+
+  user_dirs:
+    main:
+      path: '$HOME/Library/Application\ Support/Prometheus/prometheus.yml'

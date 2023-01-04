@@ -1,0 +1,3 @@
+---
+spiderfoot::settings:
+  brew_package_name: 'spiderfoot'

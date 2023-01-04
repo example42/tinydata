@@ -1,3 +1,3 @@
 ---
 spiderfoot::settings:
-  package_name: 'Sample.spiderfoot'
+  package_name: 'spiderfoot'

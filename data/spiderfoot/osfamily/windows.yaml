@@ -1,23 +1,7 @@
 ---
 spiderfoot::settings:
-  winget_package_name: 'Sample.spiderfoot'
   choco_package_name: 'spiderfoot'
   package_name: 'spiderfoot'
-  config_file_path: 'C:\ProgramData\Sample\spiderfoot\etc\spiderfoot.conf'
-  config_dir_path: 'C:\ProgramData\Sample\spiderfoot\etc'
-  process_user: 'LocalSystem'
-  process_group: 'LocalSystem'
-  user_config_file_path: '%APPDATA%\Sample\spiderfoot.conf'
-  user_config_dir_path: '%APPDATA%\Sample'
-
-  user_configs:
-    main:
-      path: '%APPDATA%\Sample\spiderfoot.conf'
-
-  user_dirs:
-    main:
-      path: '%APPDATA%\Sample'
-
 
   install:
     enable: true

@@ -1,6 +1,0 @@
----
- :hierarchy:
-   - "%{title}/operatingsystem/%{operatingsystem}%{operatingsystemmajrelease}"
-   - "%{title}/operatingsystem/%{operatingsystem}"
-   - "%{title}/default"
-   - default

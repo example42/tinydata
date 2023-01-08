@@ -1,3 +1,3 @@
 ---
 docker::settings:
-  repo_file_url: 'https://download.docker.com/linux/rhel/docker-ce.repo'
+  repo_file_url: 'https://download.docker.com/linux/centos/docker-ce.repo'

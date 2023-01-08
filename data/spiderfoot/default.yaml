@@ -56,7 +56,7 @@ spiderfoot::settings:
       sf.py:
         path: '/usr/local/bin/sf.py'
         mode: '0755'
-    systemd_settings:
+    systemd_options:
       Service:
         ExecStart: '/var/lib/tp/source/spiderfoot/sf.py -l 127.0.0.1:5001'
         EnvironmentFile: ~

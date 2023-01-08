@@ -119,7 +119,7 @@ sample::settings:
       sample:
         path: '/usr/local/bin/sample'
         mode: '0755'
-    systemd_settings:
+    systemd_options:
       Service:
         ExecStart: '/var/lib/tp/source/sample/sample -l 127.0.0.1'
         EnvironmentFile: ~

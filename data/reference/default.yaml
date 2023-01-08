@@ -103,6 +103,57 @@ reference::settings:
       port: 4432
       protocol: tcp
 
+  # Configurations to manage app as a container image
+  image:
+    # The name of the image to use. Passed to docker pull.
+    # Can be a full url like quay.io/argoproj/argocd or just the
+    # image name on Docker hub like argoproj/argocd
+    # This value has precendence over the docker_image value (v3)
+    name: 'reference/reference'
+
+    # The ports to map when starting the container. Different data types are supported:
+    # When undefined, the ports are mapped based on the settings.ports.main value, if set
+    # When an empty string (''), no ports are mapped (this overrides the undef value)
+    # When a string, they are mapped as is (e.g. '8080:8081' becomes '-p 8080:8081')
+    # When an integer, it's mapped as is (e.g. 8080 becomes '-p 8080:8080')
+    # When an array, it's mapped for each element (e.g. ['8080:8080', '8081:8082'] becomes '-p 8080:8080 -p 8081:8082')
+    # When an hash, it's mapped for each key/value pair (e.g. {'8080' => '8080', '8081' => '8082'} becomes '-p 8080:8080 -p 8081:8082')
+    ports:
+      - 9090:9090
+
+    # The volumes or bind mounts to map when starting the container.
+    # If you mount volumes, you have to manage and create them.
+    # Bind mounts are based on the host dirs (which you can manage via the tp::conf and tp::dir defines)
+    # Different data types are supported:
+    # When undefined, the bind mounts are mapped based on the settings.dirs values, if set
+    # When an empty string (''), nothing is mounted (this overrides the undef value)
+    # When a string, they are mapped as is (e.g. 'myvol2:/app' becomes '-v myvol2:/app')
+    # When an array, it's mapped for each element (e.g. ['myvol2:/app', '/etc/app:/etc/app:ro'] becomes '-v myvol2:/app -v /etc/app:/etc/app:ro')
+    # When an hash, it's mapped for each key/value pair (e.g. {'myvol2' => '/app', '/etc/app' => '/etc/app:ro'} becomes '-v myvol2:/app -v /etc/app:/etc/app:ro')
+    mounts:
+      - /etc/reference:/etc/reference
+
+    # An hash of options to use in systemd unit file that overrides or extends the default ones which are:
+    #   'Unit' => {
+    #     'Description'   => pick(getvar('settings.description'),"${app} service"),
+    #     'Documentation' => pick(getvar('settings.website'),"Search: ${app}"),
+    #     'After'         => 'docker.service',
+    #     'Requires'      => 'docker.service',
+    #   },
+    #   'Service' => {
+    #     'ExecStart'    => "/usr/bin/docker run --rm --name ${app} ${docker_args} ${port_mapping} ${mount_mapping} ${docker_image}",
+    #     'Restart'      => 'always',
+    #     'RestartSec'   => '10s',
+    #   },
+    #   'Install' => {
+    #     'WantedBy' => 'multi-user.target',
+    #   },
+    systemd_options: {}
+
+    # A custom template to use for the contents of thesystemd unit file. The default is tp/inifile_with_stanzas.erb which automatically
+    # maps systemd_options into a valid Systemd unit file in ini file format with stanza. You probably don't need to set this.
+    systemd_template: 'tp/inifile_with_stanzas.erb'
+
   build:
     prerequisites:
       tp::install:

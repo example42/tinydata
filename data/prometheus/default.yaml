@@ -27,7 +27,6 @@ prometheus::settings:
 # tp 4 settings
   install_method: 'file'
   description: 'The Prometheus monitoring system and time series database'
-  docker_image: 'prom/prometheus'
   website: 'https://prometheus.io/'
   issues: 'https://github.com/prometheus/prometheus/issues'
   git_source: 'https://github.com/prometheus/prometheus'
@@ -59,7 +58,7 @@ prometheus::settings:
 
   user_configs:
     main:
-      path: '$HOME/.prometheus/prometheus.conf'
+      path: '$HOME/.prometheus/prometheus.yml'
 
   user_dirs:
     main:
@@ -108,6 +107,10 @@ prometheus::settings:
       base_path: 'v$VERSION/'
       # file_name: 'prometheus-$VERSION.$OS-$ARCH.tar.gz'
 
+  image:
+    name: 'prom/prometheus'
+    systemd_options: {}
+
   install:
     enable: true
     files:
@@ -131,7 +134,7 @@ prometheus::settings:
         prometheus_init_config:
           command: 'touch /etc/sysconfig/prometheus.conf'
           creates: '/etc/sysconfig/prometheus.conf'
-    systemd_settings: {}
+    systemd_options: {}
     manage_service: true
     manage_user: true
 #    systemd_symlink: '/etc/systemd/system/multi-user.target.wants/prometheus.service' #default

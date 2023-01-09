@@ -103,13 +103,13 @@ sample::settings:
   releases:
     base_url: 'https://github.com/sample/sample/releases/download/'
     file_format: tar.gz
-    latest_version: '4.0'
+    latest_version: ~
     prerequisites: {}
     latest:
       release_url: 'https://github.com/sample/sample/releases/download/sample-latest/sample-latest.tar.gz'
     version:
       release_url: 'https://github.com/sample/sample/releases/download/sample-$VERSION/sample-$VERSION.tar.gz'
-      file_name: 'sample-$VERSIONN.zip'
+      file_name: 'sample-$VERSION.zip'
       extracted_dir: 'sample-$VERSION'
       base_path: 'sample-$VERSION'
 

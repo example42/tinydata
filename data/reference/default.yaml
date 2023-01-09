@@ -1,7 +1,7 @@
 ---
 # This reference module shows all the possible tinydata settings.
 #
-# The settings key is looked up by the tp_lookuop function
+# The settings key is looked up by the tp_lookup function
 # It's an hash whose values are looked up in deep merge mode across the hierarchies
 # defined in hiera.yaml.
 reference::settings:
@@ -11,18 +11,46 @@ reference::settings:
 # Valids values: String, Array, Hash of tp::install resources with (in case of Hash)
 # their parameters. v3 and v4 compatible.
 # These resources, as every other prerequisites, are installed if tp::auto_prereq is set to true.
-# If auto_prereq is set to false, the user is responsible for installing the prerequisites.
+# If auto_prereq is set to false, the user is responsible for managing the prerequisites, when needed.
   tp_prerequisites: {}
 
 # If to use the upstream repo or not (if defined in tinydata)
   upstream_repo: false
 
-# The name of the package to install. ust be available via the system or the configured repos
+# The name of the package to install. Must be available on the system or the configured repos
 # v3 and v4 compatible.
   package_name: 'reference'
 
-# The name of the service to manage
+# The provider to use for the package resource. Tinydata defaults are:
+# - chocolatey on windows (you need to install chocolatey by yourself)
+# - homebrew on Darwin (you need to install homebre by yourself)
+  package_provider: ~
+
+# The source argument of the package resource. The value is passed to the tp::url_replace function
+# which automatically replaces the following variables in the string:
+# $OS with downcase($facts['kernel'])
+# $ARCH with $facts['os']['architecture'] (with some mapping to match GitHub default names of archs)
+# $VERSION with the version of the package (if set via $ensure, $version or in $settings.releases.latest_version)
+# For example, this could be:
+# package_source: 'https://github.com/reference/reference/releases/download/v$VERSION/reference_$VERSION_$OS_$ARCH.msi'
+  package_source: ~
+
+# The install_options argument of the package resource.
+  package_install_options: []
+
+# An optional hash of parameters to pass to the package resource. They are merged and can override
+# or extend the default package parameters (ensure,provider,source,install_options)
+# Note that is you set both package_source: foo and package_params: { source: 'bar' } the latter (bar)
+# will be used. Same for the provider and install_options arguments.
+  package_params: {}
+
+# The name of the service to manage. When present, the relevant service resource is managed.
   service_name: 'reference'
+
+# An optional hash of parameters to pass to the service resource. They are merged and can override
+# or extend the default service parameters (ensure/enable/require)
+  service_params: {}
+
   process_name: 'reference'
   process_user: 'root'
   process_group: 'root'

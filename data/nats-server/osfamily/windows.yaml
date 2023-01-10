@@ -1,0 +1,5 @@
+---
+nats-server::settings:
+  choco_package_name: 'nats-server'
+  package_name: 'nats-server'
+  install_method: package

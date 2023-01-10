@@ -1,0 +1,4 @@
+---
+nats-server::settings:
+  brew_package_name: 'nats-server'
+  install_method: package

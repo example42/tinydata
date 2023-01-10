@@ -9,7 +9,7 @@ nuclei::settings:
   validate_cmd: 'nuclei'
   config_dir_path: '$HOME/.config/nuclei'
 
-  # tp 4 settings
+# tp 4 settings
   install_method: 'file'
   description: 'Fast and customizable vulnerability scanner based on simple YAML based DSL.'
   docker_image: 'projectdiscovery/nuclei'

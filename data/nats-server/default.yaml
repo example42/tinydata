@@ -9,13 +9,7 @@ nats-server::settings:
   process_user: 'root'
   process_group: 'root'
   config_file_path: '/etc/nats/nats-server.conf'
-  pid_file_path: '/run/nats-server.pid'
-  init_file_path: '/etc/sysconfig/nats-server.conf'
-  log_file_path:
-    - '/var/log/nats-server/nats-server.log'
-  config_dir_path: '/etc/nats-server'
-  log_dir_path:
-    - '/var/log/nats-server'
+  config_dir_path: '/etc/nats'
 
 # tp 4 settings
   install_method: 'file'
@@ -29,9 +23,6 @@ nats-server::settings:
   configs:
     main:
       path: '/etc/nats/nats-server.conf'
-    init:
-      path: '/etc/sysconfig/nats-server.conf'
-      format: 'inifile'
     systemd:
       path: '/etc/systemd/system/nats-server.service'
       format: 'inifile_with_stanzas'
@@ -42,11 +33,11 @@ nats-server::settings:
 
   user_configs:
     main:
-      path: '$HOME/.nats-server/nats-server.conf'
+      path: '$HOME/.nats/nats-server.conf'
 
   user_dirs:
     main:
-      path: '$HOME/.nats-server'
+      path: '$HOME/.nats'
 
   ports:
     main:
@@ -58,30 +49,6 @@ nats-server::settings:
     routing:
       port: 6222
       protocol: tcp
-
-  commandsTOCONF:
-    info:
-      list: 'nats-server list'
-    debug:
-      debug: 'nats-server debug'
-    test:
-      status: 'nats-server status'
-    version: 'nats-server --version'
-    run:
-      start:
-        command: 'nats-server start'
-        arguments:
-          - 'instance':
-            default: ''
-            description: 'Instance to start'
-        options:
-          config_file:
-            default: 'nats-server.conf'
-            value: String
-            description: 'Config file to use'
-      restart:
-        command: 'nats-server restart'
-
 
   build:
     prerequisites:
@@ -115,4 +82,3 @@ nats-server::settings:
     resources: {}
     manage_service: true
     manage_user: false
-

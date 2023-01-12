@@ -15,7 +15,7 @@
 #   Some v4 settings are used, as technology preview, in tp version 3.8.0 onwards.
 
 # Note that in every template used by the tp::conf define you can access to these settings
-# (so that you can automatically configure in your own templates the right paths and names for
+# (so that you can automatically configure in your own templates the right paths and names for
 # different underlying OSes) via the $settings variable (an hash with the settings values merged across the hierarchy).
 # For example to get the name of the user running a given app (as a service) you can use something like:
 #   User <%= @settings['service']['main']['process_user'] %> # In erb templates
@@ -24,7 +24,7 @@
 #   Port: <%= $settings['ports']['main']['port'] %>
 #   Protocol: <%= $settings['ports']['main']['protocol'] %>
 # Note: Be sure the referred settings (and subkeys) exist in your tinydata to avoid errors like:
-# Evaluation Error: Operator '[]' is not applicable to an Undef Value.
+# Evaluation Error: Operator '[]' is not applicable to an Undef Value. 
 
 # You can override these settings directly from tp defines using the parameter settings_hash (legacy) or,
 # starting from tp 4, also the parameter my_settings. Their content must be an hash, with the same structure
@@ -550,7 +550,7 @@ reference::settings:
       path: '$HOME/.reference'
 
   # This is v4 setting which allows you specify how the app has to be installed.
-  # What is set here in tinydata can be overridden by the tp::install argument install_method.
+  # What is set here in tinydata can be overridden by the tp::install argument install_method.
   # Note however that not all the install methods might be available (or have the required tinydata)
   # for all the apps and OS.
   # Possible values are:
@@ -574,7 +574,7 @@ reference::settings:
     list: 'reference debug'
 
   # An hash of extra commands used to test if the application is running or installed correctly.
-  # They are executed when running the tp test command or the tp::test task. v3 and v4 compatible.
+  # They are executed when running the tp test command or the tp::test task. v3 and v4 compatible.
   test_commands:
     status: 'reference status'
 
@@ -725,7 +725,7 @@ reference::settings:
     # an array or an hash of resource titles with the relevant arguments
     prerequisites: {}
 
-    # The application latest known version released. This can be set the $version parameter of tp::install
+    # The application latest known version released. This can be set the $version parameter of tp::install
     # In the future, this value is going to be automatically updated, but it's likely to not be updated.
     # It's used when no specific version is set via tp::install.
     latest_version: '1.0.0'
@@ -741,18 +741,18 @@ reference::settings:
     # The file_name of the archive to download
     file_name: 'reference-$VERSION.tar.gz'
 
-    # The format of the archive. Needed to find the right way to decompress it
+    # The format of the archive. Needed to find the right way to decompress it
     file_format: tar.gz
 
     # Url of the latest release of an app, in case it's a fixed url which never changes and always points to
-    # the latest version of the app.
+    # the latest version of the app.
     latest_url: ~
 
     # The name of the directory extracted from the archive. This gets variables replacement as well.
     # If not set, the file name without the file_format extension will be used.
-    # If empty the archive is not extracted into a directory but contains direclty one more files.
-    # When this happens, the extracted_file setting is used to specify the name of an extracted file.
-    # If extracted_dir is not an empty string, then extracted_file is ignored.
+    # If empty the archive is not extracted into a directory but contains direclty one more files.
+    # When this happens, the extracted_file setting is used to specify the name of an extracted file.
+    # If extracted_dir is not an empty string, then extracted_file is ignored.
     extracted_dir: 'reference-$VERSION'
     extracted_file: ''
 

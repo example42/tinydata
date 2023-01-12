@@ -59,8 +59,6 @@ nats-server::settings:
         command: 'GO111MODULE=on go get github.com/nats-io/nats-server/v2'
 
   releases:
-    base_url: 'https://github.com/nats-io/nats-server/releases/download/'
-    file_format: zip
     latest_version: '2.9.11'
     prerequisites: {}
     base_url: 'https://github.com/nats-io/nats-server/releases/download/v$VERSION'

@@ -1,6 +1,6 @@
 ---
 reference::settings:
-  # Name of brew package to install. This parameter is optional and currently
+  # Name of brew package to install. This parameter is optional and currently 
   # redundant, as on MacOS brew is always used to manage packages and
   # the package_name setting is enough to define what package to install
   # via the homebrew provider.

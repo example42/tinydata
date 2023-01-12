@@ -59,15 +59,14 @@ nats-server::settings:
         command: 'GO111MODULE=on go get github.com/nats-io/nats-server/v2'
 
   releases:
-    base_url: 'https://github.com/nats-io/nats-server/releases/download/'
-    file_format: zip
     latest_version: '2.9.11'
     prerequisites: {}
-    version:
-      release_url: 'https://github.com/nats-io/nats-server/releases/download/v$VERSION/nats-server-v$VERSION-$OS-$ARCH.zip'
-      file_name: 'nats-server-v$VERSION-$OS-$ARCH.zip'
-      extracted_dir: 'nats-server-v$VERSION-$OS-$ARCH'
-      base_path: 'v$VERSION/'
+    release_url: 'https://github.com/nats-io/nats-server/releases/download/v$VERSION/nats-server-v$VERSION-$OS-$ARCH.zip'
+    base_url: 'https://github.com/nats-io/nats-server'
+    base_path: 'releases/download/v$VERSION'
+    file_name: 'nats-server-v$VERSION-$OS-$ARCH.zip'
+    extracted_dir: 'nats-server-v$VERSION-$OS-$ARCH'
+    file_format: zip
 
   install:
     enable: true

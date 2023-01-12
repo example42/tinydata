@@ -1,3 +1,43 @@
+# This file defines the hierathy to follow when looking for tinydata settings
+# Note that even if it's called like a normal Hiera 3 configuration files
+# and has a similar logic it's NOT a Hiera configuration and is not used by Hiera
+# This file is actually used by the tp_slookuo function and has the following
+# limitation:
+# Variables interpolation is done ONLY for the following variables:
+# - Fact $::operatingsystemmajrelease
+# - Fact $::operatingsystemrelease
+# - Fact $::operatingsystem
+# - Fact $::osfamily
+# - Argument $repo of the tp::install define (defaults to 'upstream' is upstream_repo is true)
+# - $title of the tp::install (or other tp::*) define
+
+# As in Hiera lookup is done from top to bottom, according to the merge method specified
+# when calling the tp_lookup function
+# Starting from tp version 3.8 the merge method has changed from 'merge' to 'deep_merge'
+# This is not expected to have any impact on the existing TinyData but is required by
+# the more complex tinydata v4 settings
+
+# The lower levels in the hierarchy generally use a default to configure general settings
+# valid for all the apps (and in some cases different for OS and OS versions)
+
+# For each app you can have a different hiera.yaml with more or less levels
+# A minimal recommended hierarchy is as follows:
+# - "%{title}/osfamily/%{osfamily}%{operatingsystemmajrelease}" 
+# - "%{title}/osfamily/%{osfamily}"
+# - "%{title}/default"
+# - "default/%{operatingsystem}%{operatingsystemmajrelease}"
+# - "default/%{operatingsystem}"
+# - default
+
+# That maps respectively to the following files in the tinydata module:
+# Example with the app redis on RedHat9
+# - data/redis/osfamily/RedHat9.yaml
+# - data/redis/osfamily/RedHat.yaml
+# - data/redis/default.yaml
+# - data/default/RedHat9.yaml
+# - data/default/RedHat.yaml
+# - data/default.yaml
+
 ---
 :hierarchy:
   - "%{title}/%{repo}/operatingsystem/%{operatingsystem}%{operatingsystemmajrelease}"

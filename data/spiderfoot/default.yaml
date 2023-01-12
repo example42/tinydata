@@ -38,17 +38,15 @@ spiderfoot::settings:
   install_method: 'source'
 
   releases:
-    base_url: 'https://github.com/smicallef/spiderfoot/archive/refs/tags'
-    file_format: 'zip'
-  # extracted_dir: 'spiderfoot-$VERSION.$OS-$ARCH' # Override standard tar content 
     latest_version: '4.0'
     prerequisites: {}
     latest: {}
-    version:
-      file_name: 'v$VERSION.zip'
-      extracted_dir: 'spiderfoot-$VERSION'
-  #    base_path: 'v$VERSION/'
-      release_url: '$VERSION.tar.gz'
+    release_url: '$VERSION.tar.gz'
+    base_url: 'https://github.com/smicallef/spiderfoot'
+    base_path: 'archive/refs/tags/v$VERSION/'
+    file_name: 'v$VERSION.zip'
+    extracted_dir: 'spiderfoot-$VERSION'
+    file_format: 'zip'
 
   install:
     enable: true

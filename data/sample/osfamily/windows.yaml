@@ -14,10 +14,10 @@ sample::settings:
   package_provider: 'windows'
   package_source: 'https://github.com/sample/sample/releases/download/v$VERSION/sample_$VERSION_$OS_$ARCH.msi'
 
-  user_configs:
-    main:
+  user_files:
+    config:
       path: '%APPDATA%\sample\sample.conf'
 
   user_dirs:
-    main:
+    config:
       path: '%APPDATA%\sample'

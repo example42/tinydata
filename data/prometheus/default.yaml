@@ -31,8 +31,8 @@ prometheus::settings:
   issues: 'https://github.com/prometheus/prometheus/issues'
   git_source: 'https://github.com/prometheus/prometheus'
 
-  configs:
-    main:
+  files:
+    config:
       path: '/etc/prometheus/prometheus.yml'
       format: yaml
     init:
@@ -43,7 +43,7 @@ prometheus::settings:
       format: inifile_with_stanzas
 
   dirs:
-    main:
+    config:
       path: '/etc/prometheus'
     rules:
       path: '/etc/prometheus/rules'
@@ -56,12 +56,12 @@ prometheus::settings:
     data:
       path: /var/lib/prometheus
 
-  user_configs:
-    main:
+  user_files:
+    config:
       path: '$HOME/.prometheus/prometheus.yml'
 
   user_dirs:
-    main:
+    config:
       path: '$HOME/.prometheus'
 
   ports:
@@ -94,18 +94,15 @@ prometheus::settings:
         command: 'prometheus restart'
 
   releases:
-    base_url: 'https://github.com/prometheus/prometheus/releases/download/'
-    file_format: 'tar.gz'
-  # extracted_dir: 'prometheus-$VERSION.$OS-$ARCH' # Override standard tar content 
     latest_version: '2.41.0'
     prerequisites: {}
-    latest: {}
-    version:
-      file_name: 'prometheus-$VERSION.$OS-$ARCH.tar.gz'
-      extracted_dir: 'prometheus-$VERSION.$OS-$ARCH'
-      checksum_url: 'https://github.com/prometheus/prometheus/releases/download/$VERSION/sha256sums.txt'
-      base_path: 'v$VERSION/'
-      # file_name: 'prometheus-$VERSION.$OS-$ARCH.tar.gz'
+    release_url: 'https://github.com/prometheus/prometheus/releases/download/v$VERSION/prometheus-$VERSION.$OS-$ARCH.tar.gz'
+    base_url: 'https://github.com/prometheus/prometheus'
+    base_path: 'releases/download/v$VERSION'
+    file_name: 'prometheus-$VERSION.$OS-$ARCH.tar.gz'
+    extracted_dir: 'prometheus-$VERSION.$OS-$ARCH'
+    file_format: 'tar.gz'
+    checksum_url: 'https://github.com/prometheus/prometheus/releases/download/$VERSION/sha256sums.txt'
 
   image:
     name: 'prom/prometheus'
@@ -134,7 +131,9 @@ prometheus::settings:
         prometheus_init_config:
           command: 'touch /etc/sysconfig/prometheus.conf'
           creates: '/etc/sysconfig/prometheus.conf'
-    systemd_options: {}
+    systemd_options:
+      Service:
+        ExecStart: '/usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml'
     manage_service: true
     manage_user: true
 #    systemd_symlink: '/etc/systemd/system/multi-user.target.wants/prometheus.service' #default

@@ -18,8 +18,8 @@ nuclei::settings:
   issues: 'https://github.com/projectdiscovery/nuclei/issues'
   git_source: 'https://github.com/projectdiscovery/nuclei'
 
-  configs:
-    main:
+  files:
+    config:
       path: '$HOME/.config/nuclei/config.yaml'
       format: 'yaml'
     templates:
@@ -33,13 +33,13 @@ nuclei::settings:
       format: 'yaml'
 
   dirs:
-    main:
+    config:
       path: '$HOME/.config/nuclei/'
     templates:
       path: '$HOME/nuclei-templates/'
 
-  user_configs:
-    main:
+  user_files:
+    config:
       path: '$HOME/.config/nuclei/config.yaml'
       format: 'yaml'
     templates:
@@ -53,7 +53,7 @@ nuclei::settings:
       format: 'yaml'
 
   user_dirs:
-    main:
+    config:
       path: '$HOME/.config/nuclei/'
     templates:
       path: '$HOME/nuclei-templates/'
@@ -68,7 +68,7 @@ nuclei::settings:
     version: 'nuclei -version'
 
   build:
-    enable: true
+    enable: false
     prerequisites:
       tp::install:
         - golang
@@ -77,16 +77,15 @@ nuclei::settings:
         command: 'go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest'
 
   releases:
-    base_url: 'https://github.com/projectdiscovery/nuclei/releases/download'
-    file_format: zip
     latest_version: '2.8.6'
     prerequisites: {}
-
-    version:
-      release_url: 'https://github.com/projectdiscovery/nuclei/releases/download/v$VERSION/nuclei_$VERSION_$OS_$ARCH.zip'
-      file_name: 'nuclei_$VERSION_$OS_$ARCH.zip'
-      extracted_dir: 'nuclei'
-      base_path: 'v$VERSION/'
+    release_url: 'https://github.com/projectdiscovery/nuclei/releases/download/v$VERSION/nuclei_$VERSION_$OS_$ARCH.zip'
+    base_url: 'https://github.com/projectdiscovery/nuclei'
+    base_path: 'releases/download/v$VERSION'
+    file_name: 'nuclei_$VERSION_$OS_$ARCH.zip'
+    extracted_dir: ''
+    extracted_file: 'nuclei'
+    file_format: zip
 
   install:
     enable: true

@@ -28,8 +28,8 @@ sample::settings:
   issues: 'https://github.com/sample/sample/issues'
   git_source: 'https://github.com/sample/sample'
 
-  configs:
-    main:
+  files:
+    config:
       path: '/etc/sample/sample.conf'
     init:
       path: '/etc/sysconfig/sample.conf'
@@ -39,7 +39,7 @@ sample::settings:
       format: 'inifile_with_stanzas'
 
   dirs:
-    main:
+    config:
       path: '/etc/sample'
     conf:
       path: '/etc/sample/conf.d'
@@ -48,12 +48,12 @@ sample::settings:
     home:
       path: /var/lib/sample
 
-  user_configs:
-    main:
+  user_files:
+    config:
       path: '$HOME/.sample/sample.conf'
 
   user_dirs:
-    main:
+    config:
       path: '$HOME/.sample'
 
   ports:
@@ -101,17 +101,15 @@ sample::settings:
         command: 'make install'
 
   releases:
-    base_url: 'https://github.com/sample/sample/releases/download/'
-    file_format: tar.gz
     latest_version: ~
     prerequisites: {}
-    latest:
-      release_url: 'https://github.com/sample/sample/releases/download/sample-latest/sample-latest.tar.gz'
-    version:
-      release_url: 'https://github.com/sample/sample/releases/download/sample-$VERSION/sample-$VERSION.tar.gz'
-      file_name: 'sample-$VERSION.zip'
-      extracted_dir: 'sample-$VERSION'
-      base_path: 'sample-$VERSION'
+    latest_url: ~
+    release_url: 'https://github.com/sample/sample/releases/download/sample-$VERSION/sample-$VERSION.$OS-$ARCH.tar.gz'
+    base_url: 'https://github.com/sample/sample'
+    base_path: 'releases/download/sample-$VERSION'
+    file_name: 'sample-$VERSION.$OS-$ARCH.tar.gz'
+    extracted_dir: 'sample-$VERSION.$OS-$ARCH'
+    file_format: tar.gz
 
   install:
     enable: true

@@ -2,3 +2,4 @@
 default::settings:
   repo_package_provider: dpkg
   init_system: 'sysvinit'
+  dockerfile_prerequisites: 'RUN apt-get update && apt-get install -y --force-yes --no-install-recommends wget'

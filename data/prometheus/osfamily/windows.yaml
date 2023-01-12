@@ -10,11 +10,11 @@ prometheus::settings:
   user_config_file_path: '%APPDATA%\prometheus\prometheus.yml'
   user_config_dir_path: '%APPDATA%\prometheus'
 
-  user_configs:
-    main:
+  user_files:
+    config:
       path: '%APPDATA%\prometheus\prometheus.yml'
 
   user_dirs:
-    main:
+    config:
       path: '%APPDATA%\prometheus'
 

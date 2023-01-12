@@ -6,10 +6,10 @@ puppet-agent::settings:
 
   # tp 4 settings
   
-  configs:
-    main:
+  files:
+    config:
       path: '/etc/puppetlabs/puppet/puppet.conf'
-    fileserverconfig:
+    fileserver:
       path: '/etc/puppetlabs/puppet/fileserver.conf'
     routes:
       path: '/etc/puppetlabs/puppet/routes.yaml'
@@ -29,7 +29,7 @@ puppet-agent::settings:
       path: '/opt/puppetlabs/puppet/public/last_run_summary.yaml'
     passfile:
       path: '/etc/puppetlabs/puppet/ssl/private/password'
-    pidfile: 
+    pid:
       path: '/var/run/puppetlabs/main.pid'
     resourcefile:
       path: /opt/puppetlabs/puppet/cache/state/resources.txt
@@ -45,7 +45,7 @@ puppet-agent::settings:
       path: '/etc/puppetlabs/puppet/custom_trusted_oid_mapping.yaml'
 
   dirs:
-    main:
+    config:
       path: '/etc/puppetlabs/puppet'
     log:
       path: '/var/log/puppetlabs'

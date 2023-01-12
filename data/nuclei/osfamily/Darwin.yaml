@@ -1,0 +1,4 @@
+---
+nuclei::settings:
+  brew_package_name: 'nuclei'
+  install_method: 'package'

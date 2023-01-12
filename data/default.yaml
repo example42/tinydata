@@ -12,3 +12,4 @@ default::settings:
   config_dir_mode: '0755'
   config_dir_purge: false
   config_dir_recurse: true
+  install_method: 'package'

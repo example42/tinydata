@@ -1,13 +1,12 @@
 ---
 reference::settings:
+  # Name of brew package to install. This parameter is optional and currently 
+  # redundant, as on MacOS brew is always used to manage packages and
+  # the package_name setting is enough to define what package to install
+  # via the homebrew provider.
   brew_package_name: 'reference'
-  user_config_file_path: '$HOME/Library/Application\ Support/reference/reference.conf'
-  user_config_dir_path: '$HOME/Library/Application\ Support/reference/'
 
-  user_configs:
-    main:
-      path: '$HOME/Library/Application\ Support/reference/reference.conf'
-
-  user_dirs:
-    main:
-      path: '$HOME/Library/Application\ Support/reference/reference.conf'
+  # Name of a brew tap to use to install a package via brew.
+  # If set, the string used is the title of a package resource installed via
+  # the tap provider.
+  brew_tap: 'reference/reference'

@@ -1,4 +1,0 @@
----
-  docker-engine::settings:
-    package_source: https://download.docker.com/mac/stable/Docker.dmg
-

@@ -1,19 +1,16 @@
 ---
 reference::settings:
+  # The name of a package when installed via winget
+  # (NOTE: Currently this setting is not used as no winget provider
+  #        is available)
   winget_package_name: 'reference.reference'
+
+  # The name of a package when installed via scoop
+  # (NOTE: Currently this setting is not used as no scoop provider
+  #        is available)
+  scoop_package_name: 'reference.reference'
+
+  # The name of a package when installed via chocolately
+  # (NOTE: Currently this setting is not used as chocolately provider
+  # is used by default and on windows we use the package_name setting)
   choco_package_name: 'reference'
-  package_name: 'reference'
-  config_file_path: 'C:\ProgramData\reference\reference\etc\reference.conf'
-  config_dir_path: 'C:\ProgramData\reference\reference\etc'
-  process_user: 'LocalSystem'
-  process_group: 'LocalSystem'
-  user_config_file_path: '%APPDATA%\reference\reference.conf'
-  user_config_dir_path: '%APPDATA%\reference'
-
-  user_configs:
-    main:
-      path: '%APPDATA%\reference\reference.conf'
-
-  user_dirs:
-    main:
-      path: '%APPDATA%\reference'

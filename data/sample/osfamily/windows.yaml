@@ -10,10 +10,14 @@ sample::settings:
   user_config_file_path: '%APPDATA%\sample\sample.conf'
   user_config_dir_path: '%APPDATA%\sample'
 
-  user_configs:
-    main:
+# If exe or msi package is available for direct download:
+  package_provider: 'windows'
+  package_source: 'https://github.com/sample/sample/releases/download/v$VERSION/sample_$VERSION_$OS_$ARCH.msi'
+
+  user_files:
+    config:
       path: '%APPDATA%\sample\sample.conf'
 
   user_dirs:
-    main:
+    config:
       path: '%APPDATA%\sample'

@@ -4,10 +4,10 @@ sample::settings:
   user_config_file_path: '$HOME/Library/Application\ Support/sample/sample.conf'
   user_config_dir_path: '$HOME/Library/Application\ Support/sample/'
 
-  user_configs:
-    main:
+  user_files:
+    config:
       path: '$HOME/Library/Application\ Support/sample/sample.conf'
 
   user_dirs:
-    main:
+    config:
       path: '$HOME/Library/Application\ Support/sample/sample.conf'

@@ -1,0 +1,99 @@
+---
+nuclei::settings:
+  tp_prerequisites: {}
+
+  upstream_repo: false
+  package_name: 'nuclei'
+  config_file_path: '$HOME/.config/nuclei/config.yaml'
+  config_file_format: yaml
+  validate_cmd: 'nuclei'
+  config_dir_path: '$HOME/.config/nuclei'
+
+# tp 4 settings
+  install_method: 'file'
+  description: 'Fast and customizable vulnerability scanner based on simple YAML based DSL.'
+  docker_image: 'projectdiscovery/nuclei'
+  docker_args: ''
+  website: 'https://nuclei.projectdiscovery.io/'
+  issues: 'https://github.com/projectdiscovery/nuclei/issues'
+  git_source: 'https://github.com/projectdiscovery/nuclei'
+
+  files:
+    config:
+      path: '$HOME/.config/nuclei/config.yaml'
+      format: 'yaml'
+    templates:
+      path: '$HOME/.config/nuclei/.templates-config.json'
+      format: 'json'
+    ignore:
+      path: '$HOME/.config/nuclei/.nuclei-ignore'
+      format: 'yaml'
+    report:
+      path: '$HOME/.config/nuclei/report-config.yaml'
+      format: 'yaml'
+
+  dirs:
+    config:
+      path: '$HOME/.config/nuclei/'
+    templates:
+      path: '$HOME/nuclei-templates/'
+
+  user_files:
+    config:
+      path: '$HOME/.config/nuclei/config.yaml'
+      format: 'yaml'
+    templates:
+      path: '$HOME/.config/nuclei/.templates-config.json'
+      format: 'json'
+    ignore:
+      path: '$HOME/.config/nuclei/.nuclei-ignore'
+      format: 'yaml'
+    report:
+      path: '$HOME/.config/nuclei/report-config.yaml'
+      format: 'yaml'
+
+  user_dirs:
+    config:
+      path: '$HOME/.config/nuclei/'
+    templates:
+      path: '$HOME/nuclei-templates/'
+
+  commands:
+    info:
+      stats: 'nuclei -stats'
+    debug:
+      debug: 'nuclei -debug'
+    test:
+      validate: 'nuclei -validate'
+    version: 'nuclei -version'
+
+  build:
+    enable: false
+    prerequisites:
+      tp::install:
+        - golang
+    execs:
+      build:
+        command: 'go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest'
+
+  releases:
+    latest_version: '2.8.6'
+    prerequisites: {}
+    release_url: 'https://github.com/projectdiscovery/nuclei/releases/download/v$VERSION/nuclei_$VERSION_$OS_$ARCH.zip'
+    base_url: 'https://github.com/projectdiscovery/nuclei'
+    base_path: 'releases/download/v$VERSION'
+    file_name: 'nuclei_$VERSION_$OS_$ARCH.zip'
+    extracted_dir: ''
+    extracted_file: 'nuclei'
+    file_format: zip
+
+  install:
+    enable: true
+    files:
+      nuclei:
+        path: '/usr/local/bin/nuclei'
+        mode: '0755'
+    resources: {}
+    manage_service: false
+    manage_user: false
+

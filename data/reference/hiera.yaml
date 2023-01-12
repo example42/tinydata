@@ -14,15 +14,15 @@
 # As in Hiera lookup is done from top to bottom, according to the merge method specified
 # when calling the tp_lookup function
 # Starting from tp version 3.8 the merge method has changed from 'merge' to 'deep_merge'
-# This is not expected to have any impact on the existing TinyData but is required by
-# the more complex tinydata v4 settings
+# This is not expected to have any impact on the existing TinyData but is required by
+# the more complex tinydata v4 settings
 
 # The lower levels in the hierarchy generally use a default to configure general settings
 # valid for all the apps (and in some cases different for OS and OS versions)
 
 # For each app you can have a different hiera.yaml with more or less levels
 # A minimal recommended hierarchy is as follows:
-# - "%{title}/osfamily/%{osfamily}%{operatingsystemmajrelease}"
+# - "%{title}/osfamily/%{osfamily}%{operatingsystemmajrelease}" 
 # - "%{title}/osfamily/%{osfamily}"
 # - "%{title}/default"
 # - "default/%{operatingsystem}%{operatingsystemmajrelease}"
@@ -30,7 +30,7 @@
 # - default
 
 # That maps respectively to the following files in the tinydata module:
-# Example with the app redis on RedHat9
+# Example with the app redis on RedHat9
 # - data/redis/osfamily/RedHat9.yaml
 # - data/redis/osfamily/RedHat.yaml
 # - data/redis/default.yaml

@@ -13,3 +13,62 @@ default::settings:
   config_dir_purge: false
   config_dir_recurse: true
   install_method: 'package'
+
+  packages:
+    prerequisites: {}
+    main:
+      name: '$TITLE'
+      ensure: present
+      source: ~
+      install_options: []
+      params: {}
+      chocolatey_name: ~
+      scoop_name: ~
+      winget_name: ~
+      manage: true
+    devel:
+      name: '$TITLE-devel'
+      ensure: present
+      manage: false
+    doc:
+      name: '$TITLE-doc'
+      ensure: present
+      manage: false
+    libs:
+      name: '$TITLE-libs'
+      ensure: present
+      manage: false
+
+  services:
+    main:
+      process_user: root
+      process_group: root
+      ensure: running
+      enable: true
+      params: {}
+
+  files:
+    config:
+      owner: 'root'
+      group: 'root'
+      mode: '0644'
+    init:
+      owner: 'root'
+      group: 'root'
+      mode: '0644'
+      format: 'inifile'
+    systemd:
+      owner: 'root'
+      group: 'root'
+      mode: '0644'
+      format: 'inifile_with_stanzas'
+
+  dirs:
+    config:
+      owner: 'root'
+      group: 'root'
+      mode: '0755'
+    conf:
+      owner: 'root'
+      group: 'root'
+      mode: '0755'

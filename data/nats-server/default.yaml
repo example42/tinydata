@@ -61,23 +61,19 @@ nats-server::settings:
   releases:
     latest_version: '2.9.11'
     prerequisites: {}
-    release_url: 'https://github.com/nats-io/nats-server/releases/download/v$VERSION/nats-server-v$VERSION-$OS-$ARCH.zip'
-    base_url: 'https://github.com/nats-io/nats-server'
-    base_path: 'releases/download/v$VERSION'
+    base_url: 'https://github.com/nats-io/nats-server/releases/download/v$VERSION'
     file_name: 'nats-server-v$VERSION-$OS-$ARCH.zip'
     extracted_dir: 'nats-server-v$VERSION-$OS-$ARCH'
     file_format: zip
-
-  install:
-    enable: true
-    files:
-      nats-server:
-        path: '/usr/local/bin/nats-server'
-        mode: '0755'
-    systemd_options:
-      Service:
-        ExecStart: '/usr/local/bin/nats-server'
-        EnvironmentFile: ~
-    resources: {}
-    manage_service: true
-    manage_user: false
+    setup:
+      enable: true
+      files:
+        nats-server:
+          path: '/usr/local/bin/nats-server'
+          mode: '0755'
+      systemd_options:
+        Service:
+          ExecStart: '/usr/local/bin/nats-server'
+          EnvironmentFile: ~
+      manage_service: true
+      manage_user: false

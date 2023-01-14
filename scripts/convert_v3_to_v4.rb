@@ -24,8 +24,8 @@ settings_key = original_config.keys.select { |key| key.end_with?('::settings') }
 package_name = original_config[settings_key]['package_name']
 original_config[settings_key]["packages"] = {"main" => {"name" => package_name}} if package_name
 # Get the package provider from the original config
-#package_provider = original_config[settings_key]['package_provider']
-#original_config[settings_key]["packages"]["main"]["package_provider"] if package_provider
+package_provider = original_config[settings_key]['package_provider']
+original_config[settings_key]["packages"]["main"]["package_provider"] if package_provider
 
 # Get the service name from the original config
 service_name = original_config[settings_key]['service_name']

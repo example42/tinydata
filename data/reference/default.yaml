@@ -18,8 +18,8 @@
 # (so that you can automatically configure in your own templates the right paths and names for
 # different underlying OSes) via the $settings variable (an hash with the settings values merged across the hierarchy).
 # For example to get the name of the user running a given app (as a service) you can use something like:
-#   User <%= @settings['process_user'] %> # In erb templates
-#   User <%= $settings['process_user'] %> # In epp templates
+#   User <%= @settings['service']['main']['process_user'] %> # In erb templates
+#   User <%= $settings['service']['main']['process_user'] %> # In epp templates
 # This works also for nested keys like:
 #   Port: <%= $settings['ports']['main']['port'] %>
 #   Protocol: <%= $settings['ports']['main']['protocol'] %>
@@ -469,7 +469,9 @@ reference::settings:
       setup:
         command: 'make install'
 
-    #
+    # An hash of configurations that are used to setup the application when it's compiled from source
+    # (install_method => source). It merges with the defaults set in settings.setup
+    # Check the documentations below for settings.setup for more details. v4.
     setup:
       enable: true
       files:
@@ -523,6 +525,9 @@ reference::settings:
     extracted_dir: 'reference-$VERSION'
     extracted_file: ''
 
+    # An hash of configurations that are used to setup the application when it's downloaded from a release tarball
+    # (install_method => file). It merges with the defaults set in settings.setup
+    # Check the documentations below for settings.setup for more details. v4.
     setup:
       enable: true
       files:
@@ -537,23 +542,33 @@ reference::settings:
       manage_service: true
       manage_user: false
 
-  # The default setup settings. They are merged with settings. 
-
+  # The default setup settings. They are merged with settings.releases.setup and settings.source.setup
   setup:
-    enable: true
+    # If to enable the setup, which involves doing the configurations as defined in the other settings
+    enable: false
+    # An hash of files to copy from the directory where the app is extracted or compiled from source
+    # to the target path. The key is the name of the file to copy, the value is an hash with file resource
+    # parameters. Defaults are executable files owned by root and copied under /usr/local/bin
     files:
       reference:
         path: '/usr/local/bin/reference'
         mode: '0755'
+    # An hash of systemd options to use to configure the systemd unit file. Keys are the name of the relevant stanza,
+    # values are key/value pairs of the options. They are merged with the defaults used in tp::service
     systemd_options:
       Service:
         ExecStart: '/usr/local/bin/reference -l 127.0.0.1'
         EnvironmentFile: ~
+    # An hash of resources passwd to the tp::create_everything function.
     resources: {}
+    # If to manage and configure the application service. If true, the tp::service define is called with the
+    # systemd_options and resources settings.
     manage_service: true
+    # If to manage the create of the user, if true the user and group are set in settings.service.main.process_user
+    # and settings.service.main.process_group
     manage_user: false
 
-
+  # An hash of URLs related to the application.
   urls:
     # The official website of the application.
     website: ~

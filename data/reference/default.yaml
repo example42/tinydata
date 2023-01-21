@@ -40,15 +40,37 @@ reference::settings:
 ### v3 settings
 
 # If the app needs other apps, installed via tp.
-# Key used in tp::install (and tp::install::*)
-# Valids values: String, Array, Hash of tp::install resources with (in case of Hash)
+# Key used in tp::install (and tp::install::*)
+# Valid values: String, Array, Hash of tp::install resources with (in case of Hash)
 # their parameters.
 # These resources, as every other prerequisites, are installed if tp::auto_prereq is set to true.
 # If auto_prereq is set to false, the user is responsible for managing the prerequisites, when needed.
-# v3 format. v4 equivalent is packages.prerequisites.tp::install
-  tp_prerequisites: {}
+# v3 format. v4 equivalent is preinstall with tp::install resources
+  tp_prerequisites: []
+
+# A list of package prerequisites to install before the app installation.
+# Valid values: String, Array, Hash of package resources
+# v3 format. v4 equivalent is preinstall with package resources
+  package_prerequisites: []
+
+# An hash of command prerequisites to run before the app installation.
+# v3 format. v4 equivalent is preinstall with exec resources
+  exec_prerequisites: {}
+
+# An hash or arbirary resources to apply before the app installation. to pass to the tp::conf define.
+# v3 format. v4 equivalent is preinstall with arbitrary resources
+  extra_prerequisites: {}
+
+# An hash of commands to run after the app installation.
+# v3 format. v4 equivalent is postinstall with exec resources
+  exec_postinstall: {}
+
+# An hash of arbitrary resources to apply after the app installation.
+# v3 format. v4 equivalent is postinstall with arbitrary resources
+  extra_postinstall: {}
 
 # If to use the upstream repo from the app developer or not (if it exists and is defined in tinydata)
+# v3 format. v4 equivalent is repo = upstream
   upstream_repo: false
 
 # The name of the package to install. Must be available on the system or via the configured repo
@@ -59,7 +81,7 @@ reference::settings:
 # - chocolatey on windows (you need to install chocolatey by yourself)
 # - homebrew on Darwin (you need to install homebrew by yourself)
 # - Puppet's default package provider for the other OSes
-# v3 format. v4 equivalent is packages.provider
+# v3 and v4 format.
   package_provider: ~
 
 # The ensure argument of the package resource. Can be a version number, 'latest' or 'present'
@@ -109,6 +131,11 @@ reference::settings:
 # tp debug commands automatically show relevant information
 # v3 format. v4 equivalent is services.main.process_name
   process_name: 'reference'
+
+# An optional additional name to append to process_name when searching for the process.
+# This is useful when the process name is not unique, like in the case of a Java app.
+# v3 format. v4 equivalent is services.main.process_extra_name
+  process_extra_name: ~
 
 # The name of the user used by the app when it runs as a service. This is used by the tp::service
 # define when configuring automatically the systemd unit files.
@@ -175,6 +202,10 @@ reference::settings:
 # v3 format. v4 equivalent is files.init.path
   init_file_path: '/etc/sysconfig/reference.conf'
 
+# The template (erb or epp) to use for the service configuration file.
+# v3 format. v4 equivalent is files.init.template
+  init_file_template: ~
+
 # The path[s] of the log file[s] of the app. This is used by the tp log and tp info commands to tail logs or show info on the app
 # v3 format. v4 equivalent is files.log.path
   log_file_path:
@@ -204,13 +235,36 @@ reference::settings:
 # v3 format. v4 equivalent is dirs.config.recurse
   config_dir_recurse: true
 
+# An hash of additional parameters to pass to file resource managed by tp::dir
+# v3 format.
+  config_dir_params: {}
+
 # The path where the app stores its log (if different by general log dirs like /var/log)
 # v3 format. v4 equivalent is dirs.log.path
   log_dir_path:
     - '/var/log/reference'
 
-# The name or the url of the official container image of the app. v3 format. The v4 equivalent is image.name
+# The path of the app's home. Should map to the app's user home, if any.
+# v3 format. v4 equivalent is dirs.home.path 
+  home_dir_path: '/var/lib/reference'
+
+# The path where the app stores its data. Might be used to automate backups.
+# v3 format. v4 equivalent is dirs.data.path
+  data_dir_path: '/var/lib/reference'
+
+# The name or the url of the official container image of the app.
+# v3 format. v4 equivalent is image.name
   docker_image: 'reference/reference'
+
+# The arguments to pass to the app process to run it in the foreground.
+# Might be useful to automatically manage application run inside containers.
+# v3 format. v4 equivalent is services.main.nodaemon_args
+  nodaemon_args: '-D'
+
+# A list on RUN entries to prepend in Dockerfiles used to build the app.
+# Some defautls are already set per osfamily, like installing wget, curl, etc.
+# v3 format. v4 equivalent is image.dockerfile_prerequisites
+  dockerfile_prerequisites: 'RUN apt-get update && apt-get install -y --force-yes --no-install-recommends wget'
 
 # The main tcp port used by the application, if applicable.
 # v3 format. v4 equivantent are ports.main.port and ports.main.protocol: tcp
@@ -220,42 +274,198 @@ reference::settings:
 # v3 format. v4 equivantent are ports.main.port and ports.main.protocol: udp
   udp_port: 42
 
+# Repositories can be configured using different settings:
+# - Via release packages. Settings required: repo_package_name, repo_package_url.
+#                         Settings optional: repo_package_provider.
+# - Via a repofile (containing the repo configuration). Settings required: repo_file_url (zypper_repofile_url with Zypper)
+#                                                       Settings optional: repo_filename.
+# - Via repo configurations with settings depending on the package provider:
+#     With Zypper. Settings required: repo_name and repo_url
+#     With Yum. Settings required: repo_url OR yum_mirrorlist
+#               Settings optional: repo_filename, repo_description, yum_priority, yumrepo_params
+#     With Apt. Settings required: repo_url OR apt_mirrorlist
+#                            
+# The name of the repo release package, which contains all the configurations for the package's repo.
+# v3 format. v4 equivalent is repos.upstream.package_name (or repos.$repo.package_name)
+  repo_package_name: 'reference-release'
+
+# The url of the repo release package. This is downloaded and installed before installing the app.
+# v3 format. v4 equivalent is repos.upstream.package_url (or repos.$repo.package_url)
+  repo_package_url: ~
+
+# The provider to use to install the repo release package. This is different from the package provider,
+# which is used to install the app itself. On RedHat this is 'rpm', on Debian 'dpkg'.
+# v3 format. v4 equivalent is repos.upstream.package_provider (or repos.$repo.package_provider)
+  repo_package_provider: ~
+
+# Additional param for the package resource used to install the repo release package.
+# v3 format. v4 equivalent is repos.upstream.package_params (or repos.$repo.package_params)
+  repo_package_params: {}
+
+# Url pointing to the file containing the repo configuration (as in /etc/yum/$file.repo or /etc/apt/sources.list.d/$file.list)
+# This is an alternative to repo_package_url, which is used to install the repo release package.
+# v3 format. v4 equivalent is repos.upstream.repofile_url (or repos.$repo.repofile_url)
+  repo_file_url:
+
+# The name of the repo file, without the .repo or .list suffixex (as in /etc/yum/$repo_filename.repo or
+# /etc/apt/sources.list.d/$repo_filename.list).
+# v3 format. v4 equivalent is repos.upstream.repofile_name (or repos.$repo.repofile_name)
+  repo_filename: 'reference'
+
+# The url of the repo, as configured in the repo files.
+# v3 format. v4 equivalent is repos.upstream.url (or repos.$repo.url)
+  repo_url: ~
+
+# The name of the repo, as configured in the repo files.
+# v3 format. v4 equivalent is repos.upstream.name (or repos.$repo.name)
+  repo_name: ~
+
+# The description of the repo, as configured in the repo files.
+# v3 format. v4 equivalent is repos.upstream.description (or repos.$repo.description)
+  repo_description: ~
+
+# The gpg key for the repo, as configured in the repo files.
+# v3 format. v4 equivalent is repos.upstream.key (or repos.$repo.key)
+  key:
+
+# The url of the gpg key for the repo.
+# v3 format. v4 equivalent is repos.upstream.key_url (or repos.$repo.key_url)
+  key_url:
+
+# Apt specific settings for the repo, as configured in the .list files.
+# v3 format. v4 equivalent is repos.upstream.apt.include_src (or repos.$repo.apt.include_src)
+  include_src:
+
+# Apt specific settings for the repo, as configured in the .list files.
+# It refers to the components of the repo, like 'main contrib non-free'.
+# v3 format. v4 equivalent is repos.upstream.apt.components (or repos.$repo.apt.components)
+  apt_repos: 'main'
+
+# Apt specific settings. If apt_key_server and apt_key_fingerprint are set this command is run:
+# apt-key adv --keyserver ${settings[apt_key_server]} --recv ${settings[apt_key_fingerprint]}
+# v3 format. v4 equivalent is repos.upstream.apt.key_server (or repos.$repo.apt.key_server)
+  apt_key_server: ~
+# v3 format. v4 equivalent is repos.upstream.apt.key_fingerprint (or repos.$repo.apt.key_fingerprint)
+  apt_key_fingerprint: ~
+
+# Apt specific settings. The OS release name. This setting is set in data/default so it
+# should set in the app definition only when different for release dafaults (ie: stable).
+# v3 format. v4 equivalent is repos.upstream.apt.release (or repos.$repo.apt.release)
+  apt_release: ~
+
+# Apt specific settings.
+# v3 format. v4 equivalent is repos.upstream.apt.pin (or repos.$repo.apt.pin)
+  apt_pin: 
+
+# Yum specific settings to customise for the yumrepo resource.
+# v3 format. v4 equivalent is repos.upstream.yum.params (or repos.$repo.yum.params)
+  yumrepo_params: {}
+
+# Yum specific setting for the yumrepo resource.
+# v3 format. v4 equivalent is repos.upstream.yum.priority (or repos.$repo.yum.priority)
+  yum_priority: ~
+
+# Yum specific setting for the yumrepo resource.
+# v3 format. v4 equivalent is repos.upstream.yum.mirrorlist (or repos.$repo.yum.mirrorlist)
+  yum_mirrorlist: ~
+
+# Zypper version of the repo_file_url setting.
+# Used in command: zypper addrepo ${settings[zypper_repofile_url]}
+# v3 format. v4 equivalent is repos.upstream.repofile_url (or repos.$repo.repofile_url)
+  zypper_repofile_url: ~
+
+# The brew tab to use when installing a package via brew on MacOS
+# v3 format. v4 equivalent is repos.upstream.brew.tap (or repos.$repo.brew.tap)
+  brew_tap: ~
+
 
 ### v4 settings
 
+# An hash of Puppet resources (file, exec, package, tp::install ... any Puppet resource type can be used)
+# to apply before installing the app. The values of each resource can be a string,
+# an array or an hash of resource titles with the relevant arguments
+  preinstall: {}
+
+# An hash of Puppet resources (file, exec, package, tp::install ... any Puppet resource type can be used)
+# to apply after installing the app. The values of each resource can be a string,
+# an array or an hash of resource titles with the relevant arguments
+  postinstall: {}
+
+# The name of the defauly repository to use for the app. When set it's usually 'upstream'
+# to refer to a reposiotry managed directly by the app developers.
+# It can be also set with an arbitrary name, as long as in hiera.yaml you have a layer
+# with the $repo variable and you place in the relevant directory the necessary data.
+# Data has to be placed under settings.repos.$repo
+  repo: ~
+
+# An hash which contains one or more repositories to use for the app.
+# For each repository you can specify the parameters below (here example only for upstream repo):
+  repos:
+    upstream:
+      name: 'reference'
+      description: 'reference repository'
+      package_name: 'reference-release'
+      package_url: ~
+      package_provider: ~
+      package_params: {}
+      repofile_url: ~
+      repofile_name: ~
+      url: ~
+      key: ~
+      key_url: ~
+      yum:
+        priority: ~
+        mirrorlist: ~
+        baseurl: ~
+        gpgcheck: ~
+        gpgkey: ~
+        params: {}
+      apt:
+        key_server: ~
+        key_fingerprint: ~
+        components: 'main'
+        release: 'stable'
+        pin: ~
+        include_src: ~
+      brew:
+        tap: ~
+
+# The package provider
+# v3 and v4 format.
+# package_provider: ~
+
 # A v4 hash of packages related to the app.
   packages:
-    # Eventual prerequisites to install before the main package.    
-    prerequisites: {}
-
-    # Package provider is automatically detected from the OS. You can override it with the provider key.
-    provider: ~
-
-    devel: true
-    devel_suffix: '-devel'
-    doc_suffix: '-doc'
-    doc: false
     main:
       name: reference
       ensure: present
       source: ~
       install_options: []
       params: {}
-      chocolatey_name: ~
-      scoop_name: ~
-      winget_name: ~
+      providers:
+        chocolatey:
+          name: ~
+        scoop:
+          name: ~
+        winget:
+          name: ~
     # Examples of other packages
     client:
       name: reference-client
     server:
       name: reference-server
 
+# The init system to use for the app. (Set in default settings, usually no need to override)
+  init_system: ~
+
   services:
     main:
       name: reference
       process_name: reference
+      process_extra_name: ~
       process_user: root
       process_group: root
+      nodaemon_args: '-D'
       ensure: running
       enable: true
       pidfile: /run/reference.pid
@@ -277,6 +487,7 @@ reference::settings:
 # mode        : the mode of the file (optional)
 # owner       : the owner of the file (optional)
 # group       : the group of the file (optional)
+# template    : the template (erb or epp) to use to render the file (optional)
   files:
     config:
       path: '/etc/reference/reference.conf'
@@ -302,6 +513,7 @@ reference::settings:
 # mode        : the mode of the dir (optional)
 # owner       : the owner of the dir (optional)
 # group       : the group of the dir (optional)
+# recurse     : the recurse argument for the file resource used to manage the dir (optional)
   dirs:
     config:
       path: '/etc/reference'
@@ -339,7 +551,7 @@ reference::settings:
   install_method: 'package'
 
 # The description of the app. It's used by tp command. v4.
-  description: 'reference_packages description'
+  description: 'reference description'
 
 # An hash of extra commands to execute when running the tp info command or tp::info task. v3 and v4 compatible.
 # The keys are the names of the commands (ie: tp info APP list), the values are the actual commands to execute.
@@ -452,6 +664,10 @@ reference::settings:
     # maps systemd_options into a valid Systemd unit file in ini file format with stanza. You probably don't need to set this.
     systemd_template: 'tp/inifile_with_stanzas.erb'
 
+    # A list of prerequisite entries to automatically add to the app's Dockerfile when automatically
+    # building it. The values can be a string or an array, typically of  RUN entries
+    dockerfile_prerequisites: ~
+
 # A v4 setting used by the tp::build define.
   build:
     # An hash of Puppet resources (file, exec, package, tp::install ... any Puppet resource type can be used)
@@ -460,14 +676,19 @@ reference::settings:
     prerequisites:
       tp::install:
         - build-essential
-    # The commands to run execute in order to build the app 
+    # The commands to run execute in order to build the app. It's a sorted array of hashes with the following keys:
     execs:
-      configure:
-        command: './configure'
-      build:
+      - name: configure         # The name of the command
+        command: './configure'  # The command to run
+        options: {}             # An hash of options to pass to the exec resource
+        creates: ~              # The path to check for existence before running the command
+        onlyif: ~               # A command to run to check if the command should be run
+      - name: build
         command: 'make'
-      setup:
+        options: {}
+      - name: setup
         command: 'make install'
+        options: {}
 
     # An hash of configurations that are used to setup the application when it's compiled from source
     # (install_method => source). It merges with the defaults set in settings.setup
@@ -568,7 +789,7 @@ reference::settings:
     # and settings.service.main.process_group
     manage_user: false
 
-  # An hash of URLs related to the application.
+  # An hash of URLs related to the application. Additional URLs can be added for convenience.
   urls:
     # The official website of the application.
     website: ~
@@ -576,5 +797,6 @@ reference::settings:
     issues: ~
     # The documentation site of the application.
     documentation: ~
-    # The git repository of the application.
+    # The git repository of the application. Maps to v3 git_source
     source: ~
+

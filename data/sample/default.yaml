@@ -93,11 +93,11 @@ sample::settings:
       tp::install:
         - build-essential
     execs:
-      configure:
+      - name: configure
         command: './configure'
-      build:
+      - name: build
         command: 'make'
-      setup:
+      - name: setup
         command: 'make install'
 
   releases:

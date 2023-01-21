@@ -9,6 +9,10 @@ require 'yaml'
 # Get the file path from the command line argument
 file_path = ARGV[0]
 
+# Get the name of the file to write to from the second command line argument
+# If no file name is provided, the original file will be overwritten
+output_file_path = ARGV[1] || file_path
+
 # Load the original yaml file
 original_config = YAML.load_file(file_path)
 
@@ -20,8 +24,8 @@ settings_key = original_config.keys.select { |key| key.end_with?('::settings') }
 package_name = original_config[settings_key]['package_name']
 original_config[settings_key]["packages"] = {"main" => {"name" => package_name}} if package_name
 # Get the package provider from the original config
-package_provider = original_config[settings_key]['package_provider']
-original_config[settings_key]["packages"]["main"]["package_provider"] if package_provider
+#package_provider = original_config[settings_key]['package_provider']
+#original_config[settings_key]["packages"]["main"]["package_provider"] if package_provider
 
 # Get the service name from the original config
 service_name = original_config[settings_key]['service_name']
@@ -38,6 +42,10 @@ original_config[settings_key]["services"]["main"]["process_user"] = process_user
 # Get the process group from the original config
 process_group = original_config[settings_key]['process_group']
 original_config[settings_key]["services"]["main"]["process_group"] = process_user if process_group
+# Get the process nodaemon_args from the original config
+nodaemon_args = original_config[settings_key]['nodaemon_args']
+original_config[settings_key]["services"] = {"main" => {"nodaemon_args" => nodaemon_args}} if nodaemon_args
+
 
 # Get the config_file_path from the original config
 config_file_path = original_config[settings_key]['config_file_path']
@@ -90,9 +98,34 @@ original_config[settings_key]["urls"]["source"] = git_source if git_source
 # Get the docker_image from the original config
 docker_image = original_config[settings_key]['docker_image']
 original_config[settings_key]["image"] = {"name" => docker_image } if docker_image
+# Get the dockerfile_prerequisites from the original config
+dockerfile_prerequisites = original_config[settings_key]['dockerfile_prerequisites']
+original_config[settings_key]["image"] = {"dockerfile_prerequisites" => dockerfile_prerequisites } if dockerfile_prerequisites
 
-# Write the merged config to a new yaml file
-File.open('merged_config.yml', 'w') { |file| file.write(original_config.to_yaml) }
+# Convert upstream_repo to repo = upstream
+upstream_repo = original_config[settings_key]['upstream_repo']
+original_config[settings_key]["repo"] = 'upstream' if upstream_repo == true
 
-# Write the merged config to the existing yaml file
-#File.open(file_path, 'w') { |file| file.write(original_config.to_yaml) }
+# Convert prerequisites
+tp_prerequisites = original_config[settings_key]['tp_prerequisites']
+original_config[settings_key]["preinstall"] = { 'tp::install' => tp_prerequisites } if tp_prerequisites
+exec_prerequisites = original_config[settings_key]['exec_prerequisites']
+original_config[settings_key]["preinstall"] = { 'exec' => exec_prerequisites } if exec_prerequisites
+package_prerequisites = original_config[settings_key]['package_prerequisites']
+original_config[settings_key]["preinstall"] = { 'package' => package_prerequisites } if package_prerequisites
+
+# Convert postinstall
+exec_postinstall = original_config[settings_key]['exec_postinstall']
+original_config[settings_key]["postinstall"] = { 'exec' => exec_postinstall } if exec_postinstall
+extra_postinstall = original_config[settings_key]['extra_postinstall']
+original_config[settings_key]["postinstall"] = { 'extra' => extra_postinstall } if extra_postinstall
+
+
+# Convert the config to a hash
+original_config = original_config.to_hash
+
+# Convert the config to a yaml string
+original_config = original_config.to_yaml
+
+# Write the merged config to output file
+File.open(output_file_path, 'w') { |file| file.write(original_config.to_yaml) }

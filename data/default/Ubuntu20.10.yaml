@@ -1,3 +1,8 @@
 ---
 default::settings:
   apt_release: 'groovy'
+
+  repos:
+    default:
+      apt:
+        release: 'groovy'

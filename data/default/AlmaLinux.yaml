@@ -2,3 +2,7 @@
 default::settings:
   repo_package_provider: 'rpm'
   init_system: 'systemd'
+
+  repos:
+    default:
+      package_provider: 'rpm'

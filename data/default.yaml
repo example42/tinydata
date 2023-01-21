@@ -15,16 +15,13 @@ default::settings:
   install_method: 'package'
 
   packages:
-    prerequisites: {}
     main:
       name: '$TITLE'
       ensure: present
       source: ~
       install_options: []
       params: {}
-      chocolatey_name: ~
-      scoop_name: ~
-      winget_name: ~
+      providers: {}
       manage: true
     devel:
       name: '$TITLE-devel'

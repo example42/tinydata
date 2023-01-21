@@ -1,3 +1,9 @@
 ---
 default::settings:
   apt_release: 'jammy'
+
+  
+  repos:
+    default:
+      apt:
+        release: 'jammy'

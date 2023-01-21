@@ -32,7 +32,7 @@ spiderfoot::settings:
       tp::install:
         - python-pip
     execs:
-      build:
+      - name: build
         command: 'pip install -r requirements.txt'
 
   install_method: 'source'

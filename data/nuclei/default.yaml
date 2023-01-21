@@ -73,7 +73,7 @@ nuclei::settings:
       tp::install:
         - golang
     execs:
-      build:
+      - name: build
         command: 'go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest'
 
   releases:

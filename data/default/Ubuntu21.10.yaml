@@ -1,3 +1,8 @@
 ---
 default::settings:
   apt_release: 'impish'
+
+  repos:
+    default:
+      apt:
+        release: 'impish'

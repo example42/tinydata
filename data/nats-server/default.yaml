@@ -55,7 +55,7 @@ nats-server::settings:
       tp::install:
         - golang
     execs:
-      build:
+      - name: build
         command: 'GO111MODULE=on go get github.com/nats-io/nats-server/v2'
 
   releases:

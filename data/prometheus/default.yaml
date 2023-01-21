@@ -143,11 +143,11 @@ prometheus::settings:
         - golang
         - npm
     execs:
-      build:
+      - name: build
         command: 'go build cmd/prometheus/main.go'
         environment:
           - 'GO111MODULE=on'
-      setup:
+      - name: setup
         command: 'go install cmd/prometheus/main.go'
         environment:
           - 'GO111MODULE=on'

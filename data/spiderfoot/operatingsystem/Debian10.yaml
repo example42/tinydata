@@ -2,5 +2,5 @@
 spiderfoot::settings:
   build:
     execs:
-      build:
+      - name: build
         command: 'pip3 install -r requirements.txt'

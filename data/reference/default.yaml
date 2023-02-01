@@ -236,7 +236,7 @@ reference::settings:
   config_dir_recurse: true
 
 # An hash of additional parameters to pass to file resource managed by tp::dir
-# v3 format.
+# v3 format. v4 equivalent is dirs.config.params
   config_dir_params: {}
 
 # The path where the app stores its log (if different by general log dirs like /var/log)
@@ -514,9 +514,19 @@ reference::settings:
 # owner       : the owner of the dir (optional)
 # group       : the group of the dir (optional)
 # recurse     : the recurse argument for the file resource used to manage the dir (optional)
+# purge       : the purge argument for the file resource used to manage the dir (optional)
+# force       : the force argument for the file resource used to manage the dir (optional)
+# params      : an hash of additional parameters to pass to the file resource used to manage the dir (optional)
   dirs:
     config:
       path: '/etc/reference'
+      mode: ~
+      owner: ~
+      group: ~
+      recurse: ~
+      purge: ~
+      force: ~
+      params: {}
     conf:
       path: '/etc/reference/conf.d'
     log:

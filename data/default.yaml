@@ -9,14 +9,13 @@ default::settings:
   config_file_mode: '0644'
   config_dir_owner: 'root'
   config_dir_group: 'root'
-  config_dir_mode: '0755'
+  config_dir_mode: '0644'
   config_dir_purge: false
-  config_dir_recurse: true
+  config_dir_recurse: false
   install_method: 'package'
 
   packages:
     main:
-      name: '$TITLE'
       ensure: present
       source: ~
       install_options: []
@@ -64,8 +63,6 @@ default::settings:
     config:
       owner: 'root'
       group: 'root'
-      mode: '0755'
     conf:
       owner: 'root'
       group: 'root'
-      mode: '0755'

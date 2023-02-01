@@ -22,7 +22,7 @@
 
 # For each app you can have a different hiera.yaml with more or less levels
 # A minimal recommended hierarchy is as follows:
-# - "%{title}/osfamily/%{osfamily}%{operatingsystemmajrelease}" 
+# - "%{title}/osfamily/%{osfamily}%{operatingsystemmajrelease}"
 # - "%{title}/osfamily/%{osfamily}"
 # - "%{title}/default"
 # - "default/%{operatingsystem}%{operatingsystemmajrelease}"

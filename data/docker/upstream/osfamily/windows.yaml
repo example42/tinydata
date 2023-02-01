@@ -1,2 +1,3 @@
+---
 docker::settings:
   package_name: 'docker-engine'

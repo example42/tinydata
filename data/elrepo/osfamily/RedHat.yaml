@@ -1,4 +1,3 @@
 ---
 elrepo::settings:
   repo_package_name: 'elrepo-release'
-

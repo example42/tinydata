@@ -12,4 +12,3 @@ vault::settings:
   git_source: https://github.com/hashicorp/vault.git
   info_commands:
     vault_status: 'vault status'
-

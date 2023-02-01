@@ -1,5 +1,5 @@
 ---
-  nrpe::settings:
-    process_user: '_nrpe'
-    pid_file_path: '/var/run/nrpe/nrpe.pid'
-    service_name: 'nagios-nrpe-server'
+nrpe::settings:
+  process_user: '_nrpe'
+  pid_file_path: '/var/run/nrpe/nrpe.pid'
+  service_name: 'nagios-nrpe-server'

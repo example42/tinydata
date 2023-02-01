@@ -1,5 +1,5 @@
 ---
-  redis::settings:
-    init_file_path: '/etc/default/redis-server'
-    package_name: 'redis-server'
-    service_name: 'redis-server'
+redis::settings:
+  init_file_path: '/etc/default/redis-server'
+  package_name: 'redis-server'
+  service_name: 'redis-server'

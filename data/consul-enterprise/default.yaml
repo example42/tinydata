@@ -12,4 +12,3 @@ consul-enterprise::settings:
     - 8301
     - 8500
     - 8600
-  

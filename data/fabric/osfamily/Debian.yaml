@@ -1,4 +1,4 @@
 ---
-  fabric::settings:
-    package_prerequisites:
-      - python-dev
+fabric::settings:
+  package_prerequisites:
+    - python-dev

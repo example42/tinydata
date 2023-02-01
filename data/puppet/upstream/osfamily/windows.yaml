@@ -14,4 +14,3 @@ puppet::settings:
   process_user: 'LocalSystem'
   process_group: 'LocalSystem'
   winget_package_name: 'Puppet.puppet-agent'
-  

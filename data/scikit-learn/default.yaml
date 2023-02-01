@@ -2,4 +2,3 @@
 scikit-learn:
   package_name: 'scikit-learn'
   package_provider: 'pip'
-

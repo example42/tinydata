@@ -1,6 +1,5 @@
 ---
-  virtualbox::settings:
-    key: 'B9F8 D658 297A F3EF C18D  5CDF A2F6 83C5 2980 AECF'
-    key_url: 'https://www.virtualbox.org/download/oracle_vbox_2016.asc'
-    apt_repos: 'contrib'
-
+virtualbox::settings:
+  key: 'B9F8 D658 297A F3EF C18D  5CDF A2F6 83C5 2980 AECF'
+  key_url: 'https://www.virtualbox.org/download/oracle_vbox_2016.asc'
+  apt_repos: 'contrib'

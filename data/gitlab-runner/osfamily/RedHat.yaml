@@ -1,6 +1,7 @@
 ---
-  gitlab-runner::settings:
-    exec_prerequisites:
-      repo_setup:
-        command: 'curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.rpm.sh | bash'
-        creates: '/etc/yum.repos.d/runner_gitlab-runner.repo'
+gitlab-runner::settings:
+  exec_prerequisites:
+    repo_setup:
+      command: curl -L https://packages.gitlab.com/install/\
+        repositories/runner/gitlab-runner/script.rpm.sh | bash
+      creates: '/etc/yum.repos.d/runner_gitlab-runner.repo'

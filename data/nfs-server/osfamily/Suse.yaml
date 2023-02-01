@@ -1,4 +1,4 @@
 ---
-  nfs-server::settings:
-    package_name: 'nfs-kernel-server'
-    service_name: 'nfs-kernel-server'
+nfs-server::settings:
+  package_name: 'nfs-kernel-server'
+  service_name: 'nfs-kernel-server'

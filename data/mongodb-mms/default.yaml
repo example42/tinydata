@@ -1,12 +1,12 @@
 ---
-  mongodb-mms::settings:
-    package_name: 'mongodb-mms'
-    service_name: 'mongodb-mms'
-    config_file_path: '/opt/mongodb/mms/conf/mms.conf'
-    log_file_path: '/opt/mongodb/mms/logs/daemon.log'
-    pid_file_path: '/opt/mongodb/mms/tmp/mms-0.pid'
-    config_dir_path: '/opt/mongodb/mms/conf'
-    log_dir_path: '/opt/mongodb/mms/logs'
-    process_name: 'mongodb-mms'
-    process_user: 'mongodb-mms-agent'
-    process_group: 'mongodb-mms-agent'
+mongodb-mms::settings:
+  package_name: 'mongodb-mms'
+  service_name: 'mongodb-mms'
+  config_file_path: '/opt/mongodb/mms/conf/mms.conf'
+  log_file_path: '/opt/mongodb/mms/logs/daemon.log'
+  pid_file_path: '/opt/mongodb/mms/tmp/mms-0.pid'
+  config_dir_path: '/opt/mongodb/mms/conf'
+  log_dir_path: '/opt/mongodb/mms/logs'
+  process_name: 'mongodb-mms'
+  process_user: 'mongodb-mms-agent'
+  process_group: 'mongodb-mms-agent'

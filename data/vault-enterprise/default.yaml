@@ -9,4 +9,3 @@ vault-enterprise::settings:
   data_dir_path: '/opt/vault'
   config_file_format: 'hcl'
   tcp_port: 8200
-  

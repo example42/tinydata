@@ -5,4 +5,4 @@ nodejs::settings:
       command: 'curl -L https://deb.nodesource.com/setup_lts.x | bash'
       unless: 'dpkg -qa | grep nodesource-release'
   package_prerequisites:
-    - build-essential 
+    - build-essential

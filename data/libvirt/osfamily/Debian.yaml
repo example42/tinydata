@@ -1,5 +1,5 @@
 ---
-  libvirt::settings:
-    package_name: 'libvirt-bin'
-    service_name: 'libvirt-bin'
-    init_file_path: '/etc/default/libvirt-bin'
+libvirt::settings:
+  package_name: 'libvirt-bin'
+  service_name: 'libvirt-bin'
+  init_file_path: '/etc/default/libvirt-bin'

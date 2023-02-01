@@ -1,4 +1,3 @@
----  
-  bind-utils::settings:
-    package_name: 'dnsutils'
-
+---
+bind-utils::settings:
+  package_name: 'dnsutils'

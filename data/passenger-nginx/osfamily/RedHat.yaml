@@ -9,4 +9,3 @@ passenger-nginx::settings:
   package_prerequisites:
     - pygpgme
     - nginx
-    

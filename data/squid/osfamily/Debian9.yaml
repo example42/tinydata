@@ -1,7 +1,7 @@
 ---
-  squid::settings:
-    package_name: 'squid3'
-    service_name: 'squid3'
-    config_file_path: '/etc/squid3/squid.conf'
-    config_dir_path: '/etc/squid3'
-    pid_file_path: '/var/run/squid3.pid'
+squid::settings:
+  package_name: 'squid3'
+  service_name: 'squid3'
+  config_file_path: '/etc/squid3/squid.conf'
+  config_dir_path: '/etc/squid3'
+  pid_file_path: '/var/run/squid3.pid'

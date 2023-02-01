@@ -1,12 +1,14 @@
 ---
-# This reference data shows all the possible tinydata settings for a sample application (called 'reference')
+# This reference data shows all the possible tinydata settings for a
+# sample application (called 'reference')
 #
-# The main APPNAME::settings key below is looked up by the tp_lookup function in tp module manifests.
-# It's an hash whose values are looked up in deep merge mode across the hierarchies
-# defined in the hiera.yaml configuration file specific for each managed app.
+# The main APPNAME::settings key below is looked up by the tp_lookup function
+# in tp module manifests. It's an hash whose values are looked up in deep merge
+# mode across the hierarchies defined in the hiera.yaml configuration file
+# specific for each managed app.
 #
-# You don't have to set all these settings, but be sure that what's set is correct, otherwise tp may try to do weird
-# things or plainly fail with wrong data.
+# You don't have to set all these settings, but be sure that what's set is
+# correct, otherwise tp may try to do weird things or plainly fail with wrong data.
 
 # Settings marked with v3 are used by every (not ancient) version of tp module. They are going to be deprecated (but still supported) from tp 4
 # Settings marked with v4 are used by tp module starting from version 4.
@@ -22,7 +24,7 @@
 #   Port: <%= $settings['ports']['main']['port'] %>
 #   Protocol: <%= $settings['ports']['main']['protocol'] %>
 # Note: Be sure the referred settings (and subkeys) exist in your tinydata to avoid errors like:
-# Evaluation Error: Operator '[]' is not applicable to an Undef Value. 
+# Evaluation Error: Operator '[]' is not applicable to an Undef Value.
 
 # You can override these settings directly from tp defines using the parameter settings_hash (legacy) or,
 # starting from tp 4, also the parameter my_settings. Their content must be an hash, with the same structure
@@ -367,7 +369,7 @@ reference::settings:
     prerequisites:
       tp::install:
         - build-essential
-    # The commands to run execute in order to build the app 
+    # The commands to run execute in order to build the app
     execs:
       configure:
         command: './configure'
@@ -397,7 +399,7 @@ reference::settings:
     release_url: 'https://github.com/reference/reference/releases/download/reference-$VERSION/reference-$VERSION.tar.gz'
 
     # If release_url is not set then the url is built using the following values: $base_url/$base_path/$file_name
-    # Note that base_url and base_path are optional if release_url is set (they are useful if you get release files 
+    # Note that base_url and base_path are optional if release_url is set (they are useful if you get release files
     # from a local repository). file_name is mandatory.
     base_url: 'https://github.com/reference/reference/releases/download'
     base_path: 'releases/download/reference-$VERSION'
@@ -431,4 +433,3 @@ reference::settings:
     resources: {}
     manage_service: true
     manage_user: false
-

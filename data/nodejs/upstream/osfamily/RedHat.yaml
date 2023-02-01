@@ -9,5 +9,3 @@ nodejs::settings:
     - make
   tp_prerequisites:
     - epel
-
-    

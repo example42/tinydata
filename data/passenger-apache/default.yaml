@@ -1,3 +1,3 @@
 ---
-  passenger-apache::settings:
-    package_name: 'passenger-apache'
+passenger-apache::settings:
+  package_name: 'passenger-apache'

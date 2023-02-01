@@ -1,5 +1,5 @@
 ---
-  fabric::settings:
-    package_prerequisites:
-      - python-devel
-      - openssl-devel
+fabric::settings:
+  package_prerequisites:
+    - python-devel
+    - openssl-devel

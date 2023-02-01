@@ -1,3 +1,4 @@
 ---
 elrepo::settings:
-  repo_package_url: 'https://www.elrepo.org/elrepo-release-8.el8.elrepo.noarch.rpm'
+  repo_package_url: \
+    'https://www.elrepo.org/elrepo-release-8.el8.elrepo.noarch.rpm'

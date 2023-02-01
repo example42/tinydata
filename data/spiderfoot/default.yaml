@@ -15,7 +15,7 @@ spiderfoot::settings:
   git_source: 'https://github.com/smicallef/spiderfoot'
 
 
-# tp 4 settings  
+  # tp 4 settings
   description: 'SpiderFoot automates OSINT so you can find what matters, faster.'
 
   website: 'https://www.spiderfoot.net/'

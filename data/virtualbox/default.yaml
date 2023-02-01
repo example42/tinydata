@@ -1,5 +1,5 @@
 ---
-  virtualbox::settings:
-    package_name: 'virtualbox-6.0'
-    service_name: 'vboxdrv'
-    config_dir_path: '/etc/vbox'
+virtualbox::settings:
+  package_name: 'virtualbox-6.0'
+  service_name: 'vboxdrv'
+  config_dir_path: '/etc/vbox'

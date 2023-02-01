@@ -1,4 +1,4 @@
 ---
-  virtualbox::settings:
-    key: '7B0F AB3A 13B9 0743 5925  D9C9 5442 2A4B 98AB 5139'
-    key_url: 'https://www.virtualbox.org/download/oracle_vbox.asc'
+virtualbox::settings:
+  key: '7B0F AB3A 13B9 0743 5925  D9C9 5442 2A4B 98AB 5139'
+  key_url: 'https://www.virtualbox.org/download/oracle_vbox.asc'

@@ -1,9 +1,9 @@
 ---
-  nginx::settings:
-    init_file_path: '/etc/default/nginx'
-    process_user: 'www-data'
-    process_group: 'www-data'
-    mods-available_dir_path: '/etc/nginx/modules-available'
-    mods-enabled_dir_path: '/etc/nginx/modules-enabled'
-    sites-available_dir_path: '/etc/nginx/sites-available'
-    sites-enabled_dir_path: '/etc/nginx/sites-enabled'
+nginx::settings:
+  init_file_path: '/etc/default/nginx'
+  process_user: 'www-data'
+  process_group: 'www-data'
+  mods-available_dir_path: '/etc/nginx/modules-available'
+  mods-enabled_dir_path: '/etc/nginx/modules-enabled'
+  sites-available_dir_path: '/etc/nginx/sites-available'
+  sites-enabled_dir_path: '/etc/nginx/sites-enabled'

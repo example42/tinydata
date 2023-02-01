@@ -1,6 +1,6 @@
 ---
-  influxdb::settings:
-    init_file_path: '/etc/default/influxdb'
-    repo_url: 'https://repos.influxdata.com/debian/pool/stable/i/influxdb/'
-    apt_repos: 'main'
-    apt_release: 'stable'
+influxdb::settings:
+  init_file_path: '/etc/default/influxdb'
+  repo_url: 'https://repos.influxdata.com/debian/pool/stable/i/influxdb/'
+  apt_repos: 'main'
+  apt_release: 'stable'

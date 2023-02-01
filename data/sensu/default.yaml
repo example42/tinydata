@@ -20,4 +20,4 @@ sensu::settings:
   process_name: 'sensu'
   process_user: 'sensu'
   process_group: 'sensu'
-  init_file_path: '/etc/default/sensu'            
+  init_file_path: '/etc/default/sensu'

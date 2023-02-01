@@ -1,5 +1,5 @@
 ---
-  mcollective::settings:
-    process_name: 'mcollectived'
-    init_file_path: '/etc/default/mcollective'
-    data_dir_path: '/usr/share/mcollective'
+mcollective::settings:
+  process_name: 'mcollectived'
+  init_file_path: '/etc/default/mcollective'
+  data_dir_path: '/usr/share/mcollective'

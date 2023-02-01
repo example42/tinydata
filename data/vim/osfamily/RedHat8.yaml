@@ -1,4 +1,4 @@
 ---
-  vim::settings:
-    config_file_path: '/etc/vimrc'
-    package_name: 'vim-enhanced'
+vim::settings:
+  config_file_path: '/etc/vimrc'
+  package_name: 'vim-enhanced'

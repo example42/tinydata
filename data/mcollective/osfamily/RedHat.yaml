@@ -1,6 +1,6 @@
 ---
-  mcollective::settings:
-    process_name: 'ruby'
-    process_extra_name: 'mcollectived'
-    data_dir_path: '/usr/libexec/mcollective'
-    init_file_path: '/etc/sysconfig/mcollective'
+mcollective::settings:
+  process_name: 'ruby'
+  process_extra_name: 'mcollectived'
+  data_dir_path: '/usr/libexec/mcollective'
+  init_file_path: '/etc/sysconfig/mcollective'

@@ -1,6 +1,6 @@
 ---
-  yum-cron::settings:
-    package_name: 'yum-cron'
-    service_name: 'yum-cron'
-    config_file_path: '/etc/yum/yum-cron.conf'
-    log_file_path: '/var/log/yum.log'
+yum-cron::settings:
+  package_name: 'yum-cron'
+  service_name: 'yum-cron'
+  config_file_path: '/etc/yum/yum-cron.conf'
+  log_file_path: '/var/log/yum.log'

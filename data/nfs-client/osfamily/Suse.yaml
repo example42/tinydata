@@ -1,4 +1,4 @@
 ---
-  nfs-client::settings:
-    package_name: 'nfs-client'
-    init_file_path: '/etc/sysconfig/nfs-client'
+nfs-client::settings:
+  package_name: 'nfs-client'
+  init_file_path: '/etc/sysconfig/nfs-client'

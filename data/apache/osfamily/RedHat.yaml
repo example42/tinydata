@@ -9,7 +9,7 @@ apache::settings:
   init_file_path: '/etc/sysconfig/httpd'
   tcp_port: '80'
   pid_file_path: '/var/run/httpd.pid'
-  log_file_path: [ '/var/log/httpd/access_log' , '/var/log/httpd/error_log' ]
+  log_file_path: ['/var/log/httpd/access_log', '/var/log/httpd/error_log']
   log_dir_path: '/var/log/httpd'
   data_dir_path: '/var/www/html'
   process_name: 'httpd'

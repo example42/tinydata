@@ -1,7 +1,7 @@
 ---
-  varnish::settings:
-    zypper_repofile_url: 'http://download.opensuse.org/repositories/server:/http/SLE_12/server:http.repo'
-    repo_name: 'server_http'
-    init_file_path: '/etc/sysconfig/varnish'
-    config_file_path: '/etc/varnish/vcl.conf'
-    pid_file_path: '/var/run/varnishd.pid'
+varnish::settings:
+  zypper_repofile_url: 'http://download.opensuse.org/repositories/server:/http/SLE_12/server:http.repo'
+  repo_name: 'server_http'
+  init_file_path: '/etc/sysconfig/varnish'
+  config_file_path: '/etc/varnish/vcl.conf'
+  pid_file_path: '/var/run/varnishd.pid'

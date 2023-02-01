@@ -1,4 +1,4 @@
 ---
-  rundeck::settings:
-    repo_package_url: 'http://repo.rundeck.org/latest.rpm'
-    repo_package_name: 'rundeck-repo'
+rundeck::settings:
+  repo_package_url: 'http://repo.rundeck.org/latest.rpm'
+  repo_package_name: 'rundeck-repo'

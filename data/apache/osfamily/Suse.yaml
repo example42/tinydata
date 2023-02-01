@@ -6,7 +6,7 @@ apache::settings:
   init_file_path: '/etc/default/apache2'
   config_dir_path: '/etc/apache2'
   pid_file_path: '/var/run/httpd2.pid'
-  log_file_path: [ '/var/log/apache2/access.log' , '/var/log/apache2/error.log' ]
+  log_file_path: ['/var/log/apache2/access.log', '/var/log/apache2/error.log']
   log_dir_path: '/var/log/apache2'
   data_dir_path: '/var/www/htdocs'
   process_name: 'httpd2-prefork'

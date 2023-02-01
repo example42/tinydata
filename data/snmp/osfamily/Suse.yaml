@@ -1,4 +1,3 @@
 ---
-  snmp::settings:
-    package_name: 'net-snmp-utils'
-
+snmp::settings:
+  package_name: 'net-snmp-utils'

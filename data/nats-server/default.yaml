@@ -11,7 +11,7 @@ nats-server::settings:
   config_file_path: '/etc/nats/nats-server.conf'
   config_dir_path: '/etc/nats'
 
-# tp 4 settings
+  # tp 4 settings
   install_method: 'file'
   description: 'NATS is an open-source, high-performance, cloud native messaging system.'
   docker_image: 'nats'

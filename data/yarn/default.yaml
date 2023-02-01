@@ -1,3 +1,3 @@
 ---
-  yarn::settings:
-    package_name: 'yarn'
+yarn::settings:
+  package_name: 'yarn'

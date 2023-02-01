@@ -1,7 +1,6 @@
 ---
-  gitlab-runner::settings:
-    exec_prerequisites:
-      repo_setup:
-        command: 'curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | bash'
-        creates: '/etc/apt/sources.list.d/runner_gitlab-runner.list'
-
+gitlab-runner::settings:
+  exec_prerequisites:
+    repo_setup:
+      command: 'curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | bash'
+      creates: '/etc/apt/sources.list.d/runner_gitlab-runner.list'

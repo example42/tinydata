@@ -4,5 +4,5 @@ hdm::settings:
   config_file_path: '/etc/hdm/hdm.conf'
   config_dir_path: '/etc/hdm'
   tcp_port: '8042'
-  log_file_path: [ '/opt/hdm/log/production.log' ]
+  log_file_path: ['/opt/hdm/log/production.log']
   log_dir_path: '/opt/hdm/log'

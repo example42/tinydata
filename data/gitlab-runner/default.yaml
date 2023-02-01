@@ -1,6 +1,6 @@
 ---
-  gitlab-runner::settings:
-    package_name: 'gitlab-runner'
-    service_name: 'gitlab-runner'
-    config_file_path: '/etc/gitlab-runner/config.toml'
-    config_dir_path: '/etc/gitlab-runner'
+gitlab-runner::settings:
+  package_name: 'gitlab-runner'
+  service_name: 'gitlab-runner'
+  config_file_path: '/etc/gitlab-runner/config.toml'
+  config_dir_path: '/etc/gitlab-runner'

@@ -1,6 +1,6 @@
 ---
 name: PR tests
-on: pull_request
+on: pull_request  # yamllint disable-line rule:truthy
 
 jobs:
   validate-yaml:
@@ -14,21 +14,21 @@ jobs:
     strategy:
       matrix:
         include:
-#         - container: example42/tiny-puppet-ubuntu1804
+          #  - container: example42/tiny-puppet-ubuntu1804
           - container: example42/tiny-puppet-ubuntu2004
           - container: example42/tiny-puppet-ubuntu2204
           - container: example42/tiny-puppet-debian11
           - container: example42/tiny-puppet-debian10
-#         - container: example42/tiny-puppet-debian9
-#         - container: example42/tiny-puppet-debian8
+          #  - container: example42/tiny-puppet-debian9
+          #  - container: example42/tiny-puppet-debian8
           - container: example42/tiny-puppet-rockylinux9
           - container: example42/tiny-puppet-rockylinux8
           - container: example42/tiny-puppet-almalinux9
           - container: example42/tiny-puppet-almalinux8
           - container: example42/tiny-puppet-redhat9
           - container: example42/tiny-puppet-redhat8
-#         - container: example42/tiny-puppet-centos7
-#         - container: example42/tiny-puppet-centos6
+          #  - container: example42/tiny-puppet-centos7
+          #  - container: example42/tiny-puppet-centos6
     runs-on: ubuntu-latest
     container:
       image: ${{ matrix.container }}
@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0 
+          fetch-depth: 0
       - name: Git config safe directory
         run: git config --global --add safe.directory /__w/tinydata/tinydata
       - name: Get changed files

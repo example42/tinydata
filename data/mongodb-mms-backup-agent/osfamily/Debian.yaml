@@ -1,3 +1,3 @@
 ---
-  mongodb-mms-backup-agent::settings:
-    init_file_path: '/etc/init/mongodb-mms-backup-agent.conf'
+mongodb-mms-backup-agent::settings:
+  init_file_path: '/etc/init/mongodb-mms-backup-agent.conf'

@@ -2,7 +2,7 @@
 puppet-agent::settings:
   upstream_repo: true
   package_name: 'puppet-agent'
-  service_name: [ 'puppet', 'pxp-agent' ]
+  service_name: ['puppet', 'pxp-agent']
   config_file_path: '/etc/puppetlabs/puppet/puppet.conf'
   config_dir_path: '/etc/puppetlabs/puppet'
   pid_file_path: '/var/run/puppetlabs/agent.pid'
@@ -14,6 +14,3 @@ puppet-agent::settings:
   log_dir_path:
     - '/var/log/puppetlabs/puppet'
     - '/var/log/puppetlabs/pxp-agent'
-  process_name: 'puppet'
-  process_user: 'root'
-  process_group: 'root'

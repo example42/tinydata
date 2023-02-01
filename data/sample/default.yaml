@@ -10,7 +10,7 @@ sample::settings:
   process_group: 'root'
   config_file_path: '/etc/sample/sample.conf'
   config_file_format: yaml
-#  validate_cmd: 'sample validate'
+  #  validate_cmd: 'sample validate'
   pid_file_path: '/run/sample.pid'
   init_file_path: '/etc/sysconfig/sample.conf'
   log_file_path:
@@ -19,7 +19,7 @@ sample::settings:
   log_dir_path:
     - '/var/log/sample'
 
-# tp 4 settings
+  # tp 4 settings
   install_method: 'package'
   description: 'sample  description'
   docker_image: 'sample/sample'

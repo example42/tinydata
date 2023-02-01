@@ -1,11 +1,11 @@
 ---
-  octocatalog-diff::settings:
-    package_name: 'octocatalog-diff'
-    package_provider: 'gem'
-    config_file_path: '/etc/octocatalog-diff.cfg.rb'
-    tp_prerequisites:
-      - ruby
-      - ruby-dev
-      - make
-    package_prerequisites:
-      - cmake
+octocatalog-diff::settings:
+  package_name: 'octocatalog-diff'
+  package_provider: 'gem'
+  config_file_path: '/etc/octocatalog-diff.cfg.rb'
+  tp_prerequisites:
+    - ruby
+    - ruby-dev
+    - make
+  package_prerequisites:
+    - cmake

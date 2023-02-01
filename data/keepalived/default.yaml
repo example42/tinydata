@@ -1,11 +1,11 @@
 ---
-  keepalived::settings:
-    package_name: 'keepalived'
-    service_name: 'keepalived'
-    config_file_path: '/etc/keepalived/keepalived.conf'
-    config_dir_path: '/etc/keepalived'
-    init_file_path: '/etc/sysconfig/keepalived'
-    log_file_path: '/var/log/messages'
-    process_name: 'keepalived'
-    process_user: 'root'
-    process_group: 'root'
+keepalived::settings:
+  package_name: 'keepalived'
+  service_name: 'keepalived'
+  config_file_path: '/etc/keepalived/keepalived.conf'
+  config_dir_path: '/etc/keepalived'
+  init_file_path: '/etc/sysconfig/keepalived'
+  log_file_path: '/var/log/messages'
+  process_name: 'keepalived'
+  process_user: 'root'
+  process_group: 'root'

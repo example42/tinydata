@@ -1,5 +1,5 @@
 ---
-  supervisor::settings:
-    config_file_path: '/etc/supervisord.conf'
-    config_dir_path: ''
-    conf_dir_path: ''
+supervisor::settings:
+  config_file_path: '/etc/supervisord.conf'
+  config_dir_path: ''
+  conf_dir_path: ''

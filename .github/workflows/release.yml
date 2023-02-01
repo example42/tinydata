@@ -1,7 +1,7 @@
 ---
 name: Release
 
-on:
+on:  # yamllint disable-line rule:truthy
   push:
     tags:
       - '*'
@@ -19,7 +19,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Publish to the Forge
-        run: /usr/local/bin/pdk bundle exec rake module:push 
+        run: /usr/local/bin/pdk bundle exec rake module:push
         env:
           BLACKSMITH_FORGE_USERNAME: '${{ secrets.PUPPET_FORGE_USERNAME }}'
           BLACKSMITH_FORGE_API_KEY: '${{ secrets.PUPPET_FORGE_API_KEY }}'

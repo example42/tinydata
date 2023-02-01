@@ -1,9 +1,9 @@
 ---
-  grafana::settings:
-    init_file_path: '/etc/sysconfig/grafana-server'
-    repo_url: 'https://packages.grafana.com/oss/rpm'
-    key: 'D59097AB'
-    package_prerequisites:
-      - 'initscripts'
-      - 'fontconfig'
-      - 'urw-fonts'
+grafana::settings:
+  init_file_path: '/etc/sysconfig/grafana-server'
+  repo_url: 'https://packages.grafana.com/oss/rpm'
+  key: 'D59097AB'
+  package_prerequisites:
+    - 'initscripts'
+    - 'fontconfig'
+    - 'urw-fonts'

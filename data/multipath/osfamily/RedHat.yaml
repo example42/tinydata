@@ -1,6 +1,6 @@
 ---
-  multipath::settings:
-    package_name: 'device-mapper-multipath'
-    service_name: 'multipathd'
-    init_file_path: '/etc/sysconfig/multipath'
-    config_file_path: '/etc/multipath.conf'
+multipath::settings:
+  package_name: 'device-mapper-multipath'
+  service_name: 'multipathd'
+  init_file_path: '/etc/sysconfig/multipath'
+  config_file_path: '/etc/multipath.conf'

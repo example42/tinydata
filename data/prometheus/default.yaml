@@ -14,7 +14,7 @@ prometheus::settings:
   config_file_group: prometheus
   config_file_mode: '0660'
   config_file_format: yaml
-#  validate_cmd: 'prometheus validate'
+  #  validate_cmd: 'prometheus validate'
   pid_file_path: ''
   init_file_path: '/etc/sysconfig/prometheus.conf'
   log_file_path:
@@ -24,7 +24,7 @@ prometheus::settings:
   log_dir_path: '/var/log/prometheus'
 
 
-# tp 4 settings
+  # tp 4 settings
   install_method: 'file'
   description: 'The Prometheus monitoring system and time series database'
   website: 'https://prometheus.io/'
@@ -119,7 +119,7 @@ prometheus::settings:
         mode: '0755'
       prometheus.yml:
         path: '/etc/prometheus/prometheus.yml'
-        mode: '0644'    
+        mode: '0644'
     resources:
       file:
         /etc/prometheus:
@@ -136,8 +136,8 @@ prometheus::settings:
         ExecStart: '/usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml'
     manage_service: true
     manage_user: true
-#    systemd_symlink: '/etc/systemd/system/multi-user.target.wants/prometheus.service' #default
-#    systemd_template: 'tinydata/prometheus/systemd.epp'
+    #    systemd_symlink: '/etc/systemd/system/multi-user.target.wants/prometheus.service' #default
+    #    systemd_template: 'tinydata/prometheus/systemd.epp'
 
   build:
     enable: false

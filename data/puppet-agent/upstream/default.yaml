@@ -5,7 +5,7 @@ puppet-agent::settings:
 
 
   # tp 4 settings
-  
+
   files:
     config:
       path: '/etc/puppetlabs/puppet/puppet.conf'
@@ -58,7 +58,7 @@ puppet-agent::settings:
     clientbucketdir:
       path: /opt/puppetlabs/puppet/cache/clientbucket
     clientyamldir:
-      path: /opt/puppetlabs/puppet/cache/client_yaml  
+      path: /opt/puppetlabs/puppet/cache/client_yaml
     codedir:
       path: /etc/puppetlabs/code
     confdir:

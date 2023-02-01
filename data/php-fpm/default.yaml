@@ -1,11 +1,11 @@
 ---
-  php-fpm::settings:
-    package_name: 'php-fpm'
-    service_name: 'php-fpm'
-    config_file_path: '/etc/php-fpm.conf'
-    config_dir_path: '/etc/php-fpm'
-    conf_dir_path: '/etc/php-fpm.d'
-    pid_file_path: '/var/run/php-fpm/php-fpm.pid'
-    log_file_path: '/var/log/php-fpm/error.log'
-    log_dir_path: '/var/log/php-fpm'
-    process_name: 'php-fpm'
+php-fpm::settings:
+  package_name: 'php-fpm'
+  service_name: 'php-fpm'
+  config_file_path: '/etc/php-fpm.conf'
+  config_dir_path: '/etc/php-fpm'
+  conf_dir_path: '/etc/php-fpm.d'
+  pid_file_path: '/var/run/php-fpm/php-fpm.pid'
+  log_file_path: '/var/log/php-fpm/error.log'
+  log_dir_path: '/var/log/php-fpm'
+  process_name: 'php-fpm'

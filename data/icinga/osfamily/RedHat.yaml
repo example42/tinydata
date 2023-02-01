@@ -1,7 +1,7 @@
 ---
-  icinga::settings:
-    init_file_path: '/etc/sysconfig/icinga'
-    config_file_owner: 'icinga'
-    config_file_group: 'icinga'
-    config_file_mode: '664'
+icinga::settings:
+  init_file_path: '/etc/sysconfig/icinga'
+  config_file_owner: 'icinga'
+  config_file_group: 'icinga'
+  config_file_mode: '664'
 

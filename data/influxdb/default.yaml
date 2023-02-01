@@ -1,17 +1,17 @@
 ---
-  influxdb::settings:
-    package_name: 'influxdb'
-    service_name: 'influxdb'
-    config_file_path: '/etc/influxdb/influxdb.conf'
-    config_dir_path: '/etc/influxdb'
-    pid_file_path: '/var/run/influxdb.pid'
-    log_file_path: '/var/log/influxdb/influxdb.log'
-    log_dir_path: '/var/log/influxdb'
-    process_name: 'influxd'
-    process_user: 'influxdb'
-    process_group: 'influxdb'
-    tcp_port:
-      - 8088
-      - 8086
-    key: '87F70D56'
-    key_url: 'https://repos.influxdata.com/influxdb.key'
+influxdb::settings:
+  package_name: 'influxdb'
+  service_name: 'influxdb'
+  config_file_path: '/etc/influxdb/influxdb.conf'
+  config_dir_path: '/etc/influxdb'
+  pid_file_path: '/var/run/influxdb.pid'
+  log_file_path: '/var/log/influxdb/influxdb.log'
+  log_dir_path: '/var/log/influxdb'
+  process_name: 'influxd'
+  process_user: 'influxdb'
+  process_group: 'influxdb'
+  tcp_port:
+    - 8088
+    - 8086
+  key: '87F70D56'
+  key_url: 'https://repos.influxdata.com/influxdb.key'

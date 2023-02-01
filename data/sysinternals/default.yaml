@@ -1,6 +1,6 @@
 ---
 sysinternals::settings:
-  package_name: sysinternalsebpf # It's not the full sysinternals suite (on Linux)
+  package_name: sysinternalsebpf  # It's not the full sysinternals suite (on Linux)
   website_url: 'https://learn.microsoft.com/sysinternals/'
   git_source: 'https://github.com/Sysinternals/SysinternalsEBPF.git'
   tp_prerequisites:

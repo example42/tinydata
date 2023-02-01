@@ -15,7 +15,7 @@
 # Some of them are used, as technology preview, in tp version 3.8.0 onwards.
 
 # Note that in every template used by the tp::conf define you can access to these settings
-# (so that you can automatically configure in your own templates the right paths and names for
+# (so that you can automatically configure in your own templates the right paths and names for
 # different underlying OSes) via the $settings variable (an hash with the settings values merged across the hierarchy).
 # For example to get the name of the user running a given app (as a service) you can use something like:
 #   User <%= @settings['process_user'] %> # In erb templates
@@ -37,139 +37,139 @@
 # ProTip: Use as existing app one of the example ones like: "sample", "sample_desktop" ...
 reference::settings:
 
-# If the app needs other apps, installed via tp.
-# Key used in tp::install (and tp::install::*)
-# Valids values: String, Array, Hash of tp::install resources with (in case of Hash)
-# their parameters. v3 and v4 compatible.
-# These resources, as every other prerequisites, are installed if tp::auto_prereq is set to true.
-# If auto_prereq is set to false, the user is responsible for managing the prerequisites, when needed.
+  # If the app needs other apps, installed via tp.
+  # Key used in tp::install (and tp::install::*)
+  # Valids values: String, Array, Hash of tp::install resources with (in case of Hash)
+  # their parameters. v3 and v4 compatible.
+  # These resources, as every other prerequisites, are installed if tp::auto_prereq is set to true.
+  # If auto_prereq is set to false, the user is responsible for managing the prerequisites, when needed.
   tp_prerequisites: {}
 
-# If to use the upstream repo from the app developer or not (if it exists and is defined in tinydata)
+  # If to use the upstream repo from the app developer or not (if it exists and is defined in tinydata)
   upstream_repo: false
 
-# The name of the package to install. Must be available on the system or via the configured repo
-# v3 and v4 compatible.
+  # The name of the package to install. Must be available on the system or via the configured repo
+  # v3 and v4 compatible.
   package_name: 'reference'
 
-# The provider to use for the package resource. Tinydata defaults are:
-# - chocolatey on windows (you need to install chocolatey by yourself)
-# - homebrew on Darwin (you need to install homebrew by yourself)
-# - Puppet's default package provider for the other OSes
+  # The provider to use for the package resource. Tinydata defaults are:
+  # - chocolatey on windows (you need to install chocolatey by yourself)
+  # - homebrew on Darwin (you need to install homebrew by yourself)
+  # - Puppet's default package provider for the other OSes
   package_provider: ~
 
-# The source argument of the package resource. The value is passed to the tp::url_replace function
-# which automatically replaces the following variables in the string:
-# $OS with downcase($facts['kernel'])
-# $ARCH with $facts['os']['architecture'] (with some mapping to match GitHub default names of archs)
-# $VERSION with the version of the package (if set via $ensure, $version or in $settings.releases.latest_version)
-# For example, this could be:
-# package_source: 'https://github.com/reference/reference/releases/download/v$VERSION/reference_$VERSION_$OS_$ARCH.msi'
-# This works only with Puppet providers that accept a source argument
+  # The source argument of the package resource. The value is passed to the tp::url_replace function
+  # which automatically replaces the following variables in the string:
+  # $OS with downcase($facts['kernel'])
+  # $ARCH with $facts['os']['architecture'] (with some mapping to match GitHub default names of archs)
+  # $VERSION with the version of the package (if set via $ensure, $version or in $settings.releases.latest_version)
+  # For example, this could be:
+  # package_source: 'https://github.com/reference/reference/releases/download/v$VERSION/reference_$VERSION_$OS_$ARCH.msi'
+  # This works only with Puppet providers that accept a source argument
   package_source: ~
 
-# The install_options argument of the package resource.
+  # The install_options argument of the package resource.
   package_install_options: []
 
-# An optional hash of parameters to pass to the package resource. They are merged and can override
-# or extend the above default package parameters (ensure,provider,source,install_options)
-# Note that is you set both package_source: foo and package_params: { source: 'bar' } the latter (bar)
-# will be used. Same for the provider and install_options arguments.
+  # An optional hash of parameters to pass to the package resource. They are merged and can override
+  # or extend the above default package parameters (ensure,provider,source,install_options)
+  # Note that is you set both package_source: foo and package_params: { source: 'bar' } the latter (bar)
+  # will be used. Same for the provider and install_options arguments.
   package_params: {}
 
-# The name of the service to manage. When present, the relevant service resource is managed.
+  # The name of the service to manage. When present, the relevant service resource is managed.
   service_name: 'reference'
 
-# An optional hash of parameters to pass to the service resource. They are merged and can override
-# or extend the default service parameters (ensure/enable/require)
+  # An optional hash of parameters to pass to the service resource. They are merged and can override
+  # or extend the default service parameters (ensure/enable/require)
   service_params: {}
 
-# The name of the process of the managed application. This is used by the tp test, tp info and
-# tp debug commands automatically show relevant information
+  # The name of the process of the managed application. This is used by the tp test, tp info and
+  # tp debug commands automatically show relevant information
   process_name: 'reference'
 
-# The name of the user used by the app when it runs as a service. This is used by the tp::service
-# define when configuring automatically the systemd unit files.
+  # The name of the user used by the app when it runs as a service. This is used by the tp::service
+  # define when configuring automatically the systemd unit files.
   process_user: 'root'
 
-# The name of the group used by the app when it runs a service. This is used by tp::service as well
+  # The name of the group used by the app when it runs a service. This is used by tp::service as well
   process_group: 'root'
 
-# The path of the "main" configuration file of the app. When it's not clear what's the main
-# config file, choice is arbitrarily left to the tinydata developer.
-# This is the file managed when you use the tp::conf define without further arguments like path.
-# tp::conf { 'reference': content => "whatever" } will manage the file in the path below.
-# v3 format. v4 format equivalent is files.config.path
+  # The path of the "main" configuration file of the app. When it's not clear what's the main
+  # config file, choice is arbitrarily left to the tinydata developer.
+  # This is the file managed when you use the tp::conf define without further arguments like path.
+  # tp::conf { 'reference': content => "whatever" } will manage the file in the path below.
+  # v3 format. v4 format equivalent is files.config.path
   config_file_path: '/etc/reference/reference.conf'
 
-# The format of the main configuration file. Can be any of the following:
-# yaml, json, hcl (TODO), inifile, inifile_with_stanzas, spaced, spaced_with_stanzas
-# When this setting is present you can directly configure the content of a file, via tp::conf
-# without specifying a template or a sttic source. For example, Hiera data as follows:
-# tp::confs:
-#   reference:
-#     my_options:
-#       foo: bar
-#       my: baz
-# Or the analog Puppet code:
-# tp::conf { 'reference':
-#   my_options => {
-#     foo => 'bar',
-#     my  => 'baz',
-#   }
-# }
-# Will create /etc/reference/reference.conf in yaml format as follows:
-# ---
-# foo: bar
-# my: baz
-# v3 format. v4 format equivalent is files.config.format
+  # The format of the main configuration file. Can be any of the following:
+  # yaml, json, hcl (TODO), inifile, inifile_with_stanzas, spaced, spaced_with_stanzas
+  # When this setting is present you can directly configure the content of a file, via tp::conf
+  # without specifying a template or a sttic source. For example, Hiera data as follows:
+  # tp::confs:
+  #   reference:
+  #     my_options:
+  #       foo: bar
+  #       my: baz
+  # Or the analog Puppet code:
+  # tp::conf { 'reference':
+  #   my_options => {
+  #     foo => 'bar',
+  #     my  => 'baz',
+  #   }
+  # }
+  # Will create /etc/reference/reference.conf in yaml format as follows:
+  # ---
+  # foo: bar
+  # my: baz
+  # v3 format. v4 format equivalent is files.config.format
   config_file_format: yaml
 
-# The eventual value of Puppet's validate_cmd argument for the main configuration file resource, when managed via tp::conf.
-# This allows you to automatically validate the syntax of your configurations before changing them via Puppet
-# Note the % which is the default placeholder for the file to validate (keep it)
-# v3 format. v4 format equivalent is files.config.validate_cmd
+  # The eventual value of Puppet's validate_cmd argument for the main configuration file resource, when managed via tp::conf.
+  # This allows you to automatically validate the syntax of your configurations before changing them via Puppet
+  # Note the % which is the default placeholder for the file to validate (keep it)
+  # v3 format. v4 format equivalent is files.config.validate_cmd
   validate_cmd: 'reference validate %'
 
-# The path of the pid file, if any. This is used by the tp info and tp debug commands to show info based the pid of the process
-# v3 format. v4 format equivalent is files.pid.path
+  # The path of the pid file, if any. This is used by the tp info and tp debug commands to show info based the pid of the process
+  # v3 format. v4 format equivalent is files.pid.path
   pid_file_path: '/run/reference.pid'
 
-# The path of the service configuration file (not the systemd unit file or init script, but the file that they uses to configure the service)
-# v3 format. v4 format equivalent is files.init.path
+  # The path of the service configuration file (not the systemd unit file or init script, but the file that they uses to configure the service)
+  # v3 format. v4 format equivalent is files.init.path
   init_file_path: '/etc/sysconfig/reference.conf'
 
-# The path[s] of the log file[s] of the app. This is used by the tp log and tp info commands to tail logs or show info on the app
-# v3 format. v4 format equivalent is files.log.path
+  # The path[s] of the log file[s] of the app. This is used by the tp log and tp info commands to tail logs or show info on the app
+  # v3 format. v4 format equivalent is files.log.path
   log_file_path:
     - '/var/log/reference/reference.log'
 
-# The path of the directory where the app stores its configurations. This is the default path used by the tp::dir define.
-# v3 format. v4 format equivalent is dirs.config.path
+  # The path of the directory where the app stores its configurations. This is the default path used by the tp::dir define.
+  # v3 format. v4 format equivalent is dirs.config.path
   config_dir_path: '/etc/reference'
 
-# The path where the app stores its log (if different by general log dirs like /var/log)
-# v3 format. v4 format equivalent is dirs.log.path
+  # The path where the app stores its log (if different by general log dirs like /var/log)
+  # v3 format. v4 format equivalent is dirs.log.path
   log_dir_path:
     - '/var/log/reference'
 
-# An v4 hash of files related to the app. Some of the subkeys have a common meaning and usage, others can be specific to the app.
-# They are used by tp::conf to manage files without the need to specify their path, and also can be used by tp info and tp debug commands.
-# The common keys are:
-# config : the main configuration file. It's path is used when you use tp::conf { 'appname': }
-# init   : the init script or systemd unit file configuration file. It's path is used when you use tp::conf { 'appname::init': }
-# systemd: the systemd unit file. It's path is used when you use tp::conf { 'appname::systemd': }
-# pid    : the pid file.
-# Any other string can be used to refer to other app specific files. Syntax and usage is similar. For example on nuclei
-# tinydata you can have
-# templates: the .templates-config.json file, which can be configured with tp::conf { 'nuclei::templates': }
-# For each file the following subkeys can be used:
-# path        : the path of the file (required)
-# format      : the format of the file (optional, possible values are yaml, json, , inifile, inifile_with_stanzas, spaced, spaced_with_stanzas config_file_format)
-# validate_cmd: the validate_cmd argument for the file resource used to validate its syntax before it's changed by Puppet (optional)
-# mode        : the mode of the file (optional)
-# owner       : the owner of the file (optional)
-# group       : the group of the file (optional)
+  # An v4 hash of files related to the app. Some of the subkeys have a common meaning and usage, others can be specific to the app.
+  # They are used by tp::conf to manage files without the need to specify their path, and also can be used by tp info and tp debug commands.
+  # The common keys are:
+  # config : the main configuration file. It's path is used when you use tp::conf { 'appname': }
+  # init   : the init script or systemd unit file configuration file. It's path is used when you use tp::conf { 'appname::init': }
+  # systemd: the systemd unit file. It's path is used when you use tp::conf { 'appname::systemd': }
+  # pid    : the pid file.
+  # Any other string can be used to refer to other app specific files. Syntax and usage is similar. For example on nuclei
+  # tinydata you can have
+  # templates: the .templates-config.json file, which can be configured with tp::conf { 'nuclei::templates': }
+  # For each file the following subkeys can be used:
+  # path        : the path of the file (required)
+  # format      : the format of the file (optional, possible values are yaml, json, , inifile, inifile_with_stanzas, spaced, spaced_with_stanzas config_file_format)
+  # validate_cmd: the validate_cmd argument for the file resource used to validate its syntax before it's changed by Puppet (optional)
+  # mode        : the mode of the file (optional)
+  # owner       : the owner of the file (optional)
+  # group       : the group of the file (optional)
   files:
     config:
       path: '/etc/reference/reference.conf'
@@ -182,21 +182,21 @@ reference::settings:
     pid:
       path: '/run/reference.pid'
 
-# An v4 hash of directories related to the app. Some of the subkeys have a common meaning and usage, others can be specific to the app.
-# They are used by tp::dir to manage the directories without the need to specify their path, and also can be used by tp info and tp debug commands.
-# The common keys are:
-# config : the main configuration directory. It's path is used when you use tp::dir { 'appname': }
-# conf   : a configuration directory for additional configuration files which are automatically added to the app's configuration (the dot conf files).
-#          It's path is used when you use tp::dir { 'appname::conf': }
-# log    : the log directory. It's path is used when you use tp::dir { 'appname::log': } (usually you don't need to manage it)
-# home   : the app's home directory if applicable
-# data   : the directory where the app stores its data
-# Also for dirs you can have additional keys which refer to dirs specific to the app.
-# For each dir the following subkeys can be used:
-# path        : the path of the dir (required)
-# mode        : the mode of the dir (optional)
-# owner       : the owner of the dir (optional)
-# group       : the group of the dir (optional)
+  # An v4 hash of directories related to the app. Some of the subkeys have a common meaning and usage, others can be specific to the app.
+  # They are used by tp::dir to manage the directories without the need to specify their path, and also can be used by tp info and tp debug commands.
+  # The common keys are:
+  # config : the main configuration directory. It's path is used when you use tp::dir { 'appname': }
+  # conf   : a configuration directory for additional configuration files which are automatically added to the app's configuration (the dot conf files).
+  #          It's path is used when you use tp::dir { 'appname::conf': }
+  # log    : the log directory. It's path is used when you use tp::dir { 'appname::log': } (usually you don't need to manage it)
+  # home   : the app's home directory if applicable
+  # data   : the directory where the app stores its data
+  # Also for dirs you can have additional keys which refer to dirs specific to the app.
+  # For each dir the following subkeys can be used:
+  # path        : the path of the dir (required)
+  # mode        : the mode of the dir (optional)
+  # owner       : the owner of the dir (optional)
+  # group       : the group of the dir (optional)
   dirs:
     config:
       path: '/etc/reference'
@@ -207,68 +207,68 @@ reference::settings:
     home:
       path: /var/lib/reference
 
-# This is a v4 hash equivalent to the files hash. It's used when Puppet is running as a not provileged user.
-# So, given the examples in this doc, when you apply a manifest with tp::conf { 'reference': } the default
-# path used will be /etc/reference/reference.conf if Puppet is running as root (on Linux and Mac) while
-# if Puppet is running as a normal user the same define will manage the file $HOME/.reference/reference.conf
-# Remember that you can always specify the path of the file to manage with tp::conf { 'reference': path => '/path/to/file' }
+  # This is a v4 hash equivalent to the files hash. It's used when Puppet is running as a not provileged user.
+  # So, given the examples in this doc, when you apply a manifest with tp::conf { 'reference': } the default
+  # path used will be /etc/reference/reference.conf if Puppet is running as root (on Linux and Mac) while
+  # if Puppet is running as a normal user the same define will manage the file $HOME/.reference/reference.conf
+  # Remember that you can always specify the path of the file to manage with tp::conf { 'reference': path => '/path/to/file' }
   user_files:
     config:
       path: '$HOME/.reference/reference.conf'
 
-# This is a v4 hash equivalent to the dirs hash. It's used when Puppet is running as a not provileged user.
-# Same logic as for user_files.
+  # This is a v4 hash equivalent to the dirs hash. It's used when Puppet is running as a not provileged user.
+  # Same logic as for user_files.
   user_dirs:
     config:
       path: '$HOME/.reference'
 
-# This is v4 setting which allows you specify how the app has to be installed.
-# What is set here in tinydata can be overridden by the tp::install argument install_method.
-# Note however that not all the install methods might be available (or have the required tinydata)
-# for all the apps and OS.
-# Possible values are:
-# package: the app is installed from a system package and managed by Puppet's package resource. This is usually the default value.
-# file   : the app is installed from a file downloaded and eventually extracted from an archive. Details under the release setting.
-# source : the app is installed and eventually compiled from the git source repository. Details under the build setting.
-# image  : the app is installed as a Docker image. Details under the image setting.
+  # This is v4 setting which allows you specify how the app has to be installed.
+  # What is set here in tinydata can be overridden by the tp::install argument install_method.
+  # Note however that not all the install methods might be available (or have the required tinydata)
+  # for all the apps and OS.
+  # Possible values are:
+  # package: the app is installed from a system package and managed by Puppet's package resource. This is usually the default value.
+  # file   : the app is installed from a file downloaded and eventually extracted from an archive. Details under the release setting.
+  # source : the app is installed and eventually compiled from the git source repository. Details under the build setting.
+  # image  : the app is installed as a Docker image. Details under the image setting.
   install_method: 'package'
 
-# The description of the app. It's used by tp command. v4.
+  # The description of the app. It's used by tp command. v4.
   description: 'reference_packages description'
 
-# The name or the url of the official container image of the app. v3 format. The v4 equivalent is image.name
+  # The name or the url of the official container image of the app. v3 format. The v4 equivalent is image.name
   docker_image: 'reference/reference'
 
-# The official website of the application. v4. Used by tp command.
+  # The official website of the application. v4. Used by tp command.
   website: 'https://reference.com'
 
-# The tickets/issues page of the application. v4. Currently still not used.
+  # The tickets/issues page of the application. v4. Currently still not used.
   issues: 'https://github.com/reference/reference/issues'
 
-# The git repository of the application. Used by tp::source and tp::install (with install_method = source). v4.
+  # The git repository of the application. Used by tp::source and tp::install (with install_method = source). v4.
   git_source: 'https://github.com/reference/reference'
 
-# An hash of extra commands to execute when running the tp info command or tp::info task. v3 and v4 compatible.
-# The keys are the names of the commands (ie: tp info APP list), the values are the actual commands to execute.
+  # An hash of extra commands to execute when running the tp info command or tp::info task. v3 and v4 compatible.
+  # The keys are the names of the commands (ie: tp info APP list), the values are the actual commands to execute.
   info_commands:
     list: 'reference list'
 
-# An hash of extra commands to execute when running the tp debug command or tp::debug task. v3 and v4 compatible.
-# The keys are the names of the commands (ie: tp debug APP list), the values are the actual commands to execute.
+  # An hash of extra commands to execute when running the tp debug command or tp::debug task. v3 and v4 compatible.
+  # The keys are the names of the commands (ie: tp debug APP list), the values are the actual commands to execute.
   debug_commands:
     list: 'reference debug'
 
-# An hash of extra commands used to test if the application is running or installed correctly.
-# They are executed when running the tp test command or the tp::test task. v3 and v4 compatible.
+  # An hash of extra commands used to test if the application is running or installed correctly.
+  # They are executed when running the tp test command or the tp::test task. v3 and v4 compatible.
   test_commands:
     status: 'reference status'
 
-# The command to run to show the application's version. By default it's used appname --version, if a different command
-# or argument is needed. Specify it here. v3 and v4 compatible.
+  # The command to run to show the application's version. By default it's used appname --version, if a different command
+  # or argument is needed. Specify it here. v3 and v4 compatible.
   version_command: 'reference version'
 
-# An hash of commands to execute when running the tp::run command or the tp::run task. v3 and v4 compatible.
-# Experimental feature yet to be implemented. Format of the subkeys might change.
+  # An hash of commands to execute when running the tp::run command or the tp::run task. v3 and v4 compatible.
+  # Experimental feature yet to be implemented. Format of the subkeys might change.
   run_commands:
     start:
       command: 'reference start'
@@ -284,22 +284,22 @@ reference::settings:
     restart:
       command: 'reference restart'
 
-# The main tcp port used by the application, if applicable. v3 only. Replaced by v4 ports.main.port and ports.main.protocol: tcp
+  # The main tcp port used by the application, if applicable. v3 only. Replaced by v4 ports.main.port and ports.main.protocol: tcp
   tcp_port: 42
 
-# The main udp port used by the application, if applicable. v3 only. Replaced by v4 ports.main.port and ports.main.protocol: udp
+  # The main udp port used by the application, if applicable. v3 only. Replaced by v4 ports.main.port and ports.main.protocol: udp
   udp_port: 42
 
-# A v4 hash of all the ports used by the application.
-# The keys are the names of the ports, common names are (other names can be application specific):
-# main: the main port used by the application
-# ssl : the main port used by the application for ssl connections
-# For each port name the values are hashes with the following keys:
-# port     : the port number (required)
-# protocol : the protocol used (optional, default tcp)
-# listen   : the address to listen on (optional, default is based on the app's default)
-# These settings are used by tp test and tp info commands and by tp::install with install_method=image
-# to automatically map the app's port from host to container (see details under image setting).
+  # A v4 hash of all the ports used by the application.
+  # The keys are the names of the ports, common names are (other names can be application specific):
+  # main: the main port used by the application
+  # ssl : the main port used by the application for ssl connections
+  # For each port name the values are hashes with the following keys:
+  # port     : the port number (required)
+  # protocol : the protocol used (optional, default tcp)
+  # listen   : the address to listen on (optional, default is based on the app's default)
+  # These settings are used by tp test and tp info commands and by tp::install with install_method=image
+  # to automatically map the app's port from host to container (see details under image setting).
   ports:
     main:
       port: 42
@@ -309,8 +309,8 @@ reference::settings:
       port: 4432
       protocol: tcp
 
-# Configurations to manage app as a container image. v4 only.
-# Used by tp::install with install_method=image
+  # Configurations to manage app as a container image. v4 only.
+  # Used by tp::install with install_method=image
   image:
     # The name of the image to use. Passed to docker pull.
     # Can be a full url like quay.io/argoproj/argocd or just the
@@ -361,7 +361,7 @@ reference::settings:
     # maps systemd_options into a valid Systemd unit file in ini file format with stanza. You probably don't need to set this.
     systemd_template: 'tp/inifile_with_stanzas.erb'
 
-# A v4 setting used by the tp::build define.
+  # A v4 setting used by the tp::build define.
   build:
     # An hash of Puppet resources (file, exec, package, tp::install ... any Puppet resource type can be used)
     # to apply before building the app. The values of each resource (here tp::install) can be a string, an array
@@ -378,14 +378,14 @@ reference::settings:
       setup:
         command: 'make install'
 
-# A v4 setting used by the tp::install define to install the app when install_method=file
+  # A v4 setting used by the tp::install define to install the app when install_method=file
   releases:
     # An hash of Puppet resources (file, exec, package, tp::install ... any Puppet resource type can be used)
     # to apply before installing the app with install_method=file . The values of each resource can be a string,
     # an array or an hash of resource titles with the relevant arguments
     prerequisites: {}
 
-    # The application latest known version released. This can be set the $version parameter of tp::install
+    # The application latest known version released. This can be set the $version parameter of tp::install
     # In the future, this value is going to be automatically updated, but it's likely to not be updated.
     # It's used when no specific version is set via tp::install.
     latest_version: '1.0.0'
@@ -405,18 +405,18 @@ reference::settings:
     base_path: 'releases/download/reference-$VERSION'
     file_name: 'reference-$VERSION.tar.gz'
 
-    # The format of the archive. Needed to find the right way to decompress it
+    # The format of the archive. Needed to find the right way to decompress it
     file_format: tar.gz
 
     # Url of the latest release of an app, in case it's a fixed url which never changes and always points to
-    # the latest version of the app.
+    # the latest version of the app.
     latest_url: ~
 
     # The name of the directory extracted from the archive. This gets variables replacement as well.
     # If not set, the file name without the file_format extension will be used.
-    # If empty the archive is not extracted into a directory but contains direclty one more files.
-    # When this happens, the extracted_file setting is used to specify the name of an extracted file.
-    # If extracted_dir is not an empty string, then extracted_file is ignored.
+    # If empty the archive is not extracted into a directory but contains direclty one more files.
+    # When this happens, the extracted_file setting is used to specify the name of an extracted file.
+    # If extracted_dir is not an empty string, then extracted_file is ignored.
     extracted_dir: 'reference-$VERSION'
     extracted_file: ''
 

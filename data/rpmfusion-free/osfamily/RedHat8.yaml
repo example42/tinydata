@@ -1,10 +1,7 @@
 ---
 rpmfusion-free::settings:
-  repo_package_url: \
-    https://download1.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm
+  repo_package_url: https://download1.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm
   exec_postinstall:
     enable_pmfusion_free:
-      command: subscription-manager repos --enable \
-        "codeready-builder-for-rhel-8-$(uname -m)-rpms"
-      unless: subscription-manager list --consumed | \
-        grep codeready-builder-for-rhel-8-$(uname -m)-rpms
+      command: subscription-manager repos --enable "codeready-builder-for-rhel-8-$(uname -m)-rpms"
+      unless: subscription-manager list --consumed | grep codeready-builder-for-rhel-8-$(uname -m)-rpms

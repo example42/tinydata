@@ -10,4 +10,3 @@ crowdsec-firewall-bouncer-iptables::settings:
   process_group: 'root'
   tp_prerequisites:
     - crowdsec_repo
-  

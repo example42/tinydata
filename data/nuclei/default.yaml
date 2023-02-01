@@ -73,27 +73,24 @@ nuclei::settings:
       tp::install:
         - golang
     execs:
-      build:
+      - name: build
         command: 'go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest'
 
   releases:
     latest_version: '2.8.6'
     prerequisites: {}
-    release_url: 'https://github.com/projectdiscovery/nuclei/releases/download/v$VERSION/nuclei_$VERSION_$OS_$ARCH.zip'
-    base_url: 'https://github.com/projectdiscovery/nuclei'
-    base_path: 'releases/download/v$VERSION'
+    base_url: 'https://github.com/projectdiscovery/nuclei/releases/download/v$VERSION'
     file_name: 'nuclei_$VERSION_$OS_$ARCH.zip'
     extracted_dir: ''
     extracted_file: 'nuclei'
     file_format: zip
-
-  install:
-    enable: true
-    files:
-      nuclei:
-        path: '/usr/local/bin/nuclei'
-        mode: '0755'
-    resources: {}
-    manage_service: false
-    manage_user: false
+    setup:
+      enable: true
+      files:
+        nuclei:
+          path: '/usr/local/bin/nuclei'
+          mode: '0755'
+      resources: {}
+      manage_service: false
+      manage_user: false
 

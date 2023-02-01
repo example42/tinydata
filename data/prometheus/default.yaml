@@ -96,9 +96,7 @@ prometheus::settings:
   releases:
     latest_version: '2.41.0'
     prerequisites: {}
-    release_url: 'https://github.com/prometheus/prometheus/releases/download/v$VERSION/prometheus-$VERSION.$OS-$ARCH.tar.gz'
-    base_url: 'https://github.com/prometheus/prometheus'
-    base_path: 'releases/download/v$VERSION'
+    base_url: 'https://github.com/prometheus/prometheus/releases/download/v$VERSION'
     file_name: 'prometheus-$VERSION.$OS-$ARCH.tar.gz'
     extracted_dir: 'prometheus-$VERSION.$OS-$ARCH'
     file_format: 'tar.gz'
@@ -108,7 +106,7 @@ prometheus::settings:
     name: 'prom/prometheus'
     systemd_options: {}
 
-  install:
+  setup:
     enable: true
     files:
       prometheus:
@@ -136,8 +134,6 @@ prometheus::settings:
         ExecStart: '/usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml'
     manage_service: true
     manage_user: true
-    #    systemd_symlink: '/etc/systemd/system/multi-user.target.wants/prometheus.service' #default
-    #    systemd_template: 'tinydata/prometheus/systemd.epp'
 
   build:
     enable: false
@@ -147,11 +143,11 @@ prometheus::settings:
         - golang
         - npm
     execs:
-      build:
+      - name: build
         command: 'go build cmd/prometheus/main.go'
         environment:
           - 'GO111MODULE=on'
-      setup:
+      - name: setup
         command: 'go install cmd/prometheus/main.go'
         environment:
           - 'GO111MODULE=on'

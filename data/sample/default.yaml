@@ -93,25 +93,23 @@ sample::settings:
       tp::install:
         - build-essential
     execs:
-      configure:
+      - name: configure
         command: './configure'
-      build:
+      - name: build
         command: 'make'
-      setup:
+      - name: setup
         command: 'make install'
 
   releases:
     latest_version: ~
     prerequisites: {}
     latest_url: ~
-    release_url: 'https://github.com/sample/sample/releases/download/sample-$VERSION/sample-$VERSION.$OS-$ARCH.tar.gz'
-    base_url: 'https://github.com/sample/sample'
-    base_path: 'releases/download/sample-$VERSION'
+    base_url: 'https://github.com/sample/sample/releases/download/sample-$VERSION'
     file_name: 'sample-$VERSION.$OS-$ARCH.tar.gz'
     extracted_dir: 'sample-$VERSION.$OS-$ARCH'
     file_format: tar.gz
 
-  install:
+  setup:
     enable: true
     files:
       sample:

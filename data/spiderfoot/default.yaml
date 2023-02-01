@@ -8,8 +8,8 @@ spiderfoot::settings:
   service_name: 'spiderfoot'
   package_provider: 'pip'
 
-  process_name: 'spiderfoot'
-  process_user: 'spiderfoot'
+  process_name: 'sf.py'
+  process_user: 'root'
   process_group: 'root'
 
   git_source: 'https://github.com/smicallef/spiderfoot'
@@ -32,7 +32,7 @@ spiderfoot::settings:
       tp::install:
         - python-pip
     execs:
-      build:
+      - name: build
         command: 'pip install -r requirements.txt'
 
   install_method: 'source'
@@ -41,23 +41,17 @@ spiderfoot::settings:
     latest_version: '4.0'
     prerequisites: {}
     latest: {}
-    release_url: '$VERSION.tar.gz'
-    base_url: 'https://github.com/smicallef/spiderfoot'
-    base_path: 'archive/refs/tags/v$VERSION/'
+    base_url: 'https://github.com/smicallef/spiderfoot/archive/refs/tags/v$VERSION'
     file_name: 'v$VERSION.zip'
     extracted_dir: 'spiderfoot-$VERSION'
     file_format: 'zip'
 
-  install:
+  setup:
     enable: true
-    files:
-      sf.py:
-        path: '/usr/local/bin/sf.py'
-        mode: '0755'
     systemd_options:
       Service:
-        ExecStart: '/var/lib/tp/source/spiderfoot/sf.py -l 127.0.0.1:5001'
+        ExecStart: '/var/lib/tp/source/spiderfoot/sf.py -l 0.0.0.0:5001'
         EnvironmentFile: ~
     manage_service: true
-    manage_user: true
+    manage_user: false
 

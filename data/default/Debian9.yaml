@@ -2,3 +2,8 @@
 default::settings:
   apt_release: 'stretch'
   init_system: 'systemd'
+
+  repos:
+    default:
+      apt:
+        release: 'stretch'

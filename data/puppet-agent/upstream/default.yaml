@@ -5,7 +5,6 @@ puppet-agent::settings:
 
 
   # tp 4 settings
-
   files:
     config:
       path: '/etc/puppetlabs/puppet/puppet.conf'

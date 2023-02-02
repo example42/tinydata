@@ -4,8 +4,8 @@ apm-server::settings:
   exec_prerequisites:
     allow_sha1:
       command: '/usr/bin/update-crypto-policies --set DEFAULT:SHA1'
-      unless: 'rpm -qi apm-server'
+      unless: 'dnf info apm-server'
   exec_postinstall:
     disallow_sha1:
       command: '/usr/bin/update-crypto-policies --set DEFAULT'
-      unless: 'rpm -qi apm-server'
+      onlyif: '/usr/bin/update-crypto-policies --show | grep SHA1'

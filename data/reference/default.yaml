@@ -550,15 +550,6 @@ reference::settings:
       path: '$HOME/.reference'
 
   # This is v4 setting which allows you specify how the app has to be installed.
-  # What is set here in tinydata can be overridden by the tp::install argument install_method.
-  # Note however that not all the install methods might be available (or have the required tinydata)
-  # for all the apps and OS.
-  # Possible values are:
-  # package: the app is installed from a system package and managed by Puppet's package resource. This is usually the default value.
-  # file   : the app is installed from a file downloaded and eventually extracted from an archive. Details under the release setting.
-  # source : the app is installed and eventually compiled from the git source repository. Details under the build setting.
-  # image  : the app is installed as a Docker image. Details under the image setting.
-  # This is v4 setting which allows you specify how the app has to be installed.
   # What is set here in tinydata can be overridden by the tp::install argument install_method.
   # Note however that not all the install methods might be available (or have the required tinydata)
   # for all the apps and OS.
@@ -589,12 +580,8 @@ reference::settings:
 
   # The command to run to show the application's version. By default it's used appname --version, if a different command
   # or argument is needed. Specify it here. v3 and v4 compatible.
-  # The command to run to show the application's version. By default it's used appname --version, if a different command
-  # or argument is needed. Specify it here. v3 and v4 compatible.
   version_command: 'reference version'
 
-  # The command to run to show the application's help. By default it's used appname --help, if a different command
-  # or argument is needed. Specify it here. v3 and v4 compatible.
   # The command to run to show the application's help. By default it's used appname --help, if a different command
   # or argument is needed. Specify it here. v3 and v4 compatible.
   help_command: 'reference help'

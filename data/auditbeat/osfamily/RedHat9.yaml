@@ -4,8 +4,8 @@ auditbeat::settings:
   exec_prerequisites:
     allow_sha1:
       command: '/usr/bin/update-crypto-policies --set DEFAULT:SHA1'
-      unless: 'rpm -qi auditbeat'
+      unless: 'dnf info auditbeat'
   exec_postinstall:
     disallow_sha1:
       command: '/usr/bin/update-crypto-policies --set DEFAULT'
-      unless: 'rpm -qi auditbeat'
+      onlyif: '/usr/bin/update-crypto-policies --show | grep SHA1'

@@ -18,9 +18,6 @@ spiderfoot::settings:
   # tp 4 settings
   description: 'SpiderFoot automates OSINT so you can find what matters, faster.'
 
-  website: 'https://www.spiderfoot.net/'
-  issues: 'https://github.com/smicallef/spiderfoot/issues'
-
   ports:
     main:
       port: 5001
@@ -46,12 +43,19 @@ spiderfoot::settings:
     extracted_dir: 'spiderfoot-$VERSION'
     file_format: 'zip'
 
-  setup:
-    enable: true
-    systemd_options:
-      Service:
-        ExecStart: '/var/lib/tp/source/spiderfoot/sf.py -l 0.0.0.0:5001'
-        EnvironmentFile: ~
-    manage_service: true
-    manage_user: false
+  source:
+    setup:
+      enable: true
+      systemd_options:
+        Service:
+          ExecStart: '/var/lib/tp/source/spiderfoot/sf.py -l 0.0.0.0:5001'
+          EnvironmentFile: ~
+          WorkingDirectory: '/var/lib/tp/source/spiderfoot'
+      manage_service: true
+      manage_user: false
 
+  urls:
+    website: https://www.spiderfoot.net/
+    issues: https://github.com/smicallef/spiderfoot/issues
+    documentation: https://www.spiderfoot.net/documentation/
+    source: https://github.com/smicallef/spiderfoot

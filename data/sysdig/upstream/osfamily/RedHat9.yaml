@@ -1,11 +1,11 @@
 ---
 # Workaround for GPG-KEY in SHA1 https://www.redhat.com/en/blog/rhel-security-sha-1-package-signatures-distrusted-rhel-9
-auditbeat::settings:
+sysdig::settings:
   exec_prerequisites:
     allow_sha1:
       command: '/usr/bin/update-crypto-policies --set DEFAULT:SHA1'
-      unless: 'rpm -qi auditbeat'
+      unless: 'rpm -qi sysdig'
   exec_postinstall:
     disallow_sha1:
       command: '/usr/bin/update-crypto-policies --set DEFAULT'
-      unless: 'rpm -qi auditbeat'
+      unless: 'rpm -qi sysdig'

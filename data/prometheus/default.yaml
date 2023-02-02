@@ -17,11 +17,7 @@ prometheus::settings:
   #  validate_cmd: 'prometheus validate'
   pid_file_path: ''
   init_file_path: '/etc/sysconfig/prometheus.conf'
-  log_file_path:
-    - '/var/log/prometheus/prometheus.log'
-    - '/var/log/prometheus/prometheus-node-exporter.log'
   config_dir_path: '/etc/prometheus'
-  log_dir_path: '/var/log/prometheus'
 
 
   # tp 4 settings
@@ -125,6 +121,9 @@ prometheus::settings:
         /var/log/prometheus:
           ensure: directory
           owner: prometheus
+        /var/lib/prometheus:
+          ensure: directory
+          owner: prometheus
       exec:
         prometheus_init_config:
           command: 'touch /etc/sysconfig/prometheus.conf'
@@ -132,6 +131,7 @@ prometheus::settings:
     systemd_options:
       Service:
         ExecStart: '/usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml'
+        WorkingDirectory: '/var/lib/prometheus'
     manage_service: true
     manage_user: true
 

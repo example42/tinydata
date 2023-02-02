@@ -1,4 +1,4 @@
 ---
 microsoft_repo::settings:
-  repo_filename: packages-microsoft-prod
+  repo_filename: microsoft-prod
   repo_package_name: packages-microsoft-prod

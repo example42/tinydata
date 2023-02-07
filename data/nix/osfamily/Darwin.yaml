@@ -1,0 +1,11 @@
+---
+nix::settings:
+  brew_package_name: 'nix'
+
+  user_files:
+    config:
+      path: '$HOME/Library/Application\ Support/nix/nix.conf'
+
+  user_dirs:
+    config:
+      path: '$HOME/Library/Application\ Support/nix/nix.conf'

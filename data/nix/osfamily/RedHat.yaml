@@ -1,0 +1,3 @@
+---
+nix::settings:
+  dockerfile_prerequisites: 'RUN yum install -y wget which'

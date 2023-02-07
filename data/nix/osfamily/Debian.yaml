@@ -1,0 +1,6 @@
+---
+nix::settings:
+
+  files:
+    init:
+      path: '/etc/default/nix'

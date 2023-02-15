@@ -1,0 +1,4 @@
+---
+icinga_repo::settings:
+  repo_file_url: 'https://packages.icinga.com/centos/ICINGA-release.repo'
+

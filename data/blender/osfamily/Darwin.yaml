@@ -1,0 +1,8 @@
+---
+blender::settings:
+  brew_package_name: 'blender'
+  package_provider: 'appdmg'
+
+  packages:
+    main:
+      source: 'https://ftp.nluug.nl/pub/graphics/blender/release/Blender$MAJVERSION/blender-$VERSION-macos-$ARCH.dmg'

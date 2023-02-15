@@ -1,0 +1,6 @@
+---
+mgmt::settings:
+
+  files:
+    init:
+      path: '/etc/default/mgmt'

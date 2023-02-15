@@ -1,0 +1,11 @@
+---
+mgmt::settings:
+  brew_package_name: 'mgmt'
+
+  user_files:
+    config:
+      path: '$HOME/Library/Application\ Support/mgmt/mgmt.conf'
+
+  user_dirs:
+    config:
+      path: '$HOME/Library/Application\ Support/mgmt/mgmt.conf'

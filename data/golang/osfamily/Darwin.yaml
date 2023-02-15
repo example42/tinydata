@@ -1,0 +1,5 @@
+---
+golang::settings:
+
+  release:
+    https://go.dev/dl/go1.20.darwin-arm64.pkg

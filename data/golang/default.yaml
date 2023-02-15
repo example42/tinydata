@@ -1,0 +1,87 @@
+---
+golang::settings:
+  tp_prerequisites: {}
+
+  urls:
+    website: 'https://go.dev'
+    issues: 'https://github.com/golang/go/issues'
+    documentation: 'https://go.dev/doc/'
+    source: 'https://github.com/golang/go'
+  description: 'The Go programming language'
+
+  # Configured: +package -source -file +image
+  install_method: 'package'
+
+  packages:
+    main:
+      name: golang
+      ensure: present
+      source: ~
+      install_options: []
+      params: {}
+      providers:
+        chocolatey:
+          name: golang
+        scoop:
+          name: go
+        winget:
+          name: ~
+        snap:
+          name: go
+        brew:
+          name: go
+
+  info_commands:
+    list: 'go list'
+  debug_commands:
+    debug: 'go debug'
+  test_commands:
+      status: 'go status'
+  version_command: 'go version'
+  help_command: 'go help'
+  run_commands:
+    start:
+      command: 'golang start'
+
+  image:
+    name: 'golang'
+
+  build:
+    prerequisites:
+      tp::install:
+        - build-essential
+    execs:
+      - name: configure
+        command: './configure'
+      - name: build
+        command: 'make'
+      - name: setup
+        command: 'make install'
+    setup:
+      enable: true
+      files:
+        golang:
+          path: '/usr/local/bin/golang'
+          mode: '0755'
+      systemd_options: {}
+      resources: {}
+      manage_service: false
+      manage_user: false
+
+  release:
+    latest_version: ~
+    prerequisites: {}
+    latest_url: ~
+    base_url: 'https://go.dev/dl/go$VERSION.$OS-$ARCH.tar.gz'
+    file_name: 'go$VERSION.$OS-$ARCH..tar.gz'
+    extracted_dir: 'go$VERSION.$OS-$ARCH.tar.gz'
+    file_format: tar.gz
+    setup:
+      enable: true
+      files:
+        golang:
+          path: '/usr/local/bin/golang'
+          mode: '0755'
+      resources: {}
+      manage_service: false
+      manage_user: false

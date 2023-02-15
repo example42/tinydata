@@ -10,7 +10,7 @@ nuclei::settings:
   config_dir_path: '$HOME/.config/nuclei'
 
   # tp 4 settings
-  install_method: 'file'
+  install_method: 'release'
   description: 'Fast and customizable vulnerability scanner based on simple YAML based DSL.'
   docker_image: 'projectdiscovery/nuclei'
   docker_args: ''
@@ -76,7 +76,7 @@ nuclei::settings:
       - name: build
         command: 'go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest'
 
-  releases:
+  release:
     latest_version: '2.8.6'
     prerequisites: {}
     base_url: 'https://github.com/projectdiscovery/nuclei/releases/download/v$VERSION'

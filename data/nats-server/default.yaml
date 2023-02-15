@@ -12,7 +12,7 @@ nats-server::settings:
   config_dir_path: '/etc/nats'
 
   # tp 4 settings
-  install_method: 'file'
+  install_method: 'release'
   description: 'NATS is an open-source, high-performance, cloud native messaging system.'
   docker_image: 'nats'
   docker_args: ''
@@ -58,7 +58,7 @@ nats-server::settings:
       - name: build
         command: 'GO111MODULE=on go get github.com/nats-io/nats-server/v2'
 
-  releases:
+  release:
     latest_version: '2.9.11'
     prerequisites: {}
     base_url: 'https://github.com/nats-io/nats-server/releases/download/v$VERSION'

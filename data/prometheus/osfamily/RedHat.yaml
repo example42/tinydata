@@ -1,4 +1,4 @@
 ---
 prometheus::settings:
   dockerfile_prerequisites: 'RUN yum install -y wget which'
-  install_method: 'file'
+  install_method: 'release'

@@ -34,7 +34,7 @@ spiderfoot::settings:
 
   install_method: 'source'
 
-  releases:
+  release:
     latest_version: '4.0'
     prerequisites: {}
     latest: {}

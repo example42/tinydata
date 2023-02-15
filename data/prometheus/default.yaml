@@ -21,7 +21,7 @@ prometheus::settings:
 
 
   # tp 4 settings
-  install_method: 'file'
+  install_method: 'release'
   description: 'The Prometheus monitoring system and time series database'
   website: 'https://prometheus.io/'
   issues: 'https://github.com/prometheus/prometheus/issues'
@@ -89,7 +89,7 @@ prometheus::settings:
       restart:
         command: 'prometheus restart'
 
-  releases:
+  release:
     latest_version: '2.41.0'
     prerequisites: {}
     base_url: 'https://github.com/prometheus/prometheus/releases/download/v$VERSION'
@@ -97,13 +97,17 @@ prometheus::settings:
     extracted_dir: 'prometheus-$VERSION.$OS-$ARCH'
     file_format: 'tar.gz'
     checksum_url: 'https://github.com/prometheus/prometheus/releases/download/$VERSION/sha256sums.txt'
+    setup:
+      enable: true
+      manage_service: true
+      manage_user: true
 
   image:
     name: 'prom/prometheus'
     systemd_options: {}
 
   setup:
-    enable: true
+    enable: false
     files:
       prometheus:
         path: '/usr/local/bin/prometheus'
@@ -132,8 +136,6 @@ prometheus::settings:
       Service:
         ExecStart: '/usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml'
         WorkingDirectory: '/var/lib/prometheus'
-    manage_service: true
-    manage_user: true
 
   build:
     enable: false

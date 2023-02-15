@@ -92,7 +92,7 @@ reference::settings:
   # which automatically replaces the following variables in the string:
   # $OS with downcase($facts['kernel'])
   # $ARCH with $facts['os']['architecture'] (with some mapping to match GitHub default names of archs)
-  # $VERSION with the version of the package (if set via $ensure, $version or in $settings.releases.latest_version)
+  # $VERSION with the version of the package (if set via $ensure, $version or in $settings.release.latest_version)
   # For example, this could be:
   # package_source: 'https://github.com/reference/reference/releases/download/v$VERSION/reference_$VERSION_$OS_$ARCH.msi'
   # This works only with Puppet providers that accept a source argument
@@ -458,9 +458,12 @@ reference::settings:
   # The init system to use for the app. (Set in default settings, usually no need to override)
   init_system: ~
 
+  # The service provider to use
+  service_provider: ~
+
+  # Services to manage
   services:
-    main:
-      name: reference
+    reference:
       process_name: reference
       process_extra_name: ~
       process_user: root
@@ -719,7 +722,7 @@ reference::settings:
 
 
   # A v4 setting used by the tp::install define to install the app when install_method=file
-  releases:
+  :
     # An hash of Puppet resources (file, exec, package, tp::install ... any Puppet resource type can be used)
     # to apply before installing the app with install_method=file . The values of each resource can be a string,
     # an array or an hash of resource titles with the relevant arguments
@@ -773,7 +776,7 @@ reference::settings:
       manage_service: true
       manage_user: false
 
-  # The default setup settings. They are merged with settings.releases.setup and settings.source.setup
+  # The default setup settings. They are merged with settings.$install_method.setup
   setup:
     # If to enable the setup, which involves doing the configurations as defined in the other settings
     enable: false

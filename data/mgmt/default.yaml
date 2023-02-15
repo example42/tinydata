@@ -1,0 +1,118 @@
+---
+mgmt::settings:
+  tp_prerequisites: {}
+
+  urls:
+    website: 'https://github.com/purpleidea/mgmt'
+    issues: 'https://github.com/purpleidea/mgmt/issues'
+    documentation: 'https://github.com/purpleidea/mgmt/blob/master/docs/documentation.md'
+    source: 'https://github.com/purpleidea/mgmt'
+  description: 'Mgmt is a real-time automation tool.'
+
+  # Configured: -package -source +release -image
+  install_method: 'release'
+
+  packages:
+    main:
+      name: mgmt
+
+  services:
+    mgmt:
+      process_name: mgmt
+      process_extra_name: ~
+      process_user: root
+      process_group: root
+      nodaemon_args: '-D'
+      ensure: running
+      enable: true
+      pidfile: /run/mgmt.pid
+      params: {}
+
+
+  files:
+    config:
+      path: '/etc/mgmt/mgmt.conf'
+    init:
+      path: '/etc/sysconfig/mgmt.conf'
+      format: 'inifile'
+    systemd:
+      path: '/etc/systemd/system/mgmt.service'
+      format: 'inifile_with_stanzas'
+
+  dirs:
+    config:
+      path: '/etc/mgmt'
+    conf:
+      path: '/etc/mgmt/conf.d'
+    log:
+      path: /var/log/mgmt
+    home:
+      path: /var/lib/mgmt
+
+  user_files:
+    config:
+      path: '$HOME/.mgmt/mgmt.conf'
+
+  user_dirs:
+    config:
+      path: '$HOME/.mgmt'
+
+  ports:
+    main:
+      port: 42
+      protocol: tcp
+    ssl:
+      port: 4432
+      protocol: tcp
+
+  info_commands:
+    list: 'mgmt list'
+  debug_commands:
+    debug: 'mgmt debug'
+  test_commands:
+      status: 'mgmt status'
+  version_command: 'mgmt version'
+  help_command: 'mgmt help'
+  run_commands:
+    start:
+      command: 'mgmt start'
+
+  build:
+    prerequisites:
+      tp::install:
+        - golang
+    execs:
+      - name: build
+        command: 'make'
+    setup:
+      enable: true
+      files:
+        mgmt:
+          path: '/usr/local/bin/mgmt'
+          mode: '0755'
+      systemd_options: {}
+      resources: {}
+      manage_service: false
+      manage_user: false
+
+  release:
+    latest_version: '0.0.21-1'
+    prerequisites: {}
+    latest_url: ~
+    base_url: 'https://github.com/purpleidea/mgmt/releases'
+    file_name: 'mgmt-$VERSION.$OS-$ARCH.tar.gz'
+    extracted_dir: 'mgmt-$VERSION.$OS-$ARCH'
+    file_format: tar.gz
+    setup:
+      enable: true
+      files:
+        mgmt:
+          path: '/usr/local/bin/mgmt'
+          mode: '0755'
+      systemd_options:
+        Service:
+          ExecStart: '/usr/local/bin/mgmt run empty'
+          EnvironmentFile: ~
+      resources: {}
+      manage_service: false
+      manage_user: false

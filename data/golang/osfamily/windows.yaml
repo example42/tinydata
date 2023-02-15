@@ -1,0 +1,14 @@
+---
+golang::settings:
+
+  # If exe or msi package is available for direct download:
+  package_provider: 'windows'
+  package_source: 'https://go.dev/dl/go$VERSION.$OS-$ARCH.msi'
+
+  user_files:
+    config:
+      path: '%APPDATA%\golang\golang.conf'
+
+  user_dirs:
+    config:
+      path: '%APPDATA%\golang'

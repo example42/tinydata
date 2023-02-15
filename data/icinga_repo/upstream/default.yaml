@@ -1,0 +1,5 @@
+---
+icinga_repo::settings:
+  repo_filename: icinga
+  repo_description: 'Icinga repository'
+  key_url: https://packages.icinga.com/icinga.key

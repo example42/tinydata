@@ -1,0 +1,4 @@
+---
+icinga_repo::settings:
+  upstream_repo: true
+  git_source: https://github.com/Icinga/icinga2

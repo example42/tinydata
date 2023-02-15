@@ -35,14 +35,6 @@ default::settings:
       ensure: present
       manage: false
 
-  services:
-    main:
-      process_user: root
-      process_group: root
-      ensure: running
-      enable: true
-      params: {}
-
   files:
     config:
       owner: 'root'

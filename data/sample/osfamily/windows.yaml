@@ -1,14 +1,5 @@
 ---
 sample::settings:
-  winget_package_name: 'sample.sample'
-  choco_package_name: 'sample'
-  package_name: 'sample'
-  config_file_path: 'C:\ProgramData\sample\sample\etc\sample.conf'
-  config_dir_path: 'C:\ProgramData\sample\sample\etc'
-  process_user: 'LocalSystem'
-  process_group: 'LocalSystem'
-  user_config_file_path: '%APPDATA%\sample\sample.conf'
-  user_config_dir_path: '%APPDATA%\sample'
 
   # If exe or msi package is available for direct download:
   package_provider: 'windows'

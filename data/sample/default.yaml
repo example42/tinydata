@@ -2,31 +2,48 @@
 sample::settings:
   tp_prerequisites: {}
 
-  upstream_repo: false
-  package_name: 'sample'
-  service_name: 'sample'
-  process_name: 'sample'
-  process_user: 'root'
-  process_group: 'root'
-  config_file_path: '/etc/sample/sample.conf'
-  config_file_format: yaml
-  #  validate_cmd: 'sample validate'
-  pid_file_path: '/run/sample.pid'
-  init_file_path: '/etc/sysconfig/sample.conf'
-  log_file_path:
-    - '/var/log/sample/sample.log'
-  config_dir_path: '/etc/sample'
-  log_dir_path:
-    - '/var/log/sample'
+  urls:
+    website: 'https://sample.com'
+    issues: 'https://github.com/sample/sample/issues'
+    documentation: 'https://sample.com/documentation'
+    source: 'https://github.com/sample/sample'
+  description: 'sample description'
 
-  # tp 4 settings
+  # Configured: +package -source -file +image
   install_method: 'package'
-  description: 'sample  description'
-  docker_image: 'sample/sample'
-  docker_args: ''
-  website: 'https://sample.com'
-  issues: 'https://github.com/sample/sample/issues'
-  git_source: 'https://github.com/sample/sample'
+
+  packages:
+    main:
+      name: sample
+      ensure: present
+      source: ~
+      install_options: []
+      params: {}
+      providers:
+        chocolatey:
+          name: ~
+        scoop:
+          name: ~
+        winget:
+          name: ~
+    # Examples of other packages
+    client:
+      name: sample-client
+    server:
+      name: sample-server
+
+  services:
+    sample:
+      process_name: sample
+      process_extra_name: ~
+      process_user: root
+      process_group: root
+      nodaemon_args: '-D'
+      ensure: running
+      enable: true
+      pidfile: /run/sample.pid
+      params: {}
+
 
   files:
     config:
@@ -64,29 +81,23 @@ sample::settings:
       port: 4432
       protocol: tcp
 
-  commandsTOCONF:
-    info:
-      list: 'sample list'
-    debug:
-      debug: 'sample debug'
-    test:
+  info_commands:
+    list: 'sample list'
+  debug_commands:
+    debug: 'sample debug'
+  test_commands:
       status: 'sample status'
-    version: 'sample --version'
-    run:
-      start:
-        command: 'sample start'
-        arguments:
-          - 'instance':
-            default: ''
-            description: 'Instance to start'
-        options:
-          config_file:
-            default: 'sample.conf'
-            value: String
-            description: 'Config file to use'
-      restart:
-        command: 'sample restart'
+  version_command: 'sample version'
+  help_command: 'sample help'
+  run_commands:
+    start:
+      command: 'sample start'
 
+  image:
+    name: 'sample/sample'
+    ports:
+      - 9090:9090
+    systemd_options: {}
 
   build:
     prerequisites:
@@ -99,8 +110,18 @@ sample::settings:
         command: 'make'
       - name: setup
         command: 'make install'
+    setup:
+      enable: true
+      files:
+        sample:
+          path: '/usr/local/bin/sample'
+          mode: '0755'
+      systemd_options: {}
+      resources: {}
+      manage_service: false
+      manage_user: false
 
-  releases:
+  release:
     latest_version: ~
     prerequisites: {}
     latest_url: ~
@@ -108,18 +129,16 @@ sample::settings:
     file_name: 'sample-$VERSION.$OS-$ARCH.tar.gz'
     extracted_dir: 'sample-$VERSION.$OS-$ARCH'
     file_format: tar.gz
-
-  setup:
-    enable: true
-    files:
-      sample:
-        path: '/usr/local/bin/sample'
-        mode: '0755'
-    systemd_options:
-      Service:
-        ExecStart: '/var/lib/tp/source/sample/sample -l 127.0.0.1'
-        EnvironmentFile: ~
-    resources: {}
-    manage_service: true
-    manage_user: false
-
+    setup:
+      enable: true
+      files:
+        sample:
+          path: '/usr/local/bin/sample'
+          mode: '0755'
+      systemd_options:
+        Service:
+          ExecStart: '/var/lib/tp/source/sample/sample -l 127.0.0.1'
+          EnvironmentFile: ~
+      resources: {}
+      manage_service: false
+      manage_user: false

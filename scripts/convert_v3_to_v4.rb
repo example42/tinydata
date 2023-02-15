@@ -1,3 +1,4 @@
+#!/opt/puppetlabs/puppet/bin/ruby
 require 'yaml'
 
 # This script converts a v3 config file to a v4 config file
@@ -29,22 +30,22 @@ original_config[settings_key]["packages"] = {"main" => {"name" => package_name}}
 
 # Get the service name from the original config
 service_name = original_config[settings_key]['service_name']
-original_config[settings_key]["services"] = {"main" => {"name" => service_name}} if service_name
+original_config[settings_key]["services"][service_name] if service_name
 # Get the process name from the original config
 process_name = original_config[settings_key]['process_name']
-original_config[settings_key]["services"]["main"]["process_name"] = process_name if process_name
+original_config[settings_key]["services"][service_name]["process_name"] = process_name if process_name
 # Get the process_extra name from the original config
 process_extra_name = original_config[settings_key]['process_extra_name']
-original_config[settings_key]["services"]["main"]["process_extra_name"] = process_extra_name if process_extra_name
+original_config[settings_key]["services"][service_name]["process_extra_name"] = process_extra_name if process_extra_name
 # Get the process user from the original config
 process_user = original_config[settings_key]['process_user']
-original_config[settings_key]["services"]["main"]["process_user"] = process_user if process_user
+original_config[settings_key]["services"][service_name]["process_user"] = process_user if process_user
 # Get the process group from the original config
 process_group = original_config[settings_key]['process_group']
-original_config[settings_key]["services"]["main"]["process_group"] = process_user if process_group
+original_config[settings_key]["services"][service_name]["process_group"] = process_user if process_group
 # Get the process nodaemon_args from the original config
 nodaemon_args = original_config[settings_key]['nodaemon_args']
-original_config[settings_key]["services"] = {"main" => {"nodaemon_args" => nodaemon_args}} if nodaemon_args
+original_config[settings_key]["services"][service_name]["nodaemon_args"] = nodaemon_args if nodaemon_args
 
 
 # Get the config_file_path from the original config

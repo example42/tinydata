@@ -7,9 +7,9 @@ icinga2::settings:
   conf_dir_path: "/etc/icinga2/conf.d"
   features_dir_path: "/etc/icinga2/features-enabled"
   pid_file_path: "/var/run/icinga2/icinga2.pid"
-  log_file_path: &1
-  - "/var/log/icinga2/icinga2.log"
-  - "/var/log/icinga2/error.log"
+  log_file_path:
+    - "/var/log/icinga2/icinga2.log"
+    - "/var/log/icinga2/error.log"
   log_dir_path: "/var/log/icinga2"
   process_name: icinga2
   process_user: icinga

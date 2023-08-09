@@ -65,7 +65,7 @@ nix::settings:
   debug_commands:
     debug: 'nix store verify'
   test_commands:
-      status: 'nix status'
+    status: 'nix status'
   version_command: 'nix --version'
   help_command: 'nix --help'
 

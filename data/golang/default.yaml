@@ -36,7 +36,7 @@ golang::settings:
   debug_commands:
     debug: 'go debug'
   test_commands:
-      status: 'go status'
+    status: 'go status'
   version_command: 'go version'
   help_command: 'go help'
   run_commands:

@@ -86,7 +86,7 @@ sample::settings:
   debug_commands:
     debug: 'sample debug'
   test_commands:
-      status: 'sample status'
+    status: 'sample status'
   version_command: 'sample version'
   help_command: 'sample help'
   run_commands:

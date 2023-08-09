@@ -70,7 +70,7 @@ mgmt::settings:
   debug_commands:
     debug: 'mgmt debug'
   test_commands:
-      status: 'mgmt status'
+    status: 'mgmt status'
   version_command: 'mgmt version'
   help_command: 'mgmt help'
   run_commands:

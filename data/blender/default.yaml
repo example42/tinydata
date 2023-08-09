@@ -21,7 +21,7 @@ blender::settings:
       params: {}
       providers:
         chocolatey:
-          name: 
+          name: blender
         scoop:
           name: blender
         winget:
@@ -34,7 +34,7 @@ blender::settings:
 
   dirs:
     home:
-      path:  /usr/share/blender/qON/
+      path: '/usr/share/blender/qON/'
 
   user_files:
     config:
@@ -49,7 +49,7 @@ blender::settings:
   debug_commands:
     debug: 'blender debug'
   test_commands:
-      status: 'blender status'
+    status: 'blender status'
   version_command: 'blender version'
   help_command: 'blender help'
   run_commands:
@@ -60,8 +60,8 @@ blender::settings:
     latest_version_major: '3.4'
     destination: /usr/share/blender
     base_url: 'https://mirrors.dotsrc.org/blender/release/Blender$MAJVERSION/'
-#   Official base url has a intermediate page. A specific mirrot is used instead.
-#    base_url: 'https://www.blender.org/download/release/Blender$MAJVERSION/blender-$VERSION-$OS-$ARCH'
+    # Official base url has a intermediate page. A specific mirrot is used instead.
+    # base_url: 'https://www.blender.org/download/release/Blender$MAJVERSION/blender-$VERSION-$OS-$ARCH'
     file_name: 'blender-$VERSION-$OS-x64.tar.xz'
     extracted_dir: 'blender-$VERSION-$OS-x64'
     file_format: xz

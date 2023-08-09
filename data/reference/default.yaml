@@ -722,7 +722,7 @@ reference::settings:
 
 
   # A v4 setting used by the tp::install define to install the app when install_method=file
-  :
+  releases:
     # An hash of Puppet resources (file, exec, package, tp::install ... any Puppet resource type can be used)
     # to apply before installing the app with install_method=file . The values of each resource can be a string,
     # an array or an hash of resource titles with the relevant arguments

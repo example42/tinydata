@@ -121,7 +121,7 @@ snmp::settings:
   debug_commands:
     debug: 'snmpd debug'
   test_commands:
-      status: 'snmpd status'
+    status: 'snmpd status'
   version_command: 'snmpd version'
   help_command: 'snmpd help'
   run_commands:

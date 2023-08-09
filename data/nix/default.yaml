@@ -3,12 +3,10 @@ nix::settings:
   tp_prerequisites: {}
   exec_prerequisites:
     install:
-#      command: 'sh <(curl -L https://nixos.org/nix/install) --daemon'
-#      command: 'curl -L https://nixos.org/nix/install -o /tmp/nix_install ; sh /tmp/nix_install --daemon | yes'
       command: 'wget -O /tmp/nix_install https://nixos.org/nix/install ; sh /tmp/nix_install --daemon --yes'
       creates: '/nix'
       provider: posix
-      environment: [ 'HOME=/root' ]
+      environment: ['HOME=/root']
 
   urls:
     website: 'https://nixos.org'

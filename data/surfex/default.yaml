@@ -38,7 +38,6 @@ surfex::settings:
     base_url: 'https://www.umr-cnrm.fr/surfex/data/OPEN-SURFEX'
     file_name: 'open_surfex_$VERSION.tar.gz'
     extracted_dir: 'OPEN_SURFEX_V9'
-#    extracted_dir: 'open_SURFEX_V$MAJVERSION'
     file_format: tar.gz
     setup:
       enable: true

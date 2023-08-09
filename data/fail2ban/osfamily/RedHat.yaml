@@ -1,0 +1,4 @@
+---
+fail2ban::settings:
+  tp_prerequisites:
+    - epel

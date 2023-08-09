@@ -9,19 +9,12 @@ default::settings:
   config_file_mode: '0644'
   config_dir_owner: 'root'
   config_dir_group: 'root'
-  config_dir_mode: '0755'
+  config_dir_mode: '0644'
   config_dir_purge: false
-  config_dir_recurse: true
+  config_dir_recurse: false
   install_method: 'package'
 
   packages:
-    main:
-      ensure: present
-      source: ~
-      install_options: []
-      params: {}
-      providers: {}
-      manage: true
     devel:
       name: '$TITLE-devel'
       ensure: present

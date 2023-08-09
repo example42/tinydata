@@ -1,4 +1,24 @@
 ---
 snmp::settings:
-  config_file_path: '/etc/snmp/snmp.conf'
-  config_dir_path: '/etc/snmp/'
+  config_dir_path: '/etc/snmp'
+  process_user: 'snmp'
+  process_group: 'snmp'
+  init_file_path: '/etc/default/snmpd'
+
+  files:
+    client:
+      path: '/etc/snmp/snmp.conf'
+    config:
+      path: '/etc/snmp/snmpd.conf'
+      mode: '0600'
+    init:
+      path: '/etc/default/snmpd'
+      format: 'inifile'
+    systemd:
+      path: '/etc/systemd/system/snmpd.service'
+      format: 'inifile_with_stanzas'
+    snmptrapd:
+      path: '/etc/snmp/snmptrapd.conf'
+    snmptrapd_init:
+      path: '/etc/default/snmptrapd'
+      format: 'inifile'

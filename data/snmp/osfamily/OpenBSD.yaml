@@ -1,5 +1,5 @@
 ---
-snmpd::settings:
+snmp::settings:
   package_name: 'net-snmp'
   service_name: 'netsnmpd'
   config_file_path: '/etc/snmp/snmpd.conf'

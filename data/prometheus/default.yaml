@@ -16,23 +16,24 @@ prometheus::settings:
   config_file_format: yaml
   #  validate_cmd: 'prometheus validate'
   pid_file_path: ''
-  init_file_path: '/etc/sysconfig/prometheus.conf'
+  init_file_path: '/etc/sysconfig/prometheus'
   config_dir_path: '/etc/prometheus'
 
 
   # tp 4 settings
   install_method: 'release'
   description: 'The Prometheus monitoring system and time series database'
-  website: 'https://prometheus.io/'
-  issues: 'https://github.com/prometheus/prometheus/issues'
-  git_source: 'https://github.com/prometheus/prometheus'
+  urls:
+    website: 'https://prometheus.io/'
+    issues: 'https://github.com/prometheus/prometheus/issues'
+    source: 'https://github.com/prometheus/prometheus'
 
   files:
     config:
       path: '/etc/prometheus/prometheus.yml'
       format: yaml
     init:
-      path: '/etc/sysconfig/prometheus.conf'
+      path: '/etc/sysconfig/prometheus'
       format: inifile
     systemd:
       path: '/etc/systemd/system/prometheus.service'
@@ -43,7 +44,7 @@ prometheus::settings:
       path: '/etc/prometheus'
     rules:
       path: '/etc/prometheus/rules'
-    rules.d:
+    'rules.d':
       path: '/etc/prometheus/rules.d'
     files_sd:
       path: /etc/prometheus/files_sd
@@ -83,14 +84,14 @@ prometheus::settings:
             description: 'Instance to start'
         options:
           config_file:
-            default: 'prometheus.conf'
+            default: 'prometheus.yml'
             value: String
             description: 'Config file to use'
       restart:
         command: 'prometheus restart'
 
   release:
-    latest_version: '2.41.0'
+    latest_version: '2.49.1'
     prerequisites: {}
     base_url: 'https://github.com/prometheus/prometheus/releases/download/v$VERSION'
     file_name: 'prometheus-$VERSION.$OS-$ARCH.tar.gz'
@@ -107,14 +108,17 @@ prometheus::settings:
     systemd_options: {}
 
   setup:
-    enable: false
+    enable: true
+    manage_user: true
     files:
       prometheus:
         path: '/usr/local/bin/prometheus'
         mode: '0755'
+        overwrite: true
       promtool:
         path: '/usr/local/bin/promtool'
         mode: '0755'
+        overwrite: true
       prometheus.yml:
         path: '/etc/prometheus/prometheus.yml'
         mode: '0644'
@@ -130,8 +134,8 @@ prometheus::settings:
           owner: prometheus
       exec:
         prometheus_init_config:
-          command: 'touch /etc/sysconfig/prometheus.conf'
-          creates: '/etc/sysconfig/prometheus.conf'
+          command: 'touch /etc/sysconfig/prometheus'
+          creates: '/etc/sysconfig/prometheus'
     systemd_options:
       Service:
         ExecStart: '/usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml'

@@ -60,7 +60,7 @@ blender::settings:
     latest_version_major: '3.4'
     destination: /usr/share/blender
     base_url: 'https://mirrors.dotsrc.org/blender/release/Blender$MAJVERSION/'
-    # Official base url has a intermediate page. A specific mirrot is used instead.
+    # Official base url has a intermediate page. A specific mirror is used instead.
     # base_url: 'https://www.blender.org/download/release/Blender$MAJVERSION/blender-$VERSION-$OS-$ARCH'
     file_name: 'blender-$VERSION-$OS-x64.tar.xz'
     extracted_dir: 'blender-$VERSION-$OS-x64'

@@ -225,7 +225,7 @@ reference::settings:
 
   # The mode of the config directory
   # v3 format. v4 equivalent is dirs.config.mode
-  config_dir_mode: '0755'
+  config_dir_mode: '0644'
 
   # If to purge the config directory or not. This is the default value used by the tp::dir define.
   # v3 format. v4 equivalent is dirs.config.purge

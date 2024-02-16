@@ -14,4 +14,4 @@ redis::settings:
   config_dir_path: '/etc/redis-test'
   config_dir_owner: 'test'
   config_dir_group: 'test'
-  config_dir_mode: '0755'
+  config_dir_mode: '0644'

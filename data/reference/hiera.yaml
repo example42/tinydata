@@ -4,10 +4,10 @@
 # This file is actually used by the tp_lookup function and has the following
 # limitation:
 # Variables interpolation is done ONLY for the following variables:
-# - Fact $::operatingsystemmajrelease
-# - Fact $::operatingsystemrelease
-# - Fact $::operatingsystem
-# - Fact $::osfamily
+# - Fact $::os['release']['major']
+# - Fact $::os['release']['full']
+# - Fact $::os['name']
+# - Fact $::os['family']
 # - Argument $repo of the tp::install define (defaults to 'upstream' is upstream_repo is true)
 # - $title of the tp::install (or other tp::*) define
 

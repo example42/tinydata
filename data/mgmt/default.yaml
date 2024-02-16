@@ -10,7 +10,7 @@ mgmt::settings:
   description: 'Mgmt is a real-time automation tool.'
 
   # Configured: -package -source +release -image
-  install_method: 'release'
+  install_method: 'source'
 
   packages:
     main:
@@ -82,6 +82,8 @@ mgmt::settings:
       tp::install:
         - golang
     execs:
+      - name: 'build deps'
+        command: 'make deps'
       - name: build
         command: 'make'
     setup:
@@ -94,17 +96,16 @@ mgmt::settings:
       resources: {}
       manage_service: false
       manage_user: false
-
   release:
-    latest_version: '0.0.21-1'
+    latest_version: '0.0.24'
     prerequisites: {}
     latest_url: ~
-    base_url: 'https://github.com/purpleidea/mgmt/releases'
-    file_name: 'mgmt-$VERSION.$OS-$ARCH.tar.gz'
-    extracted_dir: 'mgmt-$VERSION.$OS-$ARCH'
+    base_url: 'https://github.com/purpleidea/mgmt/archive/refs/tags'
+    file_name: '$VERSION.tar.gz'
+    extracted_dir: 'mgmt-$VERSION'
     file_format: tar.gz
     setup:
-      enable: true
+      enable: false
       files:
         mgmt:
           path: '/usr/local/bin/mgmt'

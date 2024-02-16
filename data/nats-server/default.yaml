@@ -16,9 +16,10 @@ nats-server::settings:
   description: 'NATS is an open-source, high-performance, cloud native messaging system.'
   docker_image: 'nats'
   docker_args: ''
-  website: 'https://nats.io'
-  issues: 'https://github.com/nats-io/nats-server/issues'
-  git_source: 'https://github.com/nats-io/nats-server'
+  urls:
+    website: 'https://nats.io'
+    issues: 'https://github.com/nats-io/nats-server/issues'
+    source: 'https://github.com/nats-io/nats-server'
 
   files:
     config:

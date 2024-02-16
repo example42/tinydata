@@ -14,9 +14,10 @@ nuclei::settings:
   description: 'Fast and customizable vulnerability scanner based on simple YAML based DSL.'
   docker_image: 'projectdiscovery/nuclei'
   docker_args: ''
-  website: 'https://nuclei.projectdiscovery.io/'
-  issues: 'https://github.com/projectdiscovery/nuclei/issues'
-  git_source: 'https://github.com/projectdiscovery/nuclei'
+  urls:
+    website: 'https://nuclei.projectdiscovery.io/'
+    issues: 'https://github.com/projectdiscovery/nuclei/issues'
+    source: 'https://github.com/projectdiscovery/nuclei'
 
   files:
     config:

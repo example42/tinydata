@@ -149,4 +149,6 @@ new_output.gsub!(/^/, '  ')
 if new_config != {}
   File.open(output_file_path, 'a') { |file| file.write("\n# Version 4 format\n") }
   File.open(output_file_path, 'a') { |file| file.write(new_output) }
+else
+  File.open(output_file_path, 'a') { |file| file.write("\n# No data to convert to Version 4 format\n") }
 end

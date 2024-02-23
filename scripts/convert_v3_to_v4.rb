@@ -146,5 +146,7 @@ new_output.gsub!(/^/, '  ')
 
 # Write the merged config to output file
 # File.open(output_file_path, 'w') { |file| file.write(original_output.to_yaml) }
-File.open(output_file_path, 'a') { |file| file.write("\n# Version 4 format\n") }
-File.open(output_file_path, 'a') { |file| file.write(new_output) }
+if new_config != {}
+  File.open(output_file_path, 'a') { |file| file.write("\n# Version 4 format\n") }
+  File.open(output_file_path, 'a') { |file| file.write(new_output) }
+end

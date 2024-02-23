@@ -12,7 +12,7 @@ file_path = ARGV[0]
 
 # Get the name of the file to write to from the second command line argument
 # If no file name is provided, the original file will be overwritten
-output_file_path = ARGV[1] || "#{file_path}.v4"
+output_file_path = ARGV[1] || "#{file_path}"
 
 # Load the original yaml file
 original_config = YAML.load_file(file_path)
@@ -145,6 +145,6 @@ new_output.gsub!(/^---\n/, '')
 new_output.gsub!(/^/, '  ')    
 
 # Write the merged config to output file
-File.open(output_file_path, 'w') { |file| file.write(original_output.to_yaml) }
+# File.open(output_file_path, 'w') { |file| file.write(original_output.to_yaml) }
 File.open(output_file_path, 'a') { |file| file.write("\n# Version 4 format\n") }
 File.open(output_file_path, 'a') { |file| file.write(new_output) }

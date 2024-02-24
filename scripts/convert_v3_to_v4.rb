@@ -22,12 +22,13 @@ new_config = {}
 # Get the key name that contains settings
 settings_key = original_config.keys.select { |key| key.end_with?('::settings') }.first
 
-# Get the package name from the original config
+# Package
 package_name = original_config[settings_key]['package_name'] if original_config.dig(settings_key, 'package_name')
+package_provider = original_config[settings_key]['package_provider'] if original_config.dig(settings_key, 'package_provider')
+
+new_config["packages"] = { "main"  => {} } if package_name or package_provider
 new_config["packages"] = {"main" => {"name" => package_name}} if package_name
-# Get the package provider from the original config
-#package_provider = original_config[settings_key]['package_provider']
-#original_config[settings_key]["packages"]["main"]["package_provider"] if package_provider
+new_config["packages"]["main"]["provider"] = package_provider if package_provider
 
 # Service
 service_name = original_config[settings_key]['service_name'] if original_config.dig(settings_key, 'service_name')
@@ -65,7 +66,7 @@ new_config["files"]["log"] = { "path" => log_file_path } if log_file_path
 new_config["files"]["init"] ||= {} if init_file_path
 new_config["files"]["init"] = { "path" => init_file_path } if init_file_path
 
-# Get the config_dir_path from the original config
+# Dirs
 config_dir_path = original_config[settings_key]['config_dir_path'] if original_config.dig(settings_key, 'config_dir_path')
 new_config["dirs"] = {"config" => {"path" => config_dir_path}} if config_dir_path
 new_config["user_dirs"] = {"config" => {"path" => config_dir_path.gsub('/etc/','$HOME/.') }} if config_dir_path
@@ -90,7 +91,7 @@ ssl_dir_path = original_config[settings_key]['ssl_dir_path'] if original_config.
 new_config["dirs"] ||= {} if ssl_dir_path
 new_config["dirs"]["ssl"] = {"path" => ssl_dir_path} if ssl_dir_path
 
-# Get the tcp port from the original config
+# Ports
 tcp_port = original_config[settings_key]['tcp_port'] if original_config.dig(settings_key, 'tcp_port')
 new_config["ports"] ||= {} if tcp_port
 new_config["ports"]["main"] = {"port" => tcp_port , "protocol" => "tcp" } if tcp_port
@@ -99,7 +100,7 @@ udp_port = original_config[settings_key]['udp_port'] if original_config.dig(sett
 new_config["ports"] ||= {} if udp_port
 new_config["ports"]["main_udp"] = {"port" => udp_port , "protocol" => "udp" } if udp_port
 
-# Get the website_url from the original config
+# Urls
 website_url = original_config[settings_key]['website_url'] if original_config.dig(settings_key, 'website_url')
 new_config["urls"] = {"website" => website_url } if website_url
 # Get the git_source from the original config
@@ -115,9 +116,67 @@ new_config["image"] ||= {} if docker_image or dockerfile_prerequisites
 new_config["image"]["name"] = docker_image if docker_image
 new_config["image"]["dockerfile_prerequisites"] = dockerfile_prerequisites if dockerfile_prerequisites
 
-# Convert upstream_repo to repo = upstream
+# Repo
 upstream_repo = original_config[settings_key]['upstream_repo'] if original_config.dig(settings_key, 'upstream_repo')
 new_config["repo"] = 'upstream' if upstream_repo == true
+
+
+repo_url = original_config[settings_key]['repo_url'] if original_config.dig(settings_key, 'repo_url')
+repo_package_name = original_config[settings_key]['repo_package_name'] if original_config.dig(settings_key, 'repo_package_name')
+repo_package_url = original_config[settings_key]['repo_package_url'] if original_config.dig(settings_key, 'repo_package_url')
+repo_package_provider = original_config[settings_key]['repo_package_provider'] if original_config.dig(settings_key, 'repo_package_provider')
+repo_package_params = original_config[settings_key]['repo_package_params'] if original_config.dig(settings_key, 'repo_package_params')
+repo_file_url = original_config[settings_key]['repo_file_url'] if original_config.dig(settings_key, 'repo_file_url')
+repo_url = original_config[settings_key]['repo_url'] if original_config.dig(settings_key, 'repo_url')
+repo_name = original_config[settings_key]['repo_name'] if original_config.dig(settings_key, 'repo_name')
+repo_description = original_config[settings_key]['repo_description'] if original_config.dig(settings_key, 'repo_description')
+repo_filename = original_config[settings_key]['repo_filename'] if original_config.dig(settings_key, 'repo_filename')
+key = original_config[settings_key]['key'] if original_config.dig(settings_key, 'key')
+key_url = original_config[settings_key]['key_url'] if original_config.dig(settings_key, 'key_url')
+include_src = original_config[settings_key]['include_src'] if original_config.dig(settings_key, 'include_src')
+yumrepo_params = original_config[settings_key]['yumrepo_params'] if original_config.dig(settings_key, 'yumrepo_params')
+
+apt_repos = original_config[settings_key]['apt_repos'] if original_config.dig(settings_key, 'apt_repos')
+apt_key_server = original_config[settings_key]['apt_key_server'] if original_config.dig(settings_key, 'apt_key_server')
+apt_key_fingerprint = original_config[settings_key]['apt_key_fingerprint'] if original_config.dig(settings_key, 'apt_key_fingerprint')
+apt_release = original_config[settings_key]['apt_release'] if original_config.dig(settings_key, 'apt_release')
+apt_pin = original_config[settings_key]['apt_pin'] if original_config.dig(settings_key, 'apt_pin')
+yum_priority = original_config[settings_key]['yum_priority'] if original_config.dig(settings_key, 'yum_priority')
+yum_mirrorlist = original_config[settings_key]['yum_mirrorlist'] if original_config.dig(settings_key, 'yum_mirrorlist')
+zypper_repofile_url = original_config[settings_key]['zypper_repofile_url'] if original_config.dig(settings_key, 'zypper_repofile_url')
+brew_tap = original_config[settings_key]['brew_tap'] if original_config.dig(settings_key, 'brew_tap')
+
+new_config["repo"] ||= { "upstream" => {}} if repo_url or repo_package_name or repo_package_url or repo_package_provider or repo_package_params or repo_file_url or repo_url or repo_name or repo_description or repo_filename or key or key_url or include_src or yumrepo_params or apt_repos or apt_key_server or apt_key_fingerprint or apt_release or apt_pin or yum_priority or yum_mirrorlist or zypper_repofile_url or brew_tap
+new_config["repo"]["upstream"]["package_name"] = repo_package_name if repo_package_name
+new_config["repo"]["upstream"]["package_url"] = repo_package_url if repo_package_url
+new_config["repo"]["upstream"]["package_provider"] = repo_package_provider if repo_package_provider
+new_config["repo"]["upstream"]["package_params"] = repo_package_params if repo_package_params
+new_config["repo"]["upstream"]["repofile_url"] = repo_file_url if repo_file_url
+new_config["repo"]["upstream"]["url"] = repo_url if repo_url
+new_config["repo"]["upstream"]["name"] = repo_name if repo_name
+new_config["repo"]["upstream"]["description"] = repo_description if repo_description
+new_config["repo"]["upstream"]["repofile_name"] = repo_filename if repo_filename
+new_config["repo"]["upstream"]["key"] = key if key
+new_config["repo"]["upstream"]["key_url"] = key_url if key_url
+
+new_config["repo"]["upstream"]["yum"] ||= {} if yumrepo_params or yum_priority or yum_mirrorlist or repo_url or key
+new_config["repo"]["upstream"]["yum"]["baseurl"] = repo_url if repo_url
+new_config["repo"]["upstream"]["yum"]["gpgcheck"] = true if key
+new_config["repo"]["upstream"]["yum"]["gpgkey"] = key if key
+new_config["repo"]["upstream"]["yum"]["params"] = yumrepo_params if yumrepo_params
+new_config["repo"]["upstream"]["yum"]["priority"] = yum_priority if yum_priority
+new_config["repo"]["upstream"]["yum"]["mirrorlist"] = yum_mirrorlist if yum_mirrorlist
+
+new_config["repo"]["upstream"]["apt"] ||= {} if include_src or apt_key_server or apt_key_fingerprint or apt_release or apt_pin
+new_config["repo"]["upstream"]["apt"]["include_src"] = include_src if include_src
+new_config["repo"]["upstream"]["apt"]["key_server"] = apt_key_server if apt_key_server
+new_config["repo"]["upstream"]["apt"]["key_fingerprint"] = apt_key_fingerprint if apt_key_fingerprint
+new_config["repo"]["upstream"]["apt"]["release"] = apt_release if apt_release
+new_config["repo"]["upstream"]["apt"]["pin"] = apt_pin if apt_pin
+
+new_config["repo"]["upstream"]["zypper_repofile_url"] = zypper_repofile_url if zypper_repofile_url
+new_config["repo"]["upstream"]["brew_tap"] = brew_tap if brew_tap
+
 
 # Convert prerequisites
 tp_prerequisites = original_config[settings_key]['tp_prerequisites'] if original_config.dig(settings_key, 'tp_prerequisites')

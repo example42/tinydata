@@ -1,4 +1,4 @@
 ---
-scikit-learn:
+scikit-learn::settings:
   package_name: 'scikit-learn'
   package_provider: 'pip'

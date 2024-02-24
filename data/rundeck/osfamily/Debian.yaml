@@ -1,2 +1,2 @@
 ---
-rundeck::settings:
+rundeck::settings: {}

@@ -1,5 +1,5 @@
 ---
-pytorch:
+pytorch::settings:
   package_name:
     - 'torch'
     - 'torchvision'

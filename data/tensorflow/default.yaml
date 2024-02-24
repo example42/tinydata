@@ -1,5 +1,5 @@
 ---
-tensorflow:
+tensorflow::settings:
   package_name: tensorflow
   package_provider: 'pip'
 

@@ -1,4 +1,4 @@
 ---
-kedro:
+kedro::settings:
   package_name: kedro
   package_provider: 'pip'

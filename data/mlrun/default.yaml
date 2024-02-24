@@ -1,5 +1,5 @@
 ---
-mlrun:
+mlrun::settings:
   package_name: mlrun
   package_provider: 'pip'
 

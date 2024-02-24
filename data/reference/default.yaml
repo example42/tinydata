@@ -449,6 +449,8 @@ reference::settings:
           name: ~
         winget:
           name: ~
+        brew:
+          name: ~
     # Examples of other packages
     client:
       name: reference-client

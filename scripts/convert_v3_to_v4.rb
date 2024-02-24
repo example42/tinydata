@@ -25,19 +25,24 @@ settings_key = original_config.keys.select { |key| key.end_with?('::settings') }
 # Package
 package_name = original_config[settings_key]['package_name'] if original_config.dig(settings_key, 'package_name')
 package_provider = original_config[settings_key]['package_provider'] if original_config.dig(settings_key, 'package_provider')
+package_source = original_config[settings_key]['package_source'] if original_config.dig(settings_key, 'package_source')
 brew_package_name = original_config[settings_key]['brew_package_name'] if original_config.dig(settings_key, 'brew_package_name')
 winget_package_name = original_config[settings_key]['winget_package_name'] if original_config.dig(settings_key, 'winget_package_name')
 choco_package_name = original_config[settings_key]['choco_package_name'] if original_config.dig(settings_key, 'choco_package_name')
 
-new_config["packages"] = { "main"  => {} } if package_name or package_provider or brew_package_name or winget_package_name or choco_package_name
+new_config["packages"] = { "main"  => {} } if package_name or package_provider or brew_package_name or winget_package_name or choco_package_name or snap_package_name or package_source
 new_config["packages"] = {"main" => {"name" => package_name}} if package_name
-new_config["packages"]["main"]["provider"] = package_provider if package_provider or brew_package_name or winget_package_name or choco_package_name
+new_config["packages"]["main"]["provider"] = package_provider if package_provider
+new_config["packages"]["main"]["source"] = package_source if package_source
+new_config["packages"]["main"]["providers"] ||= {} if brew_package_name or winget_package_name or choco_package_name or snap_package_name 
 new_config["packages"]["main"]["providers"]["brew"] ||= {} if brew_package_name
 new_config["packages"]["main"]["providers"]["brew"] = { "name" => brew_package_name } if brew_package_name
 new_config["packages"]["main"]["providers"]["winget"] ||= {} if winget_package_name
 new_config["packages"]["main"]["providers"]["winget"] = { "name" => winget_package_name } if winget_package_name
 new_config["packages"]["main"]["providers"]["choco"] ||= {} if choco_package_name
 new_config["packages"]["main"]["providers"]["choco"] = { "name" => choco_package_name } if choco_package_name 
+new_config["packages"]["main"]["providers"]["snap"] ||= {} if snap_package_name
+new_config["packages"]["main"]["providers"]["snap"] = { "name" => snap_package_name } if snap_package_name
 
 # Service
 service_name = original_config[settings_key]['service_name'] if original_config.dig(settings_key, 'service_name')
@@ -60,8 +65,9 @@ config_file_path = original_config[settings_key]['config_file_path']  if origina
 config_file_format = original_config[settings_key]['config_file_format'] if original_config.dig(settings_key, 'config_file_format')
 log_file_path = original_config[settings_key]['log_file_path'] if original_config.dig(settings_key, 'log_file_path') 
 init_file_path = original_config[settings_key]['init_file_path'] if original_config.dig(settings_key, 'init_file_path')
+pid_file_path = original_config[settings_key]['pid_file_path'] if original_config.dig(settings_key, 'pid_file_path')
 
-new_config["files"] ||= {} if config_file_path or config_file_format or log_file_path or init_file_path
+new_config["files"] ||= {} if config_file_path or config_file_format or log_file_path or init_file_path or pid_file_path
 
 new_config["files"] = {"config" => {"path" => config_file_path}} if config_file_path
 new_config["user_files"] = {"config" => {"path" => config_file_path.gsub('/etc/','$HOME/.') }} if config_file_path
@@ -74,6 +80,9 @@ new_config["files"]["log"] = { "path" => log_file_path } if log_file_path
 
 new_config["files"]["init"] ||= {} if init_file_path
 new_config["files"]["init"] = { "path" => init_file_path } if init_file_path
+
+new_config["files"]["pid"] ||= {} if pid_file_path
+new_config["files"]["pid"] = { "path" => pid_file_path } if pid_file_path
 
 # Dirs
 config_dir_path = original_config[settings_key]['config_dir_path'] if original_config.dig(settings_key, 'config_dir_path')
@@ -168,9 +177,9 @@ new_config["repo"]["upstream"]["repofile_name"] = repo_filename if repo_filename
 new_config["repo"]["upstream"]["key"] = key if key
 new_config["repo"]["upstream"]["key_url"] = key_url if key_url
 
-new_config["repo"]["upstream"]["yum"] ||= {} if yumrepo_params or yum_priority or yum_mirrorlist or repo_url or key
+new_config["repo"]["upstream"]["yum"] ||= {} if yumrepo_params or yum_priority or yum_mirrorlist
 new_config["repo"]["upstream"]["yum"]["gpgcheck"] = true if key
-new_config["repo"]["upstream"]["yum"]["gpgkey"] = key if key
+#new_config["repo"]["upstream"]["yum"]["gpgkey"] = key if key
 new_config["repo"]["upstream"]["yum"]["params"] = yumrepo_params if yumrepo_params
 new_config["repo"]["upstream"]["yum"]["priority"] = yum_priority if yum_priority
 new_config["repo"]["upstream"]["yum"]["mirrorlist"] = yum_mirrorlist if yum_mirrorlist

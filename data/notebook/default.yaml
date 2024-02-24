@@ -1,5 +1,7 @@
 ---
-notebook:
+notebook::settings:
   package_name: notebook
   package_provider: 'pip'
 
+
+# No data to convert to Version 4 format

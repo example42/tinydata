@@ -1,5 +1,7 @@
 ---
-jupyterlab:
+jupyterlab::settings:
   package_name: jupyterlab
   package_provider: 'pip'
 
+
+# No data to convert to Version 4 format

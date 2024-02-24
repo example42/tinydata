@@ -169,7 +169,6 @@ new_config["repo"]["upstream"]["key"] = key if key
 new_config["repo"]["upstream"]["key_url"] = key_url if key_url
 
 new_config["repo"]["upstream"]["yum"] ||= {} if yumrepo_params or yum_priority or yum_mirrorlist or repo_url or key
-new_config["repo"]["upstream"]["yum"]["baseurl"] = repo_url if repo_url
 new_config["repo"]["upstream"]["yum"]["gpgcheck"] = true if key
 new_config["repo"]["upstream"]["yum"]["gpgkey"] = key if key
 new_config["repo"]["upstream"]["yum"]["params"] = yumrepo_params if yumrepo_params

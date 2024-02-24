@@ -26,12 +26,18 @@ settings_key = original_config.keys.select { |key| key.end_with?('::settings') }
 package_name = original_config[settings_key]['package_name'] if original_config.dig(settings_key, 'package_name')
 package_provider = original_config[settings_key]['package_provider'] if original_config.dig(settings_key, 'package_provider')
 brew_package_name = original_config[settings_key]['brew_package_name'] if original_config.dig(settings_key, 'brew_package_name')
+winget_package_name = original_config[settings_key]['winget_package_name'] if original_config.dig(settings_key, 'winget_package_name')
+choco_package_name = original_config[settings_key]['choco_package_name'] if original_config.dig(settings_key, 'choco_package_name')
 
-new_config["packages"] = { "main"  => {} } if package_name or package_provider or brew_package_name
+new_config["packages"] = { "main"  => {} } if package_name or package_provider or brew_package_name or winget_package_name or choco_package_name
 new_config["packages"] = {"main" => {"name" => package_name}} if package_name
 new_config["packages"]["main"]["provider"] = package_provider if package_provider
-new_config["packages"]["main"]["providers"] = { "brew" => { "name" => brew_package_name } } if brew_package_name
-
+new_config["packages"]["main"]["providers"]["brew"] ||= {} if brew_package_name
+new_config["packages"]["main"]["providers"]["brew"] = { "name" => brew_package_name } if brew_package_name
+new_config["packages"]["main"]["providers"]["winget"] ||= {} if winget_package_name
+new_config["packages"]["main"]["providers"]["winget"] = { "name" => winget_package_name } if winget_package_name
+new_config["packages"]["main"]["providers"]["choco"] ||= {} if choco_package_name
+new_config["packages"]["main"]["providers"]["choco"] = { "name" => choco_package_name } if choco_package_name 
 
 # Service
 service_name = original_config[settings_key]['service_name'] if original_config.dig(settings_key, 'service_name')

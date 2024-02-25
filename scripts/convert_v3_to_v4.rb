@@ -139,14 +139,12 @@ new_config["image"]["dockerfile_prerequisites"] = dockerfile_prerequisites if do
 upstream_repo = original_config[settings_key]['upstream_repo'] if original_config.dig(settings_key, 'upstream_repo')
 new_config["repo"] = 'upstream' if upstream_repo == true
 
-
 repo_url = original_config[settings_key]['repo_url'] if original_config.dig(settings_key, 'repo_url')
 repo_package_name = original_config[settings_key]['repo_package_name'] if original_config.dig(settings_key, 'repo_package_name')
 repo_package_url = original_config[settings_key]['repo_package_url'] if original_config.dig(settings_key, 'repo_package_url')
 repo_package_provider = original_config[settings_key]['repo_package_provider'] if original_config.dig(settings_key, 'repo_package_provider')
 repo_package_params = original_config[settings_key]['repo_package_params'] if original_config.dig(settings_key, 'repo_package_params')
 repo_file_url = original_config[settings_key]['repo_file_url'] if original_config.dig(settings_key, 'repo_file_url')
-repo_url = original_config[settings_key]['repo_url'] if original_config.dig(settings_key, 'repo_url')
 repo_name = original_config[settings_key]['repo_name'] if original_config.dig(settings_key, 'repo_name')
 repo_description = original_config[settings_key]['repo_description'] if original_config.dig(settings_key, 'repo_description')
 repo_filename = original_config[settings_key]['repo_filename'] if original_config.dig(settings_key, 'repo_filename')
@@ -154,7 +152,6 @@ key = original_config[settings_key]['key'] if original_config.dig(settings_key, 
 key_url = original_config[settings_key]['key_url'] if original_config.dig(settings_key, 'key_url')
 include_src = original_config[settings_key]['include_src'] if original_config.dig(settings_key, 'include_src')
 yumrepo_params = original_config[settings_key]['yumrepo_params'] if original_config.dig(settings_key, 'yumrepo_params')
-
 apt_repos = original_config[settings_key]['apt_repos'] if original_config.dig(settings_key, 'apt_repos')
 apt_key_server = original_config[settings_key]['apt_key_server'] if original_config.dig(settings_key, 'apt_key_server')
 apt_key_fingerprint = original_config[settings_key]['apt_key_fingerprint'] if original_config.dig(settings_key, 'apt_key_fingerprint')
@@ -178,8 +175,8 @@ new_config["repo"]["upstream"]["repofile_name"] = repo_filename if repo_filename
 new_config["repo"]["upstream"]["key"] = key if key
 new_config["repo"]["upstream"]["key_url"] = key_url if key_url
 
-new_config["repo"]["upstream"]["yum"] ||= {} if yumrepo_params or yum_priority or yum_mirrorlist or key
-new_config["repo"]["upstream"]["yum"]["gpgcheck"] = true if key
+new_config["repo"]["upstream"]["yum"] ||= {} if yumrepo_params or yum_priority or yum_mirrorlist or key_url
+new_config["repo"]["upstream"]["yum"]["gpgcheck"] = true if key_url 
 #new_config["repo"]["upstream"]["yum"]["gpgkey"] = key if key
 new_config["repo"]["upstream"]["yum"]["params"] = yumrepo_params if yumrepo_params
 new_config["repo"]["upstream"]["yum"]["priority"] = yum_priority if yum_priority

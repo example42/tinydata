@@ -2,3 +2,7 @@
 auditbeat::settings:
   tp_prerequisites:
     elastic_repo: {}
+# Version 4 format
+  preinstall:
+    tp::install:
+      elastic_repo: {}

@@ -1,3 +1,7 @@
 ---
 python-pip::settings:
   package_name: 'python'
+# Version 4 format
+  packages:
+    main:
+      name: python

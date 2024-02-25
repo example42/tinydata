@@ -7,3 +7,13 @@ openssh::settings:
     - 'SUNWsshr'
     - 'SUNWsshu'
 
+
+# Version 4 format
+  packages:
+    main:
+      name:
+      - SUNWsshcu
+      - SUNWsshdr
+      - SUNWsshdu
+      - SUNWsshr
+      - SUNWsshu

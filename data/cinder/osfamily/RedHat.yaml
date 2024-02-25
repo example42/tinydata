@@ -5,3 +5,13 @@ cinder::settings:
     - 'openstack-cinder'
   init_file_path: '/etc/sysconfig/cinder'
 
+
+# Version 4 format
+  packages:
+    main:
+      name:
+      - python-cinder
+      - openstack-cinder
+  files:
+    init:
+      path: "/etc/sysconfig/cinder"

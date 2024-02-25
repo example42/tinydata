@@ -1,3 +1,8 @@
 ---
 heartbeat-elastic::settings:
   init_file_path: '/etc/sysconfig/heartbeat-elastic'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/heartbeat-elastic"

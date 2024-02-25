@@ -12,3 +12,8 @@ sample::settings:
   user_dirs:
     config:
       path: '%APPDATA%\sample'
+# Version 4 format
+  packages:
+    main:
+      provider: windows
+      source: https://github.com/sample/sample/releases/download/v$VERSION/sample_$VERSION_$OS_$ARCH.msi

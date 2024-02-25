@@ -6,3 +6,22 @@ mongodb::settings:
   pid_file_path: '/var/run/mongodb/mongod.pid'
   log_file_path: '/var/log/mongodb/mongod.log'
   data_dir_path: '/var/lib/mongodb'
+
+# Version 4 format
+  services:
+    mongod: {}
+  files:
+    config:
+      path: "/etc/mongod.conf"
+    log:
+      path: "/var/log/mongodb/mongod.log"
+    init:
+      path: "/etc/sysconfig/mongod"
+    pid:
+      path: "/var/run/mongodb/mongod.pid"
+  user_files:
+    config:
+      path: "$HOME/.mongod.conf"
+  dirs:
+    data:
+      path: "/var/lib/mongodb"

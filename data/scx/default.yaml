@@ -8,3 +8,24 @@ scx::settings:
   home_dir_path: '/opt/microsoft/scx/'
   tp_prerequisites:
     - 'microsoft_repo'
+
+# Version 4 format
+  packages:
+    main:
+      name: scx
+  dirs:
+    config:
+      path: "/etc/opt/microsoft/scx/"
+    log:
+      path: "/var/opt/microsoft/scx/log/"
+    home:
+      path: "/opt/microsoft/scx/"
+  user_dirs:
+    config:
+      path: "$HOME/.opt/microsoft/scx/"
+  urls:
+    website: https://learn.microsoft.com/en-us/system-center/scom/manage-security-administer-crossplat-agent
+    source: https://github.com/microsoft/SCXcore.git
+  preinstall:
+    tp::install:
+    - microsoft_repo

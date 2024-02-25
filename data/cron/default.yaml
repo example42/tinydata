@@ -3,3 +3,19 @@ cron::settings:
   config_file_path: '/etc/crontab'
   config_dir_path: '/etc/cron.d'
   conf_dir_path: '/etc/cron.d'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/crontab"
+  user_files:
+    config:
+      path: "$HOME/.crontab"
+  dirs:
+    config:
+      path: "/etc/cron.d"
+    conf:
+      path: "/etc/cron.d"
+  user_dirs:
+    config:
+      path: "$HOME/.cron.d"

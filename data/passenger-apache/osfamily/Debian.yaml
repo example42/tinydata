@@ -5,3 +5,16 @@ passenger-apache::settings:
   apt_repos: 'main'
   apt_key_server: 'http://keyserver.ubuntu.com'
   package_name: 'libapache2-mod-passenger'
+
+# Version 4 format
+  packages:
+    main:
+      name: libapache2-mod-passenger
+  repo:
+    upstream:
+      url: https://oss-binaries.phusionpassenger.com/apt/passenger
+      key: 561F9B9CAC40B2F7
+      yum:
+        gpgcheck: true
+      apt:
+        key_server: http://keyserver.ubuntu.com

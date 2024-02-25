@@ -23,3 +23,40 @@ bacula-client::settings:
     list_directors: 'bacula-console -l'
     list_consoles: 'bacula-console -L'
   version_command: 'bacula-fd -? 2>&1 |  grep -i version'
+# Version 4 format
+  packages:
+    main:
+      name: bacula-client
+  services:
+    bacula-fd:
+      process_name: bacula-fd
+      process_user: root
+      process_group: root
+      nodaemon_args: "-f"
+  files:
+    config:
+      path: "/etc/bacula/bacula-fd.conf"
+    log:
+      path: "/var/log/messages"
+    init:
+      path: "/etc/sysconfig/bacula-fd"
+    pid:
+      path: "/var/run/bacula/bacula-fd.9102.pid"
+  user_files:
+    config:
+      path: "$HOME/.bacula/bacula-fd.conf"
+  dirs:
+    config:
+      path: "/etc/bacula"
+    log:
+      path: "/var/log/bacula"
+  user_dirs:
+    config:
+      path: "$HOME/.bacula"
+  ports:
+    main:
+      port: '9102'
+      protocol: tcp
+  urls:
+    website: https://www.bacula.org/
+    source: https://gitlab.bacula.org/bacula-community-edition/bacula-community

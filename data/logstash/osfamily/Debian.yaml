@@ -2,3 +2,8 @@
 logstash::settings:
   init_file_path: '/etc/default/logstash'
 
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/logstash"

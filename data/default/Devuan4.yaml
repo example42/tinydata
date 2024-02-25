@@ -8,3 +8,9 @@ default::settings:
     default:
       apt:
         release: 'chimaera'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: chimaera

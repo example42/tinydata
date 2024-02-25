@@ -14,3 +14,39 @@ logstash::settings:
   process_user: 'logstash'
   process_group: 'logstash'
   tcp_port: '9292'
+
+# Version 4 format
+  packages:
+    main:
+      name: logstash
+  services:
+    logstash:
+      process_name: java
+      process_extra_name: logstash
+      process_user: logstash
+      process_group: logstash
+  files:
+    config:
+      path: "/etc/logstash/conf.d/logstash.conf"
+    log:
+      path: "/var/log/logstash/logstash.log"
+    pid:
+      path: "/var/run/logstash.pid"
+  user_files:
+    config:
+      path: "$HOME/.logstash/conf.d/logstash.conf"
+  dirs:
+    config:
+      path: "/etc/logstash"
+    conf:
+      path: "/etc/logstash/conf.d"
+    log:
+      path: "/var/log/logstash"
+  user_dirs:
+    config:
+      path: "$HOME/.logstash"
+  ports:
+    main:
+      port: '9292'
+      protocol: tcp
+  repo: upstream

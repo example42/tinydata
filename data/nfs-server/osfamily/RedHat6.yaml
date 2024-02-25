@@ -1,3 +1,7 @@
 ---
 nfs-server::settings:
   service_name: 'nfs'
+
+# Version 4 format
+  services:
+    nfs: {}

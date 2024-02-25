@@ -14,3 +14,39 @@ rsyslog::settings:
   process_user: 'root'
   process_group: 'root'
   version_command: 'rsyslogd -v'
+
+# Version 4 format
+  packages:
+    main:
+      name: rsyslog
+  services:
+    rsyslog:
+      process_name: rsyslogd
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/rsyslog.conf"
+    log:
+      path: "/var/log/messages"
+    init:
+      path: "/etc/sysconfig/rsyslog"
+    pid:
+      path: "/var/run/rsyslog.pid"
+  user_files:
+    config:
+      path: "$HOME/.rsyslog.conf"
+  dirs:
+    config:
+      path: "/etc/rsyslog.d"
+    conf:
+      path: "/etc/rsyslog.d"
+    data:
+      path: "/var/log"
+  user_dirs:
+    config:
+      path: "$HOME/.rsyslog.d"
+  ports:
+    main_udp:
+      port: '69'
+      protocol: udp

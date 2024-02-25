@@ -8,3 +8,28 @@ cinder::settings:
   process_name: 'cinder'
   process_user: 'cinder'
   process_group: 'cinder'
+
+# Version 4 format
+  services:
+    ! '':
+      process_name: cinder
+      process_user: cinder
+      process_group: cinder
+  files:
+    config:
+      path: "/etc/cinder/cinder.conf"
+    log:
+      path: "/var/log/cinder/cinder.log"
+    pid:
+      path: "/var/run/cinder.pid"
+  user_files:
+    config:
+      path: "$HOME/.cinder/cinder.conf"
+  dirs:
+    config:
+      path: "/etc/cinder"
+    log:
+      path: "/var/log/cinder"
+  user_dirs:
+    config:
+      path: "$HOME/.cinder"

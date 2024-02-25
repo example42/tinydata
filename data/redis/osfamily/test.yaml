@@ -15,3 +15,24 @@ redis::settings:
   config_dir_owner: 'test'
   config_dir_group: 'test'
   config_dir_mode: '0644'
+
+# Version 4 format
+  packages:
+    main:
+      name: redis-test
+  services:
+    redis-test: {}
+  files:
+    config:
+      path: "/etc/redis-test/redis.conf"
+    init:
+      path: "/etc/sysconfig/redis-test"
+  user_files:
+    config:
+      path: "$HOME/.redis-test/redis.conf"
+  dirs:
+    config:
+      path: "/etc/redis-test"
+  user_dirs:
+    config:
+      path: "$HOME/.redis-test"

@@ -9,3 +9,26 @@ ansible::settings:
   website_url: 'https://www.ansible.com/'
   git_source: 'https://github.com/ansible/ansible'
   docker_image: 'quay.io/ansible/ansible-runner'
+
+# Version 4 format
+  packages:
+    main:
+      name: ansible
+  files:
+    config:
+      path: "/etc/ansible/ansible.cfg"
+      format: inifile_with_stanzas
+  user_files:
+    config:
+      path: "$HOME/.ansible/ansible.cfg"
+  dirs:
+    config:
+      path: "/etc/ansible"
+  user_dirs:
+    config:
+      path: "$HOME/.ansible"
+  urls:
+    website: https://www.ansible.com/
+    source: https://github.com/ansible/ansible
+  image:
+    name: quay.io/ansible/ansible-runner

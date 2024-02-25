@@ -3,3 +3,13 @@ discord::settings:
   package_name: discord
   snap_package_name: 'discord'
   website_url: 'https://discord.com/'
+
+# Version 4 format
+  packages:
+    main:
+      name: discord
+      providers:
+        snap:
+          name: discord
+  urls:
+    website: https://discord.com/

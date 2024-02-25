@@ -5,3 +5,15 @@ openssh::settings:
   config_file_mode: '0644'
   init_file_path: ''
   log_file_path: '/var/log/authlog'
+
+# Version 4 format
+  packages:
+    main:
+      name: ''
+  services:
+    sshd: {}
+  files:
+    log:
+      path: "/var/log/authlog"
+    init:
+      path: ''

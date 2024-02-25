@@ -12,3 +12,10 @@ snmp::settings:
   files:
     init:
       path: '/etc/sysconfig/snmpd'
+# Version 4 format
+  packages:
+    main:
+      name: net-snmp
+  files:
+    init:
+      path: "/etc/sysconfig/snmpd"

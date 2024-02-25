@@ -6,3 +6,14 @@ icingaweb2::settings:
   repo_package_name: 'icinga-rpm-release'
   tp_prerequisites:
     - scl
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/icingaweb2"
+  repo:
+    upstream:
+      package_name: icinga-rpm-release
+  preinstall:
+    tp::install:
+    - scl

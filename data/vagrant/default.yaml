@@ -7,3 +7,17 @@ vagrant::settings:
   info_commands:
     global-status: 'vagrant global-status'
   git_source: https://github.com/hashicorp/vagrant.git
+
+# Version 4 format
+  packages:
+    main:
+      name: vagrant
+  services:
+    ! '':
+      process_name: vagrant
+  dirs:
+    home:
+      path: "/opt/vagrant"
+  urls:
+    source: https://github.com/hashicorp/vagrant.git
+  repo: upstream

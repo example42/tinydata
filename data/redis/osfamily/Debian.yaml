@@ -3,3 +3,13 @@ redis::settings:
   init_file_path: '/etc/default/redis-server'
   package_name: 'redis-server'
   service_name: 'redis-server'
+
+# Version 4 format
+  packages:
+    main:
+      name: redis-server
+  services:
+    redis-server: {}
+  files:
+    init:
+      path: "/etc/default/redis-server"

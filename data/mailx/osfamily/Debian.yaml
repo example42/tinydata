@@ -1,3 +1,8 @@
 ---
 mailx::settings:
   package_name: 'bsd-mailx'
+
+# Version 4 format
+  packages:
+    main:
+      name: bsd-mailx

@@ -1,3 +1,8 @@
 ---
 passenger-nginx::settings:
   package_name: 'passenger-nginx'
+
+# Version 4 format
+  packages:
+    main:
+      name: passenger-nginx

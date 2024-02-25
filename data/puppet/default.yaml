@@ -10,3 +10,30 @@ puppet::settings:
   process_name: 'puppet'
   process_user: 'root'
   process_group: 'root'
+
+# Version 4 format
+  packages:
+    main:
+      name: puppet
+  services:
+    puppet:
+      process_name: puppet
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/puppet/puppet.conf"
+    pid:
+      path: "/var/run/puppet/puppet.pid"
+  user_files:
+    config:
+      path: "$HOME/.puppet/puppet.conf"
+  dirs:
+    config:
+      path: "/etc/puppet"
+    log:
+      path: "/var/log/puppet"
+  user_dirs:
+    config:
+      path: "$HOME/.puppet"
+  repo: upstream

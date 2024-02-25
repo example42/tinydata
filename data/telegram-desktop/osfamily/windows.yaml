@@ -2,3 +2,12 @@
 telegram-desktop::settings:
   winget_package_name: 'Telegram.TelegramDesktop'
   choco_package_name: 'telegram-desktop'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        winget:
+          name: Telegram.TelegramDesktop
+        choco:
+          name: telegram-desktop

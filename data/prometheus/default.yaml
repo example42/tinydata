@@ -157,3 +157,32 @@ prometheus::settings:
         command: 'go install cmd/prometheus/main.go'
         environment:
           - 'GO111MODULE=on'
+
+# Version 4 format
+  packages:
+    main:
+      name: prometheus
+  services:
+    prometheus:
+      process_name: prometheus
+      process_user: prometheus
+      process_group: prometheus
+  files:
+    config:
+      path: "/etc/prometheus/prometheus.yml"
+      format: yaml
+    init:
+      path: "/etc/sysconfig/prometheus"
+    pid:
+      path: ''
+  user_files:
+    config:
+      path: "$HOME/.prometheus/prometheus.yml"
+  dirs:
+    config:
+      path: "/etc/prometheus"
+  user_dirs:
+    config:
+      path: "$HOME/.prometheus"
+  preinstall:
+    tp::install: {}

@@ -1,3 +1,8 @@
 ---
 tcpdump::settings:
   package_name: 'tcpdump'
+
+# Version 4 format
+  packages:
+    main:
+      name: tcpdump

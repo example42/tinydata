@@ -2,3 +2,11 @@
 ceilometer::settings:
   package_name: 'openstack-ceilometer-common'
   init_file_path: '/etc/sysconfig/ceilometer'
+
+# Version 4 format
+  packages:
+    main:
+      name: openstack-ceilometer-common
+  files:
+    init:
+      path: "/etc/sysconfig/ceilometer"

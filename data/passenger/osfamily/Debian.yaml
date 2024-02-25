@@ -4,3 +4,13 @@ passenger::settings:
   key: '561F9B9CAC40B2F7'
   apt_repos: 'main'
   apt_key_server: 'http://keyserver.ubuntu.com'
+
+# Version 4 format
+  repo:
+    upstream:
+      url: https://oss-binaries.phusionpassenger.com/apt/passenger
+      key: 561F9B9CAC40B2F7
+      yum:
+        gpgcheck: true
+      apt:
+        key_server: http://keyserver.ubuntu.com

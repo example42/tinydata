@@ -2,3 +2,11 @@
 heartbeat-elastic::settings:
   config_file_path: 'C:\ProgramData\chocolatey\lib\heartbeat-elastic\tools\heartbeat-elastic.yml'
 
+
+# Version 4 format
+  files:
+    config:
+      path: C:\ProgramData\chocolatey\lib\heartbeat-elastic\tools\heartbeat-elastic.yml
+  user_files:
+    config:
+      path: C:\ProgramData\chocolatey\lib\heartbeat-elastic\tools\heartbeat-elastic.yml

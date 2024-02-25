@@ -3,3 +3,9 @@ tensorflow::settings:
   package_name: tensorflow
   package_provider: 'pip'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: tensorflow
+      provider: pip

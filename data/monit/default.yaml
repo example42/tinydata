@@ -11,3 +11,31 @@ monit::settings:
   process_name: 'monit'
   process_user: 'root'
   process_group: 'root'
+
+# Version 4 format
+  packages:
+    main:
+      name: monit
+  services:
+    monit:
+      process_name: monit
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/monit.conf"
+    log:
+      path: "/var/log/monit.log"
+    pid:
+      path: "/var/run/monit.pid"
+  user_files:
+    config:
+      path: "$HOME/.monit.conf"
+  dirs:
+    config:
+      path: "/etc/monit"
+    conf:
+      path: "/etc/monit.d"
+  user_dirs:
+    config:
+      path: "$HOME/.monit"

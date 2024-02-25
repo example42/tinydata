@@ -2,3 +2,9 @@
 rundeck::settings:
   repo_package_url: 'http://repo.rundeck.org/latest.rpm'
   repo_package_name: 'rundeck-repo'
+
+# Version 4 format
+  repo:
+    upstream:
+      package_name: rundeck-repo
+      package_url: http://repo.rundeck.org/latest.rpm

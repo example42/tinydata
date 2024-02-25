@@ -3,3 +3,13 @@ webex::settings:
   package_name: ''
   snap_package_name: 'webex'
   website_url: 'https://www.webex.com'
+
+# Version 4 format
+  packages:
+    main:
+      name: ''
+      providers:
+        snap:
+          name: webex
+  urls:
+    website: https://www.webex.com

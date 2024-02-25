@@ -3,3 +3,20 @@ rinse::settings:
   package_name: 'rinse'
   config_file_path: '/etc/rinse/rinse.conf'
   config_dir_path: '/etc/rinse'
+
+# Version 4 format
+  packages:
+    main:
+      name: rinse
+  files:
+    config:
+      path: "/etc/rinse/rinse.conf"
+  user_files:
+    config:
+      path: "$HOME/.rinse/rinse.conf"
+  dirs:
+    config:
+      path: "/etc/rinse"
+  user_dirs:
+    config:
+      path: "$HOME/.rinse"

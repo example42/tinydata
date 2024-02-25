@@ -12,3 +12,27 @@ apparmor::settings:
   debug_commands:
     show_denied: 'grep -i denied /var/log/kern.log /var/log/syslog'
   version_command: 'dpkg -l apparmor | grep apparmor'
+
+# Version 4 format
+  packages:
+    main:
+      name: ''
+  files:
+    config:
+      path: "/etc/apparmor/parser.conf"
+  user_files:
+    config:
+      path: "$HOME/.apparmor/parser.conf"
+  dirs:
+    config:
+      path: "/etc/apparmor/"
+    conf:
+      path: "/etc/apparmor.d/"
+    data:
+      path: "/var/cache/apparmor/"
+  user_dirs:
+    config:
+      path: "$HOME/.apparmor/"
+  urls:
+    website: https://apparmor.net/
+    source: https://gitlab.com/apparmor/apparmor

@@ -14,3 +14,36 @@ puppet-agent::settings:
   log_dir_path:
     - '/var/log/puppetlabs/puppet'
     - '/var/log/puppetlabs/pxp-agent'
+
+# Version 4 format
+  packages:
+    main:
+      name: puppet-agent
+  services:
+    ? - puppet
+      - pxp-agent
+    : process_name: puppet
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/puppetlabs/puppet/puppet.conf"
+    log:
+      path:
+      - "/var/log/puppet/pxp-agent/pxp-agent.log"
+    pid:
+      path: "/var/run/puppetlabs/agent.pid"
+  user_files:
+    config:
+      path: "$HOME/.puppetlabs/puppet/puppet.conf"
+  dirs:
+    config:
+      path: "/etc/puppetlabs/puppet"
+    log:
+      path:
+      - "/var/log/puppetlabs/puppet"
+      - "/var/log/puppetlabs/pxp-agent"
+  user_dirs:
+    config:
+      path: "$HOME/.puppetlabs/puppet"
+  repo: upstream

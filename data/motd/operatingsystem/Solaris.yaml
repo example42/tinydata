@@ -1,3 +1,5 @@
 ---
 motd::settings:
   config_file_group: 'sys'
+
+# No data to convert to Version 4 format

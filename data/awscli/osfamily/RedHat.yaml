@@ -1,3 +1,11 @@
 ---
 awscli::settings:
   config_file_path: '/etc/awsclirc'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/awsclirc"
+  user_files:
+    config:
+      path: "$HOME/.awsclirc"

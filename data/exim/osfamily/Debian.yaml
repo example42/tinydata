@@ -8,3 +8,28 @@ exim::settings:
   process_name: 'exim4'
   process_user: 'Debian-exim'
   init_file_path: '/etc/default/exim'
+
+# Version 4 format
+  packages:
+    main:
+      name: exim4
+  services:
+    exim4:
+      process_name: exim4
+      process_user: Debian-exim
+  files:
+    config:
+      path: "/etc/exim4/update-exim4.conf.conf"
+    init:
+      path: "/etc/default/exim"
+    pid:
+      path: "/var/run/exim4/exim.pid"
+  user_files:
+    config:
+      path: "$HOME/.exim4/update-exim4.conf.conf"
+  dirs:
+    config:
+      path: "/etc/exim4"
+  user_dirs:
+    config:
+      path: "$HOME/.exim4"

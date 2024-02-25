@@ -6,3 +6,26 @@ sysstat::settings:
   config_dir_path: '/etc/sysstat'
   log_file_path: '/var/log/sysstat/sa'
   log_dir_path: '/var/log/sysstat'
+
+# Version 4 format
+  packages:
+    main:
+      name: sysstat
+  services:
+    sysstat: {}
+  files:
+    config:
+      path: "/etc/sysstat/sysstat"
+    log:
+      path: "/var/log/sysstat/sa"
+  user_files:
+    config:
+      path: "$HOME/.sysstat/sysstat"
+  dirs:
+    config:
+      path: "/etc/sysstat"
+    log:
+      path: "/var/log/sysstat"
+  user_dirs:
+    config:
+      path: "$HOME/.sysstat"

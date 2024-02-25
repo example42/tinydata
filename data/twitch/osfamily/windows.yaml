@@ -2,3 +2,12 @@
 twitch::settings:
   winget_package_name: 'Streamlink.Streamlink.TwitchGui'
   choco_package_name: 'twitch'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        winget:
+          name: Streamlink.Streamlink.TwitchGui
+        choco:
+          name: twitch

@@ -8,3 +8,28 @@ quantum::settings:
   process_name: 'quantum'
   process_user: 'quantum'
   process_group: 'quantum'
+
+# Version 4 format
+  services:
+    ! '':
+      process_name: quantum
+      process_user: quantum
+      process_group: quantum
+  files:
+    config:
+      path: "/etc/quantum/quantum.conf"
+    log:
+      path: "/var/log/quantum/quantum.log"
+    pid:
+      path: "/var/run/quantum.pid"
+  user_files:
+    config:
+      path: "$HOME/.quantum/quantum.conf"
+  dirs:
+    config:
+      path: "/etc/quantum"
+    log:
+      path: "/var/log/quantum"
+  user_dirs:
+    config:
+      path: "$HOME/.quantum"

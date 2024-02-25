@@ -1,3 +1,10 @@
 ---
 puppet-agent::settings:
   dockerfile_prerequisites: "RUN echo -e 'http://dl-3.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && echo -e 'http://dl-3.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && apk update && apk add shadow ruby less bash && gem install puppet-agent --no-ri --no-rdoc "
+
+# Version 4 format
+  image:
+    dockerfile_prerequisites: 'RUN echo -e ''http://dl-3.alpinelinux.org/alpine/edge/testing''
+      >> /etc/apk/repositories && echo -e ''http://dl-3.alpinelinux.org/alpine/edge/community''
+      >> /etc/apk/repositories && apk update && apk add shadow ruby less bash && gem
+      install puppet-agent --no-ri --no-rdoc '

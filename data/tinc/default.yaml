@@ -12,3 +12,37 @@ tinc::settings:
   process_user: 'tinc'
   process_group: 'tinc'
   tcp_port: '655'
+
+# Version 4 format
+  packages:
+    main:
+      name: tinc
+  services:
+    tinc:
+      process_name: tincd
+      process_user: tinc
+      process_group: tinc
+  files:
+    config:
+      path: "/etc/tinc/tinc.conf"
+    log:
+      path: "/var/log/tinc/tinc.log"
+    pid:
+      path: "/var/run/tinc.pid"
+  user_files:
+    config:
+      path: "$HOME/.tinc/tinc.conf"
+  dirs:
+    config:
+      path: "/etc/tinc"
+    conf:
+      path: "/etc/tinc/conf.d"
+    log:
+      path: "/var/log/tinc"
+  user_dirs:
+    config:
+      path: "$HOME/.tinc"
+  ports:
+    main:
+      port: '655'
+      protocol: tcp

@@ -1,3 +1,8 @@
 ---
 nodejs::settings:
   package_name: 'nodejs'
+
+# Version 4 format
+  packages:
+    main:
+      name: nodejs

@@ -1,3 +1,8 @@
 ---
 zeek::settings:
   package_name: 'zeek'
+
+# Version 4 format
+  packages:
+    main:
+      name: zeek

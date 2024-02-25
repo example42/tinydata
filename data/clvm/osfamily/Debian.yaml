@@ -3,3 +3,13 @@ clvm::settings:
   package_name: 'clvm'
   service_name: 'clvm'
   init_file_path: '/etc/default/clvmd'
+
+# Version 4 format
+  packages:
+    main:
+      name: clvm
+  services:
+    clvm: {}
+  files:
+    init:
+      path: "/etc/default/clvmd"

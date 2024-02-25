@@ -1,3 +1,8 @@
 ---
 nux::settings:
   repo_package_url: 'http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm'
+
+# Version 4 format
+  repo:
+    upstream:
+      package_url: http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm

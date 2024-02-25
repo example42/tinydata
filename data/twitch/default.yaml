@@ -4,3 +4,14 @@ twitch::settings:
   snap_package_name: 'twitch'
   website_url: 'https://desktop.telegram.org/'
   git_source: 'https://github.com/telegramdesktop/tdesktop.git'
+
+# Version 4 format
+  packages:
+    main:
+      name: twitch
+      providers:
+        snap:
+          name: twitch
+  urls:
+    website: https://desktop.telegram.org/
+    source: https://github.com/telegramdesktop/tdesktop.git

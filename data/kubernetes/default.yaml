@@ -8,3 +8,29 @@ kubernetes::settings:
   config_file_path: '/etc/kubernetes/kubelet.conf'
   config_dir_path: '/etc/kubernetes'
   tcp_port: '10250'
+
+# Version 4 format
+  packages:
+    main:
+      name:
+      - kubeadm
+      - kubectl
+      - kubelet
+  services:
+    kubelet: {}
+  files:
+    config:
+      path: "/etc/kubernetes/kubelet.conf"
+  user_files:
+    config:
+      path: "$HOME/.kubernetes/kubelet.conf"
+  dirs:
+    config:
+      path: "/etc/kubernetes"
+  user_dirs:
+    config:
+      path: "$HOME/.kubernetes"
+  ports:
+    main:
+      port: '10250'
+      protocol: tcp

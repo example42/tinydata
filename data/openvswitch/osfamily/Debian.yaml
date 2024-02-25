@@ -1,3 +1,8 @@
 ---
 openvswitch::settings:
   init_file_path: '/etc/default/openvswitch-switch'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/openvswitch-switch"

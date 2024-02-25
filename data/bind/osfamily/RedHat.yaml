@@ -12,3 +12,25 @@ bind::settings:
     tsig-list: 'rndc tsig-list'
     tcp-timeouts: 'rndc tcp-timeouts'
     stats: 'rndc stats ; cat /var/named/data/named_stats.txt'
+
+# Version 4 format
+  services:
+    named:
+      process_user: named
+      process_group: named
+  files:
+    config:
+      path: "/etc/named.conf"
+    init:
+      path: "/etc/sysconfig/named"
+    pid:
+      path: "/var/run/named/named.pid"
+  user_files:
+    config:
+      path: "$HOME/.named.conf"
+  dirs:
+    config:
+      path: "/etc/named"
+  user_dirs:
+    config:
+      path: "$HOME/.named"

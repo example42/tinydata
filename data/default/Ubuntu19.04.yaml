@@ -6,3 +6,9 @@ default::settings:
     default:
       apt:
         release: 'disco'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: disco

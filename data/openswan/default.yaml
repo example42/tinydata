@@ -16,3 +16,37 @@ openswan::settings:
   pid_file_path: '/var/run/pluto'
   log_file_path: '/var/log/pluto/peer'
   log_dir_path: '/var/log/pluto'
+
+# Version 4 format
+  packages:
+    main:
+      name: openswan
+  services:
+    ipsec:
+      process_name: pluto
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/ipsec.conf"
+    log:
+      path: "/var/log/pluto/peer"
+    pid:
+      path: "/var/run/pluto"
+  user_files:
+    config:
+      path: "$HOME/.ipsec.conf"
+  dirs:
+    config:
+      path: "/etc/ipsec.d"
+    log:
+      path: "/var/log/pluto"
+  user_dirs:
+    config:
+      path: "$HOME/.ipsec.d"
+  ports:
+    main_udp:
+      port:
+      - '500'
+      - '4500'
+      protocol: udp

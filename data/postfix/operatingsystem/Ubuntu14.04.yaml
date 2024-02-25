@@ -1,3 +1,5 @@
 ---
 postfix::settings:
   daemon_dir_path: '/usr/lib/postfix'
+
+# No data to convert to Version 4 format

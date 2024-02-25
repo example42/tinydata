@@ -10,3 +10,33 @@ sendmail::settings:
   process_user: 'root'
   process_group: 'root'
   tcp_port: '25'
+
+# Version 4 format
+  packages:
+    main:
+      name: sendmail
+  services:
+    sendmail:
+      process_name: sendmail
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/mail/sendmail.mc"
+    log:
+      path: "/var/log/maillog"
+    pid:
+      path: "/var/run/sendmail.pid"
+  user_files:
+    config:
+      path: "$HOME/.mail/sendmail.mc"
+  dirs:
+    config:
+      path: "/etc/mail"
+  user_dirs:
+    config:
+      path: "$HOME/.mail"
+  ports:
+    main:
+      port: '25'
+      protocol: tcp

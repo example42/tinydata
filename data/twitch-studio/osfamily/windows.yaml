@@ -3,3 +3,13 @@ twitch-studio::settings:
   winget_package_name: 'Twitch.TwitchStudio'
   choco_package_name: 'twitch-studio'
   package_name: 'twitch-studio'
+
+# Version 4 format
+  packages:
+    main:
+      name: twitch-studio
+      providers:
+        winget:
+          name: Twitch.TwitchStudio
+        choco:
+          name: twitch-studio

@@ -26,3 +26,35 @@ crowdsec::settings:
       command: 'cscli hub update && cscli hub upgrade'
   tp_prerequisites:
     - crowdsec_repo
+# Version 4 format
+  packages:
+    main:
+      name: crowdsec
+  services:
+    crowdsec:
+      process_name: crowdsec
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/crowdsec/config.yaml"
+      format: yaml
+    log:
+      path:
+      - "/var/log/crowdsec.log"
+      - "/var/log/crowdsec_api.log"
+  user_files:
+    config:
+      path: "$HOME/.crowdsec/config.yaml"
+  dirs:
+    config:
+      path: "/etc/crowdsec"
+    data:
+      path: "/var/lib/crowdsec/data"
+  user_dirs:
+    config:
+      path: "$HOME/.crowdsec"
+  repo: upstream
+  preinstall:
+    tp::install:
+    - crowdsec_repo

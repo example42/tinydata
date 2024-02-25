@@ -3,3 +3,11 @@ rpmfusion-nonfree::settings:
   repo_package_name: 'rpmfusion-nonfree-release'
   tp_prerequisites:
     - epel
+
+# Version 4 format
+  repo:
+    upstream:
+      package_name: rpmfusion-nonfree-release
+  preinstall:
+    tp::install:
+    - epel

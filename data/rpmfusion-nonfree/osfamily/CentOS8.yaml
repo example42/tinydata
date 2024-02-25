@@ -4,3 +4,9 @@ rpmfusion-nonfree::settings:
     enable_pmfusion_free:
       command: 'dnf config-manager --enable PowerTools'
       unless: 'dnf repolist | grep PowerTools'
+# Version 4 format
+  postinstall:
+    exec:
+      enable_pmfusion_free:
+        command: dnf config-manager --enable PowerTools
+        unless: dnf repolist | grep PowerTools

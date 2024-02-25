@@ -1,3 +1,8 @@
 ---
 xinetd::settings:
   init_file_path: '/etc/default/xinetd'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/xinetd"

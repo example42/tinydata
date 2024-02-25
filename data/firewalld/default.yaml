@@ -10,3 +10,29 @@ firewalld::settings:
   process_args: 'firewalld'
   process_user: 'root'
   process_group: 'root'
+
+# Version 4 format
+  packages:
+    main:
+      name: firewalld
+  services:
+    firewalld:
+      process_name: python
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/firewalld/firewalld.conf"
+    log:
+      path: "/var/log/firewalld"
+    pid:
+      path: "/var/run/firewalld"
+  user_files:
+    config:
+      path: "$HOME/.firewalld/firewalld.conf"
+  dirs:
+    config:
+      path: "/etc/firewalld"
+  user_dirs:
+    config:
+      path: "$HOME/.firewalld"

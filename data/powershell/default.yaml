@@ -7,3 +7,19 @@ powershell::settings:
   git_source: 'https://github.com/PowerShell/PowerShell.git'
   tp_prerequisites:
     - 'microsoft_repo'
+
+# Version 4 format
+  packages:
+    main:
+      name: powershell
+      providers:
+        snap:
+          name: powershell
+  urls:
+    website: https://learn.microsoft.com/powershell/
+    source: https://github.com/PowerShell/PowerShell.git
+  image:
+    name: microsoft/powershell
+  preinstall:
+    tp::install:
+    - microsoft_repo

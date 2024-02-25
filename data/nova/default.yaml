@@ -7,3 +7,26 @@ nova::settings:
   process_name: 'nova'
   process_user: 'nova'
   process_group: 'nova'
+
+# Version 4 format
+  services:
+    ! '':
+      process_name: nova
+      process_user: nova
+      process_group: nova
+  files:
+    config:
+      path: "/etc/nova/nova.conf"
+    log:
+      path: "/var/log/nova/nova.log"
+  user_files:
+    config:
+      path: "$HOME/.nova/nova.conf"
+  dirs:
+    config:
+      path: "/etc/nova"
+    log:
+      path: "/var/log/nova"
+  user_dirs:
+    config:
+      path: "$HOME/.nova"

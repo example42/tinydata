@@ -17,3 +17,42 @@ kibana::settings:
   process_group: 'root'
   tcp_port: '5601'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: kibana
+  services:
+    kibana:
+      process_name: node
+      process_extra_name: kibana
+      process_user: kibana
+      process_group: kibana
+  files:
+    config:
+      path: "/etc/kibana/kibana.yml"
+      format: yaml
+    log:
+      path: "/var/log/kibana/kibana.stderr"
+  user_files:
+    config:
+      path: "$HOME/.kibana/kibana.yml"
+  dirs:
+    config:
+      path: "/etc/kibana"
+    conf:
+      path: "/etc/kibana/config"
+    log:
+      path: "/var/log/kibana"
+    home:
+      path: "/usr/share/kibana"
+    data:
+      path: "/var/lib/kibana"
+  user_dirs:
+    config:
+      path: "$HOME/.kibana"
+  ports:
+    main:
+      port: '5601'
+      protocol: tcp
+  repo: upstream

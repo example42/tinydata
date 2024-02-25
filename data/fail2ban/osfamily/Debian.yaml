@@ -3,3 +3,12 @@ fail2ban::settings:
   init_file_path: '/etc/default/fail2ban'
   pid_file_path: '/var/run/fail2ban/fail2ban.pid'
   log_file_path: '/var/log/fail2ban.log'
+
+# Version 4 format
+  files:
+    log:
+      path: "/var/log/fail2ban.log"
+    init:
+      path: "/etc/default/fail2ban"
+    pid:
+      path: "/var/run/fail2ban/fail2ban.pid"

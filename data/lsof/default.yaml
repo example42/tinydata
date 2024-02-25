@@ -1,3 +1,8 @@
 ---
 lsof::settings:
   package_name: 'lsof'
+
+# Version 4 format
+  packages:
+    main:
+      name: lsof

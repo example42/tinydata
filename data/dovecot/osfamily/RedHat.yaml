@@ -2,3 +2,13 @@
 dovecot::settings:
   config_file_path: '/etc/dovecot.conf'
   init_file_path: '/etc/sysconfig/dovecot'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/dovecot.conf"
+    init:
+      path: "/etc/sysconfig/dovecot"
+  user_files:
+    config:
+      path: "$HOME/.dovecot.conf"

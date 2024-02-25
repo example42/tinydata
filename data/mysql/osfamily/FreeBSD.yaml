@@ -4,3 +4,16 @@ mysql::settings:
   service_name: 'mysql-server'
   config_file_path: '/etc/my.cnf'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: databases/mysql56-server
+  services:
+    mysql-server: {}
+  files:
+    config:
+      path: "/etc/my.cnf"
+  user_files:
+    config:
+      path: "$HOME/.my.cnf"

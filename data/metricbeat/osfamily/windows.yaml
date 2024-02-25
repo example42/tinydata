@@ -2,3 +2,11 @@
 metricbeat::settings:
   config_file_path: 'C:\ProgramData\chocolatey\lib\metricbeat\tools\metricbeat.yml'
 
+
+# Version 4 format
+  files:
+    config:
+      path: C:\ProgramData\chocolatey\lib\metricbeat\tools\metricbeat.yml
+  user_files:
+    config:
+      path: C:\ProgramData\chocolatey\lib\metricbeat\tools\metricbeat.yml

@@ -5,3 +5,14 @@ procdump::settings:
   git_source: 'https://github.com/Sysinternals/ProcDump-for-Linux'
   tp_prerequisites:
     - 'microsoft_repo'
+
+# Version 4 format
+  packages:
+    main:
+      name: procdump
+  urls:
+    website: https://learn.microsoft.com/sysinternals/downloads/procdump/
+    source: https://github.com/Sysinternals/ProcDump-for-Linux
+  preinstall:
+    tp::install:
+    - microsoft_repo

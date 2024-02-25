@@ -2,3 +2,14 @@
 screen::settings:
   package_name: 'screen'
   config_file_path: '/etc/screenrc'
+
+# Version 4 format
+  packages:
+    main:
+      name: screen
+  files:
+    config:
+      path: "/etc/screenrc"
+  user_files:
+    config:
+      path: "$HOME/.screenrc"

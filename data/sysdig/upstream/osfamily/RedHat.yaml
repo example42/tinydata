@@ -8,3 +8,12 @@ sysdig::settings:
     - epel
   repo_file_url: 'https://download.sysdig.com/stable/rpm/draios.repo'
   repo_file_name: 'draios.repo'
+
+# Version 4 format
+  repo:
+    upstream:
+      repofile_url: https://download.sysdig.com/stable/rpm/draios.repo
+  preinstall:
+    tp::install:
+    - dkms
+    - epel

@@ -16,3 +16,36 @@ pgbouncer::settings:
   process_user: 'pgbouncer'
   process_group: 'pgbouncer'
   tcp_port: '6432'
+
+# Version 4 format
+  packages:
+    main:
+      name: pgbouncer
+  services:
+    pgbouncer:
+      process_name: pgbouncer
+      process_user: pgbouncer
+      process_group: pgbouncer
+  files:
+    config:
+      path: "/etc/pgbouncer/pgbouncer.ini"
+      format: inifile_with_stanzas
+    log:
+      path: "/var/log/pgbouncer/pgbouncer.log"
+    pid:
+      path: "/var/run/pgbouncer/pgbouncer.pid"
+  user_files:
+    config:
+      path: "$HOME/.pgbouncer/pgbouncer.ini"
+  dirs:
+    config:
+      path: "/etc/pgbouncer"
+    log:
+      path: "/var/log/pgbouncer"
+  user_dirs:
+    config:
+      path: "$HOME/.pgbouncer"
+  ports:
+    main:
+      port: '6432'
+      protocol: tcp

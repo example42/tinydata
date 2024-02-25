@@ -2,3 +2,10 @@
 activemq::settings:
   package_name: ''
   service_name: ''
+
+# Version 4 format
+  packages:
+    main:
+      name: ''
+  services:
+    '': {}

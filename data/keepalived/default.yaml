@@ -9,3 +9,29 @@ keepalived::settings:
   process_name: 'keepalived'
   process_user: 'root'
   process_group: 'root'
+
+# Version 4 format
+  packages:
+    main:
+      name: keepalived
+  services:
+    keepalived:
+      process_name: keepalived
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/keepalived/keepalived.conf"
+    log:
+      path: "/var/log/messages"
+    init:
+      path: "/etc/sysconfig/keepalived"
+  user_files:
+    config:
+      path: "$HOME/.keepalived/keepalived.conf"
+  dirs:
+    config:
+      path: "/etc/keepalived"
+  user_dirs:
+    config:
+      path: "$HOME/.keepalived"

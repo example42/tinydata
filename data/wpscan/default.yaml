@@ -12,3 +12,8 @@ wpscan::settings:
       command: 'bundle install --without test'
   tp_prerequisites:
     - ruby
+
+# Version 4 format
+  preinstall:
+    tp::install:
+    - ruby

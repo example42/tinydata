@@ -1,3 +1,8 @@
 ---
 ntpdate::settings:
   package_name: 'ntpdate'
+
+# Version 4 format
+  packages:
+    main:
+      name: ntpdate

@@ -3,3 +3,13 @@ libvirt::settings:
   package_name: 'libvirt-bin'
   service_name: 'libvirt-bin'
   init_file_path: '/etc/default/libvirt-bin'
+
+# Version 4 format
+  packages:
+    main:
+      name: libvirt-bin
+  services:
+    libvirt-bin: {}
+  files:
+    init:
+      path: "/etc/default/libvirt-bin"

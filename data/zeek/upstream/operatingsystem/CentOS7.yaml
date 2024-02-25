@@ -1,3 +1,8 @@
 ---
 zeek::settings:
   repo_file_url: 'https://download.opensuse.org/repositories/security:zeek/CentOS_7/security:zeek.repo'
+
+# Version 4 format
+  repo:
+    upstream:
+      repofile_url: https://download.opensuse.org/repositories/security:zeek/CentOS_7/security:zeek.repo

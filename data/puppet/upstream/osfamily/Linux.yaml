@@ -2,3 +2,13 @@
 puppet::settings:
   package_name: ''
   dockerfile_prerequisites: "RUN echo -e 'http://dl-3.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && echo -e 'http://dl-3.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && apk update && apk add shadow ruby less bash && gem install puppet --no-ri --no-rdoc "
+
+# Version 4 format
+  packages:
+    main:
+      name: ''
+  image:
+    dockerfile_prerequisites: 'RUN echo -e ''http://dl-3.alpinelinux.org/alpine/edge/testing''
+      >> /etc/apk/repositories && echo -e ''http://dl-3.alpinelinux.org/alpine/edge/community''
+      >> /etc/apk/repositories && apk update && apk add shadow ruby less bash && gem
+      install puppet --no-ri --no-rdoc '

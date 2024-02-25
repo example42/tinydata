@@ -1,3 +1,8 @@
 ---
 nagios-plugins::settings:
   package_name: 'monitoring-plugins'
+
+# Version 4 format
+  packages:
+    main:
+      name: monitoring-plugins

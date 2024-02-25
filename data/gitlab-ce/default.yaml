@@ -21,3 +21,23 @@ gitlab-ce::settings:
       command: 'gitlab-ctl registry-garbage-collect'
   test_commands:
     status: 'gitlab-ctl status'
+# Version 4 format
+  packages:
+    main:
+      name: gitlab-ce
+  services:
+    gitlab-runsvdir: {}
+  files:
+    config:
+      path: "/etc/gitlab/gitlab.rb"
+  user_files:
+    config:
+      path: "$HOME/.gitlab/gitlab.rb"
+  dirs:
+    config:
+      path: "/etc/gitlab"
+    ssl:
+      path: "/etc/gitlab/ssl"
+  user_dirs:
+    config:
+      path: "$HOME/.gitlab"

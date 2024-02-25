@@ -3,3 +3,9 @@ keras::settings:
   package_name: keras
   package_provider: 'pip'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: keras
+      provider: pip

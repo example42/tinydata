@@ -3,3 +3,16 @@ monit::settings:
   config_file_path: '/etc/monit/monitrc'
   conf_dir_path: '/etc/monit/conf.d'
   init_file_path: '/etc/default/monit'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/monit/monitrc"
+    init:
+      path: "/etc/default/monit"
+  user_files:
+    config:
+      path: "$HOME/.monit/monitrc"
+  dirs:
+    conf:
+      path: "/etc/monit/conf.d"

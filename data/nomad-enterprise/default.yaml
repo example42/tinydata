@@ -12,3 +12,34 @@ nomad-enterprise::settings:
     - 4646
     - 4647
     - 4648
+
+# Version 4 format
+  packages:
+    main:
+      name: nomad-enterprise
+  services:
+    nomad:
+      process_name: nomad
+  files:
+    config:
+      path: "/etc/nomad.d/nomad.hcl"
+      format: hcl
+  user_files:
+    config:
+      path: "$HOME/.nomad.d/nomad.hcl"
+  dirs:
+    config:
+      path: "/etc/nomad.d"
+    data:
+      path: "/opt/nomad"
+  user_dirs:
+    config:
+      path: "$HOME/.nomad.d"
+  ports:
+    main:
+      port:
+      - 4646
+      - 4647
+      - 4648
+      protocol: tcp
+  repo: upstream

@@ -8,3 +8,28 @@ glance::settings:
   process_name: 'glance'
   process_user: 'glance'
   process_group: 'glance'
+
+# Version 4 format
+  services:
+    ! '':
+      process_name: glance
+      process_user: glance
+      process_group: glance
+  files:
+    config:
+      path: "/etc/glance/glance.conf"
+    log:
+      path: "/var/log/glance/glance.log"
+    pid:
+      path: "/var/run/glance.pid"
+  user_files:
+    config:
+      path: "$HOME/.glance/glance.conf"
+  dirs:
+    config:
+      path: "/etc/glance"
+    log:
+      path: "/var/log/glance"
+  user_dirs:
+    config:
+      path: "$HOME/.glance"

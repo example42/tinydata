@@ -2,3 +2,8 @@
 microsoft_repo::settings:
   repo_file_url: 'https://packages.microsoft.com/config/opensuse/12/prod.repo'
 
+
+# Version 4 format
+  repo:
+    upstream:
+      repofile_url: https://packages.microsoft.com/config/opensuse/12/prod.repo

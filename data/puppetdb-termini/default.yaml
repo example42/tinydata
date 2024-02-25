@@ -5,3 +5,22 @@ puppetdb-termini::settings:
   config_dir_path: '/etc/puppetlabs/puppet'
   tp_prerequisites:
     puppet_repo: {}
+# Version 4 format
+  packages:
+    main:
+      name: puppetdb-termini
+  files:
+    config:
+      path: "/etc/puppetlabs/puppet/puppetdb.conf"
+  user_files:
+    config:
+      path: "$HOME/.puppetlabs/puppet/puppetdb.conf"
+  dirs:
+    config:
+      path: "/etc/puppetlabs/puppet"
+  user_dirs:
+    config:
+      path: "$HOME/.puppetlabs/puppet"
+  preinstall:
+    tp::install:
+      puppet_repo: {}

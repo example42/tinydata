@@ -3,3 +3,16 @@ virtualbox::settings:
   package_name: 'virtualbox-6.0'
   service_name: 'vboxdrv'
   config_dir_path: '/etc/vbox'
+
+# Version 4 format
+  packages:
+    main:
+      name: virtualbox-6.0
+  services:
+    vboxdrv: {}
+  dirs:
+    config:
+      path: "/etc/vbox"
+  user_dirs:
+    config:
+      path: "$HOME/.vbox"

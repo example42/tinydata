@@ -8,3 +8,20 @@ grafana::settings:
   package_prerequisites:
     - 'libfontconfig1'
     - 'adduser'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/grafana-server"
+  repo:
+    upstream:
+      url: https://packages.grafana.com/oss/deb
+      key: D59097AB
+      yum:
+        gpgcheck: true
+      apt:
+        release: stable
+  preinstall:
+    package:
+    - libfontconfig1
+    - adduser

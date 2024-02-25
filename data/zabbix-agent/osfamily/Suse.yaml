@@ -4,3 +4,11 @@ zabbix-agent::settings:
   repo_name: 'server_monitoring'
   service_name: 'zabbix-agentd'
 
+
+# Version 4 format
+  services:
+    zabbix-agentd: {}
+  repo:
+    upstream:
+      name: server_monitoring
+      zypper_repofile_url: http://download.opensuse.org/repositories/server:/monitoring/SLE_12/

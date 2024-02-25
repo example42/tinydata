@@ -21,3 +21,37 @@ apache::settings:
   test_commands:
     validate_config: 'httpd2-prefork -t'
   version_command: 'httpd2-prefork -v'
+
+# Version 4 format
+  packages:
+    main:
+      name: apache2
+  services:
+    apache2:
+      process_name: httpd2-prefork
+      process_user: wwwrun
+      process_group: wwwrun
+  files:
+    config:
+      path: "/etc/apache2/httpd.conf"
+    log:
+      path:
+      - "/var/log/apache2/access.log"
+      - "/var/log/apache2/error.log"
+    init:
+      path: "/etc/default/apache2"
+    pid:
+      path: "/var/run/httpd2.pid"
+  user_files:
+    config:
+      path: "$HOME/.apache2/httpd.conf"
+  dirs:
+    config:
+      path: "/etc/apache2"
+    log:
+      path: "/var/log/apache2"
+    data:
+      path: "/var/www/htdocs"
+  user_dirs:
+    config:
+      path: "$HOME/.apache2"

@@ -19,3 +19,28 @@ bolt::settings:
     plugin_show: 'bolt plugin show'
     policy_show: 'bolt policy show'
   docker_image: 'puppet/puppet-bolt'
+# Version 4 format
+  packages:
+    main:
+      name: puppet-bolt
+  files:
+    config:
+      path: "/etc/puppetlabs/bolt/bolt-defaults.yaml"
+      format: yaml
+  user_files:
+    config:
+      path: "$HOME/.puppetlabs/bolt/bolt-defaults.yaml"
+  dirs:
+    config:
+      path: "/etc/puppetlabs/bolt"
+  user_dirs:
+    config:
+      path: "$HOME/.puppetlabs/bolt"
+  urls:
+    website: https://puppet.com/docs/bolt/
+    source: https://github.com/puppetlabs/bolt
+  image:
+    name: puppet/puppet-bolt
+  preinstall:
+    tp::install:
+      puppet_repo: {}

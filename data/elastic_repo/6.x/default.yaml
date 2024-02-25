@@ -2,3 +2,9 @@
 elastic_repo::settings:
   repo_filename: elastic-6.x
   repo_description: 'Elastic repository for 6.x packages'
+
+# Version 4 format
+  repo:
+    upstream:
+      description: Elastic repository for 6.x packages
+      repofile_name: elastic-6.x

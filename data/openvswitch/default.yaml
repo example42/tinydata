@@ -10,3 +10,28 @@ openvswitch::settings:
   process_name: 'openvswitch'
   process_user: 'openvswitch'
   process_group: 'openvswitch'
+
+# Version 4 format
+  packages:
+    main:
+      name: openvswitch-switch
+  services:
+    openvswitch-switch:
+      process_name: openvswitch
+      process_user: openvswitch
+      process_group: openvswitch
+  files:
+    log:
+      path: "/var/log/openvswitch/openvswitch.log"
+    pid:
+      path: "/var/run/openvswitch.pid"
+  dirs:
+    config:
+      path: "/etc/openvswitch"
+    conf:
+      path: "/etc/openvswitch/conf.d"
+    log:
+      path: "/var/log/openvswitch"
+  user_dirs:
+    config:
+      path: "$HOME/.openvswitch"

@@ -1,3 +1,8 @@
 ---
 msmtp::settings:
   package_name: 'msmtp-mta'
+
+# Version 4 format
+  packages:
+    main:
+      name: msmtp-mta

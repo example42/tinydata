@@ -2,3 +2,10 @@
 twitch::settings:
   brew_package_name: 'streamlink-twitch-gui'
   package_name: 'streamlink-twitch-gui'
+# Version 4 format
+  packages:
+    main:
+      name: streamlink-twitch-gui
+      providers:
+        brew:
+          name: streamlink-twitch-gui

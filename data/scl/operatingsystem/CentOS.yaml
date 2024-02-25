@@ -1,3 +1,8 @@
 ---
 scl::settings:
   package_name: 'centos-release-scl'
+
+# Version 4 format
+  packages:
+    main:
+      name: centos-release-scl

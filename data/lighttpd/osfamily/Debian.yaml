@@ -2,3 +2,11 @@
 lighttpd::settings:
   init_file_path: '/etc/default/lighttpd'
   conf_dir_path: '/etc/lighttpd/conf-enabled'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/lighttpd"
+  dirs:
+    conf:
+      path: "/etc/lighttpd/conf-enabled"

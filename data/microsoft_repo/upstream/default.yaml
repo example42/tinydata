@@ -2,3 +2,8 @@
 microsoft_repo::settings:
   repo_filename: microsoft-prod
   repo_package_name: packages-microsoft-prod
+# Version 4 format
+  repo:
+    upstream:
+      package_name: packages-microsoft-prod
+      repofile_name: microsoft-prod

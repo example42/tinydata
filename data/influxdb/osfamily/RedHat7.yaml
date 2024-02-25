@@ -1,3 +1,8 @@
 ---
 influxdb::settings:
   repo_url: 'https://repos.influxdata.com/rhel/7/x86_64/stable/'
+
+# Version 4 format
+  repo:
+    upstream:
+      url: https://repos.influxdata.com/rhel/7/x86_64/stable/

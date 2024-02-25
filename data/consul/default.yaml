@@ -12,3 +12,34 @@ consul::settings:
     - 8301
     - 8500
     - 8600
+
+# Version 4 format
+  packages:
+    main:
+      name: consul
+  services:
+    consul:
+      process_name: consul
+  files:
+    config:
+      path: "/etc/consul.d/consul.hcl"
+      format: hcl
+  user_files:
+    config:
+      path: "$HOME/.consul.d/consul.hcl"
+  dirs:
+    config:
+      path: "/etc/consul.d"
+    data:
+      path: "/opt/consul"
+  user_dirs:
+    config:
+      path: "$HOME/.consul.d"
+  ports:
+    main:
+      port:
+      - 8301
+      - 8500
+      - 8600
+      protocol: tcp
+  repo: upstream

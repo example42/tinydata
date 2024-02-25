@@ -6,3 +6,20 @@ tftpd::settings:
   pid_file_path: '/var/run/tftpd-hpa.pid'
   log_file_path: '/var/log/syslog'
   data_dir_path: '/srv/tftp'
+
+# Version 4 format
+  packages:
+    main:
+      name: tftpd-hpa
+  services:
+    tftpd-hpa: {}
+  files:
+    log:
+      path: "/var/log/syslog"
+    init:
+      path: "/etc/default/tftpd-hpa"
+    pid:
+      path: "/var/run/tftpd-hpa.pid"
+  dirs:
+    data:
+      path: "/srv/tftp"

@@ -1,3 +1,8 @@
 ---
 puppet_repo::settings:
   repo_package_url: 'https://yum.puppet.com/puppet/puppet-release-fedora-34.noarch.rpm'
+
+# Version 4 format
+  repo:
+    upstream:
+      package_url: https://yum.puppet.com/puppet/puppet-release-fedora-34.noarch.rpm

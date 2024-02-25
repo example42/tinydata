@@ -8,3 +8,8 @@ reference::settings:
   files:
     init:
       path: '/etc/default/reference'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/reference"

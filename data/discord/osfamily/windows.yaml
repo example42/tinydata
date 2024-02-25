@@ -2,3 +2,12 @@
 discord::settings:
   winget_package_name: 'Discord.Discord'
   choco_package_name: 'discord'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        winget:
+          name: Discord.Discord
+        choco:
+          name: discord

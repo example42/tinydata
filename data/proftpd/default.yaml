@@ -12,3 +12,37 @@ proftpd::settings:
   process_user: 'proftpd'
   process_group: 'proftpd'
   tcp_port: '21'
+
+# Version 4 format
+  packages:
+    main:
+      name: proftpd
+  services:
+    proftpd:
+      process_name: proftpd
+      process_user: proftpd
+      process_group: proftpd
+  files:
+    config:
+      path: "/etc/proftpd/proftpd.conf"
+    log:
+      path: "/var/log/proftpd/proftpd.log"
+    pid:
+      path: "/var/run/proftpd.pid"
+  user_files:
+    config:
+      path: "$HOME/.proftpd/proftpd.conf"
+  dirs:
+    config:
+      path: "/etc/proftpd"
+    conf:
+      path: "/etc/proftpd/conf.d"
+    log:
+      path: "/var/log/proftpd"
+  user_dirs:
+    config:
+      path: "$HOME/.proftpd"
+  ports:
+    main:
+      port: '21'
+      protocol: tcp

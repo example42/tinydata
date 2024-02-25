@@ -10,3 +10,33 @@ nrpe::settings:
   process_user: 'nrpe'
   process_group: 'nrpe'
   tcp_port: '5666'
+
+# Version 4 format
+  packages:
+    main:
+      name: nrpe
+  services:
+    nrpe:
+      process_name: nrpe
+      process_user: nrpe
+      process_group: nrpe
+  files:
+    config:
+      path: "/etc/nagios/nrpe.cfg"
+    pid:
+      path: "/var/run/nrpe.pid"
+  user_files:
+    config:
+      path: "$HOME/.nagios/nrpe.cfg"
+  dirs:
+    config:
+      path: "/etc/nrpe.d"
+    conf:
+      path: "/etc/nrpe.d"
+  user_dirs:
+    config:
+      path: "$HOME/.nrpe.d"
+  ports:
+    main:
+      port: '5666'
+      protocol: tcp

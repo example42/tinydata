@@ -2,3 +2,9 @@
 hashicorp_repo::settings:
   repo_filename: hashicorp
   repo_description: 'Hashicorp Stable - $basearch'
+
+# Version 4 format
+  repo:
+    upstream:
+      description: Hashicorp Stable - $basearch
+      repofile_name: hashicorp

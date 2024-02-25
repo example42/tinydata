@@ -21,3 +21,38 @@ sensu::settings:
   process_user: 'sensu'
   process_group: 'sensu'
   init_file_path: '/etc/default/sensu'
+
+# Version 4 format
+  packages:
+    main:
+      name: sensu
+  services:
+    sensu-client:
+      process_name: sensu
+      process_user: sensu
+      process_group: sensu
+  files:
+    config:
+      path: "/etc/sensu/config.json"
+    log:
+      path:
+      - "/var/log/sensu/sensu-client.log"
+      - "/var/log/sensu/sensu-server.log"
+      - "/var/log/sensu/sensu-api.log"
+    init:
+      path: "/etc/default/sensu"
+    pid:
+      path: "/var/run/sensu/sensu-client.pid"
+  user_files:
+    config:
+      path: "$HOME/.sensu/config.json"
+  dirs:
+    config:
+      path: "/etc/sensu"
+    conf:
+      path: "/etc/sensu/conf.d"
+    log:
+      path: "/var/log/sensu"
+  user_dirs:
+    config:
+      path: "$HOME/.sensu"

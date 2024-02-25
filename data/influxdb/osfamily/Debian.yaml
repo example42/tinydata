@@ -4,3 +4,13 @@ influxdb::settings:
   repo_url: 'https://repos.influxdata.com/debian/pool/stable/i/influxdb/'
   apt_repos: 'main'
   apt_release: 'stable'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/influxdb"
+  repo:
+    upstream:
+      url: https://repos.influxdata.com/debian/pool/stable/i/influxdb/
+      apt:
+        release: stable

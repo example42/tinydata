@@ -21,3 +21,42 @@ puppetdb::settings:
     - '/var/log/puppetlabs/puppetdb/puppetdb-accesss.log'
   tp_prerequisites:
     puppet_repo: {}
+# Version 4 format
+  packages:
+    main:
+      name: puppetdb
+  services:
+    puppetdb:
+      process_name: java
+      process_extra_name: puppetdb
+      process_user: puppetdb
+      process_group: puppetdb
+  files:
+    config:
+      path: "/etc/puppetlabs/puppetsdb/bootstrap.cfg"
+    log:
+      path:
+      - "/var/log/puppetlabs/puppetdb/puppetdb.log"
+      - "/var/log/puppetlabs/puppetdb/puppetdb-accesss.log"
+    pid:
+      path: "/var/run/puppetlabs/puppetdb/puppetdb.pid"
+  user_files:
+    config:
+      path: "$HOME/.puppetlabs/puppetsdb/bootstrap.cfg"
+  dirs:
+    config:
+      path: "/etc/puppetlabs/puppetdb"
+    conf:
+      path: "/etc/puppetlabs/puppetdb/conf.d"
+    log:
+      path: "/var/log/puppetlabs/puppetdb"
+  user_dirs:
+    config:
+      path: "$HOME/.puppetlabs/puppetdb"
+  ports:
+    main:
+      port: '8080'
+      protocol: tcp
+  preinstall:
+    tp::install:
+      puppet_repo: {}

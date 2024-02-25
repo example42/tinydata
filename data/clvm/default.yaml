@@ -7,3 +7,26 @@ clvm::settings:
   pid_file_path: '/var/run/clvmd.pid'
   process_user: 'root'
   process_group: 'root'
+
+# Version 4 format
+  packages:
+    main:
+      name: lvm2-cluster
+  services:
+    clvmd:
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/lvm/lvm.conf"
+    pid:
+      path: "/var/run/clvmd.pid"
+  user_files:
+    config:
+      path: "$HOME/.lvm/lvm.conf"
+  dirs:
+    config:
+      path: "/etc/lvm"
+  user_dirs:
+    config:
+      path: "$HOME/.lvm"

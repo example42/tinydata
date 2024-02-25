@@ -12,3 +12,33 @@ heartbeat::settings:
   process_name: 'heartbeat'
   process_user: 'root'
   process_group: 'root'
+
+# Version 4 format
+  packages:
+    main:
+      name: heartbeat
+  services:
+    heartbeat:
+      process_name: heartbeat
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/ha.d/ha.cf"
+    log:
+      path:
+      - "/var/log/ha-log"
+      - "/var/log/ha-debug"
+    pid:
+      path: "/var/run/heartbeat/heartbeat.pid"
+  user_files:
+    config:
+      path: "$HOME/.ha.d/ha.cf"
+  dirs:
+    config:
+      path: "/etc/ha.d"
+    data:
+      path: "/var/lib/heartbeat"
+  user_dirs:
+    config:
+      path: "$HOME/.ha.d"

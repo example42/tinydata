@@ -3,3 +3,14 @@ mcollective::settings:
   process_name: 'mcollectived'
   init_file_path: '/etc/default/mcollective'
   data_dir_path: '/usr/share/mcollective'
+
+# Version 4 format
+  services:
+    ! '':
+      process_name: mcollectived
+  files:
+    init:
+      path: "/etc/default/mcollective"
+  dirs:
+    data:
+      path: "/usr/share/mcollective"

@@ -1,3 +1,8 @@
 ---
 auditbeat::settings:
   init_file_path: '/etc/default/auditbeat'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/auditbeat"

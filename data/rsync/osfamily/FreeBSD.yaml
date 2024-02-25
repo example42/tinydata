@@ -6,3 +6,19 @@ rsync::settings:
   process_group: 'wheel'
   tcp_port: '873'
 
+
+# Version 4 format
+  services:
+    rsyncd:
+      process_name: rsync
+      process_group:
+  files:
+    config:
+      path: "/usr/local/etc/rsyncd.conf"
+  user_files:
+    config:
+      path: "/usr/local$HOME/.rsyncd.conf"
+  ports:
+    main:
+      port: '873'
+      protocol: tcp

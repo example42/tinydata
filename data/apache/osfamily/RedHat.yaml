@@ -15,3 +15,43 @@ apache::settings:
   process_name: 'httpd'
   process_user: 'apache'
   process_group: 'apache'
+
+# Version 4 format
+  packages:
+    main:
+      name: httpd
+  services:
+    httpd:
+      process_name: httpd
+      process_user: apache
+      process_group: apache
+  files:
+    config:
+      path: "/etc/httpd/conf/httpd.conf"
+    log:
+      path:
+      - "/var/log/httpd/access_log"
+      - "/var/log/httpd/error_log"
+    init:
+      path: "/etc/sysconfig/httpd"
+    pid:
+      path: "/var/run/httpd.pid"
+  user_files:
+    config:
+      path: "$HOME/.httpd/conf/httpd.conf"
+  dirs:
+    config:
+      path: "/etc/httpd"
+    conf:
+      path: "/etc/httpd/conf.d"
+    log:
+      path: "/var/log/httpd"
+    data:
+      path: "/var/www/html"
+  user_dirs:
+    config:
+      path: "$HOME/.httpd"
+  ports:
+    main:
+      port: '80'
+      protocol: tcp

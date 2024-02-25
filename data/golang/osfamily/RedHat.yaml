@@ -1,3 +1,7 @@
 ---
 golang::settings:
   dockerfile_prerequisites: 'RUN yum install -y wget which'
+
+# Version 4 format
+  image:
+    dockerfile_prerequisites: RUN yum install -y wget which

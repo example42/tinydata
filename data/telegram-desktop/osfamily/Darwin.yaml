@@ -1,3 +1,10 @@
 ---
 telegram-desktop::settings:
   brew_package_name: 'telegram-desktop'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        brew:
+          name: telegram-desktop

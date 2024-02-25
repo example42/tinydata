@@ -6,3 +6,25 @@ postgresql::settings:
   log_file_path: '/var/log/postgresql/postgresql-9.3-main.log'
   log_dir_path: '/var/log/postgresql'
   init_file_path: '/etc/default/postgresql'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/postgresql/9.3/main/postgresql.conf"
+    log:
+      path: "/var/log/postgresql/postgresql-9.3-main.log"
+    init:
+      path: "/etc/default/postgresql"
+  user_files:
+    config:
+      path: "$HOME/.postgresql/9.3/main/postgresql.conf"
+  dirs:
+    config:
+      path: "/etc/postgresql/9.3/main"
+    log:
+      path: "/var/log/postgresql"
+    data:
+      path: "/var/lib/postgresql/9.3/main"
+  user_dirs:
+    config:
+      path: "$HOME/.postgresql/9.3/main"

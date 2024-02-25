@@ -1,3 +1,8 @@
 ---
 epel::settings:
   repo_package_url: 'http://dl.fedoraproject.org/pub/archive/epel/4/i386/epel-release-4-10.noarch.rpm'
+
+# Version 4 format
+  repo:
+    upstream:
+      package_url: http://dl.fedoraproject.org/pub/archive/epel/4/i386/epel-release-4-10.noarch.rpm

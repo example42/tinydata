@@ -6,3 +6,13 @@ git::settings:
   docker_image: 'bitnami/git'
   user_config_dir: '$HOME/.git'
   user_config_path: '$HOME/.gitconfig'
+
+# Version 4 format
+  packages:
+    main:
+      name: git
+  urls:
+    website: https://git-scm.com/
+    source: https://github.com/git/git
+  image:
+    name: bitnami/git

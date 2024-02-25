@@ -3,3 +3,4 @@ golang::settings:
 
   release:
     https://go.dev/dl/go1.20.darwin-arm64.pkg
+# No data to convert to Version 4 format

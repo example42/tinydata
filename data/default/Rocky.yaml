@@ -7,3 +7,7 @@ default::settings:
   repos:
     default:
       package_provider: 'rpm'
+# Version 4 format
+  repo:
+    upstream:
+      package_provider: rpm

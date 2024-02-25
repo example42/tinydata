@@ -1,3 +1,8 @@
 ---
 orientdb::settings:
   init_file_path: '/etc/sysconfig/orientdb'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/orientdb"

@@ -3,3 +3,11 @@ bzip2::settings:
   package_name: 'bzip2'
   website_url: 'https://sourceware.org/bzip2/'
   git_source: 'https://gitlab.com/bzip2/bzip2/'
+
+# Version 4 format
+  packages:
+    main:
+      name: bzip2
+  urls:
+    website: https://sourceware.org/bzip2/
+    source: https://gitlab.com/bzip2/bzip2/

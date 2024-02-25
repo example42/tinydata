@@ -4,3 +4,22 @@ php::settings:
   config_file_path: '/etc/php.ini'
   config_dir_path: '/etc/php'
   conf_dir_path: '/etc/php/conf.d'
+
+# Version 4 format
+  packages:
+    main:
+      name: php
+  files:
+    config:
+      path: "/etc/php.ini"
+  user_files:
+    config:
+      path: "$HOME/.php.ini"
+  dirs:
+    config:
+      path: "/etc/php"
+    conf:
+      path: "/etc/php/conf.d"
+  user_dirs:
+    config:
+      path: "$HOME/.php"

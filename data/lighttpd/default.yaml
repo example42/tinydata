@@ -14,3 +14,41 @@ lighttpd::settings:
   process_name: 'lighttpd'
   process_user: 'lighttpd'
   process_group: 'lighttpd'
+
+# Version 4 format
+  packages:
+    main:
+      name: lighttpd
+  services:
+    lighttpd:
+      process_name: lighttpd
+      process_user: lighttpd
+      process_group: lighttpd
+  files:
+    config:
+      path: "/etc/lighttpd/lighttpd.conf"
+    log:
+      path: "/var/log/lighttpd/lighttpd.log"
+    init:
+      path: "/etc/sysconfig/lighttpd"
+    pid:
+      path: "/var/run/lighttpd.pid"
+  user_files:
+    config:
+      path: "$HOME/.lighttpd/lighttpd.conf"
+  dirs:
+    config:
+      path: "/etc/lighttpd"
+    conf:
+      path: "/etc/lighttpd/conf.d"
+    log:
+      path: "/var/log/lighttpd"
+    data:
+      path: "/var/www"
+  user_dirs:
+    config:
+      path: "$HOME/.lighttpd"
+  ports:
+    main:
+      port: '80'
+      protocol: tcp

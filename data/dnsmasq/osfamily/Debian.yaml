@@ -1,3 +1,8 @@
 ---
 dnsmasq::settings:
   init_file_path: '/etc/default/dnsmasq'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/dnsmasq"

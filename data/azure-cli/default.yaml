@@ -5,3 +5,13 @@ azure-cli::settings:
   docker_image: 'bitnami/azure-cli'
   tp_prerequisites:
     - microsoft_repo
+
+# Version 4 format
+  packages:
+    main:
+      name: azure-cli
+  image:
+    name: bitnami/azure-cli
+  preinstall:
+    tp::install:
+    - microsoft_repo

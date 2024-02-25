@@ -2,3 +2,9 @@
 elastic_repo::settings:
   repo_filename: elastic-8.x
   repo_description: 'Elastic repository for 8.x packages'
+
+# Version 4 format
+  repo:
+    upstream:
+      description: Elastic repository for 8.x packages
+      repofile_name: elastic-8.x

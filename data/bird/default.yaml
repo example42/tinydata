@@ -19,3 +19,34 @@ bird::settings:
     - /var/log/bird6.log
   website_url: 'https://bird.network.cz/'
   git_source: 'https://gitlab.labs.nic.cz/labs/bird'
+
+# Version 4 format
+  packages:
+    main:
+      name: bird
+  services:
+    bird:
+      process_name: bird
+      process_user: bird
+      process_group: bird
+  files:
+    config:
+      path: "/etc/bird/bird.conf"
+    log:
+      path:
+      - "/var/log/bird.log"
+      - "/var/log/bird6.log"
+  user_files:
+    config:
+      path: "$HOME/.bird/bird.conf"
+  dirs:
+    config:
+      path: "/etc/bird"
+    home:
+      path: "/run/bird"
+  user_dirs:
+    config:
+      path: "$HOME/.bird"
+  urls:
+    website: https://bird.network.cz/
+    source: https://gitlab.labs.nic.cz/labs/bird

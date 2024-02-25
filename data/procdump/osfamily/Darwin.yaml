@@ -1,3 +1,10 @@
 ---
 procdump::settings:
   brew_package_name: 'procdump'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        brew:
+          name: procdump

@@ -2,3 +2,7 @@
 vault-enterprise::settings:
   tp_prerequisites:
     hashicorp_repo: {}
+# Version 4 format
+  preinstall:
+    tp::install:
+      hashicorp_repo: {}

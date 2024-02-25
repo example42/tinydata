@@ -25,3 +25,42 @@ bind::settings:
     tcp-timeouts: 'rndc tcp-timeouts'
     stats: 'rndc stats ; cat /var/cache/bind/named.stats'
     dumpdb: 'rndc dumpdb ; cat /var/cache/bind/named_dump.db'
+
+# Version 4 format
+  packages:
+    main:
+      name: bind
+  services:
+    bind:
+      process_name: named
+      process_user: bind
+      process_group: bind
+      nodaemon_args: "-f"
+  files:
+    config:
+      path: "/etc/bind.conf"
+    log:
+      path: "/var/log/messages"
+    pid:
+      path: "/var/run/bind.pid"
+  user_files:
+    config:
+      path: "$HOME/.bind.conf"
+  dirs:
+    config:
+      path: "/etc/bind.d"
+    conf:
+      path: "/etc/bind.d"
+    data:
+      path: "/var/named"
+  user_dirs:
+    config:
+      path: "$HOME/.bind.d"
+  ports:
+    main_udp:
+      port: '53'
+      protocol: udp
+  urls:
+    source: https://gitlab.isc.org/isc-projects/bind9
+  image:
+    name: internetsystemsconsortium/bind9

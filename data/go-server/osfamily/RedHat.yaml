@@ -2,3 +2,11 @@
 go-server::settings:
   init_file_path: '/etc/sysconfig/go-server'
   repo_url: 'http://dl.bintray.com/gocd/gocd-rpm'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/go-server"
+  repo:
+    upstream:
+      url: http://dl.bintray.com/gocd/gocd-rpm

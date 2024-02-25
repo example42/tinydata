@@ -4,3 +4,22 @@ snmp::settings:
   service_name: 'netsnmpd'
   config_file_path: '/etc/snmp/snmpd.conf'
   config_dir_path: '/etc/snmp'
+
+# Version 4 format
+  packages:
+    main:
+      name: net-snmp
+  services:
+    netsnmpd: {}
+  files:
+    config:
+      path: "/etc/snmp/snmpd.conf"
+  user_files:
+    config:
+      path: "$HOME/.snmp/snmpd.conf"
+  dirs:
+    config:
+      path: "/etc/snmp"
+  user_dirs:
+    config:
+      path: "$HOME/.snmp"

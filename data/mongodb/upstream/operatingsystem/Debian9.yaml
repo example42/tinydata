@@ -1,3 +1,9 @@
 ---
 default::settings:
   apt_release: 'stretch/mongodb-org/4.4'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: stretch/mongodb-org/4.4

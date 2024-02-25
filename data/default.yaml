@@ -51,3 +51,5 @@ default::settings:
     conf:
       owner: 'root'
       group: 'root'
+
+# No data to convert to Version 4 format

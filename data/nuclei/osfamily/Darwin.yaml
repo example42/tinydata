@@ -2,3 +2,9 @@
 nuclei::settings:
   brew_package_name: 'nuclei'
   install_method: 'package'
+# Version 4 format
+  packages:
+    main:
+      providers:
+        brew:
+          name: nuclei

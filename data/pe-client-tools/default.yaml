@@ -3,3 +3,10 @@ pe-client-tools::settings:
   package_name: 'pe-client-tools'
   tp_prerequisites:
     puppet_repo: {}
+# Version 4 format
+  packages:
+    main:
+      name: pe-client-tools
+  preinstall:
+    tp::install:
+      puppet_repo: {}

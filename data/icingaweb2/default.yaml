@@ -8,3 +8,26 @@ icingaweb2::settings:
   log_file_path: '/var/log/icingaweb2/icingaweb2.log'
   log_dir_path: '/var/log/icingaweb2'
   config_dir_mode: '0775'
+
+# Version 4 format
+  packages:
+    main:
+      name: icingaweb2
+  files:
+    config:
+      path: "/etc/icingaweb2/icingaweb2.conf"
+    log:
+      path: "/var/log/icingaweb2/icingaweb2.log"
+  user_files:
+    config:
+      path: "$HOME/.icingaweb2/icingaweb2.conf"
+  dirs:
+    config:
+      path: "/etc/icingaweb2"
+    conf:
+      path: "/etc/icingaweb2/conf.d"
+    log:
+      path: "/var/log/icingaweb2"
+  user_dirs:
+    config:
+      path: "$HOME/.icingaweb2"

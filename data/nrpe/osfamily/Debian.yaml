@@ -7,3 +7,24 @@ nrpe::settings:
   process_user: 'nagios'
   pid_file_path: '/var/run/nagios/nrpe.pid'
   init_file_path: '/etc/default/nagios-nrpe-server'
+
+# Version 4 format
+  packages:
+    main:
+      name: nagios-nrpe-server
+  services:
+    nagios-nrpe-server:
+      process_user: nagios
+  files:
+    init:
+      path: "/etc/default/nagios-nrpe-server"
+    pid:
+      path: "/var/run/nagios/nrpe.pid"
+  dirs:
+    config:
+      path: "/etc/nagios/nrpe.d"
+    conf:
+      path: "/etc/nagios/nrpe.d"
+  user_dirs:
+    config:
+      path: "$HOME/.nagios/nrpe.d"

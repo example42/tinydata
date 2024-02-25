@@ -78,3 +78,29 @@ nats-server::settings:
           EnvironmentFile: ~
       manage_service: true
       manage_user: false
+
+# Version 4 format
+  packages:
+    main:
+      name: nats-server
+  services:
+    nats-server:
+      process_name: nats-server
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/nats/nats-server.conf"
+  user_files:
+    config:
+      path: "$HOME/.nats/nats-server.conf"
+  dirs:
+    config:
+      path: "/etc/nats"
+  user_dirs:
+    config:
+      path: "$HOME/.nats"
+  image:
+    name: nats
+  preinstall:
+    tp::install: {}

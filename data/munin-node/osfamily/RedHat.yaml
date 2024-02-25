@@ -2,3 +2,10 @@
 munin-node::settings:
   log_file_path: '/var/log/munin-node/munin-node.log'
   init_file_path: '/etc/sysconfig/munin'
+
+# Version 4 format
+  files:
+    log:
+      path: "/var/log/munin-node/munin-node.log"
+    init:
+      path: "/etc/sysconfig/munin"

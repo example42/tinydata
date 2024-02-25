@@ -8,3 +8,27 @@ mdadm::settings:
   process_name: 'mdadm'
   process_user: 'root'
   process_group: 'root'
+
+# Version 4 format
+  packages:
+    main:
+      name: mdadm
+  services:
+    mdadm:
+      process_name: mdadm
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/mdadm/mdadm.conf"
+    pid:
+      path: "/run/mdadm/monitor.pid"
+  user_files:
+    config:
+      path: "$HOME/.mdadm/mdadm.conf"
+  dirs:
+    config:
+      path: "/etc/mdadm"
+  user_dirs:
+    config:
+      path: "$HOME/.mdadm"

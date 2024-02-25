@@ -9,3 +9,31 @@ squid::settings:
   process_user: 'squid'
   process_group: 'squid'
   tcp_port: '3128'
+
+# Version 4 format
+  packages:
+    main:
+      name: squid
+  services:
+    squid:
+      process_name: squid
+      process_user: squid
+      process_group: squid
+  files:
+    config:
+      path: "/etc/squid/squid.conf"
+    pid:
+      path: "/var/run/squid.pid"
+  user_files:
+    config:
+      path: "$HOME/.squid/squid.conf"
+  dirs:
+    config:
+      path: "/etc/squid"
+  user_dirs:
+    config:
+      path: "$HOME/.squid"
+  ports:
+    main:
+      port: '3128'
+      protocol: tcp

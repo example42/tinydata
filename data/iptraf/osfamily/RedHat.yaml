@@ -1,3 +1,8 @@
 ---
 iptraf::settings:
   package_name: 'iptraf-ng'
+
+# Version 4 format
+  packages:
+    main:
+      name: iptraf-ng

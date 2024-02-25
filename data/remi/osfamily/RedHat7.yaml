@@ -5,3 +5,12 @@ remi::settings:
     enable_server_optional_repo:
       command: 'subscription-manager repos --enable=rhel-7-server-optional-rpms'
       unless: 'subscription-manager list --consumed | grep rhel-7-server-optional-rpms'
+# Version 4 format
+  repo:
+    upstream:
+      package_url: https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+  postinstall:
+    exec:
+      enable_server_optional_repo:
+        command: subscription-manager repos --enable=rhel-7-server-optional-rpms
+        unless: subscription-manager list --consumed | grep rhel-7-server-optional-rpms

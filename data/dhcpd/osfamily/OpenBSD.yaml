@@ -7,3 +7,28 @@ dhcpd::settings:
   data_dir_path: ''
   process_user: '_dhcp'
   process_group: '_dhcp'
+
+# Version 4 format
+  packages:
+    main:
+      name: ''
+  services:
+    ! '':
+      process_user: _dhcp
+      process_group: _dhcp
+  files:
+    config:
+      path: "/etc/dhcpd.conf"
+    pid:
+      path: ''
+  user_files:
+    config:
+      path: "$HOME/.dhcpd.conf"
+  dirs:
+    config:
+      path: ''
+    data:
+      path: ''
+  user_dirs:
+    config:
+      path: ''

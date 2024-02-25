@@ -2,3 +2,14 @@
 vim::settings:
   config_file_path: '/etc/vimrc'
   package_name: 'vim-enhanced'
+
+# Version 4 format
+  packages:
+    main:
+      name: vim-enhanced
+  files:
+    config:
+      path: "/etc/vimrc"
+  user_files:
+    config:
+      path: "$HOME/.vimrc"

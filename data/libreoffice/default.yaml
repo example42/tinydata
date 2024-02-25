@@ -4,3 +4,14 @@ libreoffice::settings:
   snap_package_name: 'libreoffice'
   website_url: 'https://www.libreoffice.org/'
   git_source: 'https://github.com/LibreOffice/core'
+
+# Version 4 format
+  packages:
+    main:
+      name: libreoffice
+      providers:
+        snap:
+          name: libreoffice
+  urls:
+    website: https://www.libreoffice.org/
+    source: https://github.com/LibreOffice/core

@@ -1,3 +1,8 @@
 ---
 puppet_repo::settings:
   repo_package_url: 'http://apt.puppet.com/eol-releases/puppetlabs-release-jessie.deb'
+
+# Version 4 format
+  repo:
+    upstream:
+      package_url: http://apt.puppet.com/eol-releases/puppetlabs-release-jessie.deb

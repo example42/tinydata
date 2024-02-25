@@ -15,3 +15,19 @@ homebrew::settings:
     doctor: '/home/linuxbrew/.linuxbrew/bin/brew doctor'
   info_commands:
     config: '/home/linuxbrew/.linuxbrew/bin/brew config'
+
+# Version 4 format
+  preinstall:
+    exec:
+      homebrew-install:
+        command: NONINTERACTIVE=1 ; curl https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+          | bash
+        creates: "/home/linuxbrew/.linuxbrew/bin/brew"
+    package:
+    - curl
+  postinstall:
+    exec:
+      homebrew-add-user-env:
+        command: echo "eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >> ~/.profile
+        provider: shell
+        unless: grep '/home/linuxbrew/.linuxbrew/bin/brew shellenv' ~/.profile

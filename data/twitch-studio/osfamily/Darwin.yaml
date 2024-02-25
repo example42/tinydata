@@ -1,3 +1,10 @@
 ---
 twitch-studio::settings:
   brew_package_name: 'twitch-studio'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        brew:
+          name: twitch-studio

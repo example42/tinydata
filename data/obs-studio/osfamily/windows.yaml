@@ -2,3 +2,12 @@
 obs-studio::settings:
   winget_package_name: 'OBSProject.OBSStudio'
   choco_package_name: 'obs-studio'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        winget:
+          name: OBSProject.OBSStudio
+        choco:
+          name: obs-studio

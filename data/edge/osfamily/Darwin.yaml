@@ -2,3 +2,11 @@
 edge::settings:
   brew_package_name: 'microsoft-edge'
   package_name: 'microsoft-edge'
+
+# Version 4 format
+  packages:
+    main:
+      name: microsoft-edge
+      providers:
+        brew:
+          name: microsoft-edge

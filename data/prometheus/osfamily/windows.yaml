@@ -18,3 +18,27 @@ prometheus::settings:
     config:
       path: '%APPDATA%\prometheus'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: prometheus
+      providers:
+        choco:
+          name: prometheus
+  services:
+    ! '':
+      process_user: LocalSystem
+      process_group: LocalSystem
+  files:
+    config:
+      path: C:\ProgramData\prometheus\prometheus\etc\prometheus.yml
+  user_files:
+    config:
+      path: C:\ProgramData\prometheus\prometheus\etc\prometheus.yml
+  dirs:
+    config:
+      path: C:\ProgramData\prometheus\prometheus\etc
+  user_dirs:
+    config:
+      path: C:\ProgramData\prometheus\prometheus\etc

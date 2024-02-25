@@ -1,3 +1,8 @@
 ---
 zeek::settings:
   init_file_path: '/etc/sysconfig/zeek'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/zeek"

@@ -1,3 +1,8 @@
 ---
 mongodb-mms-monitoring-agent::settings:
   init_file_path: '/etc/init/mongodb-mms-monitoring-agent.conf'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/init/mongodb-mms-monitoring-agent.conf"

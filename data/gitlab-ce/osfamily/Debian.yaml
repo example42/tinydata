@@ -4,3 +4,11 @@ gitlab-ce::settings:
     gitlab-install:
       command: 'curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | bash'
       creates: '/etc/apt/sources.list.d/gitlab_gitlab-ce.list'
+
+# Version 4 format
+  preinstall:
+    exec:
+      gitlab-install:
+        command: curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh
+          | bash
+        creates: "/etc/apt/sources.list.d/gitlab_gitlab-ce.list"

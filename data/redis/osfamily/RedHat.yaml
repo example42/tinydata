@@ -2,3 +2,11 @@
 redis::settings:
   config_file_path: '/etc/redis.conf'
   process_args: '/etc/redis.conf --daemonize no'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/redis.conf"
+  user_files:
+    config:
+      path: "$HOME/.redis.conf"

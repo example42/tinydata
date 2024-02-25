@@ -3,3 +3,9 @@ fabric::settings:
   package_prerequisites:
     - python-devel
     - openssl-devel
+
+# Version 4 format
+  preinstall:
+    package:
+    - python-devel
+    - openssl-devel

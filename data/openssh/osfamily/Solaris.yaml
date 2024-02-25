@@ -4,3 +4,13 @@ openssh::settings:
   service_name: 'ssh'
   config_file_mode: '0600'
   log_file_path: '/var/adm/authlog'
+
+# Version 4 format
+  packages:
+    main:
+      name: ''
+  services:
+    ssh: {}
+  files:
+    log:
+      path: "/var/adm/authlog"

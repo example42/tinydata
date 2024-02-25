@@ -59,3 +59,19 @@ spiderfoot::settings:
     issues: https://github.com/smicallef/spiderfoot/issues
     documentation: https://www.spiderfoot.net/documentation/
     source: https://github.com/smicallef/spiderfoot
+
+# Version 4 format
+  packages:
+    main:
+      name: spiderfoot
+      provider: pip
+  services:
+    spiderfoot:
+      process_name: sf.py
+      process_user: root
+      process_group: root
+  urls:
+    source: https://github.com/smicallef/spiderfoot
+  preinstall:
+    tp::install:
+    - python-pip

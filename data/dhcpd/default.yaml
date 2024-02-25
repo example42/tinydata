@@ -9,3 +9,31 @@ dhcpd::settings:
   process_user: 'dhcpd'
   process_group: 'dhcpd'
   udp_port: '67'
+
+# Version 4 format
+  packages:
+    main:
+      name: dhcpd
+  services:
+    dhcpd:
+      process_name: dhcpd
+      process_user: dhcpd
+      process_group: dhcpd
+  files:
+    config:
+      path: "/etc/dhcpd/dhcpd.conf"
+    pid:
+      path: "/var/run/dhcpd.pid"
+  user_files:
+    config:
+      path: "$HOME/.dhcpd/dhcpd.conf"
+  dirs:
+    config:
+      path: "/etc/dhcpd"
+  user_dirs:
+    config:
+      path: "$HOME/.dhcpd"
+  ports:
+    main_udp:
+      port: '67'
+      protocol: udp

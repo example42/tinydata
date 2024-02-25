@@ -13,3 +13,35 @@ heartbeat-elastic::settings:
   data_dir_path: '/var/lib/heartbeat'
   process_name: 'heartbeat'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: heartbeat-elastic
+  services:
+    heartbeat-elastic:
+      process_name: heartbeat
+  files:
+    config:
+      path: "/etc/heartbeat/heartbeat.yml"
+      format: yaml
+    log:
+      path: "/var/log/heartbeat/heartbeat"
+    pid:
+      path: "/var/run/heartbeat.pid"
+  user_files:
+    config:
+      path: "$HOME/.heartbeat/heartbeat.yml"
+  dirs:
+    config:
+      path: "/etc/heartbeat"
+    log:
+      path: "/var/log/heartbeat"
+    home:
+      path: "/usr/share/heartbeat"
+    data:
+      path: "/var/lib/heartbeat"
+  user_dirs:
+    config:
+      path: "$HOME/.heartbeat"
+  repo: upstream

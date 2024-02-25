@@ -6,3 +6,17 @@ docker::settings:
   key_url: 'https://download.docker.com/linux/ubuntu/gpg'
   apt_repos: 'stable'
   apt_key_server: 'http://p80.pool.sks-keyservers.net'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/docker"
+  repo:
+    upstream:
+      url: https://download.docker.com/linux/ubuntu
+      key: 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+      key_url: https://download.docker.com/linux/ubuntu/gpg
+      yum:
+        gpgcheck: true
+      apt:
+        key_server: http://p80.pool.sks-keyservers.net

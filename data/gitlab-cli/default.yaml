@@ -5,3 +5,13 @@ gitlab-cli::settings:
   tp_prerequisites:
     - ruby
     - ruby-dev
+
+# Version 4 format
+  packages:
+    main:
+      name: gitlab
+      provider: puppet_gem
+  preinstall:
+    tp::install:
+    - ruby
+    - ruby-dev

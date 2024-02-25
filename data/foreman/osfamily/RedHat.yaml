@@ -2,3 +2,11 @@
 foreman::settings:
   init_file_path: '/etc/sysconfig/foreman'
   repo_package_name: 'foreman-release'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/foreman"
+  repo:
+    upstream:
+      package_name: foreman-release

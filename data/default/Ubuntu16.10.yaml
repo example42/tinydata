@@ -6,3 +6,9 @@ default::settings:
     default:
       apt:
         release: 'yakkety'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: yakkety

@@ -2,3 +2,10 @@
 twitch-studio::settings:
   package_name: ''
   website_url: 'https://www.twitch.tv/'
+
+# Version 4 format
+  packages:
+    main:
+      name: ''
+  urls:
+    website: https://www.twitch.tv/

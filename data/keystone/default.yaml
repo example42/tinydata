@@ -9,3 +9,28 @@ keystone::settings:
   process_name: 'keystone'
   process_user: 'keystone'
   process_group: 'keystone'
+
+# Version 4 format
+  services:
+    keystone:
+      process_name: keystone
+      process_user: keystone
+      process_group: keystone
+  files:
+    config:
+      path: "/etc/keystone/keystone.conf"
+    log:
+      path: "/var/log/keystone/keystone.log"
+    pid:
+      path: "/var/run/keystone.pid"
+  user_files:
+    config:
+      path: "$HOME/.keystone/keystone.conf"
+  dirs:
+    config:
+      path: "/etc/keystone"
+    log:
+      path: "/var/log/keystone"
+  user_dirs:
+    config:
+      path: "$HOME/.keystone"

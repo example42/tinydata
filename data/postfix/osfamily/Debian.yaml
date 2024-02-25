@@ -3,3 +3,10 @@ postfix::settings:
   log_file_path: '/var/log/mail.log'
   init_file_path: '/etc/default/postfix'
   daemon_dir_path: '/usr/lib/postfix/sbin'
+
+# Version 4 format
+  files:
+    log:
+      path: "/var/log/mail.log"
+    init:
+      path: "/etc/default/postfix"

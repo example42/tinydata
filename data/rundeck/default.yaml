@@ -18,3 +18,38 @@ rundeck::settings:
   config_file_mode: '0640'
   tp_prerequisites:
     - 'openjdk-jdk'
+
+# Version 4 format
+  packages:
+    main:
+      name: rundeck
+  services:
+    rundeckd:
+      process_name: rundeck
+      process_user: rundeck
+      process_group: rundeck
+  files:
+    config:
+      path: "/etc/rundeck/framework.properties"
+    log:
+      path: "/var/log/rundeck/rundeck.log"
+    init:
+      path: "/etc/rundeck/profile"
+    pid:
+      path: "/var/run/rundeckd.pid"
+  user_files:
+    config:
+      path: "$HOME/.rundeck/framework.properties"
+  dirs:
+    config:
+      path: "/etc/rundeck"
+    log:
+      path: "/var/log/rundeck"
+    ssl:
+      path: "/etc/rundeck/ssl"
+  user_dirs:
+    config:
+      path: "$HOME/.rundeck"
+  preinstall:
+    tp::install:
+    - openjdk-jdk

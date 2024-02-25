@@ -7,3 +7,9 @@ default::settings:
     default:
       apt:
         release: 'buster'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: buster

@@ -4,3 +4,10 @@ scl::settings:
     subscription_scl:
       command: 'subscription-manager repos --enable rhel-server-rhscl-6-rpms'
       unless: 'subscription-manager repos --list | grep scl'
+
+# Version 4 format
+  preinstall:
+    exec:
+      subscription_scl:
+        command: subscription-manager repos --enable rhel-server-rhscl-6-rpms
+        unless: subscription-manager repos --list | grep scl

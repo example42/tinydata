@@ -4,3 +4,13 @@ nova::settings:
     - 'python-nova'
     - 'openstack-nova-common'
   init_file_path: '/etc/sysconfig/nova'
+
+# Version 4 format
+  packages:
+    main:
+      name:
+      - python-nova
+      - openstack-nova-common
+  files:
+    init:
+      path: "/etc/sysconfig/nova"

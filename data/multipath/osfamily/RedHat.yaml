@@ -4,3 +4,18 @@ multipath::settings:
   service_name: 'multipathd'
   init_file_path: '/etc/sysconfig/multipath'
   config_file_path: '/etc/multipath.conf'
+
+# Version 4 format
+  packages:
+    main:
+      name: device-mapper-multipath
+  services:
+    multipathd: {}
+  files:
+    config:
+      path: "/etc/multipath.conf"
+    init:
+      path: "/etc/sysconfig/multipath"
+  user_files:
+    config:
+      path: "$HOME/.multipath.conf"

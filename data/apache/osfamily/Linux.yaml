@@ -14,3 +14,39 @@ apache::settings:
   process_user: 'apache'
   process_group: 'apache'
   modules_dir_path: '/usr/lib/apache2'
+
+# Version 4 format
+  packages:
+    main:
+      name: apache2
+  services:
+    apache2:
+      process_name: httpd
+      process_user: apache
+      process_group: apache
+  files:
+    config:
+      path: "/etc/apache2/httpd.conf"
+    log:
+      path:
+      - "/var/log/apache2/access.log"
+      - "/var/log/apache2/error.log"
+    init:
+      path: "/etc/conf.d/apache2"
+    pid:
+      path: "/var/run/apache2/httpd.pid"
+  user_files:
+    config:
+      path: "$HOME/.apache2/httpd.conf"
+  dirs:
+    config:
+      path: "/etc/apache2"
+    conf:
+      path: "/etc/apache2/conf.d"
+    log:
+      path: "/var/log/apache2"
+    data:
+      path: "/var/www"
+  user_dirs:
+    config:
+      path: "$HOME/.apache2"

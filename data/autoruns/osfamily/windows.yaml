@@ -3,3 +3,13 @@ autoruns::settings:
   winget_package_name: 'Microsoft.Sysinternals.Autoruns'
   choco_package_name: 'autoruns'
   package_name: 'autoruns'
+
+# Version 4 format
+  packages:
+    main:
+      name: autoruns
+      providers:
+        winget:
+          name: Microsoft.Sysinternals.Autoruns
+        choco:
+          name: autoruns

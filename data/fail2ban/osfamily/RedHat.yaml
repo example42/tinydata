@@ -2,3 +2,8 @@
 fail2ban::settings:
   tp_prerequisites:
     - epel
+
+# Version 4 format
+  preinstall:
+    tp::install:
+    - epel

@@ -13,3 +13,35 @@ metricbeat::settings:
   data_dir_path: '/var/lib/metricbeat'
   process_name: 'metricbeat'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: metricbeat
+  services:
+    metricbeat:
+      process_name: metricbeat
+  files:
+    config:
+      path: "/etc/metricbeat/metricbeat.yml"
+      format: yaml
+    log:
+      path: "/var/log/metricbeat/metricbeat"
+    pid:
+      path: "/var/run/metricbeat.pid"
+  user_files:
+    config:
+      path: "$HOME/.metricbeat/metricbeat.yml"
+  dirs:
+    config:
+      path: "/etc/metricbeat"
+    log:
+      path: "/var/log/metricbeat"
+    home:
+      path: "/usr/share/metricbeat"
+    data:
+      path: "/var/lib/metricbeat"
+  user_dirs:
+    config:
+      path: "$HOME/.metricbeat"
+  repo: upstream

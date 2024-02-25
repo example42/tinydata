@@ -1,3 +1,9 @@
 ---
 foreman::settings:
   apt_release: 'xenial'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: xenial

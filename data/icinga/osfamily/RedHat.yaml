@@ -5,3 +5,8 @@ icinga::settings:
   config_file_group: 'icinga'
   config_file_mode: '664'
 
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/icinga"

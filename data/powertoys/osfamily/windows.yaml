@@ -3,3 +3,13 @@ powertoys::settings:
   winget_package_name: 'Microsoft.PowerToys'
   choco_package_name: 'powertoys'
   package_name: 'powertoys'
+
+# Version 4 format
+  packages:
+    main:
+      name: powertoys
+      providers:
+        winget:
+          name: Microsoft.PowerToys
+        choco:
+          name: powertoys

@@ -2,3 +2,11 @@
 journalbeat::settings:
   config_file_path: 'C:\ProgramData\chocolatey\lib\journalbeat\tools\journalbeat.yml'
 
+
+# Version 4 format
+  files:
+    config:
+      path: C:\ProgramData\chocolatey\lib\journalbeat\tools\journalbeat.yml
+  user_files:
+    config:
+      path: C:\ProgramData\chocolatey\lib\journalbeat\tools\journalbeat.yml

@@ -9,3 +9,25 @@ sysklogd::settings:
   process_name: 'syslogd'
   process_user: 'syslog'
   process_group: 'syslog'
+
+# Version 4 format
+  packages:
+    main:
+      name: sysklogd
+  services:
+    syslog:
+      process_name: syslogd
+      process_user: syslog
+      process_group: syslog
+  files:
+    config:
+      path: "/etc/syslog.conf"
+    log:
+      path: "/var/log/messages"
+    init:
+      path: "/etc/sysconfig/sysklogd"
+    pid:
+      path: "/var/run/syslogd.pid"
+  user_files:
+    config:
+      path: "$HOME/.syslog.conf"

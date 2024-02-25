@@ -1,3 +1,8 @@
 ---
 bolt::settings:
   package_name: 'Puppet.puppet-bolt'
+
+# Version 4 format
+  packages:
+    main:
+      name: Puppet.puppet-bolt

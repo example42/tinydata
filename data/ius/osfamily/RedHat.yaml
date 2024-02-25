@@ -2,3 +2,8 @@
 ius::settings:
   repo_package_name: 'ius-release'
 
+
+# Version 4 format
+  repo:
+    upstream:
+      package_name: ius-release

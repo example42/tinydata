@@ -9,3 +9,31 @@ php-fpm::settings:
   log_file_path: '/var/log/php-fpm/error.log'
   log_dir_path: '/var/log/php-fpm'
   process_name: 'php-fpm'
+
+# Version 4 format
+  packages:
+    main:
+      name: php-fpm
+  services:
+    php-fpm:
+      process_name: php-fpm
+  files:
+    config:
+      path: "/etc/php-fpm.conf"
+    log:
+      path: "/var/log/php-fpm/error.log"
+    pid:
+      path: "/var/run/php-fpm/php-fpm.pid"
+  user_files:
+    config:
+      path: "$HOME/.php-fpm.conf"
+  dirs:
+    config:
+      path: "/etc/php-fpm"
+    conf:
+      path: "/etc/php-fpm.d"
+    log:
+      path: "/var/log/php-fpm"
+  user_dirs:
+    config:
+      path: "$HOME/.php-fpm"

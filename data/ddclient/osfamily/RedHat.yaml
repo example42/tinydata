@@ -2,3 +2,8 @@
 ddclient::settings:
   init_file_path: '/etc/sysconfig/ddclient'
 
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/ddclient"

@@ -3,3 +3,9 @@ zenml::settings:
   package_name: zenml
   package_provider: 'pip'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: zenml
+      provider: pip

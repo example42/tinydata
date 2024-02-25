@@ -1,3 +1,8 @@
 ---
 multitail::settings:
   package_name: 'multitail'
+
+# Version 4 format
+  packages:
+    main:
+      name: multitail

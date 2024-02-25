@@ -2,3 +2,11 @@
 webex::settings:
   brew_package_name: 'webex'
   package_name: 'webex'
+
+# Version 4 format
+  packages:
+    main:
+      name: webex
+      providers:
+        brew:
+          name: webex

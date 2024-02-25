@@ -4,3 +4,22 @@ dkms::settings:
   service_name: 'dkms'
   config_file_path: '/etc/dkms/framework.conf'
   config_dir_path: '/etc/dkms'
+
+# Version 4 format
+  packages:
+    main:
+      name: dkms
+  services:
+    dkms: {}
+  files:
+    config:
+      path: "/etc/dkms/framework.conf"
+  user_files:
+    config:
+      path: "$HOME/.dkms/framework.conf"
+  dirs:
+    config:
+      path: "/etc/dkms"
+  user_dirs:
+    config:
+      path: "$HOME/.dkms"

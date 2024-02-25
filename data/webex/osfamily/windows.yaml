@@ -3,3 +3,13 @@ webex::settings:
   winget_package_name: 'Cisco.WebexTeams'
   choco_package_name: 'webex'
   package_name: 'webex'
+
+# Version 4 format
+  packages:
+    main:
+      name: webex
+      providers:
+        winget:
+          name: Cisco.WebexTeams
+        choco:
+          name: webex

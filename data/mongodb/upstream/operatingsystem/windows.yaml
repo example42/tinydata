@@ -1,3 +1,8 @@
 ---
 mongodb::settings:
   package_name: 'mongodb'
+
+# Version 4 format
+  packages:
+    main:
+      name: mongodb

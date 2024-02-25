@@ -1,3 +1,8 @@
 ---
 docker::settings:
   repo_url: 'https://download.docker.com/linux/centos/7/$basearch/stable'
+
+# Version 4 format
+  repo:
+    upstream:
+      url: https://download.docker.com/linux/centos/7/$basearch/stable

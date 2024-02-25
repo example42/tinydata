@@ -1,3 +1,8 @@
 ---
 ruby-dev::settings:
   package_name: 'ruby-dev'
+
+# Version 4 format
+  packages:
+    main:
+      name: ruby-dev

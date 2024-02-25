@@ -1,3 +1,8 @@
 ---
 microsoft_repo::settings:
   repo_package_url: 'https://packages.microsoft.com/config/ubuntu/21.10/multiarch/packages-microsoft-prod.deb'
+
+# Version 4 format
+  repo:
+    upstream:
+      package_url: https://packages.microsoft.com/config/ubuntu/21.10/multiarch/packages-microsoft-prod.deb

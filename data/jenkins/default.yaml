@@ -12,3 +12,33 @@ jenkins::settings:
   process_user: 'jenkins'
   process_group: 'jenkins'
   tcp_port: '8080'
+
+# Version 4 format
+  packages:
+    main:
+      name: jenkins
+  services:
+    jenkins:
+      process_name: java
+      process_extra_name: jenkins
+      process_user: jenkins
+      process_group: jenkins
+  files:
+    log:
+      path: "/var/log/jenkins/jenkins.log"
+    pid:
+      path: "/var/run/jenkins.pid"
+  dirs:
+    config:
+      path: "/etc/jenkins"
+    conf:
+      path: "/etc/jenkins/conf.d"
+    log:
+      path: "/var/log/jenkins"
+  user_dirs:
+    config:
+      path: "$HOME/.jenkins"
+  ports:
+    main:
+      port: '8080'
+      protocol: tcp

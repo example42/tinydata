@@ -10,3 +10,31 @@ newrelic::settings:
   process_name: 'nrsysmond'
   process_user: 'newrelic'
   process_group: 'newrelic'
+
+# Version 4 format
+  packages:
+    main:
+      name: newrelic-sysmond
+  services:
+    newrelic-sysmond:
+      process_name: nrsysmond
+      process_user: newrelic
+      process_group: newrelic
+  files:
+    config:
+      path: "/etc/newrelic/nrsysmond.cfg"
+    log:
+      path: "/var/log/newrelic/nrsysmond.log"
+    pid:
+      path: "/var/run/nrsysmond.pid"
+  user_files:
+    config:
+      path: "$HOME/.newrelic/nrsysmond.cfg"
+  dirs:
+    config:
+      path: "/etc/newrelic"
+    log:
+      path: "/var/log/newrelic"
+  user_dirs:
+    config:
+      path: "$HOME/.newrelic"

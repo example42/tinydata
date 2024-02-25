@@ -1,3 +1,8 @@
 ---
 openjdk-jdk::settings:
   package_name: 'java-1.6.0-openjdk-devel'
+
+# Version 4 format
+  packages:
+    main:
+      name: java-1.6.0-openjdk-devel

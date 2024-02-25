@@ -13,3 +13,35 @@ journalbeat::settings:
   data_dir_path: '/var/lib/journalbeat'
   process_name: 'journalbeat'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: journalbeat
+  services:
+    journalbeat:
+      process_name: journalbeat
+  files:
+    config:
+      path: "/etc/journalbeat/journalbeat.yml"
+      format: yaml
+    log:
+      path: "/var/log/journalbeat/journalbeat"
+    pid:
+      path: "/var/run/journalbeat.pid"
+  user_files:
+    config:
+      path: "$HOME/.journalbeat/journalbeat.yml"
+  dirs:
+    config:
+      path: "/etc/journalbeat"
+    log:
+      path: "/var/log/journalbeat"
+    home:
+      path: "/usr/share/journalbeat"
+    data:
+      path: "/var/lib/journalbeat"
+  user_dirs:
+    config:
+      path: "$HOME/.journalbeat"
+  repo: upstream

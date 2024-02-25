@@ -3,3 +3,14 @@ nfs::settings:
   package_name: 'nfs-utils'
   process_name: 'nfsd'
   init_file_path: '/etc/sysconfig/nfs'
+
+# Version 4 format
+  packages:
+    main:
+      name: nfs-utils
+  services:
+    ! '':
+      process_name: nfsd
+  files:
+    init:
+      path: "/etc/sysconfig/nfs"

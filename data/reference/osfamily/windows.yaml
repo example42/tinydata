@@ -14,3 +14,12 @@ reference::settings:
   # (NOTE: Currently this setting is not used as chocolately provider
   # is used by default and on windows we use the package_name setting)
   choco_package_name: 'reference'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        winget:
+          name: reference.reference
+        choco:
+          name: reference

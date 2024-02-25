@@ -9,3 +9,22 @@ redis::settings:
   config_file_group: 'test'
   config_file_mode: '0644'
   config_dir_path: '/etc/redis-testos'
+
+# Version 4 format
+  packages:
+    main:
+      name: redis-testos
+  services:
+    redis-testos: {}
+  files:
+    config:
+      path: "/etc/redis-testos/redis.conf"
+  user_files:
+    config:
+      path: "$HOME/.redis-testos/redis.conf"
+  dirs:
+    config:
+      path: "/etc/redis-testos"
+  user_dirs:
+    config:
+      path: "$HOME/.redis-testos"

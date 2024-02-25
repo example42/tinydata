@@ -1,3 +1,8 @@
 ---
 ruby::settings:
   package_name: 'rubygems'
+
+# Version 4 format
+  packages:
+    main:
+      name: rubygems

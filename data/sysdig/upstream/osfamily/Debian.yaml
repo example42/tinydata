@@ -7,3 +7,8 @@ sysdig::settings:
   repo_file_url: 'https://download.sysdig.com/stable/deb/draios.list'
   repo_file_name: 'draios.list'
 
+
+# Version 4 format
+  repo:
+    upstream:
+      repofile_url: https://download.sysdig.com/stable/deb/draios.list

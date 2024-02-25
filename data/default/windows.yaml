@@ -5,3 +5,8 @@ default::settings:
   config_file_group: 'NT AUTHORITY\SYSTEM'
   config_dir_owner: 'BUILTIN\Administrators'
   config_dir_group: 'NT AUTHORITY\SYSTEM'
+
+# Version 4 format
+  packages:
+    main:
+      provider: chocolatey

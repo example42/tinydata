@@ -2,3 +2,8 @@
 elastic_repo::settings:
   repo_url: 'https://artifacts.elastic.co/packages/8.x/yum'
 
+
+# Version 4 format
+  repo:
+    upstream:
+      url: https://artifacts.elastic.co/packages/8.x/yum

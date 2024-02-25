@@ -13,3 +13,35 @@ packetbeat::settings:
   data_dir_path: '/var/lib/packetbeat'
   process_name: 'packetbeat'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: packetbeat
+  services:
+    packetbeat:
+      process_name: packetbeat
+  files:
+    config:
+      path: "/etc/packetbeat/packetbeat.yml"
+      format: yaml
+    log:
+      path: "/var/log/packetbeat/packetbeat"
+    pid:
+      path: "/var/run/packetbeat.pid"
+  user_files:
+    config:
+      path: "$HOME/.packetbeat/packetbeat.yml"
+  dirs:
+    config:
+      path: "/etc/packetbeat"
+    log:
+      path: "/var/log/packetbeat"
+    home:
+      path: "/usr/share/packetbeat"
+    data:
+      path: "/var/lib/packetbeat"
+  user_dirs:
+    config:
+      path: "$HOME/.packetbeat"
+  repo: upstream

@@ -1,3 +1,8 @@
 ---
 mongodb::settings:
   apt_release: 'xenial/mongodb-org/4.4'
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: xenial/mongodb-org/4.4

@@ -2,3 +2,13 @@
 memcached::settings:
   config_file_path: '/etc/sysconfig/memcached'
   init_file_path: '/etc/sysconfig/memcached'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/sysconfig/memcached"
+    init:
+      path: "/etc/sysconfig/memcached"
+  user_files:
+    config:
+      path: "$HOME/.sysconfig/memcached"

@@ -3,3 +3,13 @@ zoom::settings:
   winget_package_name: 'Zoom.Zoom'
   choco_package_name: 'zoom'
   package_name: 'zoom'
+
+# Version 4 format
+  packages:
+    main:
+      name: zoom
+      providers:
+        winget:
+          name: Zoom.Zoom
+        choco:
+          name: zoom

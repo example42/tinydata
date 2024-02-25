@@ -8,3 +8,19 @@ pgbouncer::settings:
   config_file_owner: 'postgres'
   config_file_group: 'postgres'
   pid_file_path: '/var/run/postgresql/pgbouncer.pid'
+
+# Version 4 format
+  services:
+    ! '':
+      process_user: postgres
+      process_group: postgres
+  files:
+    log:
+      path: "/var/log/postgresql/pgbouncer.log"
+    init:
+      path: "/etc/default/pgbouncer"
+    pid:
+      path: "/var/run/postgresql/pgbouncer.pid"
+  dirs:
+    log:
+      path: "/var/log/postgresql"

@@ -12,3 +12,8 @@ golang::settings:
   user_dirs:
     config:
       path: '%APPDATA%\golang'
+# Version 4 format
+  packages:
+    main:
+      provider: windows
+      source: https://go.dev/dl/go$VERSION.$OS-$ARCH.msi

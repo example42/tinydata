@@ -3,3 +3,13 @@ quantum::settings:
   package_name: 'quantum-server'
   service_name: 'quantum-server'
   init_file_path: '/etc/default/quantum'
+
+# Version 4 format
+  packages:
+    main:
+      name: quantum-server
+  services:
+    quantum-server: {}
+  files:
+    init:
+      path: "/etc/default/quantum"

@@ -1,3 +1,6 @@
 ---
 crowdsec_repo::settings:
   upstream_repo: true
+
+# Version 4 format
+  repo: upstream

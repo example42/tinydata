@@ -8,3 +8,27 @@ multipath::settings:
   process_name: 'multipathd'
   process_user: 'root'
   process_group: 'root'
+
+# Version 4 format
+  packages:
+    main:
+      name: multipath
+  services:
+    multipathd:
+      process_name: multipathd
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/multipath/multipath.conf"
+    pid:
+      path: "/var/run/multipathd.pid"
+  user_files:
+    config:
+      path: "$HOME/.multipath/multipath.conf"
+  dirs:
+    config:
+      path: "/etc/multipath"
+  user_dirs:
+    config:
+      path: "$HOME/.multipath"

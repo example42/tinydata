@@ -95,3 +95,25 @@ nuclei::settings:
       manage_service: false
       manage_user: false
 
+
+# Version 4 format
+  packages:
+    main:
+      name: nuclei
+  files:
+    config:
+      path: "$HOME/.config/nuclei/config.yaml"
+      format: yaml
+  user_files:
+    config:
+      path: "$HOME/.config/nuclei/config.yaml"
+  dirs:
+    config:
+      path: "$HOME/.config/nuclei"
+  user_dirs:
+    config:
+      path: "$HOME/.config/nuclei"
+  image:
+    name: projectdiscovery/nuclei
+  preinstall:
+    tp::install: {}

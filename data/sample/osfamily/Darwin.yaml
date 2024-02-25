@@ -9,3 +9,9 @@ sample::settings:
   user_dirs:
     config:
       path: '$HOME/Library/Application\ Support/sample/sample.conf'
+# Version 4 format
+  packages:
+    main:
+      providers:
+        brew:
+          name: sample

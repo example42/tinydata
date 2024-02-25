@@ -10,3 +10,33 @@ ntp::settings:
   process_user: 'ntp'
   process_group: 'ntp'
   udp_port: '123'
+
+# Version 4 format
+  packages:
+    main:
+      name: ntp
+  services:
+    ntp:
+      process_name: ntpd
+      process_user: ntp
+      process_group: ntp
+  files:
+    config:
+      path: "/etc/ntp.conf"
+    pid:
+      path: "/var/run/ntpd.pid"
+  user_files:
+    config:
+      path: "$HOME/.ntp.conf"
+  dirs:
+    config:
+      path: "/etc/ntp"
+    conf:
+      path: "/etc/ntp/conf.d"
+  user_dirs:
+    config:
+      path: "$HOME/.ntp"
+  ports:
+    main_udp:
+      port: '123'
+      protocol: udp

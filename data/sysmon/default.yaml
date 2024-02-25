@@ -5,3 +5,14 @@ sysmon::settings:
   git_source: 'https://github.com/Sysinternals/SysmonForLinux'
   tp_prerequisites:
     - 'microsoft_repo'
+
+# Version 4 format
+  packages:
+    main:
+      name: sysmonforlinux
+  urls:
+    website: https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon/
+    source: https://github.com/Sysinternals/SysmonForLinux
+  preinstall:
+    tp::install:
+    - microsoft_repo

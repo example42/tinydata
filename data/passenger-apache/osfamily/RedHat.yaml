@@ -7,3 +7,16 @@ passenger-apache::settings:
     - epel
   package_prerequisites:
     - pygpgme
+
+# Version 4 format
+  packages:
+    main:
+      name: mod_passenger
+  repo:
+    upstream:
+      repofile_url: https://oss-binaries.phusionpassenger.com/yum/definitions/el-passenger.repo
+  preinstall:
+    tp::install:
+    - epel
+    package:
+    - pygpgme

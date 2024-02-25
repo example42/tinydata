@@ -2,3 +2,14 @@
 mailx::settings:
   package_name: 'mailx'
   config_file_path: '/etc/mail.rc'
+
+# Version 4 format
+  packages:
+    main:
+      name: mailx
+  files:
+    config:
+      path: "/etc/mail.rc"
+  user_files:
+    config:
+      path: "$HOME/.mail.rc"

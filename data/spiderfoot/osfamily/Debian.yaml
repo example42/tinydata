@@ -7,3 +7,8 @@ spiderfoot::settings:
       path: '/etc/default/spiderfoot'
 
   upstream_repo: true
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/spiderfoot"
+  repo: upstream

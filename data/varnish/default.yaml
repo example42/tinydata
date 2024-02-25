@@ -13,3 +13,38 @@ varnish::settings:
   process_group: 'varnish'
   tcp_port: '6081'
   nodaemon_args: '-F'
+
+# Version 4 format
+  packages:
+    main:
+      name: varnish
+  services:
+    varnish:
+      process_name: varnish
+      process_user: varnish
+      process_group: varnish
+      nodaemon_args: "-F"
+  files:
+    config:
+      path: "/etc/varnish/default.vcl"
+    log:
+      path: "/var/log/varnish/varnish.log"
+    pid:
+      path: "/var/run/varnish.pid"
+  user_files:
+    config:
+      path: "$HOME/.varnish/default.vcl"
+  dirs:
+    config:
+      path: "/etc/varnish"
+    conf:
+      path: "/etc/varnish/conf.d"
+    log:
+      path: "/var/log/varnish"
+  user_dirs:
+    config:
+      path: "$HOME/.varnish"
+  ports:
+    main:
+      port: '6081'
+      protocol: tcp

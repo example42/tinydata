@@ -2,3 +2,8 @@
 epel::settings:
   repo_package_name: 'epel-release'
 
+
+# Version 4 format
+  repo:
+    upstream:
+      package_name: epel-release

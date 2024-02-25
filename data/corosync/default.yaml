@@ -9,3 +9,29 @@ corosync::settings:
   process_name: 'corosync'
   process_user: 'corosync'
   process_group: 'corosync'
+
+# Version 4 format
+  packages:
+    main:
+      name: corosync
+  services:
+    corosync:
+      process_name: corosync
+      process_user: corosync
+      process_group: corosync
+  files:
+    config:
+      path: "/etc/corosync/corosync.conf"
+    log:
+      path: "/var/log/corosync/corosync.log"
+  user_files:
+    config:
+      path: "$HOME/.corosync/corosync.conf"
+  dirs:
+    config:
+      path: "/etc/corosync"
+    log:
+      path: "/var/log/corosync"
+  user_dirs:
+    config:
+      path: "$HOME/.corosync"

@@ -9,3 +9,15 @@ nodejs::settings:
     - make
   tp_prerequisites:
     - epel
+
+# Version 4 format
+  preinstall:
+    tp::install:
+    - epel
+    exec:
+      repo_setup:
+        command: curl -L https://rpm.nodesource.com/setup_lts.x | bash
+        unless: rpm -qa | grep nodesource-release
+    package:
+    - gcc-c++
+    - make

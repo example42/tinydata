@@ -2,3 +2,11 @@
 mariadb::settings:
   package_name: 'mariadb-server'
   init_file_path: '/etc/sysconfig/mariadb'
+
+# Version 4 format
+  packages:
+    main:
+      name: mariadb-server
+  files:
+    init:
+      path: "/etc/sysconfig/mariadb"

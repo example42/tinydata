@@ -1,3 +1,8 @@
 ---
 ntp::settings:
   init_file_path: '/etc/default/ntp'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/ntp"

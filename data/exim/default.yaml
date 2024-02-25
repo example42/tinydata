@@ -11,3 +11,35 @@ exim::settings:
   process_user: 'exim'
   process_group: 'exim'
   tcp_port: '25'
+
+# Version 4 format
+  packages:
+    main:
+      name: exim
+  services:
+    exim:
+      process_name: exim
+      process_user: exim
+      process_group: exim
+  files:
+    config:
+      path: "/etc/exim/exim.conf"
+    log:
+      path: "/var/log/exim/exim.log"
+    pid:
+      path: "/var/run/exim.pid"
+  user_files:
+    config:
+      path: "$HOME/.exim/exim.conf"
+  dirs:
+    config:
+      path: "/etc/exim"
+    log:
+      path: "/var/log/exim"
+  user_dirs:
+    config:
+      path: "$HOME/.exim"
+  ports:
+    main:
+      port: '25'
+      protocol: tcp

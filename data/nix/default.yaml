@@ -89,3 +89,14 @@ nix::settings:
           command: 'curl -L https://nixos.org/nix/install --daemon | bash'
           creates: '/nix'
           provider: shell
+# Version 4 format
+  preinstall:
+    tp::install: {}
+    exec:
+      install:
+        command: wget -O /tmp/nix_install https://nixos.org/nix/install ; sh /tmp/nix_install
+          --daemon --yes
+        creates: "/nix"
+        provider: posix
+        environment:
+        - HOME=/root

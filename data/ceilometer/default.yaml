@@ -14,3 +14,34 @@ ceilometer::settings:
   website_url: 'http://docs.openstack.org/ceilometer/'
   git_source: 'https://opendev.org/openstack/ceilometer'
   config_file_format: 'inifile_with_stanzas'
+# Version 4 format
+  packages:
+    main:
+      name: ceilometer
+  services:
+    ! '':
+      process_name: ceilometer
+      process_user: ceilometer
+      process_group: ceilometer
+  files:
+    config:
+      path: "/etc/ceilometer/ceilometer.conf"
+      format: inifile_with_stanzas
+    log:
+      path: "/var/log/ceilometer/ceilometer.log"
+    pid:
+      path: "/var/run/ceilometer.pid"
+  user_files:
+    config:
+      path: "$HOME/.ceilometer/ceilometer.conf"
+  dirs:
+    config:
+      path: "/etc/ceilometer"
+    log:
+      path: "/var/log/ceilometer"
+  user_dirs:
+    config:
+      path: "$HOME/.ceilometer"
+  urls:
+    website: http://docs.openstack.org/ceilometer/
+    source: https://opendev.org/openstack/ceilometer

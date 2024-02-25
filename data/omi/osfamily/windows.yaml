@@ -3,3 +3,13 @@ omi::settings:
   package_name: ''
   winget_package_name: ''
   choco_package_name: ''
+
+# Version 4 format
+  packages:
+    main:
+      name: ''
+      providers:
+        winget:
+          name: ''
+        choco:
+          name: ''

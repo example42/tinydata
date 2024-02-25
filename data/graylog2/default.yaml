@@ -11,3 +11,34 @@ graylog2::settings:
   process_user: 'graylog2'
   process_group: 'graylog2'
   udp_port: '514'
+
+# Version 4 format
+  packages:
+    main:
+      name: graylog2-server
+  services:
+    graylog2-server:
+      process_name: java
+      process_extra_name: graylog2
+      process_user: graylog2
+      process_group: graylog2
+  files:
+    config:
+      path: "/etc/graylog2.conf"
+    pid:
+      path: "/var/run/graylog2.pid"
+  user_files:
+    config:
+      path: "$HOME/.graylog2.conf"
+  dirs:
+    config:
+      path: "/etc/graylog2"
+    conf:
+      path: "/etc/graylog2/conf.d"
+  user_dirs:
+    config:
+      path: "$HOME/.graylog2"
+  ports:
+    main_udp:
+      port: '514'
+      protocol: udp

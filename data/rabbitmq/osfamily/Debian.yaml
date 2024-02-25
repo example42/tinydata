@@ -3,3 +3,13 @@ rabbitmq::settings:
   package_name: 'rabbitmq-server'
   service_name: 'rabbitmq-server'
   init_file_path: '/etc/default/rabbitmq-server'
+
+# Version 4 format
+  packages:
+    main:
+      name: rabbitmq-server
+  services:
+    rabbitmq-server: {}
+  files:
+    init:
+      path: "/etc/default/rabbitmq-server"

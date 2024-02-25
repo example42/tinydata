@@ -9,3 +9,15 @@ apm-server::settings:
     disallow_sha1:
       command: '/usr/bin/update-crypto-policies --set DEFAULT'
       onlyif: '/usr/bin/update-crypto-policies --show | grep SHA1'
+
+# Version 4 format
+  preinstall:
+    exec:
+      allow_sha1:
+        command: "/usr/bin/update-crypto-policies --set DEFAULT:SHA1"
+        unless: dnf info apm-server
+  postinstall:
+    exec:
+      disallow_sha1:
+        command: "/usr/bin/update-crypto-policies --set DEFAULT"
+        onlyif: "/usr/bin/update-crypto-policies --show | grep SHA1"

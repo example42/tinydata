@@ -1,3 +1,8 @@
 ---
 passenger::settings:
   package_name: 'passenger'
+
+# Version 4 format
+  packages:
+    main:
+      name: passenger

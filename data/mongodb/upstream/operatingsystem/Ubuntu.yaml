@@ -2,3 +2,8 @@
 mongodb::settings:
   repo_url: 'http://repo.mongodb.org/apt/ubuntu'
   apt_repos: 'multiverse'
+
+# Version 4 format
+  repo:
+    upstream:
+      url: http://repo.mongodb.org/apt/ubuntu

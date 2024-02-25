@@ -1,3 +1,8 @@
 ---
 git::settings:
   package_name: 'git-core'
+
+# Version 4 format
+  packages:
+    main:
+      name: git-core

@@ -7,3 +7,26 @@ dovecot::settings:
   config_dir_path: '/usr/local/etc/dovecot'
   conf_dir_path: ''
   pid_file_path: '/var/run/dovecot.pid'
+
+# Version 4 format
+  packages:
+    main:
+      name:
+      - dovecot2
+      - dovecot-pigeonhole
+  files:
+    config:
+      path: "/usr/local/etc/dovecot/dovecot.conf"
+    pid:
+      path: "/var/run/dovecot.pid"
+  user_files:
+    config:
+      path: "/usr/local$HOME/.dovecot/dovecot.conf"
+  dirs:
+    config:
+      path: "/usr/local/etc/dovecot"
+    conf:
+      path: ''
+  user_dirs:
+    config:
+      path: "/usr/local$HOME/.dovecot"

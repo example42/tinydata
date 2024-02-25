@@ -13,3 +13,7 @@ prometheus::settings:
         prometheus_init_config:
           command: 'touch /etc/default/prometheus'
           creates: '/etc/default/prometheus'
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/prometheus"

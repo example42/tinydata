@@ -4,3 +4,12 @@ hashicorp_repo::settings:
   apt_repos: 'main'
   key_url: 'https://apt.releases.hashicorp.com/gpg'
   key: 'E8A0 32E0 94D8 EB4E A189  D270 DA41 8C88 A321 9F7B'
+
+# Version 4 format
+  repo:
+    upstream:
+      url: https://apt.releases.hashicorp.com
+      key: E8A0 32E0 94D8 EB4E A189  D270 DA41 8C88 A321 9F7B
+      key_url: https://apt.releases.hashicorp.com/gpg
+      yum:
+        gpgcheck: true

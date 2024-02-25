@@ -4,3 +4,13 @@ go-server::settings:
   repo_url: 'http://dl.bintray.com/gocd/gocd-deb'
   apt_repos: 'main'
   apt_release: 'stable'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/go-server"
+  repo:
+    upstream:
+      url: http://dl.bintray.com/gocd/gocd-deb
+      apt:
+        release: stable

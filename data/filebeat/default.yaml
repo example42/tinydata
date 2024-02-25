@@ -12,3 +12,35 @@ filebeat::settings:
   home_dir_path: '/usr/share/filebeat'
   data_dir_path: '/var/lib/filebeat'
   process_name: 'filebeat'
+
+# Version 4 format
+  packages:
+    main:
+      name: filebeat
+  services:
+    filebeat:
+      process_name: filebeat
+  files:
+    config:
+      path: "/etc/filebeat/filebeat.yml"
+      format: yaml
+    log:
+      path: "/var/log/filebeat/filebeat"
+    pid:
+      path: "/var/run/filebeat.pid"
+  user_files:
+    config:
+      path: "$HOME/.filebeat/filebeat.yml"
+  dirs:
+    config:
+      path: "/etc/filebeat"
+    log:
+      path: "/var/log/filebeat"
+    home:
+      path: "/usr/share/filebeat"
+    data:
+      path: "/var/lib/filebeat"
+  user_dirs:
+    config:
+      path: "$HOME/.filebeat"
+  repo: upstream

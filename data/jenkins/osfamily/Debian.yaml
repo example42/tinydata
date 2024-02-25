@@ -6,3 +6,17 @@ jenkins::settings:
   key: 'D50582E6'
   key_url: 'https://pkg.jenkins.io/debian-stable/jenkins.io.key'
   apt_repos: 'binary/'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/jenkins"
+    pid:
+      path: "/var/run/jenkins/jenkins.pid"
+  repo:
+    upstream:
+      url: https://pkg.jenkins.io/debian-stable
+      key: D50582E6
+      key_url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
+      yum:
+        gpgcheck: true

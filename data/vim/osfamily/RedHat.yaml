@@ -1,3 +1,11 @@
 ---
 vim::settings:
   config_file_path: '/etc/vimrc'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/vimrc"
+  user_files:
+    config:
+      path: "$HOME/.vimrc"

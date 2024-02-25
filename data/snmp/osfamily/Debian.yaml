@@ -22,3 +22,17 @@ snmp::settings:
     snmptrapd_init:
       path: '/etc/default/snmptrapd'
       format: 'inifile'
+# Version 4 format
+  services:
+    ! '':
+      process_user: snmp
+      process_group: snmp
+  files:
+    init:
+      path: "/etc/default/snmpd"
+  dirs:
+    config:
+      path: "/etc/snmp"
+  user_dirs:
+    config:
+      path: "$HOME/.snmp"

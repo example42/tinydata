@@ -4,3 +4,12 @@ fabric::settings:
   package_provider: 'pip'
   tp_prerequisites:
     - python-pip
+
+# Version 4 format
+  packages:
+    main:
+      name: fabric
+      provider: pip
+  preinstall:
+    tp::install:
+    - python-pip

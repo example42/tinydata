@@ -11,3 +11,33 @@ ddclient::settings:
   process_name: 'ddclient'
   process_user: 'ddclient'
   process_group: 'ddclient'
+
+# Version 4 format
+  packages:
+    main:
+      name: ddclient
+  services:
+    ddclient:
+      process_name: ddclient
+      process_user: ddclient
+      process_group: ddclient
+  files:
+    config:
+      path: "/etc/ddclient/ddclient.conf"
+    log:
+      path: "/var/log/ddclient/ddclient.log"
+    pid:
+      path: "/var/run/ddclient.pid"
+  user_files:
+    config:
+      path: "$HOME/.ddclient/ddclient.conf"
+  dirs:
+    config:
+      path: "/etc/ddclient"
+    conf:
+      path: "/etc/ddclient/conf.d"
+    log:
+      path: "/var/log/ddclient"
+  user_dirs:
+    config:
+      path: "$HOME/.ddclient"

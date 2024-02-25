@@ -1,3 +1,5 @@
 ---
 default::settings:
   init_system: 'sysvinit'
+
+# No data to convert to Version 4 format

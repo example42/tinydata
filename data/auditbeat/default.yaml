@@ -19,3 +19,40 @@ auditbeat::settings:
     show_status: 'auditbeat show auditd_status'
     show_rules: 'auditbeat show auditd_rules'
   docker_image: 'elastic/autditbeat'
+
+# Version 4 format
+  packages:
+    main:
+      name: auditbeat
+  services:
+    auditbeat:
+      process_name: auditbeat
+  files:
+    config:
+      path: "/etc/auditbeat/auditbeat.yml"
+      format: yaml
+    log:
+      path: "/var/log/auditbeat/auditbeat"
+    pid:
+      path: "/var/run/auditbeat.pid"
+  user_files:
+    config:
+      path: "$HOME/.auditbeat/auditbeat.yml"
+  dirs:
+    config:
+      path: "/etc/auditbeat"
+    log:
+      path: "/var/log/auditbeat"
+    home:
+      path: "/usr/share/auditbeat"
+    data:
+      path: "/var/lib/auditbeat"
+  user_dirs:
+    config:
+      path: "$HOME/.auditbeat"
+  urls:
+    website: https://www.elastic.co/beats/auditbeat
+    source: https://github.com/elastic/beats/tree/master/auditbeat
+  image:
+    name: elastic/autditbeat
+  repo: upstream

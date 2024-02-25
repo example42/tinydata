@@ -2,3 +2,11 @@
 webex-meetings::settings:
   brew_package_name: 'webex-meetings'
   package_name: 'webex-meetings'
+
+# Version 4 format
+  packages:
+    main:
+      name: webex-meetings
+      providers:
+        brew:
+          name: webex-meetings

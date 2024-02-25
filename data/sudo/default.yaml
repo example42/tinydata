@@ -3,3 +3,17 @@ sudo::settings:
   config_file_path: '/etc/sudoers'
   config_file_mode: '0440'
   config_dir_path: '/etc/sudoers.d'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/sudoers"
+  user_files:
+    config:
+      path: "$HOME/.sudoers"
+  dirs:
+    config:
+      path: "/etc/sudoers.d"
+  user_dirs:
+    config:
+      path: "$HOME/.sudoers.d"

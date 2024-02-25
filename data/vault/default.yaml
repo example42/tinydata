@@ -12,3 +12,33 @@ vault::settings:
   git_source: https://github.com/hashicorp/vault.git
   info_commands:
     vault_status: 'vault status'
+
+# Version 4 format
+  packages:
+    main:
+      name: vault
+  services:
+    vault:
+      process_name: vault
+  files:
+    config:
+      path: "/etc/vault.d/vault.hcl"
+      format: hcl
+  user_files:
+    config:
+      path: "$HOME/.vault.d/vault.hcl"
+  dirs:
+    config:
+      path: "/etc/vault.d"
+    data:
+      path: "/opt/vault"
+  user_dirs:
+    config:
+      path: "$HOME/.vault.d"
+  ports:
+    main:
+      port: 8200
+      protocol: tcp
+  urls:
+    source: https://github.com/hashicorp/vault.git
+  repo: upstream

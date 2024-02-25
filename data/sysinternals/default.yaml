@@ -5,3 +5,14 @@ sysinternals::settings:
   git_source: 'https://github.com/Sysinternals/SysinternalsEBPF.git'
   tp_prerequisites:
     - 'microsoft_repo'
+
+# Version 4 format
+  packages:
+    main:
+      name: sysinternalsebpf
+  urls:
+    website: https://learn.microsoft.com/sysinternals/
+    source: https://github.com/Sysinternals/SysinternalsEBPF.git
+  preinstall:
+    tp::install:
+    - microsoft_repo

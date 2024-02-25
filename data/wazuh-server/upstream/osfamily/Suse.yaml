@@ -1,3 +1,5 @@
 ---
 wazuh-server::settings:
   package_name: ~
+
+# No data to convert to Version 4 format

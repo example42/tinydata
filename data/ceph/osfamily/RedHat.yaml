@@ -1,3 +1,8 @@
 ---
 ceph::settings:
   init_file_path: '/etc/sysconfig/ceph'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/ceph"

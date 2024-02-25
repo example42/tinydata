@@ -1,3 +1,8 @@
 ---
 puppet_repo::settings:
   repo_package_url: 'https://yum.puppet.com/puppet6/puppet6-release-sles-11.noarch.rpm'
+
+# Version 4 format
+  repo:
+    upstream:
+      package_url: https://yum.puppet.com/puppet6/puppet6-release-sles-11.noarch.rpm

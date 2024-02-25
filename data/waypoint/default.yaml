@@ -4,3 +4,12 @@ waypoint::settings:
   package_name: 'waypoint'
   process_name: 'waypoint'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: waypoint
+  services:
+    ! '':
+      process_name: waypoint
+  repo: upstream

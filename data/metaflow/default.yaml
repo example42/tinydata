@@ -3,3 +3,9 @@ metaflow ::settings:
   package_name: metaflow
   package_provider: 'pip'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: metaflow
+      provider: pip

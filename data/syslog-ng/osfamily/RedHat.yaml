@@ -1,3 +1,8 @@
 ---
 syslog-ng::settings:
   init_file_path: '/etc/sysconfig/syslog-ng'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/syslog-ng"

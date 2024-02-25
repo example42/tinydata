@@ -2,3 +2,9 @@
 scikit-learn::settings:
   package_name: python3-scikit-learn
   package_provider: 'yum'
+
+# Version 4 format
+  packages:
+    main:
+      name: python3-scikit-learn
+      provider: yum

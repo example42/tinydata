@@ -3,3 +3,12 @@ wazuh-server::settings:
   repo_url: 'https://packages.wazuh.com/3.x/yum/'
   key: 'F1C3BD80'
   key_url: 'https://packages.wazuh.com/key/GPG-KEY-WAZUH'
+
+# Version 4 format
+  repo:
+    upstream:
+      url: https://packages.wazuh.com/3.x/yum/
+      key: F1C3BD80
+      key_url: https://packages.wazuh.com/key/GPG-KEY-WAZUH
+      yum:
+        gpgcheck: true

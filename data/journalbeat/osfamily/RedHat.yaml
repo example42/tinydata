@@ -1,3 +1,8 @@
 ---
 journalbeat::settings:
   init_file_path: '/etc/sysconfig/journalbeat'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/journalbeat"

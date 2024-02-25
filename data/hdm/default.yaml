@@ -6,3 +6,28 @@ hdm::settings:
   tcp_port: '8042'
   log_file_path: ['/opt/hdm/log/production.log']
   log_dir_path: '/opt/hdm/log'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/hdm/hdm.conf"
+    log:
+      path:
+      - "/opt/hdm/log/production.log"
+  user_files:
+    config:
+      path: "$HOME/.hdm/hdm.conf"
+  dirs:
+    config:
+      path: "/etc/hdm"
+    log:
+      path: "/opt/hdm/log"
+  user_dirs:
+    config:
+      path: "$HOME/.hdm"
+  ports:
+    main:
+      port: '8042'
+      protocol: tcp
+  urls:
+    source: https://github.com/example42/hdm

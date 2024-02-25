@@ -6,3 +6,15 @@ bind::settings:
   process_name: 'named'
   process_user: 'bind'
   process_group: 'bind'
+
+# Version 4 format
+  services:
+    bind9:
+      process_name: named
+      process_user: bind
+      process_group: bind
+  files:
+    log:
+      path: "/var/log/syslog"
+    pid:
+      path: "/var/run/named/named.pid"

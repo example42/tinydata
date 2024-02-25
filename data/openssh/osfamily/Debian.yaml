@@ -5,3 +5,15 @@ openssh::settings:
   config_file_mode: '0644'
   init_file_path: '/var/default/ssh'
   log_file_path: '/var/log/syslog'
+
+# Version 4 format
+  packages:
+    main:
+      name: openssh-server
+  services:
+    ssh: {}
+  files:
+    log:
+      path: "/var/log/syslog"
+    init:
+      path: "/var/default/ssh"

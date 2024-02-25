@@ -3,3 +3,9 @@ rails::settings:
   package_prerequisites:
     - 'ruby-dev'
     - 'zlib1g-dev'
+
+# Version 4 format
+  preinstall:
+    package:
+    - ruby-dev
+    - zlib1g-dev

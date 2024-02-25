@@ -1,3 +1,10 @@
 ---
 sysdig::settings:
   key: 'F1C3BD80'
+
+# Version 4 format
+  repo:
+    upstream:
+      key: F1C3BD80
+      yum:
+        gpgcheck: true

@@ -1,3 +1,8 @@
 ---
 epel::settings:
   repo_package_url: 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm'
+
+# Version 4 format
+  repo:
+    upstream:
+      package_url: https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm

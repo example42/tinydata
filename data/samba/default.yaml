@@ -12,3 +12,36 @@ samba::settings:
     - '/var/log/samba/log.nmbd'
   process_user: 'samba'
   process_group: 'samba'
+
+# Version 4 format
+  packages:
+    main:
+      name: samba
+  services:
+    smb:
+      process_user: samba
+      process_group: samba
+  files:
+    config:
+      path: "/etc/samba/smb.conf"
+    log:
+      path:
+      - "/var/log/samba/log.smbd"
+      - "/var/log/samba/log.nmbd"
+    init:
+      path: "/etc/sysconfig/samba"
+    pid:
+      path: "/var/run/smbd.pid"
+  user_files:
+    config:
+      path: "$HOME/.samba/smb.conf"
+  dirs:
+    config:
+      path: "/etc/samba"
+  user_dirs:
+    config:
+      path: "$HOME/.samba"
+  ports:
+    main:
+      port: '445'
+      protocol: tcp

@@ -29,3 +29,36 @@ boundary::settings:
     users: 'boundary users list'
     workers: 'boundary workers list'
   docker_image: 'hashicorp/boundary'
+
+# Version 4 format
+  packages:
+    main:
+      name: boundary
+  services:
+    ! '':
+      process_name: boundary
+  files:
+    config:
+      path: "/etc/boundary.d/boundary.hcl"
+      format: hcl
+  user_files:
+    config:
+      path: "$HOME/.boundary.d/boundary.hcl"
+  dirs:
+    config:
+      path: "/etc/boundary.d"
+    conf:
+      path: "/etc/boundary.d"
+  user_dirs:
+    config:
+      path: "$HOME/.boundary.d"
+  ports:
+    main:
+      port: 9200
+      protocol: tcp
+  urls:
+    website: https://boundaryproject.io/
+    source: https://github.com/hashicorp/boundary
+  image:
+    name: hashicorp/boundary
+  repo: upstream

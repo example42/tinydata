@@ -12,3 +12,8 @@ snmp::settings:
   user_dirs:
     config:
       path: '%APPDATA%\snmp'
+# Version 4 format
+  packages:
+    main:
+      provider: windows
+      source: https://github.com/snmp/snmp/releases/download/v$VERSION/snmp_$VERSION_$OS_$ARCH.msi

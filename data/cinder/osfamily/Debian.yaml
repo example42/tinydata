@@ -4,3 +4,13 @@ cinder::settings:
     - 'python-cinder'
     - 'cinder-common'
   init_file_path: '/etc/default/cinder'
+
+# Version 4 format
+  packages:
+    main:
+      name:
+      - python-cinder
+      - cinder-common
+  files:
+    init:
+      path: "/etc/default/cinder"

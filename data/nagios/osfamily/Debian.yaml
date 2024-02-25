@@ -11,3 +11,33 @@ nagios::settings:
   process_user: 'nagios'
   process_group: 'nagios'
   init_file_path: '/etc/default/nagios3'
+
+# Version 4 format
+  packages:
+    main:
+      name: nagios3
+  services:
+    nagios3:
+      process_name: nagios3
+      process_user: nagios
+      process_group: nagios
+  files:
+    config:
+      path: "/etc/nagios3/nagios.cfg"
+    log:
+      path: "/var/log/nagios3/nagios.log"
+    init:
+      path: "/etc/default/nagios3"
+    pid:
+      path: "/var/run/nagios3/nagios3.pid"
+  user_files:
+    config:
+      path: "$HOME/.nagios3/nagios.cfg"
+  dirs:
+    config:
+      path: "/etc/nagios3"
+    log:
+      path: "/var/log/nagios3"
+  user_dirs:
+    config:
+      path: "$HOME/.nagios3"

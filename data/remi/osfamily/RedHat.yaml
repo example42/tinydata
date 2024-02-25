@@ -3,3 +3,11 @@ remi::settings:
   repo_package_name: 'remi-release'
   tp_prerequisites:
     - epel
+
+# Version 4 format
+  repo:
+    upstream:
+      package_name: remi-release
+  preinstall:
+    tp::install:
+    - epel

@@ -7,3 +7,9 @@ default::settings:
     default:
       apt:
         release: 'jammy'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: jammy

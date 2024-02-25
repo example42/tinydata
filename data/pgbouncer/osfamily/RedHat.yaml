@@ -3,3 +3,10 @@ pgbouncer::settings:
   init_file_path: '/etc/sysconfig/pgbouncer'
   tp_prerequisites:
     - epel
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/pgbouncer"
+  preinstall:
+    tp::install:
+    - epel

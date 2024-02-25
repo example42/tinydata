@@ -10,3 +10,31 @@ nagios::settings:
   process_name: 'nagios'
   process_user: 'nagios'
   process_group: 'nagios'
+
+# Version 4 format
+  packages:
+    main:
+      name: nagios
+  services:
+    nagios:
+      process_name: nagios
+      process_user: nagios
+      process_group: nagios
+  files:
+    config:
+      path: "/etc/nagios/nagios.cfg"
+    log:
+      path: "/var/log/nagios/nagios.log"
+    pid:
+      path: "/var/run/nagios.pid"
+  user_files:
+    config:
+      path: "$HOME/.nagios/nagios.cfg"
+  dirs:
+    config:
+      path: "/etc/nagios"
+    log:
+      path: "/var/log/nagios"
+  user_dirs:
+    config:
+      path: "$HOME/.nagios"

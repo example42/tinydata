@@ -1,3 +1,9 @@
 ---
 kubernetes::settings:
   apt_release: 'kubernetes-yakkety'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: kubernetes-yakkety

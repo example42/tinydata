@@ -13,3 +13,37 @@ freeradius::settings:
   process_name: 'radiusd'
   process_user: 'radiusd'
   process_group: 'radiusd'
+
+# Version 4 format
+  packages:
+    main:
+      name: freeradius
+  services:
+    radiusd:
+      process_name: radiusd
+      process_user: radiusd
+      process_group: radiusd
+  files:
+    config:
+      path: "/etc/raddb/radiusd.conf"
+    log:
+      path: "/var/log/radius/radius.log"
+    pid:
+      path: "/var/run/radiusd/radiusd.pid"
+  user_files:
+    config:
+      path: "$HOME/.raddb/radiusd.conf"
+  dirs:
+    config:
+      path: "/etc/raddb"
+    log:
+      path: "/var/log/radius"
+    data:
+      path: "/var/lib/radiusd"
+  user_dirs:
+    config:
+      path: "$HOME/.raddb"
+  ports:
+    main:
+      port: '1812'
+      protocol: tcp

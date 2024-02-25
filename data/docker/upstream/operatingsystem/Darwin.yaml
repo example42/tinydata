@@ -3,3 +3,10 @@ docker::settings:
   package_name: docker
   service_name: com.docker.vmnetd
 
+
+# Version 4 format
+  packages:
+    main:
+      name: docker
+  services:
+    com.docker.vmnetd: {}

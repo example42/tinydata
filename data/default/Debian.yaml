@@ -9,3 +9,10 @@ default::settings:
       package_provider: dpkg
   image:
     dockerfile_prerequisites: 'RUN apt-get update && apt-get install -y --force-yes --no-install-recommends wget'
+# Version 4 format
+  image:
+    dockerfile_prerequisites: RUN apt-get update && apt-get install -y --force-yes --no-install-recommends
+      wget
+  repo:
+    upstream:
+      package_provider: dpkg

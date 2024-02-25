@@ -29,3 +29,11 @@ serf::settings:
     'rtt': 'Estimates network round trip time between nodes'
     'tags': 'Modify tags of a running Serf agent'
     'version': 'Prints the Serf version'
+# Version 4 format
+  packages:
+    main:
+      name: serf
+  services:
+    ! '':
+      process_name: serf
+  repo: upstream

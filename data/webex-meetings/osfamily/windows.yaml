@@ -3,3 +3,13 @@ webex-meetings::settings:
   winget_package_name: 'Cisco.CiscoWebexMeetings'
   choco_package_name: 'webex-meetings'
   package_name: 'webex-meetings'
+
+# Version 4 format
+  packages:
+    main:
+      name: webex-meetings
+      providers:
+        winget:
+          name: Cisco.CiscoWebexMeetings
+        choco:
+          name: webex-meetings

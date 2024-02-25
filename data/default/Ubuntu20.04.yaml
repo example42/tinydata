@@ -6,3 +6,9 @@ default::settings:
     default:
       apt:
         release: 'focal'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: focal

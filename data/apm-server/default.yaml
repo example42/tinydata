@@ -14,3 +14,37 @@ apm-server::settings:
   process_name: 'apm-server'
   version_command: 'apm-server version'
   docker_image: 'elastic/apm-server'
+
+# Version 4 format
+  packages:
+    main:
+      name: apm-server
+  services:
+    apm-server:
+      process_name: apm-server
+  files:
+    config:
+      path: "/etc/apm-server/apm-server.yml"
+      format: yaml
+    log:
+      path: "/var/log/apm-server/apm-server"
+    pid:
+      path: "/var/run/apm-server.pid"
+  user_files:
+    config:
+      path: "$HOME/.apm-server/apm-server.yml"
+  dirs:
+    config:
+      path: "/etc/apm-server"
+    log:
+      path: "/var/log/apm-server"
+    home:
+      path: "/usr/share/apm-server"
+    data:
+      path: "/var/lib/apm-server"
+  user_dirs:
+    config:
+      path: "$HOME/.apm-server"
+  image:
+    name: elastic/apm-server
+  repo: upstream

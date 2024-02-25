@@ -16,3 +16,40 @@ elasticsearch::settings:
   process_group: 'elasticsearch'
   tcp_port: '9200'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: elasticsearch
+  services:
+    elasticsearch:
+      process_name: java
+      process_extra_name: elasticsearch
+      process_user: elasticsearch
+      process_group: elasticsearch
+  files:
+    config:
+      path: "/etc/elasticsearch/elasticsearch.yml"
+      format: yaml
+    log:
+      path: "/var/log/elasticsearch/elasticsearch.log"
+    pid:
+      path: "/var/run/elasticsearch.pid"
+  user_files:
+    config:
+      path: "$HOME/.elasticsearch/elasticsearch.yml"
+  dirs:
+    config:
+      path: "/etc/elasticsearch"
+    log:
+      path: "/var/log/elasticsearch"
+    data:
+      path: "/var/lib/elasticsearch"
+  user_dirs:
+    config:
+      path: "$HOME/.elasticsearch"
+  ports:
+    main:
+      port: '9200'
+      protocol: tcp
+  repo: upstream

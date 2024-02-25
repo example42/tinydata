@@ -12,3 +12,37 @@ test::settings:
   process_user: 'test'
   process_group: 'test'
   tcp_port: '6379'
+
+# Version 4 format
+  packages:
+    main:
+      name: ''
+  services:
+    '':
+      process_name: test
+      process_user: test
+      process_group: test
+  files:
+    config:
+      path: "/etc/test/test.conf"
+    log:
+      path: "/var/log/test/test.log"
+    pid:
+      path: "/var/run/test.pid"
+  user_files:
+    config:
+      path: "$HOME/.test/test.conf"
+  dirs:
+    config:
+      path: "/etc/test"
+    conf:
+      path: "/etc/test/conf.d"
+    log:
+      path: "/var/log/test"
+  user_dirs:
+    config:
+      path: "$HOME/.test"
+  ports:
+    main:
+      port: '6379'
+      protocol: tcp

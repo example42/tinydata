@@ -6,3 +6,23 @@ vsftpd::settings:
   data_dir_path: '/srv/ftp'
   log_file_path: '/var/log/vsftpd.log'
   init_file_path: '/etc/default/vsftpd'
+
+# Version 4 format
+  services:
+    ! '':
+      process_user: root
+  files:
+    config:
+      path: "/etc/vsftpd.conf"
+    log:
+      path: "/var/log/vsftpd.log"
+    init:
+      path: "/etc/default/vsftpd"
+    pid:
+      path: "/var/run/vsftpd/vsftpd.pid"
+  user_files:
+    config:
+      path: "$HOME/.vsftpd.conf"
+  dirs:
+    data:
+      path: "/srv/ftp"

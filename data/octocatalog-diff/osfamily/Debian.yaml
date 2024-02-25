@@ -3,3 +3,9 @@ octocatalog-diff::settings:
   package_prerequisites:
     - cmake
     - pkgconf
+
+# Version 4 format
+  preinstall:
+    package:
+    - cmake
+    - pkgconf

@@ -2,3 +2,9 @@
 scikit-learn::settings:
   package_name: 'scikit-learn'
   package_provider: 'pip'
+
+# Version 4 format
+  packages:
+    main:
+      name: scikit-learn
+      provider: pip

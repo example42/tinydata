@@ -24,3 +24,40 @@ puppetserver::settings:
     - '/var/log/puppetlabs/puppetserver/file-sync-access.log'
   tp_prerequisites:
     puppet_repo: {}
+# Version 4 format
+  packages:
+    main:
+      name: puppetserver
+  services:
+    puppetserver:
+      process_name: puppet
+      process_user: puppet
+      process_group: puppet
+      nodaemon_args: foreground
+  files:
+    config:
+      path: "/etc/puppetlabs/puppetserver/puppetserver.conf"
+    log:
+      path:
+      - "/var/log/puppetlabs/puppetserver/puppetserver.log"
+      - "/var/log/puppetlabs/puppetserver/masterhttp.log"
+      - "/var/log/puppetlabs/puppetserver/puppetserver-access.log"
+      - "/var/log/puppetlabs/puppetserver/file-sync-access.log"
+    pid:
+      path: "/var/run/puppetlabs/puppetserver/puppetserver.pid"
+  user_files:
+    config:
+      path: "$HOME/.puppetlabs/puppetserver/puppetserver.conf"
+  dirs:
+    config:
+      path: "/etc/puppetlabs/puppetserver"
+    conf:
+      path: "/etc/puppetlabs/puppetserver/conf.d"
+    log:
+      path: "/var/log/puppetlabs/puppetserver"
+  user_dirs:
+    config:
+      path: "$HOME/.puppetlabs/puppetserver"
+  preinstall:
+    tp::install:
+      puppet_repo: {}

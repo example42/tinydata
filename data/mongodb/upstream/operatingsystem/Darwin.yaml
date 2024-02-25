@@ -4,3 +4,19 @@ mongodb::settings:
   service_name: 'mongodb-community@4.4'
   brew_tap: 'mongodb/brew'
   config_file_path: '/usr/local/etc/mongod.conf'
+
+# Version 4 format
+  packages:
+    main:
+      name: mongodb-community@4.4
+  services:
+    mongodb-community@4.4: {}
+  files:
+    config:
+      path: "/usr/local/etc/mongod.conf"
+  user_files:
+    config:
+      path: "/usr/local$HOME/.mongod.conf"
+  repo:
+    upstream:
+      brew_tap: mongodb/brew

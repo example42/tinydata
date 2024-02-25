@@ -2,3 +2,12 @@
 powershell::settings:
   winget_package_name: 'Microsoft.PowerShell'
   choco_package_name: 'powershell'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        winget:
+          name: Microsoft.PowerShell
+        choco:
+          name: powershell

@@ -4,3 +4,4 @@ sample::settings:
   files:
     init:
       path: '/etc/default/sample'
+# No data to convert to Version 4 format

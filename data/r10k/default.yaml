@@ -5,3 +5,18 @@ r10k::settings:
   config_file_path: '/etc/r10k.yaml'
   tp_prerequisites:
     - ruby
+
+# Version 4 format
+  packages:
+    main:
+      name: r10k
+      provider: gem
+  files:
+    config:
+      path: "/etc/r10k.yaml"
+  user_files:
+    config:
+      path: "$HOME/.r10k.yaml"
+  preinstall:
+    tp::install:
+    - ruby

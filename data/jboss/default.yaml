@@ -12,3 +12,37 @@ jboss::settings:
   process_user: 'jboss'
   process_group: 'jboss'
   tcp_port: '8080'
+
+# Version 4 format
+  packages:
+    main:
+      name: jboss
+  services:
+    jboss:
+      process_name: jboss
+      process_user: jboss
+      process_group: jboss
+  files:
+    config:
+      path: "/etc/jboss/jboss.conf"
+    log:
+      path: "/var/log/jboss/jboss.log"
+    pid:
+      path: "/var/run/jboss.pid"
+  user_files:
+    config:
+      path: "$HOME/.jboss/jboss.conf"
+  dirs:
+    config:
+      path: "/etc/jboss"
+    conf:
+      path: "/etc/jboss/conf.d"
+    log:
+      path: "/var/log/jboss"
+  user_dirs:
+    config:
+      path: "$HOME/.jboss"
+  ports:
+    main:
+      port: '8080'
+      protocol: tcp

@@ -2,3 +2,8 @@
 fabric::settings:
   package_prerequisites:
     - python-dev
+
+# Version 4 format
+  preinstall:
+    package:
+    - python-dev

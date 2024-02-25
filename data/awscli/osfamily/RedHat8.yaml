@@ -1,3 +1,8 @@
 ---
 awscli::settings:
   package_provider: 'pip3'
+
+# Version 4 format
+  packages:
+    main:
+      provider: pip3

@@ -3,3 +3,11 @@ nux::settings:
   repo_package_name: 'nux-dextop-release'
   tp_prerequisites:
     - epel
+
+# Version 4 format
+  repo:
+    upstream:
+      package_name: nux-dextop-release
+  preinstall:
+    tp::install:
+    - epel

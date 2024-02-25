@@ -1,3 +1,8 @@
 ---
 openjdk-jre::settings:
   package_name: 'openjdk-6-jre-headless'
+
+# Version 4 format
+  packages:
+    main:
+      name: openjdk-6-jre-headless

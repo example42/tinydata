@@ -15,3 +15,33 @@ fail2ban::settings:
   process_name: 'fail2ban-server'
   process_user: 'fail2ban'
   process_group: 'fail2ban'
+
+# Version 4 format
+  packages:
+    main:
+      name: fail2ban
+  services:
+    fail2ban:
+      process_name: fail2ban-server
+      process_user: fail2ban
+      process_group: fail2ban
+  files:
+    config:
+      path: "/etc/fail2ban/fail2ban.local"
+    log:
+      path: "/var/log/fail2ban/fail2ban.log"
+    init:
+      path: "/etc/sysconfig/fail2ban"
+    pid:
+      path: "/var/run/fail2ban.pid"
+  user_files:
+    config:
+      path: "$HOME/.fail2ban/fail2ban.local"
+  dirs:
+    config:
+      path: "/etc/fail2ban"
+    log:
+      path: "/var/log/fail2ban"
+  user_dirs:
+    config:
+      path: "$HOME/.fail2ban"

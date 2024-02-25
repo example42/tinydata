@@ -13,3 +13,37 @@ mariadb::settings:
   process_user: 'mysql'
   process_group: 'mysql'
   tcp_port: '3306'
+
+# Version 4 format
+  packages:
+    main:
+      name: mariadb
+  services:
+    mariadb:
+      process_name: mysqld
+      process_user: mysql
+      process_group: mysql
+  files:
+    config:
+      path: "/etc/my.cnf"
+    log:
+      path: "/var/log/mariadb/mariadb.log"
+    pid:
+      path: "/var/run/mariadb.pid"
+  user_files:
+    config:
+      path: "$HOME/.my.cnf"
+  dirs:
+    config:
+      path: "/etc/my.cnf.d"
+    log:
+      path: "/var/log/mariadb"
+    data:
+      path: "/var/lib/mysql"
+  user_dirs:
+    config:
+      path: "$HOME/.my.cnf.d"
+  ports:
+    main:
+      port: '3306'
+      protocol: tcp

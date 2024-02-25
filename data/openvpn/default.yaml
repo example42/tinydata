@@ -11,3 +11,35 @@ openvpn::settings:
   process_user: 'openvpn'
   process_group: 'openvpn'
   tcp_port: '1194'
+
+# Version 4 format
+  packages:
+    main:
+      name: openvpn
+  services:
+    openvpn:
+      process_name: openvpn
+      process_user: openvpn
+      process_group: openvpn
+  files:
+    config:
+      path: "/etc/openvpn/openvpn.conf"
+    log:
+      path: "/var/log/openvpn/openvpn.log"
+    pid:
+      path: "/var/run/openvpn.pid"
+  user_files:
+    config:
+      path: "$HOME/.openvpn/openvpn.conf"
+  dirs:
+    config:
+      path: "/etc/openvpn"
+    log:
+      path: "/var/log/openvpn"
+  user_dirs:
+    config:
+      path: "$HOME/.openvpn"
+  ports:
+    main:
+      port: '1194'
+      protocol: tcp

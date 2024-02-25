@@ -3,3 +3,19 @@ php::settings:
   config_file_path: '/etc/php.ini'
   config_dir_path: '/etc/php.d'
   conf_dir_path: '/etc/php.d'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/php.ini"
+  user_files:
+    config:
+      path: "$HOME/.php.ini"
+  dirs:
+    config:
+      path: "/etc/php.d"
+    conf:
+      path: "/etc/php.d"
+  user_dirs:
+    config:
+      path: "$HOME/.php.d"

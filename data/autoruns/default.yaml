@@ -2,3 +2,10 @@
 autoruns::settings:
   package_name: ''
   website_url: 'https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns'
+
+# Version 4 format
+  packages:
+    main:
+      name: ''
+  urls:
+    website: https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns

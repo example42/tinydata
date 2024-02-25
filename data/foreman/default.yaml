@@ -19,3 +19,42 @@ foreman::settings:
       command: 'foreman-installer -l warning'
       creates: '/etc/foreman/settings.yaml'
       logoutput: true
+
+# Version 4 format
+  packages:
+    main:
+      name: foreman-installer
+  services:
+    foreman:
+      process_user: foreman
+      process_group: foreman
+  files:
+    config:
+      path: "/etc/foreman/config.yml"
+    log:
+      path:
+      - "/var/log/foreman/production.log"
+      - "/var/log/foreman/error.log"
+    pid:
+      path: "/var/run/foreman/foreman.pid"
+  user_files:
+    config:
+      path: "$HOME/.foreman/config.yml"
+  dirs:
+    config:
+      path: "/etc/foreman"
+    log:
+      path: "/var/log/foreman"
+  user_dirs:
+    config:
+      path: "$HOME/.foreman"
+  preinstall:
+    tp::install:
+    - puppet-agent
+    - puppetserver
+  postinstall:
+    exec:
+      foreman_installer:
+        command: foreman-installer -l warning
+        creates: "/etc/foreman/settings.yaml"
+        logoutput: true

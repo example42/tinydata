@@ -15,3 +15,34 @@ openssh::settings:
   validate_cmd: 'sshd -t -f %'
   version_command: 'ssh -V'
   config_file_format: 'inifile'
+# Version 4 format
+  packages:
+    main:
+      name: openssh-server
+  services:
+    ssh:
+      process_name: sshd
+      process_user: root
+      process_group: root
+      nodaemon_args: "-D"
+  files:
+    config:
+      path: "/etc/ssh/sshd_config"
+      format: inifile
+    log:
+      path: "/var/log/messages"
+    pid:
+      path: "/var/run/sshd.pid"
+  user_files:
+    config:
+      path: "$HOME/.ssh/sshd_config"
+  dirs:
+    config:
+      path: "/etc/ssh"
+  user_dirs:
+    config:
+      path: "$HOME/.ssh"
+  ports:
+    main:
+      port: '22'
+      protocol: tcp

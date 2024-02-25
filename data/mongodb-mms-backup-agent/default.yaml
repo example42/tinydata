@@ -10,3 +10,31 @@ mongodb-mms-backup-agent::settings:
   process_name: 'mongodb-mms-backup-agent'
   process_user: 'mongodb-mms-agent'
   process_group: 'mongodb-mms-agent'
+
+# Version 4 format
+  packages:
+    main:
+      name: mongodb-mms-backup-agent
+  services:
+    mongodb-mms-backup-agent:
+      process_name: mongodb-mms-backup-agent
+      process_user: mongodb-mms-agent
+      process_group: mongodb-mms-agent
+  files:
+    config:
+      path: "/etc/mongodb-mms/backup-agent.config"
+    log:
+      path: "/var/log/mongodb-mms/backup-agent.log"
+    pid:
+      path: "/var/run/mongodb-mms-backup-agent.pid"
+  user_files:
+    config:
+      path: "$HOME/.mongodb-mms/backup-agent.config"
+  dirs:
+    config:
+      path: "/etc/mongodb-mms"
+    log:
+      path: "/var/log/mongodb-mms"
+  user_dirs:
+    config:
+      path: "$HOME/.mongodb-mms"

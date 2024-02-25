@@ -9,3 +9,31 @@ vault-enterprise::settings:
   data_dir_path: '/opt/vault'
   config_file_format: 'hcl'
   tcp_port: 8200
+
+# Version 4 format
+  packages:
+    main:
+      name: vault-enterprise
+  services:
+    vault:
+      process_name: vault
+  files:
+    config:
+      path: "/etc/vault.d/vault.hcl"
+      format: hcl
+  user_files:
+    config:
+      path: "$HOME/.vault.d/vault.hcl"
+  dirs:
+    config:
+      path: "/etc/vault.d"
+    data:
+      path: "/opt/vault"
+  user_dirs:
+    config:
+      path: "$HOME/.vault.d"
+  ports:
+    main:
+      port: 8200
+      protocol: tcp
+  repo: upstream

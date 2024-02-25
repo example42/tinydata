@@ -6,3 +6,26 @@ munin::settings:
   conf_dir_path: '/etc/munin/munin.d'
   log_file_path: '/var/log/munin/munin.log'
   log_dir_path: '/var/log/munin'
+
+# Version 4 format
+  packages:
+    main:
+      name: munin
+  files:
+    config:
+      path: "/etc/munin/munin.conf"
+    log:
+      path: "/var/log/munin/munin.log"
+  user_files:
+    config:
+      path: "$HOME/.munin/munin.conf"
+  dirs:
+    config:
+      path: "/etc/munin"
+    conf:
+      path: "/etc/munin/munin.d"
+    log:
+      path: "/var/log/munin"
+  user_dirs:
+    config:
+      path: "$HOME/.munin"

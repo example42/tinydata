@@ -4,3 +4,19 @@ zeek::settings:
   config_file_path: '/etc/sysconfig/zeek'
   key: '2C52609D'
   key_url: 'http://yum.zeekproject.org/gpg'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/sysconfig/zeek"
+    init:
+      path: "/etc/sysconfig/zeek"
+  user_files:
+    config:
+      path: "$HOME/.sysconfig/zeek"
+  repo:
+    upstream:
+      key: 2C52609D
+      key_url: http://yum.zeekproject.org/gpg
+      yum:
+        gpgcheck: true

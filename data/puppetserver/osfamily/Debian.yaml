@@ -1,3 +1,8 @@
 ---
 puppetserver::settings:
   init_file_path: '/etc/default/puppetserver'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/puppetserver"

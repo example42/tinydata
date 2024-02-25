@@ -117,3 +117,7 @@ mgmt::settings:
       resources: {}
       manage_service: false
       manage_user: false
+
+# Version 4 format
+  preinstall:
+    tp::install: {}

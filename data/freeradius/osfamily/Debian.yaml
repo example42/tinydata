@@ -13,3 +13,32 @@ freeradius::settings:
   data_dir_path: '/var/lib/freeradius'
   log_file_path: '/var/log/freeradius/radius.log'
   log_dir_path: '/var/log/freeradius'
+
+# Version 4 format
+  services:
+    freeradius:
+      process_name: freeradius
+      process_user: freerad
+      process_group: freerad
+  files:
+    config:
+      path: "/etc/freeradius/radiusd.conf"
+    log:
+      path: "/var/log/freeradius/radius.log"
+    init:
+      path: "/etc/default/freeradius"
+    pid:
+      path: "/var/run/freeradius/freeradius.pid"
+  user_files:
+    config:
+      path: "$HOME/.freeradius/radiusd.conf"
+  dirs:
+    config:
+      path: "/etc/freeradius"
+    log:
+      path: "/var/log/freeradius"
+    data:
+      path: "/var/lib/freeradius"
+  user_dirs:
+    config:
+      path: "$HOME/.freeradius"

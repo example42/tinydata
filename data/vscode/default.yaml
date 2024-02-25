@@ -9,3 +9,19 @@ vscode::settings:
   user_config_dir_path: '$HOME/.config/Code/User/'
   tp_prerequisites:
     - 'microsoft_repo'
+
+# Version 4 format
+  packages:
+    main:
+      name: vscode
+  files:
+    config:
+      format: json
+  urls:
+    website: https://code.visualstudio.com/
+    source: https://github.com/microsoft/vscode
+  image:
+    name: bitnami/vscode
+  preinstall:
+    tp::install:
+    - microsoft_repo

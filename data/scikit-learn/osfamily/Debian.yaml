@@ -5,3 +5,12 @@ scikit-learn::settings:
     - 'python3-sklearn-lib'
     - 'python3-sklearn-doc'
   package_provider: 'apt'
+
+# Version 4 format
+  packages:
+    main:
+      name:
+      - python3-sklearn
+      - python3-sklearn-lib
+      - python3-sklearn-doc
+      provider: apt

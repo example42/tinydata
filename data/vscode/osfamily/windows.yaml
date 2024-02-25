@@ -5,3 +5,12 @@ vscode::settings:
   user_config_file_path: '%APPDATA%\Code\User\settings.json'
   user_config_dir_path: '%APPDATA%\Code\User'
 
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        winget:
+          name: Microsoft.VisualStudioCode
+        choco:
+          name: vscode

@@ -1,3 +1,8 @@
 ---
 elrepo::settings:
   repo_package_name: 'elrepo-release'
+
+# Version 4 format
+  repo:
+    upstream:
+      package_name: elrepo-release

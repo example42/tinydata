@@ -3,3 +3,14 @@ duply::settings:
   package_name: 'duply'
   config_dir_path: '/etc/duply'
   config_dir_mode: '0600'
+
+# Version 4 format
+  packages:
+    main:
+      name: duply
+  dirs:
+    config:
+      path: "/etc/duply"
+  user_dirs:
+    config:
+      path: "$HOME/.duply"

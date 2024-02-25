@@ -5,3 +5,20 @@ ssmtp::settings:
   config_file_group: 'mail'
   config_file_mode: '0640'
   config_dir_path: '/etc/ssmtp'
+
+# Version 4 format
+  packages:
+    main:
+      name: ssmtp
+  files:
+    config:
+      path: "/etc/ssmtp/ssmtp.conf"
+  user_files:
+    config:
+      path: "$HOME/.ssmtp/ssmtp.conf"
+  dirs:
+    config:
+      path: "/etc/ssmtp"
+  user_dirs:
+    config:
+      path: "$HOME/.ssmtp"

@@ -11,3 +11,35 @@ rabbitmq::settings:
   process_user: 'rabbitmq'
   process_group: 'rabbitmq'
   tcp_port: '5672'
+
+# Version 4 format
+  packages:
+    main:
+      name: rabbitmq
+  services:
+    rabbitmq:
+      process_name: rabbitmq
+      process_user: rabbitmq
+      process_group: rabbitmq
+  files:
+    config:
+      path: "/etc/rabbitmq/rabbitmq.config"
+    log:
+      path: "/var/log/rabbitmq/rabbitmq.log"
+    pid:
+      path: "/var/run/rabbitmq.pid"
+  user_files:
+    config:
+      path: "$HOME/.rabbitmq/rabbitmq.config"
+  dirs:
+    config:
+      path: "/etc/rabbitmq"
+    log:
+      path: "/var/log/rabbitmq"
+  user_dirs:
+    config:
+      path: "$HOME/.rabbitmq"
+  ports:
+    main:
+      port: '5672'
+      protocol: tcp

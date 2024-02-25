@@ -9,3 +9,15 @@ oh-my-zsh::settings:
     - curl
     - git
     - zsh
+
+# Version 4 format
+  preinstall:
+    exec:
+      oh-my-zsh-install:
+        command: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        creates: "~/.oh-my-zsh"
+        provider: shell
+    package:
+    - curl
+    - git
+    - zsh

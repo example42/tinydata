@@ -1,3 +1,8 @@
 ---
 firewalld::settings:
   init_file_path: '/etc/default/firewalld'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/firewalld"

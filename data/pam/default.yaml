@@ -4,3 +4,22 @@ pam::settings:
   config_file_path: '/etc/pam.conf'
   config_dir_path: '/etc/pam.d'
   conf_dir_path: '/etc/pam.d'
+
+# Version 4 format
+  packages:
+    main:
+      name: pam
+  files:
+    config:
+      path: "/etc/pam.conf"
+  user_files:
+    config:
+      path: "$HOME/.pam.conf"
+  dirs:
+    config:
+      path: "/etc/pam.d"
+    conf:
+      path: "/etc/pam.d"
+  user_dirs:
+    config:
+      path: "$HOME/.pam.d"

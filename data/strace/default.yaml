@@ -1,3 +1,8 @@
 ---
 strace::settings:
   package_name: 'strace'
+
+# Version 4 format
+  packages:
+    main:
+      name: strace

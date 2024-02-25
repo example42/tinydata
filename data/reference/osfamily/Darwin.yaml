@@ -10,3 +10,13 @@ reference::settings:
   # If set, the string used is the title of a package resource installed via
   # the tap provider.
   brew_tap: 'reference/reference'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        brew:
+          name: reference
+  repo:
+    upstream:
+      brew_tap: reference/reference

@@ -5,3 +5,24 @@ squid::settings:
   config_file_path: '/etc/squid3/squid.conf'
   config_dir_path: '/etc/squid3'
   pid_file_path: '/var/run/squid3.pid'
+
+# Version 4 format
+  packages:
+    main:
+      name: squid3
+  services:
+    squid3: {}
+  files:
+    config:
+      path: "/etc/squid3/squid.conf"
+    pid:
+      path: "/var/run/squid3.pid"
+  user_files:
+    config:
+      path: "$HOME/.squid3/squid.conf"
+  dirs:
+    config:
+      path: "/etc/squid3"
+  user_dirs:
+    config:
+      path: "$HOME/.squid3"

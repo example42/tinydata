@@ -2,3 +2,8 @@
 mongodb::settings:
   zypper_repofile_url: 'https://repo.mongodb.org/zypper/suse/15/mongodb-org/4.4/x86_64/'
   repo_name: 'mongodb'
+# Version 4 format
+  repo:
+    upstream:
+      name: mongodb
+      zypper_repofile_url: https://repo.mongodb.org/zypper/suse/15/mongodb-org/4.4/x86_64/

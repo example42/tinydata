@@ -2,3 +2,15 @@
 nfs-server::settings:
   config_file_path: '/etc/exports'
   tcp_port: '2049'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/exports"
+  user_files:
+    config:
+      path: "$HOME/.exports"
+  ports:
+    main:
+      port: '2049'
+      protocol: tcp

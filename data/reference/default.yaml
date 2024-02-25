@@ -815,3 +815,65 @@ reference::settings:
     # The git repository of the application. Maps to v3 git_source
     source: ~
 
+
+# Version 4 format
+  packages:
+    main:
+      name: reference
+  services:
+    reference:
+      process_name: reference
+      process_user: root
+      process_group: root
+      nodaemon_args: "-D"
+  files:
+    config:
+      path: "/etc/reference/reference.conf"
+      format: yaml
+    log:
+      path:
+      - "/var/log/reference/reference.log"
+    init:
+      path: "/etc/sysconfig/reference.conf"
+    pid:
+      path: "/run/reference.pid"
+  user_files:
+    config:
+      path: "$HOME/.reference/reference.conf"
+  dirs:
+    config:
+      path: "/etc/reference"
+    log:
+      path:
+      - "/var/log/reference"
+    home:
+      path: "/var/lib/reference"
+    data:
+      path: "/var/lib/reference"
+  user_dirs:
+    config:
+      path: "$HOME/.reference"
+  ports:
+    main:
+      port: 42
+      protocol: tcp
+    main_udp:
+      port: 42
+      protocol: udp
+  image:
+    name: reference/reference
+    dockerfile_prerequisites: RUN apt-get update && apt-get install -y --force-yes --no-install-recommends
+      wget
+  repo:
+    upstream:
+      package_name: reference-release
+      package_params: {}
+      repofile_name: reference
+      yum:
+        params: {}
+  preinstall:
+    tp::install: []
+    exec: {}
+    package: []
+  postinstall:
+    extra: {}

@@ -6,3 +6,12 @@ pytorch::settings:
     - 'torchaudio'
   package_provider: 'pip'
 
+
+# Version 4 format
+  packages:
+    main:
+      name:
+      - torch
+      - torchvision
+      - torchaudio
+      provider: pip

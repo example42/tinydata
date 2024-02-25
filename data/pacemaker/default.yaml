@@ -8,3 +8,21 @@ pacemaker::settings:
   process_name: 'pacemakerd'
   process_user: 'pacemaker'
   process_group: 'pacemaker'
+
+# Version 4 format
+  packages:
+    main:
+      name: pacemaker
+  services:
+    pacemaker:
+      process_name: pacemakerd
+      process_user: pacemaker
+      process_group: pacemaker
+  files:
+    log:
+      path: "/var/log/pacemaker/pacemaker.log"
+    pid:
+      path: "/var/run/pacemaker.pid"
+  dirs:
+    log:
+      path: "/var/log/pacemaker"

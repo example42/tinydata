@@ -2,3 +2,12 @@
 libreoffice::settings:
   winget_package_name: 'TheDocumentFoundation.LibreOffice'
   choco_package_name: 'libreoffice'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        winget:
+          name: TheDocumentFoundation.LibreOffice
+        choco:
+          name: libreoffice

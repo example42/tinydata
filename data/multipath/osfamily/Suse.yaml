@@ -2,3 +2,9 @@
 multipath::settings:
   package_name: 'multipath-tools'
   service_name: 'multipath-tools'
+# Version 4 format
+  packages:
+    main:
+      name: multipath-tools
+  services:
+    multipath-tools: {}

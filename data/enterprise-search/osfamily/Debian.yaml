@@ -1,3 +1,8 @@
 ---
 enterprise-search::settings:
   init_file_path: '/etc/default/enterprise-search'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/enterprise-search"

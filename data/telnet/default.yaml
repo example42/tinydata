@@ -1,3 +1,8 @@
 ---
 telnet::settings:
   package_name: 'telnet'
+
+# Version 4 format
+  packages:
+    main:
+      name: telnet

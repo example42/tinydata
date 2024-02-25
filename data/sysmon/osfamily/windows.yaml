@@ -2,3 +2,10 @@
 sysmon::settings:
   choco_package_name: 'sysmon'
   package_name: 'sysmon'
+# Version 4 format
+  packages:
+    main:
+      name: sysmon
+      providers:
+        choco:
+          name: sysmon

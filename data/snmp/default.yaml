@@ -177,3 +177,37 @@ snmp::settings:
       resources: {}
       manage_service: false
       manage_user: false
+
+# Version 4 format
+  packages:
+    main:
+      name: snmpd
+  services:
+    snmpd:
+      process_name: snmpd
+      process_user: snmpd
+      process_group: snmpd
+  files:
+    config:
+      path: "/etc/snmp/snmpd.conf"
+    log:
+      path: "/var/log/snmpd/snmpd.log"
+    pid:
+      path: "/var/run/snmpd.pid"
+  user_files:
+    config:
+      path: "$HOME/.snmp/snmpd.conf"
+  dirs:
+    config:
+      path: "/etc/snmp"
+    log:
+      path: "/var/log/snmpd"
+  user_dirs:
+    config:
+      path: "$HOME/.snmp"
+  ports:
+    main_udp:
+      port: '161'
+      protocol: udp
+  preinstall:
+    tp::install: {}

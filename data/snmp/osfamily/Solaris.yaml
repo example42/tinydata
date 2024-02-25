@@ -6,3 +6,22 @@ snmp::settings:
   config_file_mode: '0444'
   config_file_group: 'bin'
   config_dir_path: '/etc/net-snmp/snmp'
+
+# Version 4 format
+  packages:
+    main:
+      name: net-snmp
+  services:
+    net-snmp: {}
+  files:
+    config:
+      path: "/etc/net-snmp/snmp/snmpd.conf"
+  user_files:
+    config:
+      path: "$HOME/.net-snmp/snmp/snmpd.conf"
+  dirs:
+    config:
+      path: "/etc/net-snmp/snmp"
+  user_dirs:
+    config:
+      path: "$HOME/.net-snmp/snmp"

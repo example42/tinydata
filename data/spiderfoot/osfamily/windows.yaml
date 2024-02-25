@@ -11,3 +11,10 @@ spiderfoot::settings:
         mode: '0755'
     manage_service: false
     manage_user: false
+# Version 4 format
+  packages:
+    main:
+      name: spiderfoot
+      providers:
+        choco:
+          name: spiderfoot

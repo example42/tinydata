@@ -19,3 +19,39 @@ activemq::settings:
   test_commands:
     status: 'activemq status'
   docker_image: 'apache/activemq'
+
+# Version 4 format
+  packages:
+    main:
+      name: activemq
+  services:
+    activemq:
+      process_name: java
+      process_extra_name: activemq
+      process_user: activemq
+      process_group: activemq
+  files:
+    config:
+      path: "/etc/activemq/activemq.xml"
+    log:
+      path: "/var/log/activemq"
+    pid:
+      path: "/var/run/activemq/activemq.pid"
+  user_files:
+    config:
+      path: "$HOME/.activemq/activemq.xml"
+  dirs:
+    config:
+      path: "/etc/activemq"
+  user_dirs:
+    config:
+      path: "$HOME/.activemq"
+  ports:
+    main:
+      port: '8161'
+      protocol: tcp
+  urls:
+    website: https://activemq.apache.org/
+    source: https://github.com/apache/activemq
+  image:
+    name: apache/activemq

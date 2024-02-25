@@ -1,3 +1,8 @@
 ---
 influxdb::settings:
   init_file_path: '/etc/sysconfig/influxdb'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/influxdb"

@@ -13,3 +13,18 @@ python-pip::settings:
     cache_info: 'pip cache info'
     check: 'pip check'
     config_debug: 'pip config debug'
+
+# Version 4 format
+  packages:
+    main:
+      name: python-pip
+  files:
+    config:
+      path: "/etc/pip.conf"
+      format: inifile_with_stanzas
+  user_files:
+    config:
+      path: "$HOME/.pip.conf"
+  urls:
+    website: https://pypi.org/project/pip/
+    source: https://github.com/pypa/pip

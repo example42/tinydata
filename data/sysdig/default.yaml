@@ -2,3 +2,9 @@
 sysdig::settings:
   upstream_repo: true
   package_name: 'sysdig'
+
+# Version 4 format
+  packages:
+    main:
+      name: sysdig
+  repo: upstream

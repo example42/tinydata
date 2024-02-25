@@ -1,3 +1,8 @@
 ---
 haveged::settings:
   package_name: 'haveged'
+
+# Version 4 format
+  packages:
+    main:
+      name: haveged

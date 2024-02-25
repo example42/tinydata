@@ -7,3 +7,18 @@ foreman::settings:
   apt_repos: '1.14'
   package_prerequisites:
     - ca-certificates
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/foreman"
+  repo:
+    upstream:
+      url: http://deb.theforeman.org/
+      key: 563278F6
+      key_url: https://deb.theforeman.org/pubkey.gpg
+      yum:
+        gpgcheck: true
+  preinstall:
+    package:
+    - ca-certificates

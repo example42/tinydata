@@ -2,3 +2,10 @@
 bind-utils::settings:
   package_name: 'bind-utils'
   git_source: 'https://github.com/tigeli/bind-utils'
+
+# Version 4 format
+  packages:
+    main:
+      name: bind-utils
+  urls:
+    source: https://github.com/tigeli/bind-utils

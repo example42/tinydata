@@ -3,3 +3,12 @@ edge::settings:
   winget_package_name: 'Microsoft.Edge'
   choco_package_name: 'edge'
   package_name: 'edge'
+# Version 4 format
+  packages:
+    main:
+      name: edge
+      providers:
+        winget:
+          name: Microsoft.Edge
+        choco:
+          name: edge

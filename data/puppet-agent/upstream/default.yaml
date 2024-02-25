@@ -106,3 +106,8 @@ puppet-agent::settings:
       path: /opt/puppetlabs/puppet/vendor_modules
     yaml:
       path: /opt/puppetlabs/puppet/cache/yaml
+
+# Version 4 format
+  preinstall:
+    tp::install:
+      puppet-agent_repo: {}

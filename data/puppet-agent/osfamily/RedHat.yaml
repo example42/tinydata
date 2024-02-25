@@ -2,3 +2,10 @@
 puppet-agent::settings:
   init_file_path: '/etc/sysconfig/puppet-agent'
   dockerfile_prerequisites: 'RUN yum install -y wget which'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/puppet-agent"
+  image:
+    dockerfile_prerequisites: RUN yum install -y wget which

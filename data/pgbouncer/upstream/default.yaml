@@ -2,3 +2,11 @@
 pgbouncer::settings:
   key: 'B97B 0AFC AA1A 47F0 44F2  44A0 7FCC 7D46 ACCC 4CF8'
   key_url: 'https://www.postgresql.org/media/keys/ACCC4CF8.asc'
+
+# Version 4 format
+  repo:
+    upstream:
+      key: B97B 0AFC AA1A 47F0 44F2  44A0 7FCC 7D46 ACCC 4CF8
+      key_url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+      yum:
+        gpgcheck: true

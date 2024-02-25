@@ -4,3 +4,14 @@ obs-studio::settings:
   snap_package_name: 'obs-studio'
   website_url: 'https://obsproject.com/'
   git_source: 'https://github.com/obsproject/obs-studio.git'
+
+# Version 4 format
+  packages:
+    main:
+      name: obs-studio
+      providers:
+        snap:
+          name: obs-studio
+  urls:
+    website: https://obsproject.com/
+    source: https://github.com/obsproject/obs-studio.git

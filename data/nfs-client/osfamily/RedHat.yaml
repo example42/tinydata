@@ -2,3 +2,11 @@
 nfs-client::settings:
   package_name: 'nfs-utils'
   init_file_path: '/etc/sysconfig/nfs-common'
+
+# Version 4 format
+  packages:
+    main:
+      name: nfs-utils
+  files:
+    init:
+      path: "/etc/sysconfig/nfs-common"

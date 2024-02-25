@@ -2,3 +2,11 @@
 openvpn::settings:
   process_user: 'nobody'
   init_file_path: '/etc/default/openvpn'
+
+# Version 4 format
+  services:
+    ! '':
+      process_user: nobody
+  files:
+    init:
+      path: "/etc/default/openvpn"

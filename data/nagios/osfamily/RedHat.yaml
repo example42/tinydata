@@ -4,3 +4,8 @@ nagios::settings:
   config_file_owner: 'nagios'
   config_file_group: 'nagios'
   init_file_path: '/etc/sysconfig/nagios'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/nagios"

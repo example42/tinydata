@@ -1,3 +1,8 @@
 ---
 krateo::settings:
   package_name: krateo
+
+# Version 4 format
+  packages:
+    main:
+      name: krateo

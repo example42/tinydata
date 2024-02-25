@@ -4,3 +4,13 @@ nova::settings:
     - 'python-nova'
     - 'nova-common'
   init_file_path: '/etc/default/nova'
+
+# Version 4 format
+  packages:
+    main:
+      name:
+      - python-nova
+      - nova-common
+  files:
+    init:
+      path: "/etc/default/nova"

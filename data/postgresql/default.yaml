@@ -12,3 +12,37 @@ postgresql::settings:
   process_user: 'postgres'
   process_group: 'postgres'
   tcp_port: '5432'
+
+# Version 4 format
+  packages:
+    main:
+      name: postgresql
+  services:
+    postgresql:
+      process_name: postgres
+      process_user: postgres
+      process_group: postgres
+  files:
+    config:
+      path: "/var/lib/pgsql/data/postgresql.conf"
+    log:
+      path: "/var/lib/pgsql/data/pg_log/postgresql.log"
+    pid:
+      path: "/var/run/postgresql/.s.PGSQL.5432"
+  user_files:
+    config:
+      path: "/var/lib/pgsql/data/postgresql.conf"
+  dirs:
+    config:
+      path: "/var/lib/pgsql/data"
+    log:
+      path: "/var/lib/pgsql/data/pg_log"
+    data:
+      path: "/var/lib/pgsql/data"
+  user_dirs:
+    config:
+      path: "/var/lib/pgsql/data"
+  ports:
+    main:
+      port: '5432'
+      protocol: tcp

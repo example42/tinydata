@@ -5,3 +5,24 @@ sysfs::settings:
   config_file_path: '/etc/sysfs.conf'
   config_dir_path: '/etc/sysfs.d'
   conf_dir_path: '/etc/sysfs.d'
+
+# Version 4 format
+  packages:
+    main:
+      name: sysfsutils
+  services:
+    sysfsutils: {}
+  files:
+    config:
+      path: "/etc/sysfs.conf"
+  user_files:
+    config:
+      path: "$HOME/.sysfs.conf"
+  dirs:
+    config:
+      path: "/etc/sysfs.d"
+    conf:
+      path: "/etc/sysfs.d"
+  user_dirs:
+    config:
+      path: "$HOME/.sysfs.d"

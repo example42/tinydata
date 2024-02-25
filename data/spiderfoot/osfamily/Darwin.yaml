@@ -1,3 +1,10 @@
 ---
 spiderfoot::settings:
   brew_package_name: 'spiderfoot'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        brew:
+          name: spiderfoot

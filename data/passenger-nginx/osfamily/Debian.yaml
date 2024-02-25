@@ -5,3 +5,16 @@ passenger-nginx::settings:
   apt_repos: 'main'
   apt_key_server: 'http://keyserver.ubuntu.com'
   package_name: 'libnginx-mod-http-passenger'
+
+# Version 4 format
+  packages:
+    main:
+      name: libnginx-mod-http-passenger
+  repo:
+    upstream:
+      url: https://oss-binaries.phusionpassenger.com/apt/passenger
+      key: 561F9B9CAC40B2F7
+      yum:
+        gpgcheck: true
+      apt:
+        key_server: http://keyserver.ubuntu.com

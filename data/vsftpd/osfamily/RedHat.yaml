@@ -3,3 +3,13 @@ vsftpd::settings:
   data_dir_path: '/var/ftp/pub'
   log_file_path: '/var/log/xferlog'
   init_file_path: '/etc/sysconfig/vsftpd'
+
+# Version 4 format
+  files:
+    log:
+      path: "/var/log/xferlog"
+    init:
+      path: "/etc/sysconfig/vsftpd"
+  dirs:
+    data:
+      path: "/var/ftp/pub"

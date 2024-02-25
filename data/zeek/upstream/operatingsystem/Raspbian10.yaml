@@ -2,3 +2,9 @@
 zeek::settings:
   repo_url: 'http://download.opensuse.org/repositories/security:/zeek/Raspbian_10/'
   key_url: 'https://download.opensuse.org/repositories/security:zeek/Raspbian_10/Release.key'
+
+# Version 4 format
+  repo:
+    upstream:
+      url: http://download.opensuse.org/repositories/security:/zeek/Raspbian_10/
+      key_url: https://download.opensuse.org/repositories/security:zeek/Raspbian_10/Release.key

@@ -1,3 +1,10 @@
 ---
 vscode::settings:
   snap_package_name: 'code'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        snap:
+          name: code

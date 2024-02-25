@@ -2,3 +2,11 @@
 ceilometer::settings:
   package_name: ceilometer-common
   init_file_path: '/etc/default/ceilometer'
+
+# Version 4 format
+  packages:
+    main:
+      name: ceilometer-common
+  files:
+    init:
+      path: "/etc/default/ceilometer"

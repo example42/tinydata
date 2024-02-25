@@ -1,3 +1,5 @@
 ---
 default:settings:
   config_file_group: 'bin'
+
+# No data to convert to Version 4 format

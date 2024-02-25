@@ -8,3 +8,25 @@ apt::settings:
   config_dir_path: '/etc/apt'
   log_file_path: '/var/log/apt'
   data_dir_path: '/var/cache/apt'
+# Version 4 format
+  packages:
+    main:
+      name: apt
+  files:
+    config:
+      path: "/etc/apt/apt.conf"
+    log:
+      path: "/var/log/apt"
+  user_files:
+    config:
+      path: "$HOME/.apt/apt.conf"
+  dirs:
+    config:
+      path: "/etc/apt"
+    conf:
+      path: "/etc/apt/apt.conf.d"
+    data:
+      path: "/var/cache/apt"
+  user_dirs:
+    config:
+      path: "$HOME/.apt"

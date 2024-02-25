@@ -3,3 +3,9 @@ rails::settings:
   package_prerequisites:
     - 'ruby-devel'
     - 'zlib-devel'
+
+# Version 4 format
+  preinstall:
+    package:
+    - ruby-devel
+    - zlib-devel

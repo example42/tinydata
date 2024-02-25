@@ -12,3 +12,37 @@ dovecot::settings:
   process_user: 'dovecot'
   process_group: 'dovecot'
   tcp_port: '143'
+
+# Version 4 format
+  packages:
+    main:
+      name: dovecot
+  services:
+    dovecot:
+      process_name: dovecot
+      process_user: dovecot
+      process_group: dovecot
+  files:
+    config:
+      path: "/etc/dovecot/dovecot.conf"
+    log:
+      path: "/var/log/dovecot/dovecot.log"
+    pid:
+      path: "/var/run/dovecot.pid"
+  user_files:
+    config:
+      path: "$HOME/.dovecot/dovecot.conf"
+  dirs:
+    config:
+      path: "/etc/dovecot"
+    conf:
+      path: "/etc/dovecot/conf.d"
+    log:
+      path: "/var/log/dovecot"
+  user_dirs:
+    config:
+      path: "$HOME/.dovecot"
+  ports:
+    main:
+      port: '143'
+      protocol: tcp

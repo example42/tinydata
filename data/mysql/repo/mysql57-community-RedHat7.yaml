@@ -2,3 +2,9 @@
 mysql::settings:
   repo_package_url: 'https://dev.mysql.com/get/mysql57-community-release-el7-1.noarch.rpm'
   repo_package_name: 'mysql57-community-release-el7-1'
+
+# Version 4 format
+  repo:
+    upstream:
+      package_name: mysql57-community-release-el7-1
+      package_url: https://dev.mysql.com/get/mysql57-community-release-el7-1.noarch.rpm

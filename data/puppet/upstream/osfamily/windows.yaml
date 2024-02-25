@@ -14,3 +14,32 @@ puppet::settings:
   process_user: 'LocalSystem'
   process_group: 'LocalSystem'
   winget_package_name: 'Puppet.puppet-agent'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        winget:
+          name: Puppet.puppet-agent
+  services:
+    ! '':
+      process_user: LocalSystem
+      process_group: LocalSystem
+  files:
+    config:
+      path: C:\ProgramData\PuppetLabs\puppet\etc\puppet.conf
+    log:
+      path: C:\ProgramData\PuppetLabs\var\log\puppet.log
+    pid:
+      path: C:\ProgramData\PuppetLabs\var\run\agent.pid
+  user_files:
+    config:
+      path: C:\ProgramData\PuppetLabs\puppet\etc\puppet.conf
+  dirs:
+    config:
+      path: C:\ProgramData\PuppetLabs\puppet\etc
+    log:
+      path: C:\ProgramData\PuppetLabs\var\log
+  user_dirs:
+    config:
+      path: C:\ProgramData\PuppetLabs\puppet\etc

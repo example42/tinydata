@@ -11,3 +11,33 @@ quagga::settings:
   process_name: 'quagga'
   process_user: 'quagga'
   process_group: 'quagga'
+
+# Version 4 format
+  packages:
+    main:
+      name: quagga
+  services:
+    quagga:
+      process_name: quagga
+      process_user: quagga
+      process_group: quagga
+  files:
+    config:
+      path: "/etc/quagga/daemons"
+    log:
+      path: "/var/log/quagga/quagga.log"
+    pid:
+      path: "/var/run/quagga.pid"
+  user_files:
+    config:
+      path: "$HOME/.quagga/daemons"
+  dirs:
+    config:
+      path: "/etc/quagga"
+    conf:
+      path: "/etc/quagga/conf.d"
+    log:
+      path: "/var/log/quagga"
+  user_dirs:
+    config:
+      path: "$HOME/.quagga"

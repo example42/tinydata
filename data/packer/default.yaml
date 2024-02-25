@@ -3,3 +3,12 @@ packer::settings:
   upstream_repo: true
   package_name: 'packer'
   process_name: 'packer'
+
+# Version 4 format
+  packages:
+    main:
+      name: packer
+  services:
+    ! '':
+      process_name: packer
+  repo: upstream

@@ -2,3 +2,10 @@
 pgbouncer::settings:
   repo_url: 'http://apt.postgresql.org/pub/repos/apt'
   apt_release: 'stretch-pgdg main'
+
+# Version 4 format
+  repo:
+    upstream:
+      url: http://apt.postgresql.org/pub/repos/apt
+      apt:
+        release: stretch-pgdg main

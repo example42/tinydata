@@ -7,3 +7,26 @@ openntpd::settings:
   config_dir_path: ''
   process_user: '_ntp'
   process_group: '_ntp'
+
+# Version 4 format
+  packages:
+    main:
+      name: ''
+  services:
+    ntpd:
+      process_user: _ntp
+      process_group: _ntp
+  files:
+    config:
+      path: "/etc/ntpd.conf"
+    init:
+      path: ''
+  user_files:
+    config:
+      path: "$HOME/.ntpd.conf"
+  dirs:
+    config:
+      path: ''
+  user_dirs:
+    config:
+      path: ''

@@ -3,3 +3,20 @@ vim::settings:
   package_name: 'vim'
   config_file_path: '/etc/vim/vimrc'
   config_dir_path: '/etc/vim'
+
+# Version 4 format
+  packages:
+    main:
+      name: vim
+  files:
+    config:
+      path: "/etc/vim/vimrc"
+  user_files:
+    config:
+      path: "$HOME/.vim/vimrc"
+  dirs:
+    config:
+      path: "/etc/vim"
+  user_dirs:
+    config:
+      path: "$HOME/.vim"

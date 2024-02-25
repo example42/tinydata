@@ -9,3 +9,28 @@ zeek::settings:
   process_group: 'zeek'
   config_file_path: '/etc/zeek/daemon.json'
   config_dir_path: '/etc/zeek'
+
+# Version 4 format
+  packages:
+    main:
+      name: zeek
+  services:
+    zeek:
+      process_name: zeek
+      process_user: zeek
+      process_group: zeek
+  files:
+    config:
+      path: "/etc/zeek/daemon.json"
+    pid:
+      path: "/var/run/zeek.pid"
+  user_files:
+    config:
+      path: "$HOME/.zeek/daemon.json"
+  dirs:
+    config:
+      path: "/etc/zeek"
+  user_dirs:
+    config:
+      path: "$HOME/.zeek"
+  repo: upstream

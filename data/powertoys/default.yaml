@@ -2,3 +2,8 @@
 powertoys::settings:
   website_url: 'https://learn.microsoft.com/windows/powertoys/'
   git_source: 'https://github.com/microsoft/PowerToys.git'
+
+# Version 4 format
+  urls:
+    website: https://learn.microsoft.com/windows/powertoys/
+    source: https://github.com/microsoft/PowerToys.git

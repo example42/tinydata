@@ -5,3 +5,19 @@ supervisor::settings:
   conf_dir_path: '/etc/supervisord.d'
   process_args: '-c /etc/supervisord.conf'
   config_file_extension: 'ini'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/supervisord.conf"
+  user_files:
+    config:
+      path: "$HOME/.supervisord.conf"
+  dirs:
+    config:
+      path: "/etc/supervisord.d"
+    conf:
+      path: "/etc/supervisord.d"
+  user_dirs:
+    config:
+      path: "$HOME/.supervisord.d"

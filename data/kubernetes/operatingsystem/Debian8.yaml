@@ -1,3 +1,9 @@
 ---
 kubernetes::settings:
   apt_release: 'kubernetes-jessie'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: kubernetes-jessie

@@ -10,3 +10,27 @@ supervisor::settings:
   process_name: 'supervisord'
   nodaemon_args: '--nodaemon'
   config_file_extension: 'conf'
+
+# Version 4 format
+  packages:
+    main:
+      name: supervisor
+  services:
+    supervisor:
+      process_name: supervisord
+      nodaemon_args: "--nodaemon"
+  files:
+    log:
+      path: "/var/log/supervisor.log"
+    pid:
+      path: "/var/run/supervisor.pid"
+  dirs:
+    config:
+      path: "/etc/supervisor"
+    conf:
+      path: "/etc/supervisor/conf.d"
+    log:
+      path: "/var/log/supervisor"
+  user_dirs:
+    config:
+      path: "$HOME/.supervisor"

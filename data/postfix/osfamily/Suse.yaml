@@ -2,3 +2,5 @@
 postfix::settings:
   setgid_group: 'maildrop'
   daemon_dir_path: '/usr/lib/postfix/bin'
+
+# No data to convert to Version 4 format

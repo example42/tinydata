@@ -1,3 +1,11 @@
 ---
 motd::settings:
   config_file_path: '/etc/motd.last'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/motd.last"
+  user_files:
+    config:
+      path: "$HOME/.motd.last"

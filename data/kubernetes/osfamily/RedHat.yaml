@@ -5,3 +5,16 @@ kubernetes::settings:
   key_url: 'https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg'
   repo_filename: 'kubernetes'
   repo_description: 'Kubernetes'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/kubelet"
+  repo:
+    upstream:
+      description: Kubernetes
+      repofile_name: kubernetes
+      key: A7317B0F
+      key_url: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+      yum:
+        gpgcheck: true

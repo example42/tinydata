@@ -4,3 +4,18 @@ dhcpd::settings:
   config_dir_path: '/etc/dhcpd.d'
   conf_dir_path: '/etc/dhcpd.d'
   data_dir_path: '/var/lib/dhcp'
+
+# Version 4 format
+  packages:
+    main:
+      name: dhcp-server
+  dirs:
+    config:
+      path: "/etc/dhcpd.d"
+    conf:
+      path: "/etc/dhcpd.d"
+    data:
+      path: "/var/lib/dhcp"
+  user_dirs:
+    config:
+      path: "$HOME/.dhcpd.d"

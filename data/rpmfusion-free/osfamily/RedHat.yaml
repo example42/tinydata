@@ -3,3 +3,11 @@ rpmfusion-free::settings:
   repo_package_name: 'rpmfusion-free-release'
   tp_prerequisites:
     - epel
+
+# Version 4 format
+  repo:
+    upstream:
+      package_name: rpmfusion-free-release
+  preinstall:
+    tp::install:
+    - epel

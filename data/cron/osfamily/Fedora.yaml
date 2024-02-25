@@ -1,3 +1,8 @@
 ---
 cron::settings:
   package_name: 'cronie'
+
+# Version 4 format
+  packages:
+    main:
+      name: cronie

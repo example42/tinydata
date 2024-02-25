@@ -2,3 +2,8 @@
 openssh::settings:
   package_name: 'network/openssh'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: network/openssh

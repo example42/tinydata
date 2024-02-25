@@ -4,3 +4,4 @@ mgmt::settings:
   files:
     init:
       path: '/etc/default/mgmt'
+# No data to convert to Version 4 format

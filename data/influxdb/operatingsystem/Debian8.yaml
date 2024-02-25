@@ -1,3 +1,9 @@
 ---
 influxdb::settings:
   apt_release: 'jessie'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: jessie

@@ -5,3 +5,15 @@ edge::settings:
   website_url: 'https://learn.microsoft.com/edge/'
   tp_prerequisites:
     - 'microsoft_repo'
+
+# Version 4 format
+  packages:
+    main:
+      name: microsoft-edge-stable
+  urls:
+    website: https://learn.microsoft.com/edge/
+  image:
+    name: microsoft/edge
+  preinstall:
+    tp::install:
+    - microsoft_repo

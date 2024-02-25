@@ -1,3 +1,8 @@
 ---
 lsb::settings:
   package_name: 'redhat-lsb-core'
+
+# Version 4 format
+  packages:
+    main:
+      name: redhat-lsb-core

@@ -7,3 +7,17 @@ virtualbox::settings:
     - gcc
     - make
     - kernel-devel
+
+# Version 4 format
+  repo:
+    upstream:
+      url: http://download.virtualbox.org/virtualbox/rpm/el/$releasever/$basearch
+      key: 7B0FAB3A
+      key_url: https://www.virtualbox.org/download/oracle_vbox.asc
+      yum:
+        gpgcheck: true
+  preinstall:
+    package:
+    - gcc
+    - make
+    - kernel-devel

@@ -24,3 +24,39 @@ postfix::settings:
     mailqueue: 'mailq'
   validate_cmd: 'postconf -n'
   config_file_format: 'inifile'
+
+# Version 4 format
+  packages:
+    main:
+      name: postfix
+  services:
+    postfix:
+      process_name: master
+      process_user: postfix
+      process_group: postfix
+  files:
+    config:
+      path: "/etc/postfix/main.cf"
+      format: inifile
+    log:
+      path: "/var/log/maillog"
+    pid:
+      path: "/var/spool/postfix/pid/master.pid"
+  user_files:
+    config:
+      path: "$HOME/.postfix/main.cf"
+  dirs:
+    config:
+      path: "/etc/postfix"
+    data:
+      path: "/var/spool/postfix"
+  user_dirs:
+    config:
+      path: "$HOME/.postfix"
+  ports:
+    main:
+      port: '25'
+      protocol: tcp
+  urls:
+    website: https://www.postfix.org/
+    source: https://github.com/vdukhovni/postfix

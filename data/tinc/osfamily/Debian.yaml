@@ -1,3 +1,8 @@
 ---
 tinc::settings:
   init_file_path: '/etc/default/tinc'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/tinc"

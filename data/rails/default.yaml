@@ -1,3 +1,8 @@
 ---
 rails::settings:
   package_name: 'rails'
+
+# Version 4 format
+  packages:
+    main:
+      name: rails

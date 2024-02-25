@@ -2,3 +2,10 @@
 puppet_repo::settings:
   brew_tap: 'puppetlabs/puppet'
   package_provider: tap
+# Version 4 format
+  packages:
+    main:
+      provider: tap
+  repo:
+    upstream:
+      brew_tap: puppetlabs/puppet

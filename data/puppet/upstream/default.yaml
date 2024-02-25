@@ -22,3 +22,36 @@ puppet::settings:
   process_group: 'root'
   tp_prerequisites:
     puppet_repo: {}
+# Version 4 format
+  packages:
+    main:
+      name: puppet-agent
+  services:
+    puppet:
+      process_name: puppet
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/puppetlabs/puppet/puppet.conf"
+    log:
+      path:
+      - "/var/log/puppetlabs/puppet/puppet.log"
+      - "/var/log/puppetlabs/pxp-agent/pxp-agent.log"
+      - "/var/log/puppetlabs/mcollective-log"
+    pid:
+      path: "/var/run/puppetlabs/agent.pid"
+  user_files:
+    config:
+      path: "$HOME/.puppetlabs/puppet/puppet.conf"
+  dirs:
+    config:
+      path: "/etc/puppetlabs/puppet/"
+    log:
+      path: "/var/log/puppetlabs/puppet"
+  user_dirs:
+    config:
+      path: "$HOME/.puppetlabs/puppet/"
+  preinstall:
+    tp::install:
+      puppet_repo: {}

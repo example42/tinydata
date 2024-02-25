@@ -20,3 +20,44 @@ nginx::settings:
   validate_cmd:
     config: 'nginx -t -c %'
   version_command: 'nginx -v'
+
+# Version 4 format
+  packages:
+    main:
+      name: nginx
+  services:
+    nginx:
+      process_name: nginx
+      process_user: nginx
+      process_group: nginx
+      nodaemon_args: "-g 'daemon off;'"
+  files:
+    config:
+      path: "/etc/nginx/nginx.conf"
+    log:
+      path:
+      - "/var/log/nginx/access.log"
+      - "/var/log/nginx/error.log"
+    init:
+      path: "/etc/sysconfig/nginx"
+    pid:
+      path: "/var/run/nginx.pid"
+  user_files:
+    config:
+      path: "$HOME/.nginx/nginx.conf"
+  dirs:
+    config:
+      path: "/etc/nginx"
+    conf:
+      path: "/etc/nginx/conf.d"
+    log:
+      path: "/var/log/nginx"
+    data:
+      path: "/usr/share/nginx/html"
+  user_dirs:
+    config:
+      path: "$HOME/.nginx"
+  ports:
+    main:
+      port: '80'
+      protocol: tcp

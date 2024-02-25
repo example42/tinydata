@@ -2,3 +2,10 @@
 hashicorp_repo::settings:
   repo_url: 'https://apt.releases.hashicorp.com'
   apt_release: 'stretch main'
+
+# Version 4 format
+  repo:
+    upstream:
+      url: https://apt.releases.hashicorp.com
+      apt:
+        release: stretch main

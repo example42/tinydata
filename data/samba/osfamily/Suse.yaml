@@ -3,3 +3,10 @@ samba::settings:
   log_file_path:
     - '/var/log/samba/log.smbd'
     - '/var/log/samba/cores/smbd'
+
+# Version 4 format
+  files:
+    log:
+      path:
+      - "/var/log/samba/log.smbd"
+      - "/var/log/samba/cores/smbd"

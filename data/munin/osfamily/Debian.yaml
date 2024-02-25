@@ -1,3 +1,5 @@
 ---
 munin::settings:
   www_dir_path: '/var/cache/munin/www'
+
+# No data to convert to Version 4 format

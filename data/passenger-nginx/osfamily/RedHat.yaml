@@ -9,3 +9,18 @@ passenger-nginx::settings:
   package_prerequisites:
     - pygpgme
     - nginx
+
+# Version 4 format
+  packages:
+    main:
+      name: nginx-mod-http-passenger
+  repo:
+    upstream:
+      url: https://oss-binaries.phusionpassenger.com/yum/passenger/el/$releasever/$basearch
+      key_url: https://oss-binaries.phusionpassenger.com/auto-software-signing-gpg-key.txt
+  preinstall:
+    tp::install:
+    - epel
+    package:
+    - pygpgme
+    - nginx

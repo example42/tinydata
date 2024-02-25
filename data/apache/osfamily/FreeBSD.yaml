@@ -2,3 +2,17 @@
 apache::settings:
   config_file_path: '/usr/local/etc/apache20/httpd.conf'
   config_dir_path: '/usr/local/etc/apache20'
+
+# Version 4 format
+  files:
+    config:
+      path: "/usr/local/etc/apache20/httpd.conf"
+  user_files:
+    config:
+      path: "/usr/local$HOME/.apache20/httpd.conf"
+  dirs:
+    config:
+      path: "/usr/local/etc/apache20"
+  user_dirs:
+    config:
+      path: "/usr/local$HOME/.apache20"

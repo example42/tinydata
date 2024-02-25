@@ -1,3 +1,7 @@
 ---
 samba::settings:
   service_name: 'smb'
+
+# Version 4 format
+  services:
+    smb: {}

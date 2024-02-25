@@ -8,3 +8,27 @@ syslog-ng::settings:
   process_name: 'syslog-ng'
   process_user: 'syslog-ng'
   process_group: 'syslog-ng'
+
+# Version 4 format
+  packages:
+    main:
+      name: syslog-ng
+  services:
+    syslog-ng:
+      process_name: syslog-ng
+      process_user: syslog-ng
+      process_group: syslog-ng
+  files:
+    config:
+      path: "/etc/syslog-ng/syslog-ng.conf"
+    pid:
+      path: "/var/run/syslog-ng.pid"
+  user_files:
+    config:
+      path: "$HOME/.syslog-ng/syslog-ng.conf"
+  dirs:
+    config:
+      path: "/etc/syslog-ng"
+  user_dirs:
+    config:
+      path: "$HOME/.syslog-ng"

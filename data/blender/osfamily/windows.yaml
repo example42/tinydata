@@ -2,3 +2,9 @@
 blender::settings:
   package_provider: 'windows'
   package_source: 'https://www.blender.org/download/release/Blender$MAJVERSION/blender-$VERSION-windows-x64.msi'
+
+# Version 4 format
+  packages:
+    main:
+      provider: windows
+      source: https://www.blender.org/download/release/Blender$MAJVERSION/blender-$VERSION-windows-x64.msi

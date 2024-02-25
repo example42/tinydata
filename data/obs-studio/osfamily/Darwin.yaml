@@ -1,3 +1,10 @@
 ---
 obs-studio::settings:
   brew_package_name: 'streamlabs-obs'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        brew:
+          name: streamlabs-obs

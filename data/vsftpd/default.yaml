@@ -11,3 +11,35 @@ vsftpd::settings:
   process_user: 'vsftpd'
   process_group: 'vsftpd'
   tcp_port: '21'
+
+# Version 4 format
+  packages:
+    main:
+      name: vsftpd
+  services:
+    vsftpd:
+      process_name: vsftpd
+      process_user: vsftpd
+      process_group: vsftpd
+  files:
+    config:
+      path: "/etc/vsftpd/vsftpd.conf"
+    log:
+      path: "/var/log/vsftpd/vsftpd.log"
+    pid:
+      path: "/var/run/vsftpd.pid"
+  user_files:
+    config:
+      path: "$HOME/.vsftpd/vsftpd.conf"
+  dirs:
+    config:
+      path: "/etc/vsftpd"
+    log:
+      path: "/var/log/vsftpd"
+  user_dirs:
+    config:
+      path: "$HOME/.vsftpd"
+  ports:
+    main:
+      port: '21'
+      protocol: tcp

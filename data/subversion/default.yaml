@@ -3,3 +3,20 @@ subversion::settings:
   package_name: 'subversion'
   config_file_path: '/etc/subversion/config.conf'
   config_dir_path: '/etc/subversion'
+
+# Version 4 format
+  packages:
+    main:
+      name: subversion
+  files:
+    config:
+      path: "/etc/subversion/config.conf"
+  user_files:
+    config:
+      path: "$HOME/.subversion/config.conf"
+  dirs:
+    config:
+      path: "/etc/subversion"
+  user_dirs:
+    config:
+      path: "$HOME/.subversion"

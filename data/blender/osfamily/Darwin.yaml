@@ -6,3 +6,11 @@ blender::settings:
   packages:
     main:
       source: 'https://ftp.nluug.nl/pub/graphics/blender/release/Blender$MAJVERSION/blender-$VERSION-macos-$ARCH.dmg'
+
+# Version 4 format
+  packages:
+    main:
+      provider: appdmg
+      providers:
+        brew:
+          name: blender

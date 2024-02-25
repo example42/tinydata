@@ -12,3 +12,35 @@ libvirt::settings:
   process_name: 'libvirtd'
   process_user: 'root'
   process_group: 'root'
+
+# Version 4 format
+  packages:
+    main:
+      name: libvirt
+  services:
+    libvirtd:
+      process_name: libvirtd
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/libvirt/libvirtd.conf"
+    log:
+      path: "/var/log/libvirt/libvirtd.log"
+    pid:
+      path: "/var/run/libvirt/network/default.pid"
+  user_files:
+    config:
+      path: "$HOME/.libvirt/libvirtd.conf"
+  dirs:
+    config:
+      path: "/etc/libvirt"
+    conf:
+      path: "/etc/libvirt/conf.d"
+    log:
+      path: "/var/log/libvirt"
+    data:
+      path: "/var/lib/libvirt"
+  user_dirs:
+    config:
+      path: "$HOME/.libvirt"

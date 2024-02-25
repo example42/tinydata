@@ -11,3 +11,33 @@ redis::settings:
   process_group: 'redis'
   process_name: 'redis-server'
   process_args: '/etc/redis/redis.conf'
+
+# Version 4 format
+  packages:
+    main:
+      name: redis
+  services:
+    redis:
+      process_name: redis-server
+      process_user: redis
+      process_group: redis
+  files:
+    config:
+      path: "/etc/redis/redis.conf"
+    log:
+      path: "/var/log/redis.log"
+    pid:
+      path: "/var/run/redis.pid"
+  user_files:
+    config:
+      path: "$HOME/.redis/redis.conf"
+  dirs:
+    config:
+      path: "/etc/redis"
+  user_dirs:
+    config:
+      path: "$HOME/.redis"
+  ports:
+    main:
+      port: '6379'
+      protocol: tcp

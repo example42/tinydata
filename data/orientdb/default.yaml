@@ -14,3 +14,40 @@ orientdb::settings:
   process_user: 'orientdb'
   process_group: 'orientdb'
   tcp_port: '2424'
+
+# Version 4 format
+  packages:
+    main:
+      name: orientdb
+  services:
+    orientdb:
+      process_name: java
+      process_extra_name: orientdb
+      process_user: orientdb
+      process_group: orientdb
+  files:
+    config:
+      path: "/etc/orientdb/orientdb.conf"
+    log:
+      path: "/var/log/orientdb/orient-server.logl.0"
+    pid:
+      path: "/var/run/orientdb.pid"
+  user_files:
+    config:
+      path: "$HOME/.orientdb/orientdb.conf"
+  dirs:
+    config:
+      path: "/etc/orientdb"
+    conf:
+      path: "/etc/orientdb/conf.d"
+    log:
+      path: "/var/log/orientdb"
+    data:
+      path: "/var/lib/orientdb"
+  user_dirs:
+    config:
+      path: "$HOME/.orientdb"
+  ports:
+    main:
+      port: '2424'
+      protocol: tcp

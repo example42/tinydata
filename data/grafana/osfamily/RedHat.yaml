@@ -7,3 +7,19 @@ grafana::settings:
     - 'initscripts'
     - 'fontconfig'
     - 'urw-fonts'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/grafana-server"
+  repo:
+    upstream:
+      url: https://packages.grafana.com/oss/rpm
+      key: D59097AB
+      yum:
+        gpgcheck: true
+  preinstall:
+    package:
+    - initscripts
+    - fontconfig
+    - urw-fonts

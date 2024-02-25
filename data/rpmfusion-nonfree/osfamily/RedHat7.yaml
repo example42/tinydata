@@ -1,3 +1,8 @@
 ---
 rpmfusion-nonfree::settings:
   repo_package_url: 'https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-7.noarch.rpm'
+
+# Version 4 format
+  repo:
+    upstream:
+      package_url: https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-7.noarch.rpm

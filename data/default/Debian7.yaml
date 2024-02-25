@@ -6,3 +6,9 @@ default::settings:
     default:
       apt:
         release: 'wheezy'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: wheezy

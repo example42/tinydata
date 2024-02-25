@@ -2,3 +2,9 @@
 default::settings:
   apt_release: 'trusty'
   init_system: 'upstart'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: trusty

@@ -4,3 +4,15 @@ mcollective::settings:
   process_extra_name: 'mcollectived'
   data_dir_path: '/usr/libexec/mcollective'
   init_file_path: '/etc/sysconfig/mcollective'
+
+# Version 4 format
+  services:
+    ! '':
+      process_name: ruby
+      process_extra_name: mcollectived
+  files:
+    init:
+      path: "/etc/sysconfig/mcollective"
+  dirs:
+    data:
+      path: "/usr/libexec/mcollective"

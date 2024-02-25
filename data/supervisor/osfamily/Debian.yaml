@@ -3,3 +3,13 @@ supervisor::settings:
   init_file_path: '/etc/default/supervisor'
   config_file_path: '/etc/supervisor/supervisord.conf'
   process_args: '-c /etc/supervisor/supervisord.conf'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/supervisor/supervisord.conf"
+    init:
+      path: "/etc/default/supervisor"
+  user_files:
+    config:
+      path: "$HOME/.supervisor/supervisord.conf"

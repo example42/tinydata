@@ -2,3 +2,8 @@
 microsoft_repo::settings:
   repo_package_url: 'https://packages.microsoft.com/config/opensuse/15/packages-microsoft-prod.rpm'
 
+
+# Version 4 format
+  repo:
+    upstream:
+      package_url: https://packages.microsoft.com/config/opensuse/15/packages-microsoft-prod.rpm

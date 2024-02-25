@@ -1,3 +1,9 @@
 ---
 influxdb::settings:
   apt_release: 'precise'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: precise

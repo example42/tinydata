@@ -1,3 +1,8 @@
 ---
 autofs::settings:
   init_file_path: '/etc/default/autofs'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/autofs"

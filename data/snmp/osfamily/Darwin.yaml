@@ -9,3 +9,9 @@ snmp::settings:
   user_dirs:
     config:
       path: '$HOME/Library/Application\ Support/snmp/snmp.conf'
+# Version 4 format
+  packages:
+    main:
+      providers:
+        brew:
+          name: snmp

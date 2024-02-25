@@ -1,3 +1,8 @@
 ---
 nano::settings:
   package_name: 'nano'
+
+# Version 4 format
+  packages:
+    main:
+      name: nano

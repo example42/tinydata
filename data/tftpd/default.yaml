@@ -12,3 +12,37 @@ tftpd::settings:
   process_name: 'in.tftpd'
   process_user: 'root'
   process_group: 'root'
+
+# Version 4 format
+  packages:
+    main:
+      name: tftpd
+  services:
+    tftpd:
+      process_name: in.tftpd
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/tftpd/tftpd.conf"
+    log:
+      path: "/var/log/messages"
+    init:
+      path: "/etc/sysconfig/tftpd-hpa"
+    pid:
+      path: "/var/run/tftpd.pid"
+  user_files:
+    config:
+      path: "$HOME/.tftpd/tftpd.conf"
+  dirs:
+    config:
+      path: "/etc/tftpd"
+    data:
+      path: "/tftproot"
+  user_dirs:
+    config:
+      path: "$HOME/.tftpd"
+  ports:
+    main_udp:
+      port: '69'
+      protocol: udp

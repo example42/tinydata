@@ -4,3 +4,5 @@ nagios-plugins::settings_broken:
     enable_powertools:
       command: 'dnf config-manager --set-enabled PowerTools'
       unless: "grep 'enabled=1' /etc/yum.repos.d/CentOS-PowerTools.repo 2>&1>/dev/null"
+
+# No data to convert to Version 4 format

@@ -3,3 +3,9 @@ hashicorp_repo::settings:
   repo_url: 'https://rpm.releases.hashicorp.com/AmazonLinux/$releasever/$basearch/stable'
   key_url: 'https://rpm.releases.hashicorp.com/gpg'
 
+
+# Version 4 format
+  repo:
+    upstream:
+      url: https://rpm.releases.hashicorp.com/AmazonLinux/$releasever/$basearch/stable
+      key_url: https://rpm.releases.hashicorp.com/gpg

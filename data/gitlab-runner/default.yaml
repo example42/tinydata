@@ -4,3 +4,22 @@ gitlab-runner::settings:
   service_name: 'gitlab-runner'
   config_file_path: '/etc/gitlab-runner/config.toml'
   config_dir_path: '/etc/gitlab-runner'
+
+# Version 4 format
+  packages:
+    main:
+      name: gitlab-runner
+  services:
+    gitlab-runner: {}
+  files:
+    config:
+      path: "/etc/gitlab-runner/config.toml"
+  user_files:
+    config:
+      path: "$HOME/.gitlab-runner/config.toml"
+  dirs:
+    config:
+      path: "/etc/gitlab-runner"
+  user_dirs:
+    config:
+      path: "$HOME/.gitlab-runner"

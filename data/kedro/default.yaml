@@ -2,3 +2,9 @@
 kedro::settings:
   package_name: kedro
   package_provider: 'pip'
+
+# Version 4 format
+  packages:
+    main:
+      name: kedro
+      provider: pip

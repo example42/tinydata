@@ -4,3 +4,12 @@ dovecot::settings:
     - 'dovecot-imapd'
   init_file_path: '/etc/default/dovecot'
   run_file_path: '/var/run/dovecot/master.pid'
+
+# Version 4 format
+  packages:
+    main:
+      name:
+      - dovecot-imapd
+  files:
+    init:
+      path: "/etc/default/dovecot"

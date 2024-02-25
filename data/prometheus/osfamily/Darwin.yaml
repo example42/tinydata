@@ -11,3 +11,9 @@ prometheus::settings:
   user_dirs:
     config:
       path: '$HOME/Library/Application\ Support/Prometheus/prometheus.yml'
+# Version 4 format
+  packages:
+    main:
+      providers:
+        brew:
+          name: prometheus

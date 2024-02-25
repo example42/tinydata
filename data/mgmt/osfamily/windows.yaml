@@ -12,3 +12,8 @@ mgmt::settings:
   user_dirs:
     config:
       path: '%APPDATA%\mgmt'
+# Version 4 format
+  packages:
+    main:
+      provider: windows
+      source: https://github.com/mgmt/mgmt/releases/download/v$VERSION/mgmt_$VERSION_$OS_$ARCH.msi

@@ -3,3 +3,9 @@ mlrun::settings:
   package_name: mlrun
   package_provider: 'pip'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: mlrun
+      provider: pip

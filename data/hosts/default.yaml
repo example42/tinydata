@@ -1,3 +1,11 @@
 ---
 hosts::settings:
   config_file_path: '/etc/hosts'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/hosts"
+  user_files:
+    config:
+      path: "$HOME/.hosts"

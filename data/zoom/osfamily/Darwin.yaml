@@ -2,3 +2,11 @@
 zoom::settings:
   brew_package_name: 'zoom'
   package_name: 'zoom'
+
+# Version 4 format
+  packages:
+    main:
+      name: zoom
+      providers:
+        brew:
+          name: zoom

@@ -3,3 +3,13 @@ sysinternals::settings:
   winget_package_name: 'Microsoft.PowerShell'
   choco_package_name: 'sysinternals'
   package_name: 'sysinternals'
+
+# Version 4 format
+  packages:
+    main:
+      name: sysinternals
+      providers:
+        winget:
+          name: Microsoft.PowerShell
+        choco:
+          name: sysinternals

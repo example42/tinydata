@@ -12,3 +12,37 @@ dnsmasq::settings:
   process_user: 'dnsmasq'
   process_group: 'dnsmasq'
   tcp_port: '53'
+
+# Version 4 format
+  packages:
+    main:
+      name: dnsmasq
+  services:
+    dnsmasq:
+      process_name: dnsmasq
+      process_user: dnsmasq
+      process_group: dnsmasq
+  files:
+    config:
+      path: "/etc/dnsmasq.conf"
+    log:
+      path: "/var/log/dnsmasq/dnsmasq.log"
+    pid:
+      path: "/var/run/dnsmasq.pid"
+  user_files:
+    config:
+      path: "$HOME/.dnsmasq.conf"
+  dirs:
+    config:
+      path: "/etc/dnsmasq.d"
+    conf:
+      path: "/etc/dnsmasq.d"
+    log:
+      path: "/var/log/dnsmasq"
+  user_dirs:
+    config:
+      path: "$HOME/.dnsmasq.d"
+  ports:
+    main:
+      port: '53'
+      protocol: tcp

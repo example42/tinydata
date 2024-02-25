@@ -2,3 +2,10 @@
 puppetserver::settings:
   init_file_path: '/etc/sysconfig/puppetserver'
   dockerfile_prerequisites: 'RUN yum install -y wget'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/puppetserver"
+  image:
+    dockerfile_prerequisites: RUN yum install -y wget

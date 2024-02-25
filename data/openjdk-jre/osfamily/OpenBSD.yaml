@@ -1,3 +1,8 @@
 ---
 openjdk-jre::settings:
   package_name: 'jre'
+
+# Version 4 format
+  packages:
+    main:
+      name: jre

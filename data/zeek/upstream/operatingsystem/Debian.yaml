@@ -5,3 +5,15 @@ zeek::settings:
   key: '0EBFCD88'
   key_url: 'https://download.zeek.com/linux/debian/gpg'
   apt_repos: 'stable'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/zeek"
+  repo:
+    upstream:
+      url: https://download.zeek.com/linux/debian
+      key: 0EBFCD88
+      key_url: https://download.zeek.com/linux/debian/gpg
+      yum:
+        gpgcheck: true

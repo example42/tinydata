@@ -10,3 +10,30 @@ memcached::settings:
   process_user: 'memcached'
   process_group: 'memcached'
   tcp_port: '11211'
+
+# Version 4 format
+  packages:
+    main:
+      name: memcached
+  services:
+    memcached:
+      process_name: memcached
+      process_user: memcached
+      process_group: memcached
+  files:
+    config:
+      path: "/etc/memcached.conf"
+    log:
+      path: "/var/log/memcached/memcached.log"
+    pid:
+      path: "/var/run/memcached.pid"
+  user_files:
+    config:
+      path: "$HOME/.memcached.conf"
+  dirs:
+    log:
+      path: "/var/log/memcached"
+  ports:
+    main:
+      port: '11211'
+      protocol: tcp

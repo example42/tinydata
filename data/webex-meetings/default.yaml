@@ -4,3 +4,14 @@ webex-meetings::settings:
   snap_package_name: 'webex-meetings'
   website_url: 'https://desktop.telegram.org/'
   git_source: 'https://github.com/telegramdesktop/tdesktop.git'
+
+# Version 4 format
+  packages:
+    main:
+      name: ''
+      providers:
+        snap:
+          name: webex-meetings
+  urls:
+    website: https://desktop.telegram.org/
+    source: https://github.com/telegramdesktop/tdesktop.git

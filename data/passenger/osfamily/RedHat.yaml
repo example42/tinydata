@@ -2,3 +2,8 @@
 passenger::settings:
   repo_url: 'https://oss-binaries.phusionpassenger.com/yum/passenger/el/$releasever/$basearch'
 
+
+# Version 4 format
+  repo:
+    upstream:
+      url: https://oss-binaries.phusionpassenger.com/yum/passenger/el/$releasever/$basearch

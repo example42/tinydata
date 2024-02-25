@@ -3,3 +3,11 @@ nrpe::settings:
   process_user: '_nrpe'
   pid_file_path: '/var/run/nrpe/nrpe.pid'
   service_name: 'nagios-nrpe-server'
+
+# Version 4 format
+  services:
+    nagios-nrpe-server:
+      process_user: _nrpe
+  files:
+    pid:
+      path: "/var/run/nrpe/nrpe.pid"

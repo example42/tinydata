@@ -11,3 +11,8 @@ default::settings:
   repos:
     default:
       package_provider: 'homebrew'
+
+# Version 4 format
+  packages:
+    main:
+      provider: homebrew

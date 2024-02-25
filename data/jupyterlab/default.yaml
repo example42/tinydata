@@ -5,3 +5,9 @@ jupyterlab::settings:
 
 
 # No data to convert to Version 4 format
+
+# Version 4 format
+  packages:
+    main:
+      name: jupyterlab
+      provider: pip

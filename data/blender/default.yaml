@@ -70,3 +70,7 @@ blender::settings:
       enable: true
       links:
         '/usr/local/bin/blender': '/usr/share/blender/blender-$VERSION-$OS-x64/blender'
+
+# Version 4 format
+  preinstall:
+    tp::install: {}

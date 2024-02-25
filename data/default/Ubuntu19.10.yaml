@@ -6,3 +6,9 @@ default::settings:
     default:
       apt:
         release: 'eoan'
+
+# Version 4 format
+  repo:
+    upstream:
+      apt:
+        release: eoan

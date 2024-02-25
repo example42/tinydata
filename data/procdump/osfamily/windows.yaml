@@ -1,3 +1,10 @@
 ---
 procdump::settings:
   choco_package_name: 'procdump'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        choco:
+          name: procdump

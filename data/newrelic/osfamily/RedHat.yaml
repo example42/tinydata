@@ -1,3 +1,8 @@
 ---
 newrelic::settings:
   init_file_path: '/etc/sysconfig/newrelic-sysmond'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/newrelic-sysmond"

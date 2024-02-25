@@ -4,3 +4,13 @@ openssh::settings:
   service_name: 'sshd'
   config_file_mode: '0640'
   init_file_path: '/etc/sysconfig/sshd'
+
+# Version 4 format
+  packages:
+    main:
+      name: openssh
+  services:
+    sshd: {}
+  files:
+    init:
+      path: "/etc/sysconfig/sshd"

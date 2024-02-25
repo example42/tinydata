@@ -1,3 +1,8 @@
 ---
 openjdk-jdk::settings:
   package_name: 'openjdk-8-jdk'
+
+# Version 4 format
+  packages:
+    main:
+      name: openjdk-8-jdk

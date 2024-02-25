@@ -8,3 +8,28 @@ dhcpd::settings:
   data_dir_path: '/var/lib/dhcp'
   init_file_path: '/etc/default/isc-dhcp-server'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: isc-dhcp-server
+  services:
+    isc-dhcp-server: {}
+  files:
+    config:
+      path: "/etc/dhcp/dhcpd.conf"
+    init:
+      path: "/etc/default/isc-dhcp-server"
+    pid:
+      path: "/var/run/dhcp-server/dhcpd.pid"
+  user_files:
+    config:
+      path: "$HOME/.dhcp/dhcpd.conf"
+  dirs:
+    config:
+      path: "/etc/dhcp"
+    data:
+      path: "/var/lib/dhcp"
+  user_dirs:
+    config:
+      path: "$HOME/.dhcp"

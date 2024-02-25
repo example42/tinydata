@@ -1,3 +1,10 @@
 ---
 powershell::settings:
   brew_package_name: 'powershell'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        brew:
+          name: powershell

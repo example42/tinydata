@@ -10,3 +10,29 @@ crowdsec-firewall-bouncer-iptables::settings:
   process_group: 'root'
   tp_prerequisites:
     - crowdsec_repo
+
+# Version 4 format
+  packages:
+    main:
+      name: crowdsec-firewall-bouncer-iptables
+  services:
+    crowdsec-firewall-bouncer:
+      process_name: crowdsec-firewall-bouncer
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/crowdsec/bouncers/crowdsec-firewall-bouncer.yaml"
+  user_files:
+    config:
+      path: "$HOME/.crowdsec/bouncers/crowdsec-firewall-bouncer.yaml"
+  dirs:
+    config:
+      path: "/etc/crowdsec/bouncers"
+  user_dirs:
+    config:
+      path: "$HOME/.crowdsec/bouncers"
+  repo: upstream
+  preinstall:
+    tp::install:
+    - crowdsec_repo

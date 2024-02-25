@@ -1,3 +1,8 @@
 ---
 crowdsec_repo::settings:
   repo_url: 'https://packagecloud.io/crowdsec/crowdsec/opensuse/15/$basearch'
+
+# Version 4 format
+  repo:
+    upstream:
+      url: https://packagecloud.io/crowdsec/crowdsec/opensuse/15/$basearch

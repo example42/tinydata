@@ -17,3 +17,38 @@ grafana::settings:
   process_user: 'grafana'
   process_group: 'grafana'
   tcp_port: '3000'
+
+# Version 4 format
+  packages:
+    main:
+      name: grafana
+  services:
+    grafana-server:
+      process_name: grafana-server
+      process_user: grafana
+      process_group: grafana
+  files:
+    config:
+      path: "/etc/grafana/grafana.ini"
+    log:
+      path: "/var/log/grafana/grafana.log"
+    pid:
+      path: "/var/run/grafana/grafana-server.pid"
+  user_files:
+    config:
+      path: "$HOME/.grafana/grafana.ini"
+  dirs:
+    config:
+      path: "/etc/grafana"
+    log:
+      path: "/var/log/grafana"
+  user_dirs:
+    config:
+      path: "$HOME/.grafana"
+  ports:
+    main:
+      port: '3000'
+      protocol: tcp
+  repo:
+    upstream:
+      key_url: https://packages.grafana.com/gpg.key

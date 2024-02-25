@@ -1,3 +1,8 @@
 ---
 icingaweb2::settings:
   init_file_path: '/etc/default/icingaweb2'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/icingaweb2"

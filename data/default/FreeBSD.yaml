@@ -5,3 +5,5 @@ default::settings:
   files:
     config:
       group: 'wheel'
+
+# No data to convert to Version 4 format

@@ -10,3 +10,34 @@ mcollective::settings:
   process_user: 'mcollective'
   process_group: 'mcollective'
   tcp_port: '61613'
+
+# Version 4 format
+  packages:
+    main:
+      name: mcollective
+  services:
+    mcollective:
+      process_user: mcollective
+      process_group: mcollective
+  files:
+    config:
+      path: "/etc/mcollective/server.cfg"
+    log:
+      path: "/var/log/mcollective.log"
+    pid:
+      path: "/var/run/mcollective.pid"
+  user_files:
+    config:
+      path: "$HOME/.mcollective/server.cfg"
+  dirs:
+    config:
+      path: "/etc/mcollective"
+    log:
+      path: "/var/log/mcollective"
+  user_dirs:
+    config:
+      path: "$HOME/.mcollective"
+  ports:
+    main:
+      port: '61613'
+      protocol: tcp

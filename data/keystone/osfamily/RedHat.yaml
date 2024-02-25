@@ -5,3 +5,15 @@ keystone::settings:
     - 'openstack-keystone'
   service_name: 'openstack-keystone'
   init_file_path: '/etc/sysconfig/keystone'
+
+# Version 4 format
+  packages:
+    main:
+      name:
+      - python-keystone
+      - openstack-keystone
+  services:
+    openstack-keystone: {}
+  files:
+    init:
+      path: "/etc/sysconfig/keystone"

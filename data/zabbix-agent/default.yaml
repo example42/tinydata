@@ -11,3 +11,35 @@ zabbix-agent::settings:
   process_user: 'zabbix'
   process_group: 'zabbix'
   tcp_port: '10050'
+
+# Version 4 format
+  packages:
+    main:
+      name: zabbix-agent
+  services:
+    zabbix-agent:
+      process_name: zabbix_agentd
+      process_user: zabbix
+      process_group: zabbix
+  files:
+    config:
+      path: "/etc/zabbix/zabbix_agentd.conf"
+    log:
+      path: "/var/log/zabbix-agent/zabbix_agentd.log"
+    pid:
+      path: "/var/run/zabbix/zabbix_agentd.pid"
+  user_files:
+    config:
+      path: "$HOME/.zabbix/zabbix_agentd.conf"
+  dirs:
+    config:
+      path: "/etc/zabbix"
+    log:
+      path: "/var/log/zabbix-agent"
+  user_dirs:
+    config:
+      path: "$HOME/.zabbix"
+  ports:
+    main:
+      port: '10050'
+      protocol: tcp

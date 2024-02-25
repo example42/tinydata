@@ -7,3 +7,25 @@ bash::settings:
   config_dir_path: '/etc/profile.d'
   user_config_file_path: '$HOME/.bash_profile'
   docker_image: 'bash'
+
+# Version 4 format
+  packages:
+    main:
+      name: bash
+  files:
+    config:
+      path: "/etc/profile"
+  user_files:
+    config:
+      path: "$HOME/.profile"
+  dirs:
+    config:
+      path: "/etc/profile.d"
+  user_dirs:
+    config:
+      path: "$HOME/.profile.d"
+  urls:
+    website: https://www.gnu.org/software/bash/
+    source: https://git.savannah.gnu.org/git/bash.git
+  image:
+    name: bash

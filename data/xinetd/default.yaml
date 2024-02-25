@@ -9,3 +9,29 @@ xinetd::settings:
   process_name: 'xinetd'
   process_user: 'xinetd'
   process_group: 'xinetd'
+
+# Version 4 format
+  packages:
+    main:
+      name: xinetd
+  services:
+    xinetd:
+      process_name: xinetd
+      process_user: xinetd
+      process_group: xinetd
+  files:
+    config:
+      path: "/etc/xinetd.conf"
+    init:
+      path: "/etc/sysconfig/xinetd"
+    pid:
+      path: "/var/run/xinetd.pid"
+  user_files:
+    config:
+      path: "$HOME/.xinetd.conf"
+  dirs:
+    config:
+      path: "/etc/xinetd.d"
+  user_dirs:
+    config:
+      path: "$HOME/.xinetd.d"

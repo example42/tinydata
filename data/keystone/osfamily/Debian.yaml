@@ -4,3 +4,13 @@ keystone::settings:
     - 'python-keystone'
     - 'keystone'
   init_file_path: '/etc/default/keystone'
+
+# Version 4 format
+  packages:
+    main:
+      name:
+      - python-keystone
+      - keystone
+  files:
+    init:
+      path: "/etc/default/keystone"

@@ -8,3 +8,23 @@ autofs::settings:
   process_user: 'root'
   process_group: 'root'
   git_source: 'https://kernel.googlesource.com/pub/scm/linux/storage/autofs/autofs/'
+# Version 4 format
+  packages:
+    main:
+      name: autofs
+  services:
+    autofs:
+      process_user: root
+      process_group: root
+  files:
+    config:
+      path: "/etc/auto.master"
+    init:
+      path: "/etc/sysconfig/autofs"
+    pid:
+      path: "/var/run/autofs.pid"
+  user_files:
+    config:
+      path: "$HOME/.auto.master"
+  urls:
+    source: https://kernel.googlesource.com/pub/scm/linux/storage/autofs/autofs/

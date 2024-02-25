@@ -5,3 +5,14 @@ rpmfusion-nonfree::settings:
     enable_pmfusion_free:
       command: 'subscription-manager repos --enable "codeready-builder-for-rhel-8-$(uname -m)-rpms"'
       unless: 'subscription-manager list --consumed | grep codeready-builder-for-rhel-8-$(uname -m)-rpms'
+# Version 4 format
+  repo:
+    upstream:
+      package_url: https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-8.noarch.rpm
+  postinstall:
+    exec:
+      enable_pmfusion_free:
+        command: subscription-manager repos --enable "codeready-builder-for-rhel-8-$(uname
+          -m)-rpms"
+        unless: subscription-manager list --consumed | grep codeready-builder-for-rhel-8-$(uname
+          -m)-rpms

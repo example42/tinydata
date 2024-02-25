@@ -1,3 +1,8 @@
 ---
 lsb-release::settings:
   package_name: 'lsb-release'
+
+# Version 4 format
+  packages:
+    main:
+      name: lsb-release

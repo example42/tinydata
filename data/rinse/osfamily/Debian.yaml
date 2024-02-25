@@ -1,3 +1,11 @@
 ---
 rinse::settings:
   config_file_path: '/etc/rinse/rinse.conf'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/rinse/rinse.conf"
+  user_files:
+    config:
+      path: "$HOME/.rinse/rinse.conf"

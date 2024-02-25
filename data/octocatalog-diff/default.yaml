@@ -9,3 +9,22 @@ octocatalog-diff::settings:
     - make
   package_prerequisites:
     - cmake
+
+# Version 4 format
+  packages:
+    main:
+      name: octocatalog-diff
+      provider: gem
+  files:
+    config:
+      path: "/etc/octocatalog-diff.cfg.rb"
+  user_files:
+    config:
+      path: "$HOME/.octocatalog-diff.cfg.rb"
+  preinstall:
+    tp::install:
+    - ruby
+    - ruby-dev
+    - make
+    package:
+    - cmake

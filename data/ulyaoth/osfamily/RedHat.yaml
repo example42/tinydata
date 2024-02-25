@@ -2,3 +2,9 @@
 ulyaoth::settings:
   repo_package_name: 'ulyaoth'
   repo_package_url: 'https://downloads.ulyaoth.com/rpm/ulyaoth-latest.rhel.x86_64.rpm'
+
+# Version 4 format
+  repo:
+    upstream:
+      package_name: ulyaoth
+      package_url: https://downloads.ulyaoth.com/rpm/ulyaoth-latest.rhel.x86_64.rpm

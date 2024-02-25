@@ -12,3 +12,35 @@ icinga::settings:
   process_name: 'icinga'
   process_user: 'icinga'
   process_group: 'icinga'
+
+# Version 4 format
+  packages:
+    main:
+      name: icinga
+  services:
+    icinga:
+      process_name: icinga
+      process_user: icinga
+      process_group: icinga
+  files:
+    config:
+      path: "/etc/icinga/icinga.conf"
+    log:
+      path: "/var/log/icinga/icinga.log"
+    pid:
+      path: "/var/run/icinga.pid"
+  user_files:
+    config:
+      path: "$HOME/.icinga/icinga.conf"
+  dirs:
+    config:
+      path: "/etc/icinga"
+    conf:
+      path: "/etc/icinga/conf.d"
+    log:
+      path: "/var/log/icinga"
+    data:
+      path: "/var/lib/icinga"
+  user_dirs:
+    config:
+      path: "$HOME/.icinga"

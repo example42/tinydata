@@ -7,3 +7,26 @@ nrpe::settings:
   conf_dir_path: '/etc/opt/csw/nrpe.d'
   init_file_path: '/etc/opt/csw/nrpe-init'
   pid_file_path: '/var/run/nrpe.pid'
+
+# Version 4 format
+  services:
+    cswnrpe:
+      process_user: nagios
+  files:
+    config:
+      path: "/etc/opt/csw/nrpe.cfg"
+    init:
+      path: "/etc/opt/csw/nrpe-init"
+    pid:
+      path: "/var/run/nrpe.pid"
+  user_files:
+    config:
+      path: "$HOME/.opt/csw/nrpe.cfg"
+  dirs:
+    config:
+      path: "/etc/opt/csw/nrpe.d"
+    conf:
+      path: "/etc/opt/csw/nrpe.d"
+  user_dirs:
+    config:
+      path: "$HOME/.opt/csw/nrpe.d"

@@ -12,3 +12,37 @@ mysql::settings:
   process_user: 'mysql'
   process_group: 'mysql'
   tcp_port: '3306'
+
+# Version 4 format
+  packages:
+    main:
+      name: mysql-server
+  services:
+    mysql:
+      process_name: mysqld
+      process_user: mysql
+      process_group: mysql
+  files:
+    config:
+      path: "/etc/mysql/my.cnf"
+    log:
+      path: "/var/log/mysql.log"
+    pid:
+      path: "/var/run/mysqld/mysqld.pid"
+  user_files:
+    config:
+      path: "$HOME/.mysql/my.cnf"
+  dirs:
+    config:
+      path: "/etc/mysql"
+    log:
+      path: "/var/log/mysql"
+    data:
+      path: "/var/lib/mysql"
+  user_dirs:
+    config:
+      path: "$HOME/.mysql"
+  ports:
+    main:
+      port: '3306'
+      protocol: tcp

@@ -11,3 +11,33 @@ docker::settings:
   config_file_path: '/etc/docker/daemon.json'
   config_dir_path: '/etc/docker'
   config_file_format: 'json'
+
+# Version 4 format
+  packages:
+    main:
+      name: docker
+  services:
+    docker:
+      process_name: docker
+      process_user: docker
+      process_group: docker
+  files:
+    config:
+      path: "/etc/docker/daemon.json"
+      format: json
+    pid:
+      path: "/var/run/docker.pid"
+  user_files:
+    config:
+      path: "$HOME/.docker/daemon.json"
+  dirs:
+    config:
+      path: "/etc/docker"
+  user_dirs:
+    config:
+      path: "$HOME/.docker"
+  ports:
+    main:
+      port: '2375'
+      protocol: tcp
+  repo: upstream

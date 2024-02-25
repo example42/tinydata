@@ -5,3 +5,15 @@ kubernetes::settings:
   key: '54A6 47F9 048D 5688 D7DA  2ABE 6A03 0B21 BA07 F4FB'
   key_url: 'https://packages.cloud.google.com/apt/doc/apt-key.gpg'
   apt_repos: 'main'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/kubelet"
+  repo:
+    upstream:
+      url: https://apt.kubernetes.io
+      key: 54A6 47F9 048D 5688 D7DA  2ABE 6A03 0B21 BA07 F4FB
+      key_url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+      yum:
+        gpgcheck: true

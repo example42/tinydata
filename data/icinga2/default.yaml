@@ -42,3 +42,35 @@ icinga2::settings:
   user_dirs:
     config:
       path: "$HOME/.icinga2"
+
+# Version 4 format
+  packages:
+    main:
+      name: icinga2
+  services:
+    icinga2:
+      process_name: icinga2
+      process_user: icinga
+      process_group: icinga
+  files:
+    config:
+      path: "/etc/icinga2/icinga2.conf"
+    log:
+      path:
+      - "/var/log/icinga2/icinga2.log"
+      - "/var/log/icinga2/error.log"
+    pid:
+      path: "/var/run/icinga2/icinga2.pid"
+  user_files:
+    config:
+      path: "$HOME/.icinga2/icinga2.conf"
+  dirs:
+    config:
+      path: "/etc/icinga2"
+    conf:
+      path: "/etc/icinga2/conf.d"
+    log:
+      path: "/var/log/icinga2"
+  user_dirs:
+    config:
+      path: "$HOME/.icinga2"

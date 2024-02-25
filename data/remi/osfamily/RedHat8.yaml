@@ -1,3 +1,8 @@
 ---
 remi::settings:
   repo_package_url: 'https://rpms.remirepo.net/enterprise/remi-release-8.rpm'
+
+# Version 4 format
+  repo:
+    upstream:
+      package_url: https://rpms.remirepo.net/enterprise/remi-release-8.rpm

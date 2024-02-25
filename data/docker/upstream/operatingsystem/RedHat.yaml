@@ -4,3 +4,19 @@ docker::settings:
   config_file_path: '/etc/sysconfig/docker'
   key: '2C52609D'
   key_url: 'http://yum.dockerproject.org/gpg'
+
+# Version 4 format
+  files:
+    config:
+      path: "/etc/sysconfig/docker"
+    init:
+      path: "/etc/sysconfig/docker"
+  user_files:
+    config:
+      path: "$HOME/.sysconfig/docker"
+  repo:
+    upstream:
+      key: 2C52609D
+      key_url: http://yum.dockerproject.org/gpg
+      yum:
+        gpgcheck: true

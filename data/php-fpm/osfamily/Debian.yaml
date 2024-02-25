@@ -1,3 +1,8 @@
 ---
 php-fpm::settings:
   init_file_path: '/etc/default/php-fpm'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/default/php-fpm"

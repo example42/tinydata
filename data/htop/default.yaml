@@ -1,3 +1,8 @@
 ---
 htop::settings:
   package_name: 'htop'
+
+# Version 4 format
+  packages:
+    main:
+      name: htop

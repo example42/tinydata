@@ -1,3 +1,8 @@
 ---
 yarn::settings:
   package_name: 'yarn'
+
+# Version 4 format
+  packages:
+    main:
+      name: yarn

@@ -4,3 +4,12 @@ samba::settings:
   init_file_path: '/etc/default/samba'
   pid_file_path: '/var/run/samba/smbd.pid'
 
+
+# Version 4 format
+  services:
+    samba: {}
+  files:
+    init:
+      path: "/etc/default/samba"
+    pid:
+      path: "/var/run/samba/smbd.pid"

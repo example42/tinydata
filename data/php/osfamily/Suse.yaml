@@ -4,3 +4,22 @@ php::settings:
   config_file_path: '/etc/php5/apache2/php.ini'
   config_dir_path: '/etc/php5'
   conf_dir_path: '/etc/php5/conf.d'
+
+# Version 4 format
+  packages:
+    main:
+      name: php5
+  files:
+    config:
+      path: "/etc/php5/apache2/php.ini"
+  user_files:
+    config:
+      path: "$HOME/.php5/apache2/php.ini"
+  dirs:
+    config:
+      path: "/etc/php5"
+    conf:
+      path: "/etc/php5/conf.d"
+  user_dirs:
+    config:
+      path: "$HOME/.php5"

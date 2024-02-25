@@ -9,3 +9,30 @@ collectd::settings:
   log_file_path: '/var/log/collectd.log'
   process_user: 'collectd'
   process_group: 'collectd'
+
+# Version 4 format
+  packages:
+    main:
+      name: collectd
+  services:
+    collectd:
+      process_user: collectd
+      process_group: collectd
+  files:
+    config:
+      path: "/etc/collectd/collectd.conf"
+    log:
+      path: "/var/log/collectd.log"
+    pid:
+      path: "/var/run/collectd.pid"
+  user_files:
+    config:
+      path: "$HOME/.collectd/collectd.conf"
+  dirs:
+    config:
+      path: "/etc/collectd"
+    conf:
+      path: "/etc/collectd/collectd.d"
+  user_dirs:
+    config:
+      path: "$HOME/.collectd"

@@ -14,3 +14,37 @@ ceph::settings:
   website_url: 'http://ceph.com'
   git_source: 'https://github.com/ceph/ceph'
   docker_image: 'ceph/cepth'
+# Version 4 format
+  packages:
+    main:
+      name: ceph
+  services:
+    ceph:
+      process_name: ceph
+      process_user: ceph
+      process_group: ceph
+  files:
+    config:
+      path: "/etc/ceph/ceph.conf"
+    log:
+      path: "/var/log/ceph/ceph.log"
+    pid:
+      path: "/var/run/ceph.pid"
+  user_files:
+    config:
+      path: "$HOME/.ceph/ceph.conf"
+  dirs:
+    config:
+      path: "/etc/ceph"
+    conf:
+      path: "/etc/ceph/conf.d"
+    log:
+      path: "/var/log/ceph"
+  user_dirs:
+    config:
+      path: "$HOME/.ceph"
+  urls:
+    website: http://ceph.com
+    source: https://github.com/ceph/ceph
+  image:
+    name: ceph/cepth

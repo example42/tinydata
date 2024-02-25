@@ -1,3 +1,8 @@
 ---
 trickle::settings:
   package_name: ''
+
+# Version 4 format
+  packages:
+    main:
+      name: ''

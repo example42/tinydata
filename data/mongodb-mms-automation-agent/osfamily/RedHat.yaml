@@ -1,3 +1,8 @@
 ---
 mongodb-mms-automation-agent::settings:
   init_file_path: '/etc/sysconfig/mongodb-mms-automation-agent'
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/mongodb-mms-automation-agent"

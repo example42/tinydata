@@ -3,3 +3,22 @@ bolt::settings:
   config_file_path: 'C:\ProgramData\PuppetLabs\bolt\etc\bolt-defaults.yaml'
   config_dir_path: 'C:\ProgramData\PuppetLabs\bolt\etc\'
   winget_package_name: 'Puppet.puppet-bolt'
+
+# Version 4 format
+  packages:
+    main:
+      providers:
+        winget:
+          name: Puppet.puppet-bolt
+  files:
+    config:
+      path: C:\ProgramData\PuppetLabs\bolt\etc\bolt-defaults.yaml
+  user_files:
+    config:
+      path: C:\ProgramData\PuppetLabs\bolt\etc\bolt-defaults.yaml
+  dirs:
+    config:
+      path: C:\ProgramData\PuppetLabs\bolt\etc\
+  user_dirs:
+    config:
+      path: C:\ProgramData\PuppetLabs\bolt\etc\

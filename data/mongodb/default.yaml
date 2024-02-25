@@ -11,3 +11,32 @@ mongodb::settings:
   process_user: 'mongodb'
   process_group: 'mongodb'
   tcp_port: '27017'
+
+# Version 4 format
+  packages:
+    main:
+      name: mongodb-server
+  services:
+    mongodb:
+      process_name: mongod
+      process_user: mongodb
+      process_group: mongodb
+  files:
+    config:
+      path: "/etc/mongodb.conf"
+    log:
+      path: "/var/log/mongodb/mongodb.log"
+    pid:
+      path: "/var/run/mongodb.pid"
+  user_files:
+    config:
+      path: "$HOME/.mongodb.conf"
+  dirs:
+    log:
+      path: "/var/log/mongodb"
+    data:
+      path: "/var/lib/mongodb"
+  ports:
+    main:
+      port: '27017'
+      protocol: tcp

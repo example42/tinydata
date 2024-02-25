@@ -3,3 +3,9 @@ terraform::settings:
   upstream_repo: true
   package_name: 'terraform'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: terraform
+  repo: upstream

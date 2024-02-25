@@ -1,3 +1,7 @@
 ---
 openswan::settings:
   package_name: 'libreswan'
+# Version 4 format
+  packages:
+    main:
+      name: libreswan

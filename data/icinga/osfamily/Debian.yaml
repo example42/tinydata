@@ -4,3 +4,14 @@ icinga::settings:
   process_user: 'nagios'
   process_group: 'nagios'
   pid_file_path: '/var/run/icinga/icinga.pid'
+
+# Version 4 format
+  services:
+    ! '':
+      process_user: nagios
+      process_group: nagios
+  files:
+    init:
+      path: "/etc/default/icinga"
+    pid:
+      path: "/var/run/icinga/icinga.pid"

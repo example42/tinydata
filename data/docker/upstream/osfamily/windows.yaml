@@ -1,3 +1,7 @@
 ---
 docker::settings:
   package_name: 'docker-engine'
+# Version 4 format
+  packages:
+    main:
+      name: docker-engine

@@ -7,3 +7,12 @@ nginx::settings:
   mods-enabled_dir_path: '/etc/nginx/modules-enabled'
   sites-available_dir_path: '/etc/nginx/sites-available'
   sites-enabled_dir_path: '/etc/nginx/sites-enabled'
+
+# Version 4 format
+  services:
+    ! '':
+      process_user: www-data
+      process_group: www-data
+  files:
+    init:
+      path: "/etc/default/nginx"

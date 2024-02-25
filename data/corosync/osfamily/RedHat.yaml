@@ -2,3 +2,8 @@
 corosync::settings:
   init_file_path: '/etc/sysconfig/corosync'
 
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/corosync"

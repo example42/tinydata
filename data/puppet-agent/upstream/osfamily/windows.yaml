@@ -13,3 +13,27 @@ puppet-agent::settings:
   log_dir_path: 'C:\ProgramData\PuppetLabs\var\log'
   process_user: 'LocalSystem'
   process_group: 'LocalSystem'
+
+# Version 4 format
+  services:
+    ! '':
+      process_user: LocalSystem
+      process_group: LocalSystem
+  files:
+    config:
+      path: C:\ProgramData\PuppetLabs\puppet-agent\etc\puppet-agent.conf
+    log:
+      path: C:\ProgramData\PuppetLabs\var\log\puppet-agent.log
+    pid:
+      path: C:\ProgramData\PuppetLabs\var\run\agent.pid
+  user_files:
+    config:
+      path: C:\ProgramData\PuppetLabs\puppet-agent\etc\puppet-agent.conf
+  dirs:
+    config:
+      path: C:\ProgramData\PuppetLabs\puppet-agent\etc
+    log:
+      path: C:\ProgramData\PuppetLabs\var\log
+  user_dirs:
+    config:
+      path: C:\ProgramData\PuppetLabs\puppet-agent\etc

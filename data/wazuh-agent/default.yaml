@@ -9,3 +9,28 @@ wazuh-agent::settings:
   process_name: 'ossec-agentd'
   process_user: 'ossec'
   process_group: 'ossec'
+
+# Version 4 format
+  packages:
+    main:
+      name: wazuh-agent
+  services:
+    wazuh-agent:
+      process_name: ossec-agentd
+      process_user: ossec
+      process_group: ossec
+  files:
+    config:
+      path: "/var/ossec/etc/ossec.conf"
+  user_files:
+    config:
+      path: "/var/ossec$HOME/.ossec.conf"
+  dirs:
+    config:
+      path: "/var/ossec/etc"
+    home:
+      path: "/var/ossec"
+  user_dirs:
+    config:
+      path: "/var/ossec/etc"
+  repo: upstream

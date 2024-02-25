@@ -3,3 +3,9 @@ oh-my-zsh::settings:
   package_prerequisites: []
   tp_prerequisites:
     - git
+
+# Version 4 format
+  preinstall:
+    tp::install:
+    - git
+    package: []

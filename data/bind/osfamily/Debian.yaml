@@ -9,3 +9,32 @@ bind::settings:
   config_dir_path: '/etc/bind'
   conf_dir_path: '/etc/bind'
   data_dir_path: '/var/cache/named'
+
+# Version 4 format
+  packages:
+    main:
+      name: bind9
+  services:
+    bind9: {}
+  files:
+    config:
+      path: "/etc/bind/named.conf"
+    log:
+      path: "/var/log/syslog"
+    init:
+      path: "/etc/default/bind9"
+    pid:
+      path: "/var/run/named/named.pid"
+  user_files:
+    config:
+      path: "$HOME/.bind/named.conf"
+  dirs:
+    config:
+      path: "/etc/bind"
+    conf:
+      path: "/etc/bind"
+    data:
+      path: "/var/cache/named"
+  user_dirs:
+    config:
+      path: "$HOME/.bind"

@@ -13,3 +13,35 @@ enterprise-search::settings:
   data_dir_path: '/var/lib/enterprise-search'
   process_name: 'enterprise-search'
 
+
+# Version 4 format
+  packages:
+    main:
+      name: enterprise-search
+  services:
+    enterprise-search:
+      process_name: enterprise-search
+  files:
+    config:
+      path: "/etc/enterprise-search/enterprise-search.yml"
+      format: yaml
+    log:
+      path: "/var/log/enterprise-search/enterprise-search"
+    pid:
+      path: "/var/run/enterprise-search.pid"
+  user_files:
+    config:
+      path: "$HOME/.enterprise-search/enterprise-search.yml"
+  dirs:
+    config:
+      path: "/etc/enterprise-search"
+    log:
+      path: "/var/log/enterprise-search"
+    home:
+      path: "/usr/share/enterprise-search"
+    data:
+      path: "/var/lib/enterprise-search"
+  user_dirs:
+    config:
+      path: "$HOME/.enterprise-search"
+  repo: upstream

@@ -3,3 +3,10 @@ pgbouncer::settings:
   repo_package_url: 'https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm'
   repo_package_name: 'pgdp-redhat-repo'
   repo_filename: 'pgdg-redhat-all'
+
+# Version 4 format
+  repo:
+    upstream:
+      package_name: pgdp-redhat-repo
+      package_url: https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+      repofile_name: pgdg-redhat-all

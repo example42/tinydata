@@ -1,3 +1,8 @@
 ---
 rsyslog-relp::settings:
   package_name: 'rsyslog-relp'
+
+# Version 4 format
+  packages:
+    main:
+      name: rsyslog-relp

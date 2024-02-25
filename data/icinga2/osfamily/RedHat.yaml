@@ -6,3 +6,14 @@ icinga2::settings:
   repo_package_name: 'icinga-rpm-release'
   tp_prerequisites:
     - epel
+
+# Version 4 format
+  files:
+    init:
+      path: "/etc/sysconfig/icinga2"
+  repo:
+    upstream:
+      package_name: icinga-rpm-release
+  preinstall:
+    tp::install:
+    - epel

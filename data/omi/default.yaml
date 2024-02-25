@@ -10,3 +10,32 @@ omi::settings:
   home_dir_path: '/opt/microsoft/omi/'
   tp_prerequisites:
     - 'microsoft_repo'
+
+# Version 4 format
+  packages:
+    main:
+      name: omi
+  services:
+    omid: {}
+  files:
+    config:
+      path: "/etc/opt/omi/conf/omiserver.conf"
+  user_files:
+    config:
+      path: "$HOME/.opt/omi/conf/omiserver.conf"
+  dirs:
+    config:
+      path: "/etc/opt/microsoft/omi/"
+    log:
+      path: "/var/opt/omi/log/"
+    home:
+      path: "/opt/microsoft/omi/"
+  user_dirs:
+    config:
+      path: "$HOME/.opt/microsoft/omi/"
+  urls:
+    website: https://learn.microsoft.com/en-us/system-center/scom/plan-planning-agent-deployment
+    source: https://github.com/microsoft/omi.git
+  preinstall:
+    tp::install:
+    - microsoft_repo

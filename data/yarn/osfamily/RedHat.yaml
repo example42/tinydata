@@ -4,3 +4,10 @@ yarn::settings:
   repo_description: 'Yarn Repository'
   repo_url: 'https://dl.yarnpkg.com/rpm/'
   key_url: 'https://dl.yarnpkg.com/rpm/pubkey.gpg'
+
+# Version 4 format
+  repo:
+    upstream:
+      url: https://dl.yarnpkg.com/rpm/
+      description: Yarn Repository
+      key_url: https://dl.yarnpkg.com/rpm/pubkey.gpg

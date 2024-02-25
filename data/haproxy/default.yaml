@@ -14,3 +14,39 @@ haproxy::settings:
   tcp_port:
     - '80'
     - '443'
+
+# Version 4 format
+  packages:
+    main:
+      name: haproxy
+  services:
+    haproxy:
+      process_name: haproxy
+      process_user: haproxy
+      process_group: haproxy
+  files:
+    config:
+      path: "/etc/haproxy/haproxy.cfg"
+    log:
+      path: "/var/log/haproxy/haproxy.log"
+    pid:
+      path: "/var/run/haproxy.pid"
+  user_files:
+    config:
+      path: "$HOME/.haproxy/haproxy.cfg"
+  dirs:
+    config:
+      path: "/etc/haproxy"
+    conf:
+      path: "/etc/haproxy/conf.d"
+    log:
+      path: "/var/log/haproxy"
+  user_dirs:
+    config:
+      path: "$HOME/.haproxy"
+  ports:
+    main:
+      port:
+      - '80'
+      - '443'
+      protocol: tcp

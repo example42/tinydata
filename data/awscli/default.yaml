@@ -8,3 +8,26 @@ awscli::settings:
     - python-pip
   version_command: 'aws --version'
   docker_image: 'amazon/aws-cli'
+
+# Version 4 format
+  packages:
+    main:
+      name: awscli
+      provider: pip
+  files:
+    config:
+      path: "/root/.aws/config"
+  user_files:
+    config:
+      path: "/root/.aws/config"
+  dirs:
+    config:
+      path: "/etc/aws"
+  user_dirs:
+    config:
+      path: "$HOME/.aws"
+  image:
+    name: amazon/aws-cli
+  preinstall:
+    tp::install:
+    - python-pip

@@ -28,3 +28,39 @@ apache::settings:
     show_loaded_modules: 'apache2 -t -D DUMP_MODULES'
   test_commands:
     validate_config: 'source /etc/apache2/envvars ; apache2 -t'
+
+# Version 4 format
+  packages:
+    main:
+      name: apache2
+  services:
+    apache2:
+      process_name: apache2
+      process_user: www-data
+      process_group: www-data
+  files:
+    config:
+      path: "/etc/apache2/apache2.conf"
+    log:
+      path:
+      - "/var/log/apache2/access.log"
+      - "/var/log/apache2/error.log"
+    init:
+      path: "/etc/default/apache2"
+    pid:
+      path: "/var/run/apache2.pid"
+  user_files:
+    config:
+      path: "$HOME/.apache2/apache2.conf"
+  dirs:
+    config:
+      path: "/etc/apache2"
+    conf:
+      path: "/etc/apache2/conf.d"
+    log:
+      path: "/var/log/apache2"
+    data:
+      path: "/var/www"
+  user_dirs:
+    config:
+      path: "$HOME/.apache2"

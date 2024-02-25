@@ -4,3 +4,18 @@ multipath::settings:
   service_name: 'multipath-tools'
   config_file_path: '/etc/multipath.conf'
   init_file_path: '/etc/default/multipath-tools'
+
+# Version 4 format
+  packages:
+    main:
+      name: multipath-tools
+  services:
+    multipath-tools: {}
+  files:
+    config:
+      path: "/etc/multipath.conf"
+    init:
+      path: "/etc/default/multipath-tools"
+  user_files:
+    config:
+      path: "$HOME/.multipath.conf"

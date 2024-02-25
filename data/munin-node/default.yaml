@@ -14,3 +14,37 @@ munin-node::settings:
   process_user: 'munin'
   process_group: 'munin'
   tcp_port: '4949'
+
+# Version 4 format
+  packages:
+    main:
+      name: munin-node
+  services:
+    munin-node:
+      process_name: munin-node
+      process_user: munin
+      process_group: munin
+  files:
+    config:
+      path: "/etc/munin/munin-node.conf"
+    log:
+      path: "/var/log/munin/munin.log"
+    pid:
+      path: "/var/run/munin/munin-node.pid"
+  user_files:
+    config:
+      path: "$HOME/.munin/munin-node.conf"
+  dirs:
+    config:
+      path: "/etc/munin"
+    conf:
+      path: "/etc/munin/munin-conf.d"
+    log:
+      path: "/var/log/munin"
+  user_dirs:
+    config:
+      path: "$HOME/.munin"
+  ports:
+    main:
+      port: '4949'
+      protocol: tcp

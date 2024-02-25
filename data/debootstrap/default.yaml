@@ -1,3 +1,8 @@
 ---
 debootstrap::settings:
   package_name: 'debootstrap'
+
+# Version 4 format
+  packages:
+    main:
+      name: debootstrap

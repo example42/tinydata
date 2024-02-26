@@ -26,3 +26,4 @@
 .envrc
 /inventory.yaml
 /results.txt
+/chroma_db/

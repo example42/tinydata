@@ -4,6 +4,7 @@ squid::settings:
   service_name: 'squid'
   config_file_path: '/etc/squid/squid.conf'
   config_dir_path: '/etc/squid'
+  conf_dir_path: '/etc/squid/conf.d'
   pid_file_path: '/var/run/squid.pid'
   process_name: 'squid'
   process_user: 'squid'

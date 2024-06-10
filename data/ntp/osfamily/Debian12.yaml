@@ -1,0 +1,8 @@
+---
+ntp::settings:
+  package_name: 'ntpsec'
+  service_name: 'ntp'
+  config_file_path: '/etc/ntpsec/ntp.conf'
+  config_dir_path: '/etc/ntp/ntpsec'
+  process_user: 'ntpsec'
+  process_group: 'ntpsec'

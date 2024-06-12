@@ -1,0 +1,5 @@
+---
+discord::settings:
+  package_name: discord
+  snap_package_name: 'discord'
+  website_url: 'https://discord.com/'

@@ -1,0 +1,5 @@
+---
+mysql::settings:
+  package_name: 'mysql-community-server'
+  repo_package_url: 'https://dev.mysql.com/get/mysql80-community-release-el6-1.noarch.rpm'
+  repo_package_name: 'mysql80-community-release-el6-1'

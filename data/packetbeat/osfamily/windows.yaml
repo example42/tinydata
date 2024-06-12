@@ -1,0 +1,4 @@
+---
+packetbeat::settings:
+  config_file_path: 'C:\ProgramData\chocolatey\lib\packetbeat\tools\packetbeat.yml'
+

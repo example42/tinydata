@@ -1,0 +1,5 @@
+---
+sysinternals::settings:
+  winget_package_name: 'Microsoft.PowerShell'
+  choco_package_name: 'sysinternals'
+  package_name: 'sysinternals'

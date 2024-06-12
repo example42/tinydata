@@ -1,0 +1,17 @@
+---
+homebrew::settings:
+  exec_prerequisites:
+    homebrew-install:
+      command: 'NONINTERACTIVE=1 ; curl https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash'
+      creates: '/home/linuxbrew/.linuxbrew/bin/brew'
+  exec_postinstall:
+    homebrew-add-user-env:
+      command: 'echo "eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >> ~/.profile'
+      provider: 'shell'
+      unless: "grep '/home/linuxbrew/.linuxbrew/bin/brew shellenv' ~/.profile"
+  package_prerequisites:
+    - curl
+  debug_commands:
+    doctor: '/home/linuxbrew/.linuxbrew/bin/brew doctor'
+  info_commands:
+    config: '/home/linuxbrew/.linuxbrew/bin/brew config'

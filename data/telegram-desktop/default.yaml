@@ -1,0 +1,6 @@
+---
+telegram-desktop::settings:
+  package_name: telegram-desktop
+  snap_package_name: 'telegram-desktop'
+  website_url: 'https://desktop.telegram.org/'
+  git_source: 'https://github.com/telegramdesktop/tdesktop.git'

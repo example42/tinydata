@@ -1,0 +1,8 @@
+---
+default::settings:
+  apt_release: 'wheezy'
+
+  repos:
+    default:
+      apt:
+        release: 'wheezy'

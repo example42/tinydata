@@ -1,0 +1,8 @@
+---
+pytorch:
+  package_name:
+    - 'torch'
+    - 'torchvision'
+    - 'torchaudio'
+  package_provider: 'pip'
+

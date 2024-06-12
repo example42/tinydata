@@ -1,0 +1,4 @@
+---
+enterprise-search::settings:
+  config_file_path: 'C:\ProgramData\chocolatey\lib\enterprise-search\tools\enterprise-search.yml'
+

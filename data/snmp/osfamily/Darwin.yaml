@@ -1,0 +1,11 @@
+---
+snmp::settings:
+  brew_package_name: 'snmp'
+
+  user_files:
+    config:
+      path: '$HOME/Library/Application\ Support/snmp/snmp.conf'
+
+  user_dirs:
+    config:
+      path: '$HOME/Library/Application\ Support/snmp/snmp.conf'

@@ -1,0 +1,3 @@
+---
+twitch-studio::settings:
+  brew_package_name: 'twitch-studio'

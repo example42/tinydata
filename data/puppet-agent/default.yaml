@@ -1,18 +1,16 @@
 ---
-  puppet-agent::settings:
-    package_name: 'puppet-agent'
-    service_name: 'puppet'
-    config_file_path: '/etc/puppetlabs/puppet/puppet.conf'
-    fileserver_file_path: '/etc/puppetlabs/puppet/fileserver.conf'
-    routes_file_path: '/etc/puppetlabs/puppet/routes.yaml'
-    autosign_file_path: '/etc/puppetlabs/puppet/autosign.conf'
-    auth_file_path: '/etc/puppetlabs/puppet/auth.conf'
-    config_dir_path: '/etc/puppetlabs/puppet/'
-    code_dir_path: '/etc/puppetlabs/code'
-    environment_dir_path: '/etc/puppetlabs/code/environments'
-    pid_file_path: '/var/run/puppetlabs/agent.pid'
-    log_file_path: '/var/log/puppetlabs/puppet/puppet.log'
-    log_dir_path: '/var/log/puppetlabs/puppet'
-    process_name: 'puppet'
-    process_user: 'root'
-    process_group: 'root'
+puppet-agent::settings:
+  upstream_repo: true
+  package_name: 'puppet-agent'
+  service_name: ['puppet', 'pxp-agent']
+  config_file_path: '/etc/puppetlabs/puppet/puppet.conf'
+  config_dir_path: '/etc/puppetlabs/puppet'
+  pid_file_path: '/var/run/puppetlabs/agent.pid'
+  process_name: 'puppet'
+  process_user: 'root'
+  process_group: 'root'
+  log_file_path:
+    - '/var/log/puppet/pxp-agent/pxp-agent.log'
+  log_dir_path:
+    - '/var/log/puppetlabs/puppet'
+    - '/var/log/puppetlabs/pxp-agent'

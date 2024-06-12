@@ -1,4 +1,0 @@
----
-  puppet-agent::settings:
-    dockerfile_prerequisites: 'RUN yum install -y wget systemd'
-

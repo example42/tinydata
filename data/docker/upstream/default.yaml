@@ -1,0 +1,4 @@
+---
+docker::settings:
+  package_name: 'docker-ce'
+  compose_version: '1.24.0'

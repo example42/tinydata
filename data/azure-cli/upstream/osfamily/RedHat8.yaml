@@ -1,0 +1,4 @@
+---
+azure-cli::settings:
+  repo_package_url: 'https://packages.microsoft.com/config/rhel/8/packages-microsoft-prod.rpm'
+

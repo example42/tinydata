@@ -1,0 +1,4 @@
+---
+epel::settings:
+  repo_package_name: 'epel-release'
+

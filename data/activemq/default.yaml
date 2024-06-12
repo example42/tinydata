@@ -1,13 +1,21 @@
 ---
-  activemq::settings:
-    package_name: 'activemq'
-    service_name: 'activemq'
-    config_file_path: '/etc/activemq/activemq.xml'
-    config_dir_path: '/etc/activemq'
-    tpp_port: '8161'
-    pid_file_path: '/var/run/activemq/activemq.pid'
-    log_file_path: '/var/log/activemq'
-    process_name: 'java'
-    process_extra_name: 'activemq'
-    process_user: 'activemq'
-    process_group: 'activemq'
+activemq::settings:
+  package_name: 'activemq'
+  service_name: 'activemq'
+  config_file_path: '/etc/activemq/activemq.xml'
+  config_dir_path: '/etc/activemq'
+  tcp_port: '8161'
+  pid_file_path: '/var/run/activemq/activemq.pid'
+  log_file_path: '/var/log/activemq'
+  process_name: 'java'
+  process_extra_name: 'activemq'
+  process_user: 'activemq'
+  process_group: 'activemq'
+  website_url: 'https://activemq.apache.org/'
+  git_source: 'https://github.com/apache/activemq'
+  info_commands:
+    dstat: 'activemq dstat'
+    list: 'activemq list'
+  test_commands:
+    status: 'activemq status'
+  docker_image: 'apache/activemq'

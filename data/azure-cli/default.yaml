@@ -1,0 +1,7 @@
+---
+azure-cli::settings:
+  package_name: azure-cli
+  version_command: 'az -v'
+  docker_image: 'bitnami/azure-cli'
+  tp_prerequisites:
+    - microsoft_repo

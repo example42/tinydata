@@ -1,0 +1,4 @@
+---
+autoruns::settings:
+  package_name: ''
+  website_url: 'https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns'

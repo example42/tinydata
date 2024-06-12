@@ -1,0 +1,4 @@
+---
+kedro:
+  package_name: kedro
+  package_provider: 'pip'

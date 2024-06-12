@@ -1,0 +1,11 @@
+---
+zeek::settings:
+  upstream_repo: true
+  package_name: 'zeek'
+  service_name: 'zeek'
+  pid_file_path: '/var/run/zeek.pid'
+  process_name: 'zeek'
+  process_user: 'zeek'
+  process_group: 'zeek'
+  config_file_path: '/etc/zeek/daemon.json'
+  config_dir_path: '/etc/zeek'

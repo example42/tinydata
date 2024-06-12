@@ -1,0 +1,8 @@
+---
+default::settings:
+  apt_release: 'hirsute'
+
+  repos:
+    default:
+      apt:
+        release: 'hirsute'

@@ -1,4 +1,0 @@
----
-  puppet-agent::settings:
-    apt_release: 'trusty'
-

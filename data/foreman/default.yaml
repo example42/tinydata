@@ -1,0 +1,21 @@
+---
+foreman::settings:
+  package_name: 'foreman-installer'
+  service_name: 'foreman'
+  config_file_path: '/etc/foreman/config.yml'
+  config_dir_path: '/etc/foreman'
+  pid_file_path: '/var/run/foreman/foreman.pid'
+  log_file_path:
+    - '/var/log/foreman/production.log'
+    - '/var/log/foreman/error.log'
+  log_dir_path: '/var/log/foreman'
+  process_user: 'foreman'
+  process_group: 'foreman'
+  tp_prerequisites:
+    - puppet-agent
+    - puppetserver
+  exec_postinstall:
+    foreman_installer:
+      command: 'foreman-installer -l warning'
+      creates: '/etc/foreman/settings.yaml'
+      logoutput: true

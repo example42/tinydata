@@ -1,0 +1,5 @@
+---
+icinga_repo::settings:
+  repo_url: 'https://packages.icinga.com/debian'
+  apt_repos: 'main'
+  apt_release: 'stable'

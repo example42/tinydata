@@ -1,0 +1,15 @@
+---
+enterprise-search::settings:
+  upstream_repo: true
+  package_name: 'enterprise-search'
+  service_name: 'enterprise-search'
+  config_file_path: '/etc/enterprise-search/enterprise-search.yml'
+  config_file_format: 'yaml'
+  config_dir_path: '/etc/enterprise-search'
+  pid_file_path: '/var/run/enterprise-search.pid'
+  log_file_path: '/var/log/enterprise-search/enterprise-search'
+  log_dir_path: '/var/log/enterprise-search'
+  home_dir_path: '/usr/share/enterprise-search'
+  data_dir_path: '/var/lib/enterprise-search'
+  process_name: 'enterprise-search'
+

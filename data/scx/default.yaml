@@ -1,0 +1,10 @@
+---
+scx::settings:
+  package_name: scx
+  website_url: 'https://learn.microsoft.com/en-us/system-center/scom/manage-security-administer-crossplat-agent'
+  git_source: 'https://github.com/microsoft/SCXcore.git'
+  log_dir_path: '/var/opt/microsoft/scx/log/'
+  config_dir_path: '/etc/opt/microsoft/scx/'
+  home_dir_path: '/opt/microsoft/scx/'
+  tp_prerequisites:
+    - 'microsoft_repo'

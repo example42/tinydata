@@ -1,3 +1,0 @@
----
-  docker-engine::settings:
-    apt_release: 'ubuntu-precise'

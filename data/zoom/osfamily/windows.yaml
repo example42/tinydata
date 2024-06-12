@@ -1,0 +1,5 @@
+---
+zoom::settings:
+  winget_package_name: 'Zoom.Zoom'
+  choco_package_name: 'zoom'
+  package_name: 'zoom'

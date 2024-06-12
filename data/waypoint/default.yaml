@@ -1,0 +1,6 @@
+---
+waypoint::settings:
+  upstream_repo: true
+  package_name: 'waypoint'
+  process_name: 'waypoint'
+

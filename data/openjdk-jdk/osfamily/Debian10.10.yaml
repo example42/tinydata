@@ -1,3 +1,0 @@
----
-  openjdk-jdk::settings:
-    package_name: 'openjdk-6-jdk'

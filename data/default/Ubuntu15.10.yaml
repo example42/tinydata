@@ -1,0 +1,8 @@
+---
+default::settings:
+  apt_release: 'wily'
+
+  repos:
+    default:
+      apt:
+        release: 'wily'

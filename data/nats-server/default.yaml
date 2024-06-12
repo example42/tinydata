@@ -1,0 +1,80 @@
+---
+nats-server::settings:
+  tp_prerequisites: {}
+
+  upstream_repo: false
+  package_name: 'nats-server'
+  service_name: 'nats-server'
+  process_name: 'nats-server'
+  process_user: 'root'
+  process_group: 'root'
+  config_file_path: '/etc/nats/nats-server.conf'
+  config_dir_path: '/etc/nats'
+
+  # tp 4 settings
+  install_method: 'release'
+  description: 'NATS is an open-source, high-performance, cloud native messaging system.'
+  docker_image: 'nats'
+  docker_args: ''
+  urls:
+    website: 'https://nats.io'
+    issues: 'https://github.com/nats-io/nats-server/issues'
+    source: 'https://github.com/nats-io/nats-server'
+
+  files:
+    config:
+      path: '/etc/nats/nats-server.conf'
+    systemd:
+      path: '/etc/systemd/system/nats-server.service'
+      format: 'inifile_with_stanzas'
+
+  dirs:
+    config:
+      path: '/etc/nats'
+
+  user_files:
+    config:
+      path: '$HOME/.nats/nats-server.conf'
+
+  user_dirs:
+    config:
+      path: '$HOME/.nats'
+
+  ports:
+    main:
+      port: 4222
+      protocol: tcp
+    management:
+      port: 8222
+      protocol: tcp
+    routing:
+      port: 6222
+      protocol: tcp
+
+  build:
+    prerequisites:
+      tp::install:
+        - golang
+    execs:
+      - name: build
+        command: 'GO111MODULE=on go get github.com/nats-io/nats-server/v2'
+
+  release:
+    latest_version: '2.9.11'
+    prerequisites: {}
+    base_url: 'https://github.com/nats-io/nats-server/releases/download/v$VERSION'
+    file_name: 'nats-server-v$VERSION-$OS-$ARCH.zip'
+    extracted_dir: 'nats-server-v$VERSION-$OS-$ARCH'
+    file_format: zip
+    setup:
+      enable: true
+      files:
+        nats-server:
+          path: '/usr/local/bin/nats-server'
+          mode: '0755'
+      systemd_options:
+        Service:
+          ExecStart: '/usr/local/bin/nats-server'
+          EnvironmentFile: ~
+      manage_service: true
+      manage_user: false

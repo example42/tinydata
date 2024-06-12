@@ -1,0 +1,3 @@
+---
+spiderfoot::settings:
+  package_name: 'spiderfoot'

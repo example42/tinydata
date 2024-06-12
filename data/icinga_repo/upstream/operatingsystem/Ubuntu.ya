@@ -1,0 +1,4 @@
+---
+icinga_repo::settings:
+  repo_url: 'https://packages.icinga.com/ubuntu'
+

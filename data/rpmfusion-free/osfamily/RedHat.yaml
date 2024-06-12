@@ -1,0 +1,5 @@
+---
+rpmfusion-free::settings:
+  repo_package_name: 'rpmfusion-free-release'
+  tp_prerequisites:
+    - epel

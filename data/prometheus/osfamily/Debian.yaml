@@ -1,0 +1,15 @@
+---
+prometheus::settings:
+  init_file_path: '/etc/default/prometheus'
+  install_method: 'package'
+
+  files:
+    init:
+      path: '/etc/default/prometheus'
+
+  setup:
+    resources:
+      exec:
+        prometheus_init_config:
+          command: 'touch /etc/default/prometheus'
+          creates: '/etc/default/prometheus'

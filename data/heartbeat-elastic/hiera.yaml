@@ -1,0 +1,8 @@
+---
+:hierarchy:
+  - "%{title}/upstream/osfamily/%{osfamily}"
+  - "%{title}/upstream/default"
+  - "%{title}/osfamily/%{osfamily}"
+  - "%{title}/default"
+  - "default/%{operatingsystem}"
+  - default

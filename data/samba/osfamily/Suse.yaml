@@ -1,0 +1,5 @@
+---
+samba::settings:
+  log_file_path:
+    - '/var/log/samba/log.smbd'
+    - '/var/log/samba/cores/smbd'

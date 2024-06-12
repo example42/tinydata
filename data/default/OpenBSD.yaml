@@ -1,0 +1,7 @@
+---
+default::settings:
+  config_file_group: 'wheel'
+
+  files:
+    config:
+      group: 'wheel'

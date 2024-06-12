@@ -1,0 +1,144 @@
+---
+sample::settings:
+  tp_prerequisites: {}
+
+  urls:
+    website: 'https://sample.com'
+    issues: 'https://github.com/sample/sample/issues'
+    documentation: 'https://sample.com/documentation'
+    source: 'https://github.com/sample/sample'
+  description: 'sample description'
+
+  # Configured: +package -source -file +image
+  install_method: 'package'
+
+  packages:
+    main:
+      name: sample
+      ensure: present
+      source: ~
+      install_options: []
+      params: {}
+      providers:
+        chocolatey:
+          name: ~
+        scoop:
+          name: ~
+        winget:
+          name: ~
+    # Examples of other packages
+    client:
+      name: sample-client
+    server:
+      name: sample-server
+
+  services:
+    sample:
+      process_name: sample
+      process_extra_name: ~
+      process_user: root
+      process_group: root
+      nodaemon_args: '-D'
+      ensure: running
+      enable: true
+      pidfile: /run/sample.pid
+      params: {}
+
+
+  files:
+    config:
+      path: '/etc/sample/sample.conf'
+    init:
+      path: '/etc/sysconfig/sample.conf'
+      format: 'inifile'
+    systemd:
+      path: '/etc/systemd/system/sample.service'
+      format: 'inifile_with_stanzas'
+
+  dirs:
+    config:
+      path: '/etc/sample'
+    conf:
+      path: '/etc/sample/conf.d'
+    log:
+      path: /var/log/sample
+    home:
+      path: /var/lib/sample
+
+  user_files:
+    config:
+      path: '$HOME/.sample/sample.conf'
+
+  user_dirs:
+    config:
+      path: '$HOME/.sample'
+
+  ports:
+    main:
+      port: 42
+      protocol: tcp
+    ssl:
+      port: 4432
+      protocol: tcp
+
+  info_commands:
+    list: 'sample list'
+  debug_commands:
+    debug: 'sample debug'
+  test_commands:
+    status: 'sample status'
+  version_command: 'sample version'
+  help_command: 'sample help'
+  run_commands:
+    start:
+      command: 'sample start'
+
+  image:
+    name: 'sample/sample'
+    ports:
+      - 9090:9090
+    systemd_options: {}
+
+  build:
+    prerequisites:
+      tp::install:
+        - build-essential
+    execs:
+      - name: configure
+        command: './configure'
+      - name: build
+        command: 'make'
+      - name: setup
+        command: 'make install'
+    setup:
+      enable: true
+      files:
+        sample:
+          path: '/usr/local/bin/sample'
+          mode: '0755'
+      systemd_options: {}
+      resources: {}
+      manage_service: false
+      manage_user: false
+
+  release:
+    latest_version: ~
+    prerequisites: {}
+    latest_url: ~
+    base_url: 'https://github.com/sample/sample/releases/download/sample-$VERSION'
+    file_name: 'sample-$VERSION.$OS-$ARCH.tar.gz'
+    extracted_dir: 'sample-$VERSION.$OS-$ARCH'
+    file_format: tar.gz
+    setup:
+      enable: true
+      files:
+        sample:
+          path: '/usr/local/bin/sample'
+          mode: '0755'
+      systemd_options:
+        Service:
+          ExecStart: '/var/lib/tp/source/sample/sample -l 127.0.0.1'
+          EnvironmentFile: ~
+      resources: {}
+      manage_service: false
+      manage_user: false

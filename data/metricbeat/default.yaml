@@ -1,0 +1,15 @@
+---
+metricbeat::settings:
+  upstream_repo: true
+  package_name: 'metricbeat'
+  service_name: 'metricbeat'
+  config_file_path: '/etc/metricbeat/metricbeat.yml'
+  config_file_format: 'yaml'
+  config_dir_path: '/etc/metricbeat'
+  pid_file_path: '/var/run/metricbeat.pid'
+  log_file_path: '/var/log/metricbeat/metricbeat'
+  log_dir_path: '/var/log/metricbeat'
+  home_dir_path: '/usr/share/metricbeat'
+  data_dir_path: '/var/lib/metricbeat'
+  process_name: 'metricbeat'
+

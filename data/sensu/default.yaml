@@ -1,0 +1,23 @@
+---
+sensu::settings:
+  package_name: 'sensu'
+  service_name: 'sensu-client'
+  config_file_path: '/etc/sensu/config.json'
+  config_dir_path: '/etc/sensu'
+  conf_dir_path: '/etc/sensu/conf.d'
+  checks_dir_path: '/etc/sensu/conf.d/checks'
+  contacts_dir_path: '/etc/sensu/conf.d/contacts'
+  extensions_dir_path: '/etc/sensu/conf.d/extensions'
+  filters_dir_path: '/etc/sensu/conf.d/filters'
+  handlers_dir_path: '/etc/sensu/conf.d/handlers'
+  mutators_dir_path: '/etc/sensu/conf.d/mutators'
+  pid_file_path: '/var/run/sensu/sensu-client.pid'
+  log_file_path:
+    - '/var/log/sensu/sensu-client.log'
+    - '/var/log/sensu/sensu-server.log'
+    - '/var/log/sensu/sensu-api.log'
+  log_dir_path: '/var/log/sensu'
+  process_name: 'sensu'
+  process_user: 'sensu'
+  process_group: 'sensu'
+  init_file_path: '/etc/default/sensu'

@@ -1,0 +1,3 @@
+---
+mongodb::settings:
+  apt_release: 'bionic/mongodb-org/4.4'

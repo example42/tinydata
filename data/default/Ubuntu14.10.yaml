@@ -1,0 +1,4 @@
+---
+default::settings:
+  apt_release: 'utopic'
+  init_system: 'upstart'

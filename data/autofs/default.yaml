@@ -1,9 +1,10 @@
 ---
-  autofs::settings:
-    package_name: 'autofs'
-    service_name: 'autofs'
-    config_file_path: '/etc/auto.master'
-    init_file_path: '/etc/sysconfig/autofs'
-    pid_file_path: '/var/run/autofs.pid'
-    process_user: 'root'
-    process_group: 'root'
+autofs::settings:
+  package_name: 'autofs'
+  service_name: 'autofs'
+  config_file_path: '/etc/auto.master'
+  init_file_path: '/etc/sysconfig/autofs'
+  pid_file_path: '/var/run/autofs.pid'
+  process_user: 'root'
+  process_group: 'root'
+  git_source: 'https://kernel.googlesource.com/pub/scm/linux/storage/autofs/autofs/'

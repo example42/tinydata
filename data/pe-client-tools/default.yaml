@@ -1,0 +1,5 @@
+---
+pe-client-tools::settings:
+  package_name: 'pe-client-tools'
+  tp_prerequisites:
+    puppet_repo: {}

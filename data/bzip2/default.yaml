@@ -1,0 +1,5 @@
+---
+bzip2::settings:
+  package_name: 'bzip2'
+  website_url: 'https://sourceware.org/bzip2/'
+  git_source: 'https://gitlab.com/bzip2/bzip2/'

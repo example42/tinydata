@@ -1,0 +1,10 @@
+---
+sysdig::settings:
+#  repo_url: 'http://download.draios.com/stable/rpm/$basearch'
+#  key: 'F1C3BD80'
+#  key_url: 'https://s3.amazonaws.com/download.draios.com/DRAIOS-GPG-KEY.public'
+  tp_prerequisites:
+    - dkms
+    - epel
+  repo_file_url: 'https://download.sysdig.com/stable/rpm/draios.repo'
+  repo_file_name: 'draios.repo'

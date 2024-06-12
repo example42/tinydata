@@ -1,0 +1,14 @@
+---
+sample::settings:
+
+  # If exe or msi package is available for direct download:
+  package_provider: 'windows'
+  package_source: 'https://github.com/sample/sample/releases/download/v$VERSION/sample_$VERSION_$OS_$ARCH.msi'
+
+  user_files:
+    config:
+      path: '%APPDATA%\sample\sample.conf'
+
+  user_dirs:
+    config:
+      path: '%APPDATA%\sample'

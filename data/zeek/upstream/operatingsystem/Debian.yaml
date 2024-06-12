@@ -1,0 +1,7 @@
+---
+zeek::settings:
+  init_file_path: '/etc/default/zeek'
+  repo_url: 'https://download.zeek.com/linux/debian'
+  key: '0EBFCD88'
+  key_url: 'https://download.zeek.com/linux/debian/gpg'
+  apt_repos: 'stable'

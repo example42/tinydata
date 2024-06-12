@@ -1,0 +1,13 @@
+---
+docker::settings:
+  upstream_repo: true
+  package_name: 'docker'
+  service_name: 'docker'
+  pid_file_path: '/var/run/docker.pid'
+  process_name: 'docker'
+  process_user: 'docker'
+  process_group: 'docker'
+  tcp_port: '2375'
+  config_file_path: '/etc/docker/daemon.json'
+  config_dir_path: '/etc/docker'
+  config_file_format: 'json'

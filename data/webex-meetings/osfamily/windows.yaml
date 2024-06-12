@@ -1,0 +1,5 @@
+---
+webex-meetings::settings:
+  winget_package_name: 'Cisco.CiscoWebexMeetings'
+  choco_package_name: 'webex-meetings'
+  package_name: 'webex-meetings'

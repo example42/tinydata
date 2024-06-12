@@ -1,0 +1,4 @@
+---
+docker::settings:
+  repo_url: ~
+  package_name: 'docker'

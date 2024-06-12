@@ -1,6 +1,11 @@
 ---
-  bind::settings:
-    package_name: 'bind9'
-    service_name: 'bind9'
-    init_file_path: '/etc/default/bind9'
-    pid_file_path: '/var/run/named/named.pid'
+bind::settings:
+  package_name: 'bind9'
+  service_name: 'bind9'
+  init_file_path: '/etc/default/bind9'
+  pid_file_path: '/var/run/named/named.pid'
+  log_file_path: '/var/log/syslog'
+  config_file_path: '/etc/bind/named.conf'
+  config_dir_path: '/etc/bind'
+  conf_dir_path: '/etc/bind'
+  data_dir_path: '/var/cache/named'

@@ -1,0 +1,12 @@
+---
+crowdsec-firewall-bouncer-iptables::settings:
+  upstream_repo: true
+  package_name: 'crowdsec-firewall-bouncer-iptables'
+  service_name: 'crowdsec-firewall-bouncer'
+  config_file_path: '/etc/crowdsec/bouncers/crowdsec-firewall-bouncer.yaml'
+  config_dir_path: '/etc/crowdsec/bouncers'
+  process_name: 'crowdsec-firewall-bouncer'
+  process_user: 'root'
+  process_group: 'root'
+  tp_prerequisites:
+    - crowdsec_repo

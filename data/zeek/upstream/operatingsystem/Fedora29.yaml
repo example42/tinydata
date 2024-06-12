@@ -1,0 +1,3 @@
+---
+zeek::settings:
+  repo_file_url: 'https://download.opensuse.org/repositories/security:zeek/Fedora_29/security:zeek.repo'

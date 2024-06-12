@@ -1,0 +1,3 @@
+---
+elrepo::settings:
+  repo_package_url: 'https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm'

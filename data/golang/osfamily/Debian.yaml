@@ -1,0 +1,6 @@
+---
+golang::settings:
+
+  files:
+    init:
+      path: '/etc/default/golang'

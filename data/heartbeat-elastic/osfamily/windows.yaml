@@ -1,0 +1,4 @@
+---
+heartbeat-elastic::settings:
+  config_file_path: 'C:\ProgramData\chocolatey\lib\heartbeat-elastic\tools\heartbeat-elastic.yml'
+

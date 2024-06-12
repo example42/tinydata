@@ -1,0 +1,72 @@
+---
+blender::settings:
+  tp_prerequisites: {}
+
+  urls:
+    website: 'https://blender.org'
+    support: 'https://www.blender.org/support/'
+    documentation: 'https://www.blender.org/get-involved/documentation/'
+    source: 'https://github.com/blender/blender'
+  description: 'Blender is the free and open source 3D creation suite'
+
+  # Configured: +package -source -release +image
+  install_method: 'release'
+
+  packages:
+    main:
+      name: blender
+      ensure: present
+      source: ~
+      install_options: []
+      params: {}
+      providers:
+        chocolatey:
+          name: blender
+        scoop:
+          name: blender
+        winget:
+          name: BlenderFoundation.Blender
+
+  files:
+    config:
+      path: /usr/share/blender/$MAJVERSION/
+      format: 'inifile_with_stanzas'
+
+  dirs:
+    home:
+      path: '/usr/share/blender/qON/'
+
+  user_files:
+    config:
+      path: '$HOME/.config/blender/$MAJVERSION/'
+
+  user_dirs:
+    config:
+      path: '$HOME/.config/blender/$MAJVERSION/'
+
+  info_commands:
+    list: 'blender list'
+  debug_commands:
+    debug: 'blender debug'
+  test_commands:
+    status: 'blender status'
+  version_command: 'blender version'
+  help_command: 'blender help'
+  run_commands:
+    start:
+      command: 'blender start'
+  release:
+    latest_version: '3.4.1'
+    latest_version_major: '3.4'
+    destination: /usr/share/blender
+    base_url: 'https://mirrors.dotsrc.org/blender/release/Blender$MAJVERSION/'
+    # Official base url has a intermediate page. A specific mirror is used instead.
+    # base_url: 'https://www.blender.org/download/release/Blender$MAJVERSION/blender-$VERSION-$OS-$ARCH'
+    file_name: 'blender-$VERSION-$OS-x64.tar.xz'
+    extracted_dir: 'blender-$VERSION-$OS-x64'
+    file_format: xz
+    extract_dir: '/usr/share/blender'
+    setup:
+      enable: true
+      links:
+        '/usr/local/bin/blender': '/usr/share/blender/blender-$VERSION-$OS-x64/blender'

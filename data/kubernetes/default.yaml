@@ -1,0 +1,10 @@
+---
+kubernetes::settings:
+  package_name:
+    - 'kubeadm'
+    - 'kubectl'
+    - 'kubelet'
+  service_name: 'kubelet'
+  config_file_path: '/etc/kubernetes/kubelet.conf'
+  config_dir_path: '/etc/kubernetes'
+  tcp_port: '10250'

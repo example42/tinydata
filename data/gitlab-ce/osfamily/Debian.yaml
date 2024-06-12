@@ -1,0 +1,6 @@
+---
+gitlab-ce::settings:
+  exec_prerequisites:
+    gitlab-install:
+      command: 'curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | bash'
+      creates: '/etc/apt/sources.list.d/gitlab_gitlab-ce.list'

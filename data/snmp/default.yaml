@@ -1,0 +1,179 @@
+---
+snmp::settings:
+  tp_prerequisites: {}
+
+  package_name: 'snmpd'
+  service_name: 'snmpd'
+  config_file_path: '/etc/snmp/snmpd.conf'
+  config_file_mode: '0600'
+  config_dir_path: '/etc/snmp'
+  pid_file_path: '/var/run/snmpd.pid'
+  log_file_path: '/var/log/snmpd/snmpd.log'
+  log_dir_path: '/var/log/snmpd'
+  process_name: 'snmpd'
+  process_user: 'snmpd'
+  process_group: 'snmpd'
+  udp_port: '161'
+
+  urls:
+    website: 'http://www.net-snmp.org/'
+    issues: 'https://github.com/net-snmp/net-snmp/issues'
+    documentation: 'https://snmpd.com/documentation'
+    source: 'https://github.com/net-snmp/net-snmp'
+  description: 'A SNMP application library, tools and daemon'
+
+  # Configured: +package -source -file +image
+  install_method: 'package'
+
+  packages:
+    main:
+      name: snmpd
+      ensure: present
+      source: ~
+      install_options: []
+      params: {}
+      providers:
+        chocolatey:
+          name: ~
+        scoop:
+          name: ~
+        winget:
+          name: ~
+    snmptrapd:
+      name: snmptrapd
+      ensure: present
+      source: ~
+      install_options: []
+      params: {}
+      providers:
+        chocolatey:
+          name: ~
+        scoop:
+          name: ~
+        winget:
+          name: ~
+  services:
+    snmpd:
+      process_name: snmpd
+      process_extra_name: ~
+      process_user: root
+      process_group: root
+      nodaemon_args: '-D'
+      ensure: running
+      enable: true
+      pidfile: /var/run/snmpd.pid
+      params: {}
+    snmptrapd:
+      process_name: snmptrapd
+      process_extra_name: ~
+      process_user: root
+      process_group: root
+      nodaemon_args: '-D'
+      ensure: stopped
+      enable: false
+      pidfile: /var/run/snmptrapd.pid
+      params: {}
+
+
+  files:
+    client:
+      path: '/etc/snmp/snmp.conf'
+    config:
+      path: '/etc/snmp/snmpd.conf'
+      mode: '0600'
+    init:
+      path: '/etc/sysconfig/snmpd'
+      format: 'inifile'
+    systemd:
+      path: '/etc/systemd/system/snmpd.service'
+      format: 'inifile_with_stanzas'
+    snmptrapd:
+      path: '/etc/snmp/snmptrapd.conf'
+    snmptrapd_init:
+      path: '/etc/sysconfig/snmptrapd'
+      format: 'inifile'
+  dirs:
+    config:
+      path: '/etc/snmp'
+    log:
+      path: /var/log/snmpd
+    home:
+      path: /var/lib/snmp
+
+  user_files:
+    config:
+      path: '$HOME/.snmpd/snmpd.conf'
+
+  user_dirs:
+    config:
+      path: '$HOME/.snmpd'
+
+  ports:
+    main:
+      port: 42
+      protocol: tcp
+    ssl:
+      port: 4432
+      protocol: tcp
+
+  info_commands:
+    list: 'snmpd list'
+  debug_commands:
+    debug: 'snmpd debug'
+  test_commands:
+    status: 'snmpd status'
+  version_command: 'snmpd version'
+  help_command: 'snmpd help'
+  run_commands:
+    start:
+      command: 'snmpd start'
+
+  image:
+    name: 'snmpd/snmpd'
+    ports:
+      - 9090:9090
+    systemd_options: {}
+
+  build:
+    prerequisites:
+      tp::install:
+        - build-essential
+    execs:
+      - name: configure
+        command: './configure'
+      - name: build
+        command: 'make'
+      - name: setup
+        command: 'make install'
+    setup:
+      enable: true
+      files:
+        snmpd:
+          path: '/usr/local/bin/snmpd'
+          mode: '0755'
+      systemd_options: {}
+      resources: {}
+      manage_service: false
+      manage_user: false
+
+  release:
+    latest_version: ~
+    prerequisites: {}
+    latest_url: ~
+    base_url: 'https://sourceforge.net/projects/net-snmp/files/net-snmp/$VERSION/'
+    file_name: 'net-snmp-$VERSION.tar.gz'
+    extracted_dir: 'net-snmp-$VERSION'
+    file_format: tar.gz
+    setup:
+      enable: true
+      files:
+        snmpd:
+          path: '/usr/local/bin/snmpd'
+          mode: '0755'
+      systemd_options:
+        Service:
+          ExecStart: '/var/lib/tp/source/snmpd/snmpd -l 127.0.0.1'
+          EnvironmentFile: ~
+      resources: {}
+      manage_service: false
+      manage_user: false

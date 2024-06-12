@@ -1,0 +1,9 @@
+---
+virtualbox::settings:
+  key: '7B0FAB3A'
+  repo_url: 'http://download.virtualbox.org/virtualbox/rpm/el/$releasever/$basearch'
+  key_url: 'https://www.virtualbox.org/download/oracle_vbox.asc'
+  package_prerequisites:
+    - gcc
+    - make
+    - kernel-devel

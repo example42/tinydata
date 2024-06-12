@@ -1,0 +1,12 @@
+---
+fixtures:
+  repositories:
+    "concat": "https://github.com/puppetlabs/puppetlabs-concat.git"
+    "vcsrepo": "https://github.com/puppetlabs/puppetlabs-vcsrepo.git"
+    "tp_profile": "https://github.com/example42/puppet-tp_profile.git"
+    "psick_profile": "https://github.com/example42/psick_profile.git"
+    "tp": "https://github.com/example42/puppet-tp.git"
+    "psick": "https://github.com/example42/puppet-psick.git"
+    "yumrepo": "https://github.com/puppetlabs/puppetlabs-yumrepo_core"
+  forge_modules:
+    stdlib: "puppetlabs/stdlib"

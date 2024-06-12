@@ -1,0 +1,4 @@
+---
+webex-meetings::settings:
+  brew_package_name: 'webex-meetings'
+  package_name: 'webex-meetings'

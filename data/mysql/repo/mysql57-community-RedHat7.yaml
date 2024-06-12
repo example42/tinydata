@@ -1,0 +1,4 @@
+---
+mysql::settings:
+  repo_package_url: 'https://dev.mysql.com/get/mysql57-community-release-el7-1.noarch.rpm'
+  repo_package_name: 'mysql57-community-release-el7-1'

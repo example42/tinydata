@@ -1,0 +1,4 @@
+---
+heartbeat-elastic::settings:
+  tp_prerequisites:
+    elastic_repo: {}

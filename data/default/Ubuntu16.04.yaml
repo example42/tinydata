@@ -1,0 +1,8 @@
+---
+default::settings:
+  apt_release: 'xenial'
+
+  repos:
+    default:
+      apt:
+        release: 'xenial'

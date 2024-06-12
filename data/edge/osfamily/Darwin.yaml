@@ -1,0 +1,4 @@
+---
+edge::settings:
+  brew_package_name: 'microsoft-edge'
+  package_name: 'microsoft-edge'

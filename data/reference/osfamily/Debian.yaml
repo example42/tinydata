@@ -1,0 +1,10 @@
+---
+# On Debian the configuration file used by a service init script is
+# under /etc/default. Here the same setting is expressed in v3 and v4 formatting
+
+reference::settings:
+  init_file_path: '/etc/default/reference'
+
+  files:
+    init:
+      path: '/etc/default/reference'

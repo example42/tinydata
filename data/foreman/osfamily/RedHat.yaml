@@ -1,0 +1,4 @@
+---
+foreman::settings:
+  init_file_path: '/etc/sysconfig/foreman'
+  repo_package_name: 'foreman-release'

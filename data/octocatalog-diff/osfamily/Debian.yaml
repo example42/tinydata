@@ -1,0 +1,5 @@
+---
+octocatalog-diff::settings:
+  package_prerequisites:
+    - cmake
+    - pkgconf

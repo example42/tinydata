@@ -1,0 +1,14 @@
+---
+mgmt::settings:
+
+  # If exe or msi package is available for direct download:
+  package_provider: 'windows'
+  package_source: 'https://github.com/mgmt/mgmt/releases/download/v$VERSION/mgmt_$VERSION_$OS_$ARCH.msi'
+
+  user_files:
+    config:
+      path: '%APPDATA%\mgmt\mgmt.conf'
+
+  user_dirs:
+    config:
+      path: '%APPDATA%\mgmt'

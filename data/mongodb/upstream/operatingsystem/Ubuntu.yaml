@@ -1,0 +1,4 @@
+---
+mongodb::settings:
+  repo_url: 'http://repo.mongodb.org/apt/ubuntu'
+  apt_repos: 'multiverse'

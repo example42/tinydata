@@ -1,0 +1,6 @@
+---
+hashicorp_repo::settings:
+  repo_url: 'https://apt.releases.hashicorp.com'
+  apt_repos: 'main'
+  key_url: 'https://apt.releases.hashicorp.com/gpg'
+  key: 'E8A0 32E0 94D8 EB4E A189  D270 DA41 8C88 A321 9F7B'

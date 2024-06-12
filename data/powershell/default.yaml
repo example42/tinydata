@@ -1,0 +1,9 @@
+---
+powershell::settings:
+  package_name: powershell
+  snap_package_name: 'powershell'
+  docker_image: 'microsoft/powershell'
+  website_url: 'https://learn.microsoft.com/powershell/'
+  git_source: 'https://github.com/PowerShell/PowerShell.git'
+  tp_prerequisites:
+    - 'microsoft_repo'

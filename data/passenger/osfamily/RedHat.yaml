@@ -1,0 +1,4 @@
+---
+passenger::settings:
+  repo_url: 'https://oss-binaries.phusionpassenger.com/yum/passenger/el/$releasever/$basearch'
+

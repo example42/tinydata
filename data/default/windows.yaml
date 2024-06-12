@@ -1,0 +1,7 @@
+---
+default::settings:
+  package_provider: 'chocolatey'
+  config_file_owner: 'BUILTIN\Administrators'
+  config_file_group: 'NT AUTHORITY\SYSTEM'
+  config_dir_owner: 'BUILTIN\Administrators'
+  config_dir_group: 'NT AUTHORITY\SYSTEM'

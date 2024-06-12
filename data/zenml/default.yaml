@@ -1,0 +1,5 @@
+---
+zenml:
+  package_name: zenml
+  package_provider: 'pip'
+

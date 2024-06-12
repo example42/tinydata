@@ -1,0 +1,56 @@
+---
+name: PR tests
+on: pull_request  # yamllint disable-line rule:truthy
+
+jobs:
+  validate-yaml:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Validate YAML files
+        run: yamllint .
+
+  acceptance:
+    strategy:
+      matrix:
+        include:
+          #  - container: example42/tiny-puppet-ubuntu1804
+          - container: example42/tiny-puppet-ubuntu2004
+          - container: example42/tiny-puppet-ubuntu2204
+          - container: example42/tiny-puppet-debian11
+          - container: example42/tiny-puppet-debian10
+          #  - container: example42/tiny-puppet-debian9
+          #  - container: example42/tiny-puppet-debian8
+          - container: example42/tiny-puppet-rockylinux9
+          - container: example42/tiny-puppet-rockylinux8
+          - container: example42/tiny-puppet-almalinux9
+          - container: example42/tiny-puppet-almalinux8
+          - container: example42/tiny-puppet-redhat9
+          - container: example42/tiny-puppet-redhat8
+          #  - container: example42/tiny-puppet-centos7
+          #  - container: example42/tiny-puppet-centos6
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ matrix.container }}
+      options: --user root
+    name: "Acceptance test on ${{ matrix.container }}"
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Git config safe directory
+        run: git config --global --add safe.directory /__w/tinydata/tinydata
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v41
+      - name: Run tp tests
+        run: scripts/github_tp_test.sh "${{ steps.changed-files.outputs.all_changed_files }}"
+        shell: 'script -q -e -c "bash {0}"'
+        if: success() || failure()
+      - name: 'Upload results artifact'
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: results.txt
+          retention-days: 5

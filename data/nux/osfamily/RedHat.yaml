@@ -1,0 +1,5 @@
+---
+nux::settings:
+  repo_package_name: 'nux-dextop-release'
+  tp_prerequisites:
+    - epel

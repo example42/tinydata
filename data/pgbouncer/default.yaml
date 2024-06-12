@@ -1,0 +1,18 @@
+---
+pgbouncer::settings:
+  package_name: 'pgbouncer'
+  service_name: 'pgbouncer'
+  config_file_path: '/etc/pgbouncer/pgbouncer.ini'
+  config_file_format: 'inifile_with_stanzas'
+  config_file_owner: 'pgbouncer'
+  config_file_group: 'pgbouncer'
+  config_file_mode: '0600'
+  userlist_file_path: '/etc/pgbouncer/userlist.txt'
+  config_dir_path: '/etc/pgbouncer'
+  pid_file_path: '/var/run/pgbouncer/pgbouncer.pid'
+  log_file_path: '/var/log/pgbouncer/pgbouncer.log'
+  log_dir_path: '/var/log/pgbouncer'
+  process_name: 'pgbouncer'
+  process_user: 'pgbouncer'
+  process_group: 'pgbouncer'
+  tcp_port: '6432'

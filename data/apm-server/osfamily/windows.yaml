@@ -1,0 +1,4 @@
+---
+apm-server::settings:
+  config_file_path: 'C:\ProgramData\chocolatey\lib\apm-server\tools\apm-server.yml'
+

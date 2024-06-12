@@ -1,0 +1,3 @@
+---
+kubernetes::settings:
+  repo_url: 'https://packages.cloud.google.com/yum/repos/kubernetes-el8-$basearch'

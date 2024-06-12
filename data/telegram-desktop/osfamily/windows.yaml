@@ -1,0 +1,4 @@
+---
+telegram-desktop::settings:
+  winget_package_name: 'Telegram.TelegramDesktop'
+  choco_package_name: 'telegram-desktop'

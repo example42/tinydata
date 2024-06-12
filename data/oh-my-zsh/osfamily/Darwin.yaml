@@ -1,0 +1,5 @@
+---
+oh-my-zsh::settings:
+  package_prerequisites: []
+  tp_prerequisites:
+    - git

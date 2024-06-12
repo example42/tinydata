@@ -1,0 +1,8 @@
+---
+default::settings:
+  apt_release: 'bionic'
+
+  repos:
+    default:
+      apt:
+        release: 'bionic'

@@ -1,0 +1,4 @@
+---
+elastic_repo::settings:
+  repo_filename: elastic-7.x
+  repo_description: 'Elastic repository for 7.x packages'

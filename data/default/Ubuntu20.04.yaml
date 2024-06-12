@@ -1,0 +1,8 @@
+---
+default::settings:
+  apt_release: 'focal'
+
+  repos:
+    default:
+      apt:
+        release: 'focal'

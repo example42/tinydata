@@ -1,0 +1,6 @@
+---
+docker::settings:
+  init_file_path: '/etc/sysconfig/docker'
+  config_file_path: '/etc/sysconfig/docker'
+  key: '060A 61C5 1B55 8A7F 742B 77AA C52F EB6B 621E 9F35'
+  key_url: 'https://download.docker.com/linux/centos/gpg'

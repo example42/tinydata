@@ -1,0 +1,16 @@
+---
+apm-server::settings:
+  upstream_repo: true
+  package_name: 'apm-server'
+  service_name: 'apm-server'
+  config_file_path: '/etc/apm-server/apm-server.yml'
+  config_file_format: 'yaml'
+  config_dir_path: '/etc/apm-server'
+  pid_file_path: '/var/run/apm-server.pid'
+  log_file_path: '/var/log/apm-server/apm-server'
+  log_dir_path: '/var/log/apm-server'
+  home_dir_path: '/usr/share/apm-server'
+  data_dir_path: '/var/lib/apm-server'
+  process_name: 'apm-server'
+  version_command: 'apm-server version'
+  docker_image: 'elastic/apm-server'

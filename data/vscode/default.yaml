@@ -1,0 +1,11 @@
+---
+vscode::settings:
+  package_name: vscode
+  docker_image: 'bitnami/vscode'
+  website_url: 'https://code.visualstudio.com/'
+  git_source: 'https://github.com/microsoft/vscode'
+  config_file_format: 'json'
+  user_config_file_path: '$HOME/.config/Code/User/settings.json'
+  user_config_dir_path: '$HOME/.config/Code/User/'
+  tp_prerequisites:
+    - 'microsoft_repo'

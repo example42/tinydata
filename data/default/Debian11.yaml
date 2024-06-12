@@ -1,0 +1,9 @@
+---
+default::settings:
+  apt_release: 'bullseye'
+  init_system: 'systemd'
+
+  repos:
+    default:
+      apt:
+        release: 'bullseye'

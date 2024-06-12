@@ -1,0 +1,5 @@
+---
+jupyterlab:
+  package_name: jupyterlab
+  package_provider: 'pip'
+

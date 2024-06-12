@@ -1,4 +1,0 @@
----
-  puppetserver::settings:
-    apt_release: 'wheezy'
-

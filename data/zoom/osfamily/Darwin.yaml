@@ -1,0 +1,4 @@
+---
+zoom::settings:
+  brew_package_name: 'zoom'
+  package_name: 'zoom'

@@ -1,0 +1,15 @@
+---
+puppet-agent::settings:
+  config_file_path: 'C:\ProgramData\PuppetLabs\puppet-agent\etc\puppet-agent.conf'
+  fileserver_file_path: 'C:\ProgramData\PuppetLabs\puppet-agent\etc\fileserver.conf'
+  routes_file_path: 'C:\ProgramData\PuppetLabs\puppet-agent\etc\routes.yaml'
+  autosign_file_path: 'C:\ProgramData\PuppetLabs\puppet-agent\etc\autosign.conf'
+  auth_file_path: 'C:\ProgramData\PuppetLabs\puppet-agent\etc\auth.conf'
+  config_dir_path: 'C:\ProgramData\PuppetLabs\puppet-agent\etc'
+  code_dir_path: 'C:\ProgramData\PuppetLabs\code'
+  environment_dir_path: 'C:\ProgramData\PuppetLabs\code\environments'
+  pid_file_path: 'C:\ProgramData\PuppetLabs\var\run\agent.pid'
+  log_file_path: 'C:\ProgramData\PuppetLabs\var\log\puppet-agent.log'
+  log_dir_path: 'C:\ProgramData\PuppetLabs\var\log'
+  process_user: 'LocalSystem'
+  process_group: 'LocalSystem'

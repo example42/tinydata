@@ -1,0 +1,3 @@
+---
+iptraf::settings:
+  package_name: 'iptraf'

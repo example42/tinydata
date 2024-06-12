@@ -1,0 +1,21 @@
+---
+auditbeat::settings:
+  upstream_repo: true
+  package_name: 'auditbeat'
+  service_name: 'auditbeat'
+  config_file_path: '/etc/auditbeat/auditbeat.yml'
+  config_file_format: 'yaml'
+  config_dir_path: '/etc/auditbeat'
+  pid_file_path: '/var/run/auditbeat.pid'
+  log_file_path: '/var/log/auditbeat/auditbeat'
+  log_dir_path: '/var/log/auditbeat'
+  home_dir_path: '/usr/share/auditbeat'
+  data_dir_path: '/var/lib/auditbeat'
+  process_name: 'auditbeat'
+  website_url: 'https://www.elastic.co/beats/auditbeat'
+  git_source: 'https://github.com/elastic/beats/tree/master/auditbeat'
+  version_command: 'auditbeat version'
+  info_commands:
+    show_status: 'auditbeat show auditd_status'
+    show_rules: 'auditbeat show auditd_rules'
+  docker_image: 'elastic/autditbeat'

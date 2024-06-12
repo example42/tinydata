@@ -1,0 +1,11 @@
+---
+nodejs::settings:
+  exec_prerequisites:
+    repo_setup:
+      command: 'curl -L https://rpm.nodesource.com/setup_lts.x | bash'
+      unless: 'rpm -qa | grep nodesource-release'
+  package_prerequisites:
+    - gcc-c++
+    - make
+  tp_prerequisites:
+    - epel

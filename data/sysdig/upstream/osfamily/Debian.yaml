@@ -1,0 +1,9 @@
+---
+sysdig::settings:
+#  repo_url: 'http://download.draios.com/stable/deb'
+#  key: 'D27A 72F3 2D86 7DF9 300A  2415 7449 0FD6 EC51 E8C4'
+#  key_url: 'https://s3.amazonaws.com/download.draios.com/DRAIOS-GPG-KEY.public'
+#  apt_release: 'stable-$(ARCH)/'
+  repo_file_url: 'https://download.sysdig.com/stable/deb/draios.list'
+  repo_file_name: 'draios.list'
+

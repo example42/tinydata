@@ -1,0 +1,8 @@
+---
+zeek::settings:
+  init_file_path: '/etc/default/zeek'
+  repo_url: 'https://download.zeek.com/linux/ubuntu'
+  key: '9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88'
+  key_url: 'https://download.zeek.com/linux/ubuntu/gpg'
+  apt_repos: '/'
+  apt_key_server: 'http://p80.pool.sks-keyservers.net'

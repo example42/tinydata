@@ -1,0 +1,6 @@
+---
+obs-studio::settings:
+  package_name: obs-studio
+  snap_package_name: 'obs-studio'
+  website_url: 'https://obsproject.com/'
+  git_source: 'https://github.com/obsproject/obs-studio.git'

@@ -1,0 +1,3 @@
+---
+discord::settings:
+  brew_package_name: 'discord'

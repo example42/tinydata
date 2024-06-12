@@ -1,0 +1,8 @@
+---
+default::settings:
+  apt_release: 'vivid'
+
+  repos:
+    default:
+      apt:
+        release: 'vivid'

@@ -1,17 +1,16 @@
 ---
-  apache::settings:
-    package_name: 'apache2'
-    service_name: 'apache2'
-    config_file_path: '/etc/apache2/httpd.conf'
-    init_file_path: '/etc/conf.d/apache2'
-    config_dir_path: '/etc/apache2'
-    conf_dir_path: '/etc/apache2/conf.d'
-    pid_file_path: '/var/run/apache2/httpd.pid'
-    log_file_path: [ '/var/log/apache2/access.log' , '/var/log/apache2/error.log' ]
-    log_dir_path: '/var/log/apache2'
-    data_dir_path: '/var/www'
-    process_name: 'httpd'
-    process_user: 'apache'
-    process_group: 'apache'
-    modules_dir_path: '/usr/lib/apache2'
-
+apache::settings:
+  package_name: 'apache2'
+  service_name: 'apache2'
+  config_file_path: '/etc/apache2/httpd.conf'
+  init_file_path: '/etc/conf.d/apache2'
+  config_dir_path: '/etc/apache2'
+  conf_dir_path: '/etc/apache2/conf.d'
+  pid_file_path: '/var/run/apache2/httpd.pid'
+  log_file_path: ['/var/log/apache2/access.log', '/var/log/apache2/error.log']
+  log_dir_path: '/var/log/apache2'
+  data_dir_path: '/var/www'
+  process_name: 'httpd'
+  process_user: 'apache'
+  process_group: 'apache'
+  modules_dir_path: '/usr/lib/apache2'

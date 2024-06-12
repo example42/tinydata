@@ -1,0 +1,7 @@
+---
+docker::settings:
+  init_file_path: '/etc/default/docker'
+  repo_url: 'https://download.docker.com/linux/debian'
+  key: '0EBFCD88'
+  key_url: 'https://download.docker.com/linux/debian/gpg'
+  apt_repos: 'stable'

@@ -1,0 +1,9 @@
+---
+bash::settings:
+  package_name: 'bash'
+  website_url: 'https://www.gnu.org/software/bash/'
+  git_source: 'https://git.savannah.gnu.org/git/bash.git'
+  config_file_path: '/etc/profile'
+  config_dir_path: '/etc/profile.d'
+  user_config_file_path: '$HOME/.bash_profile'
+  docker_image: 'bash'

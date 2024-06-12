@@ -1,0 +1,3 @@
+---
+influxdb::settings:
+  repo_url: 'https://repos.influxdata.com/ubuntu'

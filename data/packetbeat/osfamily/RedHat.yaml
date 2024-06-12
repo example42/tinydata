@@ -1,0 +1,3 @@
+---
+packetbeat::settings:
+  init_file_path: '/etc/sysconfig/packetbeat'

@@ -1,0 +1,5 @@
+---
+pgbouncer::settings:
+  repo_package_url: 'https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm'
+  repo_package_name: 'pgdg-redhat-repo'
+  repo_filename: 'pgdg-redhat-all'

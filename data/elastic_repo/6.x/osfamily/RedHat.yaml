@@ -1,0 +1,4 @@
+---
+elastic_repo::settings:
+  repo_url: 'http://artifacts.elastic.co/packages/6.x/yum'
+

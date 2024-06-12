@@ -1,0 +1,3 @@
+---
+wazuh-server::settings:
+  package_name: ~

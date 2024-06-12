@@ -1,0 +1,6 @@
+---
+zeek::settings:
+  init_file_path: '/etc/sysconfig/zeek'
+  config_file_path: '/etc/sysconfig/zeek'
+  key: '2C52609D'
+  key_url: 'http://yum.zeekproject.org/gpg'

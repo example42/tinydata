@@ -1,0 +1,8 @@
+---
+bind::settings:
+  pid_file_path: '/var/run/named/named.pid'
+  log_file_path: '/var/log/syslog'
+  service_name: 'bind9'
+  process_name: 'named'
+  process_user: 'bind'
+  process_group: 'bind'

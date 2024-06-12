@@ -1,0 +1,23 @@
+---
+gitlab-ce::settings:
+  package_name: 'gitlab-ce'
+  service_name: 'gitlab-runsvdir'
+  config_file_path: '/etc/gitlab/gitlab.rb'
+  config_dir_path: '/etc/gitlab'
+  ssl_dir_path: '/etc/gitlab/ssl'
+  version_command: 'gitlab-rake gitlab:env:info'
+  info_commands:
+    status: 'gitlab-ctl status'
+    service-list: 'gitlab-ctl service-list'
+    get-redis-master: 'gitlab-ctl get-redis-master'
+  run_commands:
+    reconfigure:
+      command: 'gitlab-ctl reconfigure'
+    backup-etc:
+      command: 'gitlab-ctl backup-etc'
+    renew-le-certs:
+      command: 'gitlab-ctl renew-le-certs'
+    registry-garbage-collect:
+      command: 'gitlab-ctl registry-garbage-collect'
+  test_commands:
+    status: 'gitlab-ctl status'

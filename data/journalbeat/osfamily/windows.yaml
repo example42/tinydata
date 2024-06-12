@@ -1,0 +1,4 @@
+---
+journalbeat::settings:
+  config_file_path: 'C:\ProgramData\chocolatey\lib\journalbeat\tools\journalbeat.yml'
+

@@ -1,0 +1,3 @@
+---
+procdump::settings:
+  brew_package_name: 'procdump'

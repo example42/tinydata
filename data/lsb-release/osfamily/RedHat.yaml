@@ -1,0 +1,3 @@
+---
+lsb-release::settings:
+  package_name: 'redhat-lsb'

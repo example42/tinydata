@@ -1,0 +1,3 @@
+---
+default::settings:
+  init_system: 'sysvinit'

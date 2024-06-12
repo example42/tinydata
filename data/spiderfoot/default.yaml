@@ -1,0 +1,61 @@
+---
+spiderfoot::settings:
+  tp_prerequisites:
+    - python-pip
+
+  upstream_repo: false
+  package_name: 'spiderfoot'
+  service_name: 'spiderfoot'
+  package_provider: 'pip'
+
+  process_name: 'sf.py'
+  process_user: 'root'
+  process_group: 'root'
+
+  git_source: 'https://github.com/smicallef/spiderfoot'
+
+
+  # tp 4 settings
+  description: 'SpiderFoot automates OSINT so you can find what matters, faster.'
+
+  ports:
+    main:
+      port: 5001
+      protocol: tcp
+
+  build:
+    enable: true
+    prerequisites:
+      tp::install:
+        - python-pip
+    execs:
+      - name: build
+        command: 'pip install -r requirements.txt'
+
+  install_method: 'source'
+
+  release:
+    latest_version: '4.0'
+    prerequisites: {}
+    latest: {}
+    base_url: 'https://github.com/smicallef/spiderfoot/archive/refs/tags/v$VERSION'
+    file_name: 'v$VERSION.zip'
+    extracted_dir: 'spiderfoot-$VERSION'
+    file_format: 'zip'
+
+  source:
+    setup:
+      enable: true
+      systemd_options:
+        Service:
+          ExecStart: '/var/lib/tp/source/spiderfoot/sf.py -l 0.0.0.0:5001'
+          EnvironmentFile: ~
+          WorkingDirectory: '/var/lib/tp/source/spiderfoot'
+      manage_service: true
+      manage_user: false
+
+  urls:
+    website: https://www.spiderfoot.net/
+    issues: https://github.com/smicallef/spiderfoot/issues
+    documentation: https://www.spiderfoot.net/documentation/
+    source: https://github.com/smicallef/spiderfoot

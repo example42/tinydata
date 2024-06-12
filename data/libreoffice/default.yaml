@@ -1,0 +1,6 @@
+---
+libreoffice::settings:
+  package_name: libreoffice
+  snap_package_name: 'libreoffice'
+  website_url: 'https://www.libreoffice.org/'
+  git_source: 'https://github.com/LibreOffice/core'

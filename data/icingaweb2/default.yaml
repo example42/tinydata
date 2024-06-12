@@ -1,0 +1,10 @@
+---
+icingaweb2::settings:
+  package_name: 'icingaweb2'
+  config_file_path: '/etc/icingaweb2/icingaweb2.conf'
+  config_dir_path: '/etc/icingaweb2'
+  conf_dir_path: '/etc/icingaweb2/conf.d'
+  modules_dir_path: '/etc/icingaweb2/modules'
+  log_file_path: '/var/log/icingaweb2/icingaweb2.log'
+  log_dir_path: '/var/log/icingaweb2'
+  config_dir_mode: '0775'

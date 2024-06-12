@@ -1,0 +1,6 @@
+---
+twitch::settings:
+  package_name: twitch
+  snap_package_name: 'twitch'
+  website_url: 'https://desktop.telegram.org/'
+  git_source: 'https://github.com/telegramdesktop/tdesktop.git'

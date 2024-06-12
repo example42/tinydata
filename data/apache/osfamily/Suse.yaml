@@ -1,16 +1,23 @@
 ---
-  apache::settings:
-    package_name: 'apache2'
-    service_name: 'apache2'
-
-    config_file_path: '/etc/apache2/httpd.conf'
-    init_file_path: '/etc/default/apache2'
-    config_dir_path: '/etc/apache2'
-    pid_file_path: '/var/run/httpd2.pid'
-    log_file_path: [ '/var/log/apache2/access.log' , '/var/log/apache2/error.log' ]
-    log_dir_path: '/var/log/apache2'
-    data_dir_path: '/var/www/htdocs'
-    process_name: 'httpd2-prefork'
-    process_user: 'wwwrun'
-    process_group: 'wwwrun'
-
+apache::settings:
+  package_name: 'apache2'
+  service_name: 'apache2'
+  config_file_path: '/etc/apache2/httpd.conf'
+  init_file_path: '/etc/default/apache2'
+  config_dir_path: '/etc/apache2'
+  pid_file_path: '/var/run/httpd2.pid'
+  log_file_path: ['/var/log/apache2/access.log', '/var/log/apache2/error.log']
+  log_dir_path: '/var/log/apache2'
+  data_dir_path: '/var/www/htdocs'
+  process_name: 'httpd2-prefork'
+  process_user: 'wwwrun'
+  process_group: 'wwwrun'
+  validate_cmd:
+    config: 'httpd2-prefork -t -f %'
+  info_commands:
+    show_compile_settings: 'httpd2-prefork -V'
+    show_compiled_modules: 'httpd2-prefork -l'
+    show_loaded_modules: 'httpd2-prefork -t -D DUMP_MODULES'
+  test_commands:
+    validate_config: 'httpd2-prefork -t'
+  version_command: 'httpd2-prefork -v'

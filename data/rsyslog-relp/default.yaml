@@ -1,0 +1,3 @@
+---
+rsyslog-relp::settings:
+  package_name: 'rsyslog-relp'

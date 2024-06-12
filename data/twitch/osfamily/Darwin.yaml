@@ -1,0 +1,4 @@
+---
+twitch::settings:
+  brew_package_name: 'streamlink-twitch-gui'
+  package_name: 'streamlink-twitch-gui'

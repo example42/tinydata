@@ -1,0 +1,4 @@
+---
+libreoffice::settings:
+  winget_package_name: 'TheDocumentFoundation.LibreOffice'
+  choco_package_name: 'libreoffice'

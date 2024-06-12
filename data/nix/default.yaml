@@ -1,0 +1,91 @@
+---
+nix::settings:
+  tp_prerequisites: {}
+  exec_prerequisites:
+    install:
+      command: 'wget -O /tmp/nix_install https://nixos.org/nix/install ; sh /tmp/nix_install --daemon --yes'
+      creates: '/nix'
+      provider: posix
+      environment: ['HOME=/root']
+
+  urls:
+    website: 'https://nixos.org'
+    issues: 'https://github.com/nixos/nix/issues'
+    documentation: 'https://nixos.org/learn.html'
+    source: 'https://github.com/nixos/nix'
+  description: 'The purely functional package manager'
+
+  # Configured: +package -source -file +image
+  install_method: 'package'
+
+  packages: {}
+  manage_package: false
+
+  services:
+    nix-daemon:
+      process_name: nix
+      process_extra_name: ~
+      process_user: root
+      process_group: root
+      nodaemon_args: '-D'
+      pidfile: /run/nix.pid
+      params: {}
+
+  files:
+    config:
+      path: '/etc/nix/nix.conf'
+    init:
+      path: '/etc/sysconfig/nix-daemon.conf'
+      format: 'inifile'
+    systemd:
+      path: '/etc/systemd/system/nix-daemon.service'
+      format: 'inifile_with_stanzas'
+
+  dirs:
+    config:
+      path: '/etc/nix'
+    metadata:
+      path: /nix/var/nix
+    log:
+      path: /nix/var/log
+    store:
+      path: /nix
+
+  user_files:
+    config:
+      path: '$HOME/.config/nix/nix.conf'
+
+  user_dirs:
+    config:
+      path: '$HOME/.config/nix'
+
+  info_commands:
+    list_profile: 'nix profile list'
+    list_store: 'nix store ls'
+  debug_commands:
+    debug: 'nix store verify'
+  test_commands:
+    status: 'nix status'
+  version_command: 'nix --version'
+  help_command: 'nix --help'
+
+  image:
+    name: 'nixos/nix'
+    systemd_options: {}
+
+  release:
+    latest_version: 2.13.2
+    latest_url: ~
+    base_url: 'https://releases.nixos.org/nix/nix-$VERSION/nix-$VERSION-$OS.tar.xz'
+    file_name: 'nix-$VERSION-$OS.tar.xz'
+    extracted_dir: 'nix-$VERSION-$OS'
+    file_format: xz
+
+  setupa:
+    enable: true
+    resources:
+      exec:
+        install_nix:
+          command: 'curl -L https://nixos.org/nix/install --daemon | bash'
+          creates: '/nix'
+          provider: shell

@@ -1,0 +1,4 @@
+---
+microsoft_repo::settings:
+  repo_package_url: 'https://packages.microsoft.com/config/sles/11/packages-microsoft-prod.rpm'
+

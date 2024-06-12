@@ -1,0 +1,8 @@
+---
+default::settings:
+  apt_release: 'jessie'
+
+  repos:
+    default:
+      apt:
+        release: 'jessie'

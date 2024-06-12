@@ -1,0 +1,8 @@
+---
+nodejs::settings:
+  exec_prerequisites:
+    repo_setup:
+      command: 'curl -L https://deb.nodesource.com/setup_lts.x | bash'
+      unless: 'dpkg -qa | grep nodesource-release'
+  package_prerequisites:
+    - build-essential

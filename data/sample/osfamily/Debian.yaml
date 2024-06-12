@@ -1,0 +1,6 @@
+---
+sample::settings:
+
+  files:
+    init:
+      path: '/etc/default/sample'

@@ -1,0 +1,9 @@
+---
+spiderfoot::settings:
+  init_file_path: '/etc/default/spiderfoot'
+
+  files:
+    init:
+      path: '/etc/default/spiderfoot'
+
+  upstream_repo: true

@@ -1,0 +1,3 @@
+---
+debootstrap::settings:
+  package_name: 'debootstrap'

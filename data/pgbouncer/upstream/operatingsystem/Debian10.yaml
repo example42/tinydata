@@ -1,0 +1,4 @@
+---
+pgbouncer::settings:
+  repo_url: 'http://apt.postgresql.org/pub/repos/apt'
+  apt_release: 'buster-pgdg main'

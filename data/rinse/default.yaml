@@ -1,0 +1,5 @@
+---
+rinse::settings:
+  package_name: 'rinse'
+  config_file_path: '/etc/rinse/rinse.conf'
+  config_dir_path: '/etc/rinse'

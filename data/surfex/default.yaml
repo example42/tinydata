@@ -1,0 +1,46 @@
+---
+surfex::settings:
+  tp_prerequisites: {}
+
+  urls:
+    website: 'http://www.umr-cnrm.fr/surfex/'
+    documentation: 'http://www.umr-cnrm.fr/surfex/'
+    source: 'https://github.com/surfex/surfex'
+  description: 'SURFEX (Surface Externalisée, in French) is a surface modelling platform'
+
+  # Configured: -package -source +release -image
+  install_method: 'release'
+
+  build:
+    enable: true
+    prerequisites:
+      tp::install:
+        - build-essential
+    execs:
+      - name: configure
+        command: 'cd src ; ./configure'
+        # TODO: Add source of generated model
+      - name: build
+        command: 'make'
+      - name: setup
+        command: 'make installmaster'
+    setup:
+      enable: true
+      systemd_options: {}
+      resources: {}
+      manage_service: false
+      manage_user: false
+
+  release:
+    latest_version: 'v9_0_0'
+    prerequisites: {}
+    latest_url: ~
+    base_url: 'https://www.umr-cnrm.fr/surfex/data/OPEN-SURFEX'
+    file_name: 'open_surfex_$VERSION.tar.gz'
+    extracted_dir: 'OPEN_SURFEX_V9'
+    file_format: tar.gz
+    setup:
+      enable: true
+      resources: {}
+      manage_service: false
+      manage_user: false

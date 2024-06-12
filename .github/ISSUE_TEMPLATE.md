@@ -1,19 +1,13 @@
-## Expected Behavior 
+# Your tp request
 
+Application to manage (new or to fix):
+Operating System(s) to support:
+Installation Method(s):
 
-## Actual Behavior
+## Labels
 
+Please use the following labels:
 
-## Steps to Reproduce the Problem
+*   **tinydata request** for any request for new or updated tinydata for an application
+*   **questions** for any error you find, doubt or clarification request
 
-  1. 
-  1. 
-  1. 
-
-## Specifications
-
-Please add this info:
-
-  1. Output of ```facter -p``` on the failing node (at least the OS related facts)
-  1. Version of Puppet and of the module
-  1. The relevant Puppet code and eventually Hiera data

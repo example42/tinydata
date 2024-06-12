@@ -1,0 +1,12 @@
+---
+mongodb-mms-automation-agent::settings:
+  package_name: 'mongodb-mms-automation-agent'
+  service_name: 'mongodb-mms-automation-agent'
+  config_file_path: '/etc/mongodb-mms/automation-agent.config'
+  pid_file_path: '/var/run/mongodb-mms-automation-agent.pid'
+  log_file_path: '/var/log/mongodb-mms/automation-agent.log'
+  config_dir_path: '/etc/mongodb-mms'
+  log_dir_path: '/var/log/mongodb-mms'
+  process_name: 'mongodb-mms-automation-agent'
+  process_user: 'mongodb-mms-agent'
+  process_group: 'mongodb-mms-agent'

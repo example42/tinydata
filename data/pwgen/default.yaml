@@ -1,0 +1,3 @@
+---
+pwgen::settings:
+  package_name: 'pwgen'

@@ -1,0 +1,11 @@
+---
+# Workaround for GPG-KEY in SHA1 https://www.redhat.com/en/blog/rhel-security-sha-1-package-signatures-distrusted-rhel-9
+sysdig::settings:
+  exec_prerequisites:
+    allow_sha1:
+      command: '/usr/bin/update-crypto-policies --set DEFAULT:SHA1'
+      unless: 'dnf info sysdig'
+  exec_postinstall:
+    disallow_sha1:
+      command: '/usr/bin/update-crypto-policies --set DEFAULT'
+      onlyif: '/usr/bin/update-crypto-policies --show | grep SHA1'

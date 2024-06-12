@@ -1,0 +1,14 @@
+---
+apparmor::settings:
+  package_name: ''
+  config_file_path: '/etc/apparmor/parser.conf'
+  config_dir_path: '/etc/apparmor/'
+  conf_dir_path: '/etc/apparmor.d/'
+  data_dir_path: '/var/cache/apparmor/'
+  website_url: 'https://apparmor.net/'
+  git_source: 'https://gitlab.com/apparmor/apparmor'
+  info_commands:
+    status: 'aa-status'
+  debug_commands:
+    show_denied: 'grep -i denied /var/log/kern.log /var/log/syslog'
+  version_command: 'dpkg -l apparmor | grep apparmor'

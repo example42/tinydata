@@ -1,0 +1,4 @@
+---
+sysmon::settings:
+  choco_package_name: 'sysmon'
+  package_name: 'sysmon'

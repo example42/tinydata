@@ -1,12 +1,12 @@
 ---
-  asterisk::settings:
-    package_name: 'asterisk'
-    service_name: 'asterisk'
-    config_dir_path: '/etc/asterisk'
-    pid_file_path: '/var/run/asterisk/asterisk.pid'
-    log_file_path: [ '/var/log/asterisk/messages' , '/var/log/asterisk/queue_log' ]
-    log_dir_path: '/var/log/asterisk'
-    process_name: 'asterisk'
-    progess_user: 'asterisk'
-    process_group: 'astersik'
-    
+asterisk::settings:
+  package_name: 'asterisk'
+  service_name: 'asterisk'
+  config_dir_path: '/etc/asterisk'
+  pid_file_path: '/var/run/asterisk/asterisk.pid'
+  log_file_path: [ '/var/log/asterisk/messages' , '/var/log/asterisk/queue_log' ]
+  log_dir_path: '/var/log/asterisk'
+  process_name: 'asterisk'
+  progess_user: 'asterisk'
+  process_group: 'astersik'
+  

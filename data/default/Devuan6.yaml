@@ -1,0 +1,10 @@
+---
+default::settings:
+  apt_release: 'excalibur'
+  init_system: 'sysvinit'
+  service_provider: 'sysvinit'
+
+  repos:
+    default:
+      apt:
+        release: 'excalibur'

@@ -1,0 +1,9 @@
+---
+default::settings:
+  apt_release: 'oracular'
+
+
+  repos:
+    default:
+      apt:
+        release: 'oracular'

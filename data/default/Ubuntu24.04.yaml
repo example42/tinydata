@@ -1,0 +1,9 @@
+---
+default::settings:
+  apt_release: 'noble'
+
+
+  repos:
+    default:
+      apt:
+        release: 'noble'

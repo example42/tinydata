@@ -1,0 +1,9 @@
+---
+default::settings:
+  apt_release: 'trixie'
+  init_system: 'systemd'
+
+  repos:
+    default:
+      apt:
+        release: 'trixie'

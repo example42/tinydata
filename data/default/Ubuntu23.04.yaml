@@ -1,0 +1,9 @@
+---
+default::settings:
+  apt_release: 'lunar'
+
+
+  repos:
+    default:
+      apt:
+        release: 'lunar'

@@ -1,0 +1,10 @@
+---
+default::settings:
+  apt_release: 'freia'
+  init_system: 'sysvinit'
+  service_provider: 'sysvinit'
+
+  repos:
+    default:
+      apt:
+        release: 'freia'

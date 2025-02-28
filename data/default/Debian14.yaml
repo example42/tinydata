@@ -1,0 +1,9 @@
+---
+default::settings:
+  apt_release: 'forky'
+  init_system: 'systemd'
+
+  repos:
+    default:
+      apt:
+        release: 'forky'

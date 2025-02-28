@@ -1,0 +1,9 @@
+---
+default::settings:
+  apt_release: 'kinetic'
+
+
+  repos:
+    default:
+      apt:
+        release: 'kinetic'

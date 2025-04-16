@@ -14,10 +14,10 @@ jobs:
     name: 'Deploy to forge'
     runs-on: ubuntu-latest
     if: github.repository_owner == 'example42'
-    container: puppet/puppet-dev-tools:2022-11-14-8e11537
+    container: puppet/pdk:3.4.0.1.55.g4519dd0
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Publish to the Forge
         run: /usr/local/bin/pdk bundle exec rake module:push
         env:
